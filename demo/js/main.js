@@ -22,7 +22,7 @@ $(document).ready( function() {
 
 
 		$('pre').hide();
-		$('h1').after( function() {
+		$('hr').before( function() {
 			
 			var $a = $('<button>show code examples</button>');
 			$a.on('click', function() {

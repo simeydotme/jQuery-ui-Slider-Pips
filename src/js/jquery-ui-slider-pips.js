@@ -9,19 +9,8 @@
 	
 	
 		(function($) {
-		/**
-		 *  Namespace: the namespace the plugin is located under
-		 *  pluginName: the name of the plugin
-		 */
+			
 			var extensionMethods = {
-				/*
-				 * retrieve the id of the element
-				 * this is some context within the existing plugin
-				 */
-				showId: function(){
-					return this.element[0].id;
-				},
-				
 				
 				pips: function( settings ) {
 					
