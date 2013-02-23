@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="demo/css/normalize.min.css">
+        <link rel="stylesheet" href="demo/css/main.css">
+        <link rel="stylesheet" href="demo/css/prettify.css">
+		
+        <link rel="stylesheet" href="demo/css/smoothness/jquery-ui-1.10.1.custom.css">
+        <link rel="stylesheet" href="src/css/jquery-ui-slider-pips.css">
+
+        <script src="demo/js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+
+        <section class="wrapper">
+			
+			
+			<h1>A Quick Demo of the jQuery ui Slider Pips plugin extension</h1>
+			
+			<hr>
+			
+<pre class="prettyprint linenums lang-js">
+$('.slider1')
+	.slider({ max: 10, min: 0, value: 0 })
+	.slider('pips', { rest: 'number' });
+</pre>
+			
+			<div class="slider1"></div>
+			
+<pre class="prettyprint linenums lang-js">
+$('.slider2')
+	.slider({ max: 200, min: 0, value: 0 })
+	.slider('pips');
+</pre>
+
+			<div class="slider2"></div>
+			
+<pre class="prettyprint linenums lang-js">
+$('.slider3')
+	.slider({ max: 45, min: 0, range: true, values: [10, 35] })
+	.slider('pips', { rest: false });
+</pre>
+
+			<div class="slider3"></div>
+			
+
+			<div class="slider4"></div>
+			
+<pre class="prettyprint linenums lang-js">
+$('.slider4')
+	.slider({ max: 10, min: 0, value: 10, range: "min", orientation: 'vertical' })
+	.slider('pips', { rest: 'number' });
+</pre><br>
+
+			<div class="slider5"></div>
+			
+<pre class="prettyprint linenums lang-js">
+$('.slider5')
+	.slider({ max: 45, min: 0, range: true, values: [10, 35], orientation: 'vertical' })
+	.slider('pips', { rest: false });
+</pre><br>
+
+			<div class="slider6"></div>
+			
+<pre class="prettyprint linenums lang-js">
+$('.slider6')
+	.slider({ max: 17, min: 0, orientation: 'vertical' })
+	.slider('pips', { first: 'pip', last: 'pip' });
+</pre><br>
+
+		
+		
+		</section>
+
+        <script src="demo/js/vendor/jquery-1.9.1.js"></script>
+        <script src="demo/js/vendor/jquery-ui-1.10.1.js"></script>
+
+        <script src="src/js/jquery-ui-slider-pips.js"></script>
+        <script src="demo/js/prettify.js"></script>
+
+
+        <script src="demo/js/main.js"></script>
+
+        <script>
+            /*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));*/
+        </script>
+    </body>
+</html>
