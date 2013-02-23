@@ -29,6 +29,7 @@ Include the CSS file, edit as you please.
   
   
 `$('.element').slider({opts}).slider('pips', { first: 'number', last: 'number', rest: 'pip' });`  
+  
 The method takes the options: `first, last, rest` with the value of:  
 `"pip"` - adds a pip.  
 `"number"` - adds a pip and a number.  
