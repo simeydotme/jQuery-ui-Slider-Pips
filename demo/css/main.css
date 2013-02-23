@@ -65,7 +65,7 @@ textarea {
 
 
 
-	.wrapper { width: auto; margin: 50px auto; text-align: center; }
+	.wrapper { width: auto; margin: 50px auto; text-align: center; font-size: 14px; }
 	.wrapper .ui-slider-horizontal.ui-slider-pips { width: 600px; display: block; margin: 10px auto 50px; }
 	.wrapper .ui-slider-vertical.ui-slider-pips { height: 200px; margin: 0 50px; display: inline-block; }
 
