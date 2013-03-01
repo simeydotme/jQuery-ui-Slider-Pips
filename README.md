@@ -42,7 +42,7 @@ The method takes the options: `first, last, rest` with the value of:
 ------------------------------------
 
 ###Compatibility:   
-Modern Browsers, IE7+ 
+Modern Browsers, IE7+   
 _(will need some CSS work for IE7 display issues (`display: inline-block;`)_
 
 
