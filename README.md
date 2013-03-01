@@ -24,13 +24,14 @@ Include the plugin javascript file after jquery-ui.
 Include the CSS file, edit as you please.  
   
   
-`$('.element')  
+```javascript  
+$('.element')  
   .slider({opts})  
-  .slider('pips', {  
+  .slider('pips', {    
     first: 'number',  
     last: 'number',  
     rest: 'pip'  
-  });`  
+  });```
   
 The method takes the options: `first, last, rest` with the value of:  
 - `"pip"` - adds a pip.  
