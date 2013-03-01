@@ -1,26 +1,19 @@
 jQuery-ui-Slider-Pips
 =====================
   
-Plugin for adding little 'pips' and numbers to a jQuery UI slider widget.    
-   
-// ____________________________________________________________________________ 
-// ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''  
-// 1                                                                             100
-  
--------------------------------------
-  
+Plugin for adding little 'pips' and numbers to a jQuery UI slider widget.      
   
 This plugin 'extends' the jQuery UI Slider widget.    
-check out the Demo at: http://sites.simey.me/jquery-pip/    
+check out the Demo at: http://sites.simey.me/jquery-pip/   
   
   
 ------------------------------------  
   
   
-Requirements:
-jQuery (1.9)
-jQuery UI (1.10)
-A Reason :P
+  Requirements:
+  - jQuery (1.9+)
+  - jQuery UI (1.10+)
+  - A Reason to use it
   
   
 ------------------------------------  
