@@ -37,9 +37,9 @@ $('.element').slider('pips', {
 ```
   
 The method takes the options: `first, last, rest` with the value of:  
-- `"pip"` - adds a pip.  
-- `"number"` - adds a pip and a number.  
-- `false` - hides the number and pip.  
+- `"pip"` - adds a pip. (default)    
+- `"number"` - adds a pip and a number. (default)   
+- `false` - hides the number and pip. (default)  
 
   
   
