@@ -25,9 +25,11 @@ Include the CSS file, edit as you please.
   
   
 ```javascript  
-$('.element')  
-  .slider({opts})  
-  .slider('pips', {    
+// First of all attach a slider to an element.
+$('.element').slider({opts});
+
+// Then you can give it pips and numbers!
+$('.element').slider('pips', {    
     first: 'number',
     last: 'number',  
     rest: 'pip'  
