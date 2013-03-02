@@ -66,13 +66,12 @@ textarea {
 
 
 	.wrapper { width: auto; margin: 50px auto; text-align: center; font-size: 14px; }
-	.wrapper .ui-slider-horizontal.ui-slider-pips { width: 600px; display: block; margin: 10px auto 50px; }
-	.wrapper .ui-slider-vertical.ui-slider-pips { height: 200px; margin: 0 50px; display: inline-block; }
+	.wrapper .ui-slider-pips {  margin: 20px!important; }
+	.wrapper .ui-slider-horizontal.ui-slider-pips { width: 500px; display: block;}
+	.wrapper .ui-slider-vertical.ui-slider-pips { height: 200px; }
 
 
-	.wrapper pre { text-align: left; font-size: 0.8em; padding: 6px 10px; border-radius: 4px; width: 500px; display: inline-block; background: #333; color: #eee; }
-	.wrapper br { display: none; }
-	.wrapper hr { margin: 30px 100px 50px; }
+	.wrapper pre { text-align: left; font-size: 0.8em; padding: 6px 10px; border-radius: 4px; width: 300px; display: inline-block; background: #333; color: #eee; }
 
 
 

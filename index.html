@@ -13,10 +13,11 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="demo/css/normalize.min.css">
+        <link rel="stylesheet" href="demo/css/bootstrap.min.css">
         <link rel="stylesheet" href="demo/css/main.css">
         <link rel="stylesheet" href="demo/css/prettify.css">
 		
-        <link rel="stylesheet" href="demo/css/smoothness/jquery-ui-1.10.1.custom.css">
+        <link rel="stylesheet" href="demo/css/flick/jquery-ui-1.10.1.custom.css">
         <link rel="stylesheet" href="src/css/jquery-ui-slider-pips.css">
 
         <script src="demo/js/vendor/modernizr-2.6.2.min.js"></script>
@@ -26,60 +27,91 @@
         <section class="wrapper">
 			
 			
-			<h1>A Quick Demo of the jQuery ui Slider Pips plugin extension</h1>
+			<h1>A Quick Demo of the <br>jQuery ui Slider Pips plugin extension</h1>
 			<p>Follow me on twitter: <a href="https://twitter.com/simeydotme">@simeydotme</a> or codepen: <a href="http://codepen.io/simeydotme">simeydotme</a><br>
 			or <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">fork it on github</a> and help make it better :)</p>
 			<hr>
 			
-<pre class="prettyprint linenums lang-js">
-$('.slider1')
-	.slider({ max: 10, min: 0, value: 0 })
-	.slider('pips', { rest: 'number' });
-</pre>
 			
-			<div class="slider1"></div>
-			
-<pre class="prettyprint linenums lang-js">
-$('.slider2')
-	.slider({ max: 200, min: 0, value: 0 })
-	.slider('pips');
-</pre>
+			<div class="container">
+				
+				<div class="row-fluid">
+					<div class="span12">
+					
+						<table class="table table-bordered table-striped">
+							<caption><h3>Examples</h3><br></caption>
+							<tr>
+								<td><div class="slider1"></div></td>
+								<td>
+<pre class="prettyprint linenums lang-js">$('.slider1')).slider('pips');</pre>
 
-			<div class="slider2"></div>
-			
-<pre class="prettyprint linenums lang-js">
-$('.slider3')
-	.slider({ max: 45, min: 0, range: true, values: [10, 35] })
-	.slider('pips', { rest: false });
-</pre>
-
-			<div class="slider3"></div>
-			
-
-			<div class="slider4"></div>
-			
-<pre class="prettyprint linenums lang-js">
-$('.slider4')
-	.slider({ max: 10, min: 0, value: 10, range: "min", orientation: 'vertical' })
-	.slider('pips', { rest: 'number' });
-</pre><br>
-
-			<div class="slider5"></div>
-			
-<pre class="prettyprint linenums lang-js">
-$('.slider5')
-	.slider({ max: 45, min: 0, range: true, values: [10, 35], orientation: 'vertical' })
-	.slider('pips', { rest: false });
-</pre><br>
-
-			<div class="slider6"></div>
-			
-<pre class="prettyprint linenums lang-js">
-$('.slider6')
-	.slider({ max: 17, min: 0, orientation: 'vertical' })
-	.slider('pips', { first: 'pip', last: 'pip' });
-</pre><br>
-
+									<p>The default configuration of the points.<br>
+									<small>NB: All sliders have been initialised by jQuery UI first</small></p>
+								</td>
+							</tr>
+							
+							<tr>
+								<td><div class="slider2"></div></td>
+								<td>
+<pre class="prettyprint linenums lang-js">$('.slider2').slider('pips', { 
+	rest: 'number' 
+});</pre>
+									<p>Here we tell the 'rest' of the points to be numbers.</p>
+								</td>
+							</td>
+							
+							<tr>
+								<td><div class="slider3"></div></td>
+								<td>
+<pre class="prettyprint linenums lang-js">$('.slider3').slider('pips', { 
+	rest: false 
+});</pre>
+									<p>Here we ask the plugin to hide the 'rest' of the points. Example also shows working with range.</p>
+								</td>
+							</tr>
+							
+							<tr>
+								<td><div class="slider4"></div></td>
+								<td>
+<pre class="prettyprint linenums lang-js">$('.slider4').slider('pips', { 
+	first: 'pip', 
+	last: 'pip'
+});</pre>
+									<p>Here we ask the plugin to show 'pips' for the first and last point (no numbers).</p>
+								</td>
+							</tr>
+							
+							<tr>
+								<td><div class="slider5"></div></td>
+								<td>
+<pre class="prettyprint linenums lang-js">$('.slider5').slider('pips', { 
+	rest: false 
+});</pre>								
+										<p>Here are hiding the 'rest' of the points again. Example of vertical slider.</p>
+								</td>
+							</tr>
+							
+							<tr>
+								<td><div class="slider6"></div></td>
+								<td>
+<pre class="prettyprint linenums lang-js">$('.slider6').slider('pips', { 
+	first: 'pip', 
+	last: 'pip' 
+});</pre>
+									<p>Here we ask the plugin to show 'pips' for the first and last point, the 'rest' are defaulted.</p>
+								</td>
+							</tr>
+							
+							
+						</table>
+				
+				
+						
+						
+					
+					</div>
+				</div>
+			</div>
 		
 		
 		</section>
@@ -94,11 +126,11 @@ $('.slider6')
         <script src="demo/js/main.js"></script>
 
         <script>
-            var _gaq=[['_setAccount','UA-15937605-6'],['_trackPageview']];
+           /* var _gaq=[['_setAccount','UA-15937605-6'],['_trackPageview']];
 			_gaq.push(['_setDomainName', 'simey.me']);
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+            s.parentNode.insertBefore(g,s)}(document,'script'));*/
         </script>
     </body>
 </html>
