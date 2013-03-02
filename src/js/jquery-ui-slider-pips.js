@@ -22,7 +22,7 @@
 				// we need teh amount of pips to create.
 				var pips = this.options.max - this.options.min;					
 				 
-					// for every stop in the slider(-1), we create a pip.
+					// for every stop in the slider; we create a pip.
 					for( i=0; i<=pips; i++ ) {
 						
 						// hold a span element for the pip
