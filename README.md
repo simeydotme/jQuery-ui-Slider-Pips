@@ -8,6 +8,13 @@ check out the Demo at: http://sites.simey.me/jquery-pip/
   
 ------------------------------------  
   
+###Changlog:  
+- March 10, 2013
+  - Added extension for 'floating' numbers
+  - Fixed so that sliders can start with negative numbers
+
+------------------------------------  
+  
 ###Requirements:
   - jQuery (1.9+)
   - jQuery UI (1.10+)
