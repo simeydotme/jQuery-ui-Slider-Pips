@@ -1,4 +1,4 @@
-/* jquery slider pips plugin, version 0.1 */
+/* jquery slider pips plugin, version 0.2 */
 	
 	(function($) {
 		
@@ -20,13 +20,13 @@
 				this.element.addClass('ui-slider-pips').find( '.ui-slider-pip' ).remove();
 				
 				// we need teh amount of pips to create.
-				var pips = this.options.max - this.options.min;					
+				var pips = this.options.max - this.options.min;
 				 
 					// for every stop in the slider; we create a pip.
 					for( i=0; i<=pips; i++ ) {
 						
 						// hold a span element for the pip
-						var s = $('<span class="ui-slider-pip"><span class="ui-slider-line"></span><span class="ui-slider-number">'+i+'</span></span>');
+						var s = $('<span class="ui-slider-pip"><span class="ui-slider-line"></span><span class="ui-slider-number">'+(this.options.min+i)+'</span></span>');
 						
 						// add a class so css can handle the display
 						// we'll hide numbers by default in CSS, and show them if set.
@@ -68,5 +68,89 @@
 	
 	})(jQuery);
 	
+	
+	
+/* jquery slider float plugin, version 0.2 */
+		
+	(function($) {
+
+		var extensionMethods = {
+
+			float: function( settings ) {
+
+				options = { handle: true, numbers: true };
+				$.extend( options, settings );
+				
+				// add a class for the CSS
+				this.element.addClass('ui-slider-float');
+        
+        
+				// apply handle tip if we settings allows.
+				if( options.handle ) {
+					
+					// if this is a range slider
+					if( this.options.values ) {
+					   
+					var $tip = [
+						$('<span class="ui-slider-tip">'+ this.options.values[0]+'</span>'),
+						$('<span class="ui-slider-tip">'+ this.options.values[1]+'</span>')
+					];
+					  
+					  
+					// else if its just a normal slider
+					} else {
+					
+						// create a tip element
+						var $tip = $('<span class="ui-slider-tip">'+ this.options.value+'</span>');
+					
+					}
+					
+					// now we append it to all the handles
+					this.element.find('.ui-slider-handle').each( function(k,v) {
+						$(v).append($tip[k]);
+					});
+				
+				}
+					
+					
+				if( options.numbers ) {
+						
+					// if this slider also has numbers, we'll make those into tips, too; by cloning and changing class.
+					this.element.find('.ui-slider-number').each(function(k,v) {
+						var $e = $(v).clone().removeClass('ui-slider-number').addClass('ui-slider-tip-number');
+						$e.insertAfter($(v));
+					});
+					
+				}
+					
+					// when slider changes, update handle tip value.
+					this.element.on('slidechange slide', function(e,ui) {
+						$(ui.handle).find('.ui-slider-tip').text( ui.value );
+					});
+					
+				
+        
+			}
+
+
+		};
+
+		$.extend(true, $['ui']['slider'].prototype, extensionMethods);
+
+
+	})(jQuery);		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
