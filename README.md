@@ -36,15 +36,32 @@ $('.element').slider('pips', {
     first: 'number',
     last: 'number',  
     rest: 'pip'  
-  });  
+});
+  
+  
+// And finally can add floaty numbers (if desired)
+$('.element').slider('float', {    
+    handle: true,
+    numbers: true  
+});
 ```
-  
-The method takes the options: `first, last, rest` with the value of:  
-- `"pip"` - adds a pip. (default)    
-- `"number"` - adds a pip and a number. (default)   
-- `false` - hides the number and pip. (default)  
 
+#####Pips method takes the options: `first, last, rest` with the values of:  
+- `"pip"` - adds a pip. (default for `rest`)    
+- `"number"` - adds a pip and a number. (default for`first` & `last`)   
+- `false` - hides the number and pip.
+
+#####Float method takes the options: `handle, numbers` with the values of:  
+- `true` - adds floaty number. (default)    
+- `false` - no floaty number.
   
+  
+------------------------------------
+
+###Customisation:  
+All customisation should be done to the CSS file, or in your own CSS.  
+The base styles I've provided do a decent job in the Demo,   
+but they will need tweaking to suit your needs and UI theme.  
   
 ------------------------------------
 
