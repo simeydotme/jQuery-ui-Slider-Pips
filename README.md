@@ -81,8 +81,8 @@ but they will need tweaking to suit your needs and UI theme.
 ------------------------------------
 
 ###Compatibility:   
-Modern Browsers, IE8+   
-_(will need some CSS work for IE7 display issues (`display: inline-block;`)_
+Modern Browsers, IE7+   
+_(will need some CSS work for IE7 display issues, I'm not interested in doing them :P)_
 
 
 
