@@ -54,11 +54,11 @@
 								<td><div class="slider2"></div></td>
 								<td>
 <pre class="prettyprint linenums lang-js">$('.slider2').slider('pips', { 
-	rest: 'number' 
+	rest: 'label' 
 });</pre>
-									<p>Here we tell the 'rest' of the points to be numbers.</p>
+									<p>Here we tell the 'rest' of the points to be labels.</p>
 								</td>
-							</td>
+							</tr>
 							
 							<tr>
 								<td><div class="slider3"></div></td>
@@ -77,12 +77,33 @@
 	first: 'pip', 
 	last: 'pip'
 });</pre>
-									<p>Here we ask the plugin to show 'pips' for the first and last point (no numbers).</p>
+									<p>Here we ask the plugin to show 'pips' for the first and last point (no labels).</p>
 								</td>
 							</tr>
 							
-							
-							
+						</table>
+						
+						
+						<table class="table table-bordered table-striped">
+							<caption><h3>With Labels</h3><br></caption>
+							<tr>
+								<td><div class="slider21"></div></td>
+								<td>
+<pre class="prettyprint linenums lang-js">$('.slider21').slider('pips', { 
+	rest: 'label', 
+	labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] 
+});
+</pre>
+
+									<p>Here we tell the 'rest' of the points to be labels.<br>
+									We are also assigning custom labels for each pip.</p>
+								</td>
+							</tr>
+						</table>
+						
+						
+						<table class="table table-bordered table-striped">
+							<caption><h3>Vertical Sliders</h3><br></caption>
 							<tr>
 								<td><div class="slider5"></div></td>
 								<td>
@@ -105,13 +126,17 @@
 							</tr>
 							
 							
-							
+						</table>
+						
+						
+						<table class="table table-bordered table-striped">
+							<caption><h3>Floating Labels Plugin</h3><br></caption>
 							
 							<tr>
 								<td><div class="slider7"></div></td>
 								<td>
 <pre class="prettyprint linenums lang-js">$('.slider7').slider('float');</pre>
-									<p>We can also have a slider with floating numbers</p>
+									<p>We can also have a slider with floating labels</p>
 								</td>
 							</tr>
 							
