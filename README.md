@@ -1,6 +1,6 @@
 #jQuery-ui-Slider-Pips
   
-##Plugin for adding little 'pips' and numbers to a jQuery UI slider widget.      
+##Plugin for adding little 'pips' and labels to a jQuery UI slider widget.      
   
   
 This plugin 'extends' the jQuery UI Slider widget.    
@@ -9,7 +9,18 @@ check out the Demo at: http://sites.simey.me/jquery-pip/
 ------------------------------------  
   
 ###Changlog:  
-- March 10, 2013
+  
+
+- **March 13, 2013** - Update to `1.0`
+  - [Add ability to create custom labels with an array](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/46467e05dd3c4ee0296b9a13cd9604a3ed8f2ff6#L2L9)
+  - [Change `number` option to `label`](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/46467e05dd3c4ee0296b9a13cd9604a3ed8f2ff6#L2L9)
+  - [Add `labels` option](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/46467e05dd3c4ee0296b9a13cd9604a3ed8f2ff6#L2L9)
+  - [CSS style names changed to reflect update `ui-slider-pip-value`, `ui-slider-value` .. etc](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/46467e05dd3c4ee0296b9a13cd9604a3ed8f2ff6#L0L7)
+  - fix various typos  
+  
+***
+
+- **March 10, 2013** - Update to `0.2`
   - [Added extension for 'floating' numbers](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/aeacad87d47d79a96b9f26d2d83a5c3206d9f90f)
   - [Fixed so that sliders can start with negative numbers](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/aeacad87d47d79a96b9f26d2d83a5c3206d9f90f)
 
@@ -31,13 +42,13 @@ Include the CSS file, edit as you please.
 // First of all attach a slider to an element.
 $('.element').slider({opts});
 
-// Then you can give it pips and numbers!
+// Then you can give it pips and labels!
 $('.element').slider('pips', {    
-    first: 'number',
-    last: 'number',  
-    rest: 'pip'  
+    first: 'label',
+    last: 'label',  
+    rest: 'pip',
+    labels: ['label1', 'label2', ...]
 });
-  
   
 // And finally can add floaty numbers (if desired)
 $('.element').slider('float', {    
@@ -48,8 +59,12 @@ $('.element').slider('float', {
 
 #####Pips method takes the options: `first, last, rest` with the values of:  
 - `"pip"` - adds a pip. (default for `rest`)    
-- `"number"` - adds a pip and a number. (default for`first` & `last`)   
-- `false` - hides the number and pip.
+- `"label"` - adds a pip and a number. (default for`first` & `last`)   
+- `false` - hides the number and pip.  
+  
+#####Pips method also can have option of: `labels` with values of:
+- `false` - defaults labels to be numberic value
+- `[array]` - array of values to apply to pips
 
 #####Float method takes the options: `handle, numbers` with the values of:  
 - `true` - adds floaty number. (default)    
@@ -66,7 +81,7 @@ but they will need tweaking to suit your needs and UI theme.
 ------------------------------------
 
 ###Compatibility:   
-Modern Browsers, IE7+   
+Modern Browsers, IE8+   
 _(will need some CSS work for IE7 display issues (`display: inline-block;`)_
 
 
