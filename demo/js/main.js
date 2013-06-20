@@ -6,6 +6,8 @@ $(document).ready( function() {
 
 
 		prettyPrint();
+		
+		$.extend( $.ui.slider.prototype.options, { animate: true });
 
 		$('.slider1')	.slider({ max: 10, min: 0, value: 3 }).slider('pips');
 		
@@ -17,6 +19,8 @@ $(document).ready( function() {
 
 		$('.slider4')	.slider({ max: 20, min: 0, value: 10, range: "min" }).slider('pips', { first: 'pip', last: 'pip' });
 
+		$('.slider41')	.slider({ max: 200, min: -200, value: 0, step: 100, range: "min" }).slider('pips', { rest: 'label', prefix: "$" , suffix: ".00" });
+
 		$('.slider5')	.slider({ max: 10, min: 0, range: true, values: [2, 8], orientation: 'vertical' }).slider('pips', { rest: false });
 
 		$('.slider6')	.slider({ max: 10, min: 0, orientation: 'vertical' }).slider('pips', { first: 'pip', last: 'pip' });
@@ -25,6 +29,7 @@ $(document).ready( function() {
 
 		$('.slider8')	.slider({ max: 20, min: 0 }).slider('pips').slider('float');
 
+		$('.slider9')	.slider({ max: 72, min: 0, value: 26 }).slider('pips', { rest: false, prefix: "&deg;" , suffix: "c" }).slider('float', { labels: false, prefix: "&deg;" , suffix: "c" });
 
 });
 

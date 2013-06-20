@@ -56,7 +56,7 @@
 <pre class="prettyprint linenums lang-js">$('.slider2').slider('pips', { 
 	rest: 'label' 
 });</pre>
-									<p>Here we tell the 'rest' of the points to be labels.</p>
+									<p>Here we tell the <code>rest</code> of the points to be <code>label</code>s.</p>
 								</td>
 							</tr>
 							
@@ -66,7 +66,7 @@
 <pre class="prettyprint linenums lang-js">$('.slider3').slider('pips', { 
 	rest: false 
 });</pre>
-									<p>Here we ask the plugin to hide the 'rest' of the points. Example also shows working with range.</p>
+									<p>Here we ask the plugin to hide the <code>rest</code> of the points. Example also shows working with range.</p>
 								</td>
 							</tr>
 							
@@ -77,7 +77,20 @@
 	first: 'pip', 
 	last: 'pip'
 });</pre>
-									<p>Here we ask the plugin to show 'pips' for the first and last point (no labels).</p>
+									<p>Here we ask the plugin to show <code>pips</code> for the <code>first</code> and <code>last</code> point (no labels).</p>
+								</td>
+							</tr>
+
+							<tr class="divider">
+								<td><div class="slider41"></div></td>
+								<td>
+<pre class="prettyprint linenums lang-js">$('.slider41').slider('pips', { 
+	rest: 'label',  
+	prefix: '$' , 
+	suffix: '.00'
+});</pre>
+									<p>Here we have all <code>label</code>s, but crucially we supply a <code>prefix</code> and <code>suffix</code>.<br>
+									<small>NB: both <code>prefix</code> and <code>suffix</code> are optional and may require slight css tweaks</p>
 								</td>
 							</tr>
 							
@@ -95,8 +108,8 @@
 });
 </pre>
 
-									<p>Here we tell the 'rest' of the points to be labels.<br>
-									We are also assigning custom labels for each pip.</p>
+									<p>Here we tell the <code>rest</code> of the points to be <code>label</code>s.<br>
+									We are also assigning custom <code>label</code>s for each pip.</p>
 								</td>
 							</tr>
 						</table>
@@ -110,7 +123,7 @@
 <pre class="prettyprint linenums lang-js">$('.slider5').slider('pips', { 
 	rest: false 
 });</pre>								
-										<p>Here are hiding the 'rest' of the points again. Example of vertical slider.</p>
+										<p>Here are hiding the <code>rest</code> of the points again. Example of vertical slider.</p>
 								</td>
 							</tr>
 							
@@ -121,7 +134,7 @@
 	first: 'pip', 
 	last: 'pip' 
 });</pre>
-									<p>Here we ask the plugin to show 'pips' for the first and last point, the 'rest' are defaulted.</p>
+									<p>Here we ask the plugin to show <code>pips</code> for the first and last point, the <code>rest</code> are defaulted.</p>
 								</td>
 							</tr>
 							
@@ -144,7 +157,25 @@
 								<td><div class="slider8"></div></td>
 								<td>
 <pre class="prettyprint linenums lang-js">$('.slider8').slider('pips').slider('float');</pre>
-									<p>If we've already got pips, we can float those, too. (hover the pips).</p>
+									<p>If we've already got <code>pips</code>, we can <code>float</code> those, too. (hover the pips).</p>
+								</td>
+							</tr>
+							
+							<tr>
+								<td><div class="slider9"></div></td>
+								<td>
+<pre class="prettyprint linenums lang-js">$('.slider9')
+	.slider('pips', { 
+		rest: false, 
+		prefix: "&deg;", 
+		suffix: "c" 
+	}).slider('float', { 
+		labels: false, 
+		prefix: "&deg;" , 
+		suffix: "c" 
+	});</pre>
+									<p>And here's an example of the <code>prefix</code> and <code>suffix</code> on both the <code>pips</code> and the <code>float</code>s.</p>
+									<small>NB: both <code>prefix</code> and <code>suffix</code> are optional and may require slight css tweaks</p>
 								</td>
 							</tr>
 							
@@ -162,10 +193,10 @@
 		
 		</section>
 
-        <script src="demo/js/vendor/jquery-1.9.1.js"></script>
+        <script src="demo/js/vendor/jquery-1.10.1.js"></script>
         <script src="demo/js/vendor/jquery-ui-1.10.1.js"></script>
 
-        <script src="src/js/jquery-ui-slider-pips-min.js"></script>
+        <script src="src/js/jquery-ui-slider-pips.js"></script>
         <script src="demo/js/prettify.js"></script>
 
 
