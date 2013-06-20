@@ -6,7 +6,7 @@
 			
 			pips: function( settings ) {
 				
-				options = {
+				var options = {
 					
 					first: 	"label", 	// "pip" , false
 					last: 	"label", 	// "pip" , false
@@ -19,20 +19,20 @@
 				
 				$.extend( options, settings );
 				
-				// labels are needed globally potentially.
+				// labels are needed globally, potentially.
 				this.options.labels = options.labels
 				
 				// get rid of all pips that might already exist.
 				this.element.addClass('ui-slider-pips').find( '.ui-slider-pip' ).remove();
 				
 				// we need the amount of pips to create.
-				var pips = this.options.max - this.options.min;
+				var pips = ( this.options.max - this.options.min ) / this.options.step;
 				 
 					// for every stop in the slider; we create a pip.
 					for( i=0; i<=pips; i++ ) {
 						
 						// create the label name, it's either the item in the array, or a number.
-						var label = (this.options.labels) ? this.options.labels[i] : (this.options.min+i);
+						var label = (this.options.labels) ? this.options.labels[i] : ( this.options.min + ( this.options.step * i ) );
 						if( typeof(label) === "undefined" ) { label = ""; }
 						
 						
@@ -89,7 +89,7 @@
 
 			float: function( settings ) {
 
-				options = { 
+				var options = { 
 					handle: true, 		// false
 					labels: true,		// false
 					prefix: "",			// "", string
@@ -139,8 +139,8 @@
 				}
 					
 					// when slider changes, update handle tip label.
-					this.element.on('slidechange slide', function(e,ui) {
-						$(ui.handle).find('.ui-slider-tip').text( options.prefix + ui.value + options.suffix );
+					this.element.on('slidechange slide', function( e, ui ) {
+						$(ui.handle).find('.ui-slider-tip').html( options.prefix + ui.value + options.suffix );
 					});
 					
 				
