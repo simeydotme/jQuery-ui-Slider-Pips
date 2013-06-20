@@ -65,6 +65,9 @@ $('.element').slider('float', {
     prefix: "",
     suffix: ""  
 });
+
+// methods can (and probably should) be chained:
+$('.element').slider().slider('pips').slider('float');
 ```
 
 #####Pips method takes the options: `first, last, rest` with the values of:  
