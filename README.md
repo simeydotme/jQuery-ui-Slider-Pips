@@ -53,13 +53,17 @@ $('.element').slider('pips', {
     first: 'label',
     last: 'label',  
     rest: 'pip',
-    labels: ['label1', 'label2', ...]
+    labels: ['label1', 'label2', ...],
+    prefix: "",
+    suffix: ""
 });
   
 // And finally can add floaty numbers (if desired)
 $('.element').slider('float', {    
     handle: true,
-    numbers: true  
+    numbers: true,
+    prefix: "",
+    suffix: ""  
 });
 ```
 
@@ -75,6 +79,10 @@ $('.element').slider('float', {
 #####Float method takes the options: `handle, numbers` with the values of:  
 - `true` - adds floaty number. (default)    
 - `false` - no floaty number.
+
+#####Pips and Float methods both take the options: `prefix, suffix` with the values of:  
+- `""` - no prefix/suffix. (default)    
+- `"prefix"` - a string prefixed/suffixed.
   
   
 ------------------------------------
