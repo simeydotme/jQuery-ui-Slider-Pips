@@ -1,4 +1,4 @@
-/* jquery slider pips plugin, version 0.2 */
+/* jquery slider pips plugin, version 1.0 */
 	
 	(function($) {
 		
@@ -81,7 +81,7 @@
 	
 	
 	
-/* jquery slider float plugin, version 0.2 */
+/* jquery slider float plugin, version 1.0 */
 		
 	(function($) {
 
