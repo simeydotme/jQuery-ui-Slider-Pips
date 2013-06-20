@@ -9,7 +9,13 @@ check out the Demo at: http://sites.simey.me/jquery-pip/
 ------------------------------------  
   
 ###Changlog:  
-  
+
+- **June 20, 2013** - Update to `1.1`
+  - [Add ability to `prefix` and `suffix` labels and floats](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/cd483265a458ad1a3f200f16e4518a7f3d3db27a) - thanks [Xeeeveee](https://github.com/xeeeveee)
+  - [Fix some bugs, clean up code](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/fda25f8545c941480fd10e6eb22e8efe91a78128)
+  - update demo to show new features
+
+***
 
 - **March 13, 2013** - Update to `1.0`
   - [Add ability to create custom labels with an array](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/46467e05dd3c4ee0296b9a13cd9604a3ed8f2ff6#L2L9)
