@@ -11,7 +11,9 @@
 					first: 	"label", 	// "pip" , false
 					last: 	"label", 	// "pip" , false
 					rest: 	"pip", 		// "label" , false
-					labels:	false		// [array]
+					labels:	false,		// [array]
+					prefix: "",			// "", string
+					suffix: ""			// "", string
 					
 				};
 				
@@ -35,7 +37,7 @@
 						
 						
 						// hold a span element for the pip
-						var s = $('<span class="ui-slider-pip ui-slider-pip-'+i+'"><span class="ui-slider-line"></span><span class="ui-slider-label">'+ label +'</span></span>');
+						var s = $('<span class="ui-slider-pip ui-slider-pip-'+i+'"><span class="ui-slider-line"></span><span class="ui-slider-label">'+ options.prefix + label + options.suffix +'</span></span>');
 						
 						// add a class so css can handle the display
 						// we'll hide labels by default in CSS, and show them if set.
@@ -89,7 +91,9 @@
 
 				options = { 
 					handle: true, 		// false
-					labels: true		// false
+					labels: true,		// false
+					prefix: "",			// "", string
+					suffix: ""			// "", string
 				};
 				$.extend( options, settings );
 				
@@ -104,15 +108,15 @@
 					if( this.options.values ) {
 					   
 						var $tip = [
-							$('<span class="ui-slider-tip">'+ this.options.values[0]+'</span>'),
-							$('<span class="ui-slider-tip">'+ this.options.values[1]+'</span>')
+							$('<span class="ui-slider-tip">'+ options.prefix + this.options.values[0] + options.suffix +'</span>'),
+							$('<span class="ui-slider-tip">'+ options.prefix + this.options.values[1] + options.suffix +'</span>')
 						];
 					  
 					// else if its just a normal slider
 					} else {
 					
 						// create a tip element
-						var $tip = $('<span class="ui-slider-tip">'+ this.options.value +'</span>');
+						var $tip = $('<span class="ui-slider-tip">'+ options.prefix + this.options.value + options.suffix +'</span>');
 					
 					}
 					
@@ -136,7 +140,7 @@
 					
 					// when slider changes, update handle tip label.
 					this.element.on('slidechange slide', function(e,ui) {
-						$(ui.handle).find('.ui-slider-tip').text( ui.value );
+						$(ui.handle).find('.ui-slider-tip').text( options.prefix + ui.value + options.suffix );
 					});
 					
 				
