@@ -54,6 +54,15 @@
 		-webkit-transition-duration: 200ms, 200ms, 0;
 		-webkit-transition-property: opacity, top, visibility;
 		-webkit-transition-delay: 0, 0, 200ms;
+		-moz-transition-duration: 200ms, 200ms, 0;
+		-moz-transition-property: opacity, top, visibility;
+		-moz-transition-delay: 0, 0, 200ms;
+		-ms-transition-duration: 200ms, 200ms, 0;
+		-ms-transition-property: opacity, top, visibility;
+		-ms-transition-delay: 0, 0, 200ms;
+		transition-duration: 200ms, 200ms, 0;
+		transition-property: opacity, top, visibility;
+		transition-delay: 0, 0, 200ms;
 		
 	}
 	
@@ -64,8 +73,17 @@
 		opacity: 1; top: -30px; visibility: visible;
 		
 		-webkit-transition-duration:200ms, 200ms, 0;
-        -webkit-transition-property: opacity, top, visibility;
-        -webkit-transition-delay:200ms, 200ms, 0;
+		-webkit-transition-property: opacity, top, visibility;
+		-webkit-transition-delay:200ms, 200ms, 0;
+		-moz-transition-duration:200ms, 200ms, 0;
+		-moz-transition-property: opacity, top, visibility;
+		-moz-transition-delay:200ms, 200ms, 0;
+		-ms-transition-duration:200ms, 200ms, 0;
+		-ms-transition-property: opacity, top, visibility;
+		-ms-transition-delay:200ms, 200ms, 0;
+		transition-duration:200ms, 200ms, 0;
+		transition-property: opacity, top, visibility;
+		transition-delay:200ms, 200ms, 0;
 		
 	}
 	
