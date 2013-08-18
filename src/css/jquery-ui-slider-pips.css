@@ -50,12 +50,25 @@
 		font-size: 12px; 
 		opacity: 0;
 		color: #333;
-		-webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; -ms-transition: all 0.2s ease; transition: all 0.2s ease;
+		
+		-webkit-transition-duration: 200ms, 200ms, 0;
+		-webkit-transition-property: opacity, top, visibility;
+		-webkit-transition-delay: 0, 0, 200ms;
+		
 	}
 	
 	.ui-slider-float .ui-slider-handle:hover .ui-slider-tip,
 	.ui-slider-float .ui-slider-handle:focus .ui-slider-tip,
-	.ui-slider-float .ui-slider-pip:hover .ui-slider-tip-label{ opacity: 1; top: -30px; color: #333; visibility: visible; }
+	.ui-slider-float .ui-slider-pip:hover .ui-slider-tip-label { 
+	
+		opacity: 1; top: -30px; visibility: visible;
+		
+		-webkit-transition-duration:200ms, 200ms, 0;
+        -webkit-transition-property: opacity, top, visibility;
+        -webkit-transition-delay:200ms, 200ms, 0;
+		
+	}
+	
 	
 	.ui-slider-float .ui-slider-pip .ui-slider-tip-label { top: 30px; }
 	.ui-slider-float .ui-slider-pip:hover .ui-slider-tip-label { top: 20px; font-weight: normal; }
