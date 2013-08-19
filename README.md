@@ -4,7 +4,8 @@
   
   
 This plugin 'extends' the jQuery UI Slider widget.    
-check out the Demo at: http://sites.simey.me/jquery-pip/   
+check out the Demo / Docs:  
+http://simey.me/projects/jquery-ui-slider-pips/
   
 ------------------------------------  
   
