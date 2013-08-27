@@ -29,6 +29,9 @@ local.properties
 .buildpath
 
 
+
+
+
 #################
 ## Visual Studio
 #################
@@ -116,6 +119,7 @@ UpgradeLog*.XML
 
 
 
+
 ############
 ## Windows
 ############
@@ -125,6 +129,13 @@ Thumbs.db
 
 # Folder config file
 Desktop.ini
+
+
+############
+## Node
+############
+node_modules/
+
 
 
 #############
