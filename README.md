@@ -1,9 +1,9 @@
 #jQuery-ui-Slider-Pips
   
-##Plugin for adding little 'pips' and labels to a jQuery UI slider widget.      
+###Plugin for adding little 'pips' and labels to a jQuery UI slider widget.      
   
   
-This plugin 'extends' the jQuery UI Slider widget.    
+This plugin **extends** the [jQuery UI Slider widget](http://jqueryui.com/slider/).    
 
 check out the Demo / Docs:  
 http://simey.me/projects/jquery-ui-slider-pips/
