@@ -4,12 +4,23 @@
   
   
 This plugin 'extends' the jQuery UI Slider widget.    
+<<<<<<< HEAD
 check out the Demo / Docs:  
 http://simey.me/projects/jquery-ui-slider-pips/
+=======
+check out the Demo at: http://simey.me/projects/jquery-ui-slider-pips/
+>>>>>>> update to version 1.2.0
   
 ------------------------------------  
   
 ###Changlog:  
+
+- **Aug 28, 2013** - Update to `1.2`
+  - Convert to a grunt/node setup
+  - Clean up code with jshint
+  - Remove legacy demo
+
+***
 
 - **June 20, 2013** - Update to `1.1`
   - [Add ability to `prefix` and `suffix` labels and floats](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/cd483265a458ad1a3f200f16e4518a7f3d3db27a) - thanks [Xeeeveee](https://github.com/xeeeveee)

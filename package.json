@@ -1,6 +1,6 @@
 {
   "name": "jQuery-ui-Slider-Pips",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A plugin to add little \"pips\" to the jQuery UI Slider widget",
   "main": "js/jquery-ui-slider-pips.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "grunt": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-contrib-jshint": "~0.6.3",
-    "grunt-contrib-concat": "~0.3.0"
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1"
   }
 }

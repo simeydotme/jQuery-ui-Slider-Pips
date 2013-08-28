@@ -19,8 +19,8 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['src/<%= pkg.name %>.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+        src: ['src/js/jquery-ui-slider-pips.js'],
+        dest: 'dist/jquery-ui-slider-pips.js'
       }
     },
 
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/<%= pkg.name %>.min.js'
+        dest: 'dist/jquery-ui-slider-pips.min.js'
       }
     },
 
@@ -58,7 +58,19 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       lib_test: {
-        src: ['src/*.js']
+        src: ['src/js/*.js']
+      }
+    },
+
+
+    copy: {
+      options: {
+        banner: '<%= banner %>'
+      },
+      main: {
+        files: [
+          {src: ['src/css/*'], dest: 'dist/', filter: 'isFile', expand: true, flatten: true}        
+        ]
       }
     }
 
@@ -69,8 +81,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'copy']);
 
 };

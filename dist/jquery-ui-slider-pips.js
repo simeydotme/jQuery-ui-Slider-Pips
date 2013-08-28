@@ -1,6 +1,6 @@
-/* jquery slider pips plugin, version 1.1 */
-	
-	(function($) {
+/*! jQuery-ui-Slider-Pips - v1.2.0 - 2013-08-28
+* Copyright (c) 2013 ; Licensed  */
+(function($) {
 		
 		var extensionMethods = {
 			
