@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.2.0 - 2013-08-28
+/*! jQuery-ui-Slider-Pips - v1.2.0 - 2013-11-22
 * Copyright (c) 2013 ; Licensed  */
 (function($) {
 		
@@ -81,7 +81,7 @@
 						
 						} else {
 							
-							s.css({ top: '' + (100/pips)*i + '%'  });
+							s.css({ bottom: '' + (100/pips)*i + '%'  });
 						
 						}
 						
