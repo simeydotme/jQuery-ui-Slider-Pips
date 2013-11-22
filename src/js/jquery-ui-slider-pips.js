@@ -81,7 +81,7 @@
 						
 						} else {
 							
-							s.css({ top: '' + (100/pips)*i + '%'  });
+							s.css({ bottom: '' + (100/pips)*i + '%'  });
 						
 						}
 						

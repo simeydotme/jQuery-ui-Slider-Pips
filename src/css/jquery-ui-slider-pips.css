@@ -24,7 +24,7 @@
 
 	.ui-slider-vertical.ui-slider-pips { margin-bottom: 0; margin-right: 2em; }
 	.ui-slider-vertical.ui-slider-pips .ui-slider-pip { 
-		text-align: left; top: 20px; left: 20px; margin-left: 0; margin-top: -0.5em;
+		text-align: left; top: auto; left: 20px; margin-left: 0; margin-bottom: -0.5em;
 	}
 	.ui-slider-vertical.ui-slider-pips .ui-slider-line { width: 3px; height: 1px; position: absolute; top: 50%; left: 0; }
 	.ui-slider-vertical.ui-slider-pips .ui-slider-label { top: 50%; left: 0.5em; margin-left: 0; margin-top: -0.5em; width: 2em; }
