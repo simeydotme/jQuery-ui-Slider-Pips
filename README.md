@@ -12,6 +12,12 @@ http://simey.me/projects/jquery-ui-slider-pips/
   
 ###Changlog:  
 
+- **Nov 22, 2013** - CSS Changes
+  - Fix tiny bit of JS for vertical sliders
+  - Add missing CSS for vertical floats
+
+***
+
 - **Aug 28, 2013** - Update to `1.2`
   - Convert to a grunt/node setup
   - Clean up code with jshint
