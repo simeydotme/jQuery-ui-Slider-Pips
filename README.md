@@ -13,8 +13,8 @@ http://simey.me/projects/jquery-ui-slider-pips/
 ###Changlog:  
 
 - **Nov 22, 2013** - CSS Changes
-  - Fix tiny bit of JS for vertical sliders
-  - Add missing CSS for vertical floats
+  - [Fix tiny bit of JS for vertical sliders](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/e7da19e5489c43ae2d439165199904812ee2e07f)
+  - [Add missing CSS for vertical floats](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/d8ad4da1392f79f962b71aa842afee687d48ab57)
 
 ***
 
