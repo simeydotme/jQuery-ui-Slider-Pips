@@ -118,8 +118,8 @@ _(will need some CSS work for IE7 display issues, I'm not interested in doing th
 
 ------------------------------------
 
-###License:
-Open Source MIT.
+###License:  
+Open Source MIT.  
 http://opensource.org/licenses/MIT
 
 
