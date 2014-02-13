@@ -21,7 +21,7 @@
     "floats"
   ],
   "author": "Simon Goellner",
-  "license": "BSD",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips/issues"
   },
