@@ -116,7 +116,11 @@ but they will need tweaking to suit your needs and UI theme.
 Modern Browsers, IE7+   
 _(will need some CSS work for IE7 display issues, I'm not interested in doing them :P)_
 
+------------------------------------
 
+###License:
+Open Source MIT.
+http://opensource.org/licenses/MIT
 
 
 
