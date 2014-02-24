@@ -121,8 +121,11 @@
 					prefix: "",
 					// "", string
 					
-					suffix: ""
+					suffix: "",
 					// "", string
+					formatLabel: function(value) {
+                				return options.prefix + value + options.suffix;
+                    			}
 				};
 				$.extend( options, settings );
 				
@@ -139,15 +142,15 @@
 					if( this.options.values ) {
 					 
 						$tip = [
-							$('<span class="ui-slider-tip">'+ options.prefix + this.options.values[0] + options.suffix +'</span>'),
-							$('<span class="ui-slider-tip">'+ options.prefix + this.options.values[1] + options.suffix +'</span>')
+							$('<span class="ui-slider-tip">'+ options.formatLabel(this.options.values[0]) +'</span>'),
+							$('<span class="ui-slider-tip">'+ options.formatLabel(this.options.values[1]) +'</span>')
 						];
 
 					// else if its just a normal slider
 					} else {
 					
 						// create a tip element
-						$tip = $('<span class="ui-slider-tip">'+ options.prefix + this.options.value + options.suffix +'</span>');
+						$tip = $('<span class="ui-slider-tip">'+ options.formatLabel(this.options.value) +'</span>');
 					
 					}
 					
@@ -171,7 +174,7 @@
 					
 					// when slider changes, update handle tip label.
 					this.element.on('slidechange slide', function( e, ui ) {
-						$(ui.handle).find('.ui-slider-tip').html( options.prefix + ui.value + options.suffix );
+						$(ui.handle).find('.ui-slider-tip').html(options.formatLabel(ui.value) );
 					});
 					
 				
