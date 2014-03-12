@@ -22,10 +22,12 @@ Include the plugin javascript file after jquery-ui.
 Include the CSS file, edit as you please.  
   
   
-```javascript  
+```javascript
 // First of all attach a slider to an element.
 $('.element').slider({opts});
+```
 
+```javascript
 // Then you can give it pips and labels!
 $('.element').slider('pips', {    
     first: 'label',
@@ -35,43 +37,50 @@ $('.element').slider('pips', {
     prefix: "",
     suffix: ""
 });
-  
+```
+
+#####Options for pips:  
+**first:** `'pip'` or `'label'` or `false`  
+**last:** `'pip'` or `'label'` or `false`  
+**rest:** `'pip'` or `'label'` or `false`  
+**labels:** `['array','of','labels']` or `false`  
+**prefix:** `"string"`  
+**suffix:** `"string"`  
+
+
+```javascript
 // And finally can add floaty numbers (if desired)
 $('.element').slider('float', {    
     handle: true,
-    numbers: true,
+    labels: true,
     prefix: "",
     suffix: ""  
 });
-
-// methods can (and probably should) be chained:
-$('.element').slider().slider('pips').slider('float');
 ```
 
-#####Pips method takes the options: `first, last, rest` with the values of:  
-- `"pip"` - adds a pip. (default for `rest`)    
-- `"label"` - adds a pip and a number. (default for`first` & `last`)   
-- `false` - hides the number and pip.  
-  
-#####Pips method also can have option of: `labels` with values of:
-- `false` - defaults labels to be numberic value
-- `[array]` - array of values to apply to pips
+#####Options for floats:  
+**handle:** `true` or `false`  
+**labels:** `true` or `false`  
+**prefix:** `"string"`  
+**suffix:** `"string"` 
 
-#####Float method takes the options: `handle, numbers` with the values of:  
-- `true` - adds floaty number. (default)    
-- `false` - no floaty number.
 
-#####Pips and Float methods both take the options: `prefix, suffix` with the values of:  
-- `""` - no prefix/suffix. (default)    
-- `"prefix"` - a string prefixed/suffixed.
+```javascript
+// methods can (and probably should) be chained:
+$('.element')
+    .slider()
+    .slider('pips')
+    .slider('float');
+```
+
   
   
 ------------------------------------
 
-###Customisation:  
+###Style Customisation:  
 All customisation should be done to the CSS file, or in your own CSS.  
 The base styles I've provided do a decent job in the Demo,   
-but they will need tweaking to suit your needs and UI theme.  
+but they may need tweaking to suit your needs and UI theme.  
   
 ------------------------------------
 
