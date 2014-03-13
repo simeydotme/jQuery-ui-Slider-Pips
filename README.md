@@ -1,12 +1,10 @@
-#jQuery-ui-Slider-Pips
-  
+#jQuery UI Slider Pips (v1.3.0)  
 ###Plugin for adding little 'pips' and labels to a jQuery UI slider widget.      
   
   
 This plugin **extends** the [jQuery UI Slider widget](http://jqueryui.com/slider/).    
 
-check out the Demo / Docs:  
-http://simey.me/projects/jquery-ui-slider-pips/
+Updated Documentation coming soon.
 
 ------------------------------------  
   
@@ -18,18 +16,21 @@ http://simey.me/projects/jquery-ui-slider-pips/
 ------------------------------------  
   
 ###Usage:   
-Include the plugin javascript file after jquery-ui.   
-Include the CSS file, edit as you please.  
+Include the plugin javascript file after jQuery & jQuery-ui.   
+Include the CSS file; edit as you please.  
   
   
 ```javascript
 // First of all attach a slider to an element.
-$('.element').slider({opts});
+$('.element')
+  .slider({ opts });
 ```
 
 ```javascript
 // Then you can give it pips and labels!  
-$('.element').slider('pips', {  
+$('.element')
+  .slider({ opts })
+  .slider('pips', {  
     first: 'label',  
     last: 'label',  
     rest: 'pip',  
@@ -50,7 +51,10 @@ $('.element').slider('pips', {
 
 ```javascript
 // And finally can add floaty numbers (if desired)  
-$('.element').slider('float', {  
+$('.element')
+  .slider({ opts })
+  .slider('pips', { opts })
+  .slider('float', {  
     handle: true,  
     pips: true,  
     labels: ['label1', 'label2', ...],  
@@ -66,14 +70,6 @@ $('.element').slider('float', {
 **prefix:** `"string"`  
 **suffix:** `"string"` 
 
-
-```javascript
-// methods can (and probably should) be chained:
-$('.element')
-    .slider()
-    .slider('pips')
-    .slider('float');
-```
 
   
   
