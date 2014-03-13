@@ -52,7 +52,7 @@
                         label = options.labels[i];
                     } else {
                         label = slider.options.min + ( slider.options.step * i );
-                    };
+                    }
 
                     if( typeof(label) === "undefined" ) { 
                         label = ""; 
@@ -263,7 +263,7 @@
                     } else {
 
                         val = ui.value;
-                        
+
                     }
                     
                     $(ui.handle).find(".ui-slider-tip").html( options.prefix + val + options.suffix );
