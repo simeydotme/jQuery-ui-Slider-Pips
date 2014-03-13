@@ -28,14 +28,14 @@ $('.element').slider({opts});
 ```
 
 ```javascript
-// Then you can give it pips and labels!
-$('.element').slider('pips', {    
-    first: 'label',
+// Then you can give it pips and labels!  
+$('.element').slider('pips', {  
+    first: 'label',  
     last: 'label',  
-    rest: 'pip',
-    labels: ['label1', 'label2', ...],
-    prefix: "",
-    suffix: ""
+    rest: 'pip',  
+    labels: ['label1', 'label2', ...],  
+    prefix: "",  
+    suffix: ""  
 });
 ```
 
@@ -49,18 +49,20 @@ $('.element').slider('pips', {
 
 
 ```javascript
-// And finally can add floaty numbers (if desired)
-$('.element').slider('float', {    
-    handle: true,
-    labels: true,
-    prefix: "",
+// And finally can add floaty numbers (if desired)  
+$('.element').slider('float', {  
+    handle: true,  
+    pips: true,  
+    labels: ['label1', 'label2', ...],  
+    prefix: "",  
     suffix: ""  
 });
 ```
 
-#####Options for floats:  
+#####Options for float:  
 **handle:** `true` or `false`  
-**labels:** `true` or `false`  
+**pips:** `true` or `false`  
+**labels:** `['array','of','labels']` or `false`  
 **prefix:** `"string"`  
 **suffix:** `"string"` 
 
@@ -98,6 +100,13 @@ http://opensource.org/licenses/MIT
 ------------------------------------
 
 ###Changlog:  
+
+- **Mar 12, 2014** - Update to `1.3`
+  - [Rewrite spacing and structure]()
+  - [Add ability for custom labels on floats]()
+  - [Fix bug of floats on labels >/< min/max in range]()
+
+***
 
 - **Nov 22, 2013** - CSS Changes
   - [Fix tiny bit of JS for vertical sliders](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/e7da19e5489c43ae2d439165199904812ee2e07f)
