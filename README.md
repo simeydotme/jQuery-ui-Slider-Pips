@@ -1,9 +1,9 @@
-#jQuery UI Slider Pips (v1.3.0)  
-###Plugin for adding little 'pips' and labels to a jQuery UI slider widget.      
+#jQuery UI Slider Pips (v1.3.0) 
+####Plugin for adding little 'pips' and labels to a jQuery UI slider widget.      
+    
+    
   
-  
-This plugin **extends** the [jQuery UI Slider widget](http://jqueryui.com/slider/).    
-
+This plugin **extends** the [jQuery UI Slider widget](http://jqueryui.com/slider/).  
 Updated Documentation coming soon.
 
 ------------------------------------  
@@ -98,9 +98,9 @@ http://opensource.org/licenses/MIT
 ###Changlog:  
 
 - **Mar 12, 2014** - Update to `1.3`
-  - [Rewrite spacing and structure]()
-  - [Add ability for custom labels on floats]()
-  - [Fix bug of floats on labels >/< min/max in range]()
+  - [Rewrite spacing and structure](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/aee27c14ae36de1a68b3dc0d725e318340f553b7)
+  - [Add ability for custom labels on floats](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/aee27c14ae36de1a68b3dc0d725e318340f553b7)
+  - [Fix bug of floats on labels >/< min/max in range](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/aee27c14ae36de1a68b3dc0d725e318340f553b7)
 
 ***
 
