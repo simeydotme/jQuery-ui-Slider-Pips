@@ -10,7 +10,100 @@ http://simey.me/projects/jquery-ui-slider-pips/
 
 ------------------------------------  
   
+###Requirements:
+  - jQuery (1.9+)
+  - jQuery UI (1.10+)
+  - A Reason to use it
+  
+------------------------------------  
+  
+###Usage:   
+Include the plugin javascript file after jquery-ui.   
+Include the CSS file, edit as you please.  
+  
+  
+```javascript
+// First of all attach a slider to an element.
+$('.element').slider({opts});
+```
+
+```javascript
+// Then you can give it pips and labels!
+$('.element').slider('pips', {    
+    first: 'label',
+    last: 'label',  
+    rest: 'pip',
+    labels: ['label1', 'label2', ...],
+    prefix: "",
+    suffix: ""
+});
+```
+
+#####Options for pips:  
+**first:** `'pip'` or `'label'` or `false`  
+**last:** `'pip'` or `'label'` or `false`  
+**rest:** `'pip'` or `'label'` or `false`  
+**labels:** `['array','of','labels']` or `false`  
+**prefix:** `"string"`  
+**suffix:** `"string"`  
+
+
+```javascript
+// And finally can add floaty numbers (if desired)
+$('.element').slider('float', {    
+    handle: true,
+    labels: true,
+    prefix: "",
+    suffix: ""  
+});
+```
+
+#####Options for floats:  
+**handle:** `true` or `false`  
+**labels:** `true` or `false`  
+**prefix:** `"string"`  
+**suffix:** `"string"` 
+
+
+```javascript
+// methods can (and probably should) be chained:
+$('.element')
+    .slider()
+    .slider('pips')
+    .slider('float');
+```
+
+  
+  
+------------------------------------
+
+###Style Customisation:  
+All customisation should be done to the CSS file, or in your own CSS.  
+The base styles I've provided do a decent job in the Demo,   
+but they may need tweaking to suit your needs and UI theme.  
+  
+------------------------------------
+
+###Compatibility:   
+Modern Browsers, IE7+   
+_(will need some CSS work for IE7 display issues, I'm not interested in doing them :P)_
+
+------------------------------------
+
+###License:  
+Open Source MIT.  
+http://opensource.org/licenses/MIT
+
+
+------------------------------------
+
 ###Changlog:  
+
+- **Nov 22, 2013** - CSS Changes
+  - [Fix tiny bit of JS for vertical sliders](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/e7da19e5489c43ae2d439165199904812ee2e07f)
+  - [Add missing CSS for vertical floats](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/d8ad4da1392f79f962b71aa842afee687d48ab57)
+
+***
 
 - **Aug 28, 2013** - Update to `1.2`
   - Convert to a grunt/node setup
@@ -40,77 +133,3 @@ http://simey.me/projects/jquery-ui-slider-pips/
   - [Fixed so that sliders can start with negative numbers](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/aeacad87d47d79a96b9f26d2d83a5c3206d9f90f)
 
 ------------------------------------  
-  
-###Requirements:
-  - jQuery (1.9+)
-  - jQuery UI (1.10+)
-  - A Reason to use it
-  
-------------------------------------  
-  
-###Usage:   
-Include the plugin javascript file after jquery-ui.   
-Include the CSS file, edit as you please.  
-  
-  
-```javascript  
-// First of all attach a slider to an element.
-$('.element').slider({opts});
-
-// Then you can give it pips and labels!
-$('.element').slider('pips', {    
-    first: 'label',
-    last: 'label',  
-    rest: 'pip',
-    labels: ['label1', 'label2', ...],
-    prefix: "",
-    suffix: ""
-});
-  
-// And finally can add floaty numbers (if desired)
-$('.element').slider('float', {    
-    handle: true,
-    numbers: true,
-    prefix: "",
-    suffix: ""  
-});
-
-// methods can (and probably should) be chained:
-$('.element').slider().slider('pips').slider('float');
-```
-
-#####Pips method takes the options: `first, last, rest` with the values of:  
-- `"pip"` - adds a pip. (default for `rest`)    
-- `"label"` - adds a pip and a number. (default for`first` & `last`)   
-- `false` - hides the number and pip.  
-  
-#####Pips method also can have option of: `labels` with values of:
-- `false` - defaults labels to be numberic value
-- `[array]` - array of values to apply to pips
-
-#####Float method takes the options: `handle, numbers` with the values of:  
-- `true` - adds floaty number. (default)    
-- `false` - no floaty number.
-
-#####Pips and Float methods both take the options: `prefix, suffix` with the values of:  
-- `""` - no prefix/suffix. (default)    
-- `"prefix"` - a string prefixed/suffixed.
-  
-  
-------------------------------------
-
-###Customisation:  
-All customisation should be done to the CSS file, or in your own CSS.  
-The base styles I've provided do a decent job in the Demo,   
-but they will need tweaking to suit your needs and UI theme.  
-  
-------------------------------------
-
-###Compatibility:   
-Modern Browsers, IE7+   
-_(will need some CSS work for IE7 display issues, I'm not interested in doing them :P)_
-
-
-
-
-
