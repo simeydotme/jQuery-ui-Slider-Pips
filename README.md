@@ -18,19 +18,15 @@ Updated Documentation coming soon.
 ###Usage:   
 Include the plugin javascript file after jQuery & jQuery-ui.   
 Include the CSS file; edit as you please.  
-  
+_Below methods are chainable, I've shown them separate for clarity_
   
 ```javascript
-// First of all attach a slider to an element.
-$('.element')
-  .slider({ opts });
-```
 
-```javascript
+// First of all attach a slider to an element.
+$('.element').slider();
+
 // Then you can give it pips and labels!  
-$('.element')
-  .slider({ opts })
-  .slider('pips', {  
+$('.element').slider('pips', {  
     first: 'label',  
     last: 'label',  
     rest: 'pip',  
@@ -38,23 +34,9 @@ $('.element')
     prefix: "",  
     suffix: ""  
 });
-```
 
-#####Options for pips:  
-**first:** `'pip'` or `'label'` or `false`  
-**last:** `'pip'` or `'label'` or `false`  
-**rest:** `'pip'` or `'label'` or `false`  
-**labels:** `['array','of','labels']` or `false`  
-**prefix:** `"string"`  
-**suffix:** `"string"`  
-
-
-```javascript
 // And finally can add floaty numbers (if desired)  
-$('.element')
-  .slider({ opts })
-  .slider('pips', { opts })
-  .slider('float', {  
+$('.element').slider('float', {  
     handle: true,  
     pips: true,  
     labels: ['label1', 'label2', ...],  
@@ -63,7 +45,15 @@ $('.element')
 });
 ```
 
-#####Options for float:  
+####Options for pips:  
+**first:** `'pip'` or `'label'` or `false`  
+**last:** `'pip'` or `'label'` or `false`  
+**rest:** `'pip'` or `'label'` or `false`  
+**labels:** `['array','of','labels']` or `false`  
+**prefix:** `"string"`  
+**suffix:** `"string"`  
+
+####Options for float:  
 **handle:** `true` or `false`  
 **pips:** `true` or `false`  
 **labels:** `['array','of','labels']` or `false`  
