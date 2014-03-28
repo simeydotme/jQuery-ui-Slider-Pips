@@ -16,10 +16,18 @@ Updated Documentation coming soon.
 ------------------------------------  
   
 ###Usage:   
-Include the plugin javascript file after jQuery & jQuery-ui.   
+Include the plugin javascript file __after__ jQuery & jQuery-ui.   
 Include the CSS file; edit as you please.  
 _Below methods are chainable, I've shown them separate for clarity_
   
+####Default usage:
+
+```javascript
+// if you just want the defaults, copy & paste this code.
+$('.element').slider().slider('pips').slider('float');
+```
+
+####Advanced usage with options:
 ```javascript
 
 // First of all attach a slider to an element.
