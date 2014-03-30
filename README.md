@@ -1,10 +1,13 @@
 #jQuery UI Slider Pips (v1.3.0) 
-####Plugin for adding little 'pips' and labels to a jQuery UI slider widget.      
-    
+####Plugin to add "pips" or "floats" to a JQUI Slider.
     
   
 This plugin **extends** the [jQuery UI Slider widget](http://jqueryui.com/slider/).  
-Updated Documentation coming soon.
+Use it for creating a nicely-styled slider like shown below:  
+
+![Default settings for the plugin](http://files.simey.me/pips.jpg "Example of Pips plugin with default options")
+
+_Updated Documentation/Demos coming soon._
 
 ------------------------------------  
   
