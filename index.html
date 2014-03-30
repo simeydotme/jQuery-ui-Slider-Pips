@@ -1,71 +1,523 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Jquery-ui-slider-pips by simeydotme</title>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Jquery-ui-slider-pips</h1>
-        <p>Plugin for adding little &#39;pips&#39; , &#39;floats&#39; and labels to a slider.</p>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <p class="view"><a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">View the Project on GitHub <small>simeydotme/jQuery-ui-Slider-Pips</small></a></p>
+        <title>Jquery UI Slider Pips - Simey.me</title>
+
+        <meta name="description" content="Documentation and Examples for jQuery ui slider pips plugin by Simon Goellner">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Averia+Sans+Libre:300,700,300italic,700italic|Lato:400,300,700,900,100,500">
+        <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/flick/jquery-ui.min.css">
+
+        <link rel="stylesheet" type="text/css" href="dist/jquery-ui-slider-pips.css">
+
+        <link rel="stylesheet" type="text/css" href="css/prettify.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/project.css">
+
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+        <header class="simey-header">
+
+            <h1>
+                <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">Jquery UI Slider Pips</a>
+                <small>An extension for the jQuery UI slider widget</small>
+            </h1>
 
 
-        <ul>
-          <li><a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+            <iframe src="http://ghbtns.com/github-btn.html?user=simeydotme&repo=jQuery-ui-Slider-Pips&type=watch&count=true" 
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+            <iframe src="http://ghbtns.com/github-btn.html?user=simeydotme&repo=jQuery-ui-Slider-Pips&type=fork&count=true" 
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="simeydotme" data-hashtags="jquerysliderpips">
+                Tweet</a>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+            <br>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+            <iframe src="http://ghbtns.com/github-btn.html?user=simeydotme&repo=jQuery-ui-Slider-Pips&type=follow&count=true" 
+                allowtransparency="true" frameborder="0" scrolling="0" width="155" height="20"></iframe>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+            <a href="https://twitter.com/simeydotme" class="twitter-follow-button" data-show-count="false">
+                Follow @simeydotme</a>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+        </header>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+        <section class="example">
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+            <div class="wrapper">
+                <h2>Default Example</h2>
+                <div id="slider1"></div>
+                <p class="scroll">Scroll down for more examples and documentation &darr;</p>
+            </div>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+        </section>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/simeydotme">simeydotme</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+        <div class="body">
+
+        <h2 id="features"><a href="#features">Features</a></h2>
+
+            <div class="row">
+                <div class="half">
+                    <ul>
+                        <li><strong>Adds small "pips" and "labels" to the slider</strong></li>
+                        <li><strong>Extends the jQuery UI Slider widget</strong></li>
+                        <li><strong>Easily Configurable</strong></li>
+                    </ul>
+                </div>
+
+                <div class="half">
+                    <ul>
+                        <li>Works for both Horizontal and Vertical sliders</li>
+                        <li>Doesn't change default slider behaviour</li>
+                        <li>Purely a visual plugin</li>
+                        <li>IE7+, modern browsers.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr>
+            
+          
+            <h2 class="no-margin-b" id="install"><a href="#install">Installation</a></h2>
+
+            <p class="no-margin-t">First of all download the 
+                <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips/tree/master/dist">/dist/</a> 
+                code from: <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips/tree/master/dist">GitHub</a> and place it into your project structure.</p>
+
+                
+
+                
+            <h3 class="no-margin-b" id="jquery"><a href="#jquery">Include jQuery</a></h3>
+            <p class="no-margin-t">
+                Make sure you've included a <a href="http://jquery.com"><strong>jQuery</strong></a> &amp; <a href="http://jqueryui.com"><strong>jQuery UI</strong></a> package with $.slider<br>
+                <em>(I've shown them being loaded remotely, depending on your project you may wish to download them locally instead)</em>.
+            </p>
+                
+            <pre class="prettyprint lang-html">
+&lt;script src="//code.jquery.com/jquery-1.10.2.min.js"&gt;&lt;/script&gt;
+&lt;script src="//code.jquery.com/ui/1.10.3/jquery-ui.min.js"&gt;&lt;/script&gt;</pre>
+            
+
+
+
+            <h3 class="no-margin-b" id="include"><a href="#include">Include the plugin</a></h3>
+            <p class="no-margin-t">Next we need to include the Pips Plugin. (minified or development)</p>
+                  
+            <pre class="prettyprint lang-html">
+&lt;script src="js/jquery-ui-slider-pips.min.js"&gt;&lt;/script&gt;</pre>
+                
+            
+
+
+            <h3 class="no-margin-b" id="styles"><a href="#styles">Include Stylesheets</a></h3>
+            <p class="no-margin-t">Make sure you've got the stylesheets loading for the pip plugin.</p>
+              
+            <pre class="prettyprint lang-html">
+&lt;link rel="stylesheet" type="text/css" href="css/jquery-ui-slider-pips.css"&gt;</pre>
+           
+            
+
+            
+            <h3 class="no-margin-b" id="initPips"><a href="#initPips">Initialize the pips</a></h3>
+              
+            <p class="no-margin-t no-margin-b">All that's left now is to initialize the plugin.</p>
+            <p class="no-margin-t">At it's most basic you can just run it on a already-initialized slider:</p>
+
+            <pre class="prettyprint lang-js">
+// first we need a slider to work with
+var $slider2 = $("#slider2").slider({ max: 20 , value: 10 });
+
+// and then we can apply pips to it!
+$slider2.slider("pips");</pre>
+            
+
+            <div class="showcase">
+                <div id="slider2"></div>
+            </div>
+                    
+
+
+
+            <h3 class="no-margin-b" id="initFloats"><a href="#initFloats">Initialize the floats</a></h3>
+              
+            <p class="no-margin-t">We can also apply floats with default options:</p>
+
+            <pre class="prettyprint lang-js">
+// first we need a slider to work with
+var $slider3 = $("#slider3").slider({ max: 20 , value: 10 });
+
+// and then we can apply a float to it!
+$slider3.slider("float");</pre>
+            
+
+            <div class="showcase">
+                <div id="slider3"></div>
+            </div>
+
+                         
+            
+            <h2 class="no-margin-b" id="themeing"><a href="#themeing">Styling</a></h2>
+            <p>The default styles are pretty robust, but you can override them yourself by
+                adding your own styles in your own stylesheet. Here's an example of the pips being 
+                rounded and placed above the bar instead. I've also shown a different coloured float.</p>
+                
+            <pre class="prettyprint lang-js">
+var $awesome = $("#awesome").slider({ max: 20 , value: 10 });
+    $awesome.slider("pips").slider("float");</pre>
+
+            <pre class="prettyprint lang-css">
+#awesome .ui-slider-pip {
+    top: auto;
+    bottom: 7px;
+}
+
+#awesome .ui-slider-line {
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    margin-left: -2px;
+    background: #0073EA;
+}
+
+#awesome .ui-slider-tip {
+    background: #0073EA;
+    color: white;
+    border-color: #0073EA;
+}
+
+#awesome .ui-slider-tip:before,
+#awesome .ui-slider-tip:after {
+    border-top-color: #0073EA;
+}
+
+#awesome .ui-slider-pip-label {
+    color: #0073EA;
+}
+
+#awesome .ui-slider-label {
+    color: #0073EA;
+    top: 7px;
+}
+
+#awesome .ui-slider-pip-first .ui-slider-label {
+    left: -2px;
+}
+
+#awesome .ui-slider-pip-last .ui-slider-label {
+    left: auto;
+    right: -20px;
+}</pre>
+            
+
+            <div class="showcase">
+                <div id="awesome"></div>
+                <p><em>This is 100% <code>css</code> changes with only the default <code>js</code> for pips</em></p>
+            </div>
+
+
+          
+            
+            <h2 class="no-margin-b" id="examples"><a href="#examples">Examples</a></h2>
+            <p>Here is a list of examples with the code used to create them. Combined with CSS the limits are
+                nearly endless, using psuedo selectors like <code>:nth-child()</code> it's possible to show/hide
+                every other pip, every 5th pip or every 10th pip, and the javascript options allow for
+                creating very interesting sliders without muddying your logic!</p>
+            
+
+            <hr><br>
+
+
+
+
+
+            
+            <p>The default configuration of the pips</p>
+
+            <pre class="prettyprint lang-js">
+$("#slider5").slider({ max: 20 });
+$("#slider5").slider("pips");</pre>
+
+
+            <div class="showcase">
+                <div id="slider5"></div>
+            </div>
+                
+
+
+
+
+            <p>Here we tell the <code>rest</code> of the points to be <code>label</code>.</p>
+
+            <pre class="prettyprint lang-js">
+$("#slider6").slider({ max: 20 });
+$("#slider6").slider("pips" , {
+    rest: "label"
+});</pre>
+
+
+            <div class="showcase">
+                <div id="slider6"></div>
+            </div>
+                
+
+
+
+            <p>Here we ask the plugin to hide the <code>rest</code> of the points. Example also shows working with <code>range</code>.</p>
+
+            <pre class="prettyprint lang-js">
+$("#slider7").slider({ max: 20, range: true, values: [ 4, 16 ] });
+$("#slider7").slider("pips" , {
+    rest: false
+});</pre>
+                    
+
+            <div class="showcase">
+                <div id="slider7"></div>
+            </div>
+
+
+
+
+            <p>Here we show <code>pip</code> for the <code>first</code> and <code>last</code> point (no labels).</p>
+                
+            <pre class="prettyprint lang-js">
+$("#slider8").slider({ max: 20 });
+$("#slider8").slider("pips", { 
+    first: "pip", 
+    last: "pip"
+});</pre>
+
+
+            <div class="showcase">
+                <div id="slider8"></div>
+            </div>
+
+
+
+
+            <p>Here we have all <code>label</code>, but crucially we supply a <code>prefix</code> and <code>suffix</code>.<br>
+                <small>NB: both <code>prefix</code> and <code>suffix</code> are optional and may require slight css tweaks</small></p>
+                
+            <pre class="prettyprint lang-js">
+$("#slider9").slider({ max: 10, value: 5 });
+$("#slider9").slider("pips", { 
+    rest: 'label',  
+    prefix: '$' , 
+    suffix: '.00'
+});</pre>
+
+
+            <div class="showcase">
+                <div id="slider9"></div>
+            </div>
+
+
+
+
+            <p>Here we tell the <code>rest</code> of the points to be <code>label</code>.<br>
+                We are also assigning custom <code>label</code> for each pip.</p>
+
+            <pre class="prettyprint lang-js">
+var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+$("#slider10").slider({ min: 0, max: 11, value: 5 });
+
+$("#slider10").slider("pips" , {
+    rest: 'label', 
+    labels: months
+})
+
+.on("slidechange", function(e,ui) {
+    $("#slider10output").text( "You selected " + months[ui.value] );
+});</pre>
+
+
+            <div class="showcase">
+                <span id="slider10output" class="output">Nothing Selected.</span>
+                <div id="slider10"></div>
+            </div> 
+                
+
+
+
+            <p>Here we demonstrate <code>pip</code> and <code>label</code> on a vertical slider with steps.</p>
+
+            <pre class="prettyprint lang-js">
+$("#slider11").slider({ min: 0, max: 100, step: 20, orientation: "vertical" });
+$("#slider11").slider("pips");</pre>
+
+
+            <div class="showcase">
+                <div id="slider11"></div>
+            </div>
+
+
+
+
+            <p>Vertical Sliders also allow floats and <code>suffix</code> &amp <code>prefix</code>.</p>
+
+            <pre class="prettyprint lang-js">
+var suffix = "&deg;c"
+
+$("#slider12").slider({ max: 100, step: 20, orientation: "vertical" });
+$("#slider12").slider("pips", { suffix: suffix });
+$("#slider12").slider("float", { suffix: suffix });</pre>
+
+
+            <div class="showcase">
+                <div id="slider12"></div>
+            </div>
+
+
+
+
+            <p>If we've already got <code>pips</code>, we can <code>float</code> those, too. (hover the pips).</p>
+
+            <pre class="prettyprint lang-js">
+$("#slider13").slider({ max: 2 });
+$("#slider13").slider("pips");
+$("#slider13").slider("float", { pips: true });</pre>
+
+
+            <div class="showcase">
+                <div id="slider13"></div>
+            </div>
+
+
+
+            <hr>
+            
+            <p>Please feel free to email me with suggestions for examples, or 
+                <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips/tree/gh-pages/">fork the <code>gh-pages</code> branch</a>
+                and add your own, when I see a merge request I'll review and action.</p>
+
+            <hr>
+                
+
+            <h2 id="api"><a href="#api">API Options</a></h2>
+
+            <h3 class="no-margin-b" id="pipOptions">Pips options</h3>
+            <p class="no-margin-t">Below are the default options for the pip method.<br>
+                These options can be overidden by supplying an object to the method call.</p>
+                    
+            <pre class="prettyprint lang-js">
+// Default options for pips:
+$slider.slider("pips", {
+
+    first: "label",   
+    // string, boolean
+    // eg: "label", "pip" , false
+    // determines label for first item on slider.
+
+    last: "label",
+    // string, boolean
+    // eg: "label", "pip" , false
+    // determines label for last item on slider.
+
+    rest: "pip",    
+    // string, boolean
+    // eg: "label", "pip" , false
+    // determines labels for all other items on slider.
+
+    labels: false,
+    // array
+    // eg: ["Mon","Tues","Weds","Thurs","Fri","Sat","Sun"]
+    // provides overrides for the labels so the
+    // implementer can visually display a different
+    // set of labels to the normal value
+
+    prefix: "",     
+    // string
+    // eg: "$"
+    // allows implementer to show a prefix value before
+    // the values on the slider
+
+    suffix: ""      
+    // string
+    // eg: ".00&cent;"
+    // allows implementer to show a suffix value after
+    // the values on the slider
+
+});</pre>
+
+
+
+
+
+            <h3 class="no-margin-b" id="pipOptions">Float options</h3>
+            <p class="no-margin-t">Below are the default options for the float method.<br>
+                These options can be overidden by supplying an object to the method call.</p>
+                    
+            <pre class="prettyprint lang-js">
+// Default options for floats:
+$('div.slider').slider('float', {
+
+    handle: true,
+    // boolean
+    // eg: true, false
+    // activates the floats on slider handles
+
+    labels: true,
+    // boolean
+    // eg: true, false
+    // activates the floats on slider labels
+
+    prefix: "",
+    // string
+    // eg: "$"
+    // allows implementer to show a prefix value before
+    // the values on the float
+
+    suffix: ""
+    // string
+    // eg: ".00&cent;"
+    // allows implementer to show a suffix value after
+    // the values on the float
+
+});</pre>         
+                    
+
+
+                
+        </div>
+      
+
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <![endif]-->
+        <!--[if gte IE 9]><!-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+        <!--[endif]-->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+
+        <script src="dist/jquery-ui-slider-pips.js"></script>
+        <script src="js/demos.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-15937605-6'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+  
+    </body>
 </html>
