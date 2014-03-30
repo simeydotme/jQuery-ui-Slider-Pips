@@ -7,7 +7,7 @@ Use it for creating a nicely-styled slider like shown below:
 
 ![Default settings for the plugin](http://files.simey.me/pips.jpg "Example of Pips plugin with default options")
 
-_Updated Documentation/Demos coming soon._
+[Documentation, Demos and Examples here](http://simeydotme.github.io/jQuery-ui-Slider-Pips/)
 
 ------------------------------------  
   
