@@ -126,17 +126,10 @@ header {
     padding: 10% 7em;
     text-align: center;
 
-    background: #e85661;
-    background: rgb(232,86,97);
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(232,86,97,1) 54%, rgba(206,72,74,1) 100%); 
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(54%,rgba(232,86,97,1)), color-stop(100%,rgba(206,72,74,1)));
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(232,86,97,1) 54%,rgba(206,72,74,1) 130%); 
-    background: -o-radial-gradient(center, ellipse cover,  rgba(232,86,97,1) 54%,rgba(206,72,74,1) 100%); 
-    background: -ms-radial-gradient(center, ellipse cover,  rgba(232,86,97,1) 54%,rgba(206,72,74,1) 100%); 
-    background: radial-gradient(ellipse at center,  rgba(232,86,97,1) 54%,rgba(206,72,74,1) 130%); 
+    background: #54B8BC;
+    background: url("http://simey.me/img/header-bg.png");
     
-    background-repeat: no-repeat;
-    background-size: 100% 130%;
+    background-position: -3698px 0;
     
 }
 
