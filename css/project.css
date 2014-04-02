@@ -129,9 +129,6 @@ header {
     text-align: center;
 
     background: #54B8BC;
-    background: url("http://simey.me/img/header-bg.png");
-    
-    background-position: -3698px 0;
     position: relative;
     
 }
@@ -275,7 +272,9 @@ pre + .showcase {
 @media only screen and (max-width: 45em) {
 
     .body, .example {
+
         padding: 4em 3em 5em;
+
     }
 
     header #socialbreak {
@@ -285,6 +284,34 @@ pre + .showcase {
 
 }
 
+@media only screen and (max-width: 34em) {
+
+    header {
+
+        font-size: 0.6em;
+        padding: 12em 1em;
+
+    }
+
+    header h1 { font-weight: 300; }
+
+    .body {
+
+        font-size: 0.9em;
+    }
+
+}
+
+@media screen and ( min-width: 34em ) {
+
+    header {
+
+        background: url("http://simey.me/img/header-bg.png");
+        background-position: -3698px 0;
+
+    }
+
+}
 
 
 
