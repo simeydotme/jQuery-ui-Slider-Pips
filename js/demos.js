@@ -1,15 +1,21 @@
 $(document).ready(function() {
 
 
-
-
-
-
     prettyPrint();
 
-    $.extend( $.ui.slider.prototype.options, { animate: true });
 
-    var $slider1 = $("#slider1").slider({ max: 20 , value: 10 });
+    $.extend( $.ui.slider.prototype.options, { 
+
+        animate: true ,
+        stop: function(e,ui) {
+            ga('send', 'event', 'slider', 'interact', this.id );
+        }
+
+    });
+
+
+
+    var $slider1 = $("#mainDemo").slider({ max: 20 , value: 10 });
         $slider1.slider("pips");
 
 
