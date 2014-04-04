@@ -1,8 +1,6 @@
 $(document).ready(function() {
 
 
-    prettyPrint();
-
 
     $.extend( $.ui.slider.prototype.options, { 
 
