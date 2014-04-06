@@ -184,155 +184,6 @@ $slider3.slider("float");</pre>
             <hr>
 
 
-            <h2 class="no-margin-b" id="themeing"><a href="#themeing">Styling</a></h2>
-            <p>The default styles are pretty robust, but you can override them yourself by
-                adding your own styles in your own stylesheet. Here's a couple of examples of
-                using CSS to change the look of the pips and floats.</p>
-                
-
-
-<a href="#" id="awesomecss">[ Show CSS ]</a>
-<pre class="prettyprint lang-css">
-#awesome .ui-slider-pip {
-    top: auto;
-    bottom: -5px;
-}
-
-#awesome .ui-slider-line {
-    width: 4px;
-    height: 4px;
-    border-radius: 2px;
-    margin-left: -2px;
-    background: #0073EA;
-}
-
-#awesome .ui-slider-tip {
-    background: #0073EA;
-    color: white;
-    border-color: #0073EA;
-}
-
-#awesome .ui-slider-tip:before,
-#awesome .ui-slider-tip:after {
-    border-top-color: #0073EA;
-}
-
-#awesome .ui-slider-pip-label {
-    color: #0073EA;
-}
-
-#awesome .ui-slider-label {
-    color: #0073EA;
-    top: 7px;
-}
-
-#awesome .ui-slider-pip-first .ui-slider-label {
-    left: -2px;
-    top: -5px;
-}
-
-#awesome .ui-slider-pip-last .ui-slider-label {
-    left: auto;
-    right: -20px;
-    top: -5px;
-}</pre>
-
-            <pre class="prettyprint lang-js">
-var $awesome = $("#awesome").slider({ max: 20 , value: 10 });
-    $awesome.slider("pips").slider("float");</pre>            
-
-            <div class="showcase">
-                <div id="awesome"></div>
-                <p><em>This is 100% <code>css</code> changes; with only the default <code>js</code> for pips</em></p>
-            </div>
-
-
-
-<a href="#" id="awesome2css">[ Show CSS ]</a>
-<pre class="prettyprint lang-css">
-#awesome2 {
-    margin-bottom: 3em;
-}
-
-#awesome2 .ui-slider-handle {
-    border-radius: 15px/10px;
-    background: #4F5861;
-    border-color: #4F5861;
-}
-
-#awesome2 .ui-slider-handle:after {
-    content: " ";
-    width: 0; 
-    height: 0;
-    border: 7px solid transparent;
-    border-top-color: #4F5861;
-    position: absolute;
-    bottom: -12px; 
-    left: 50%; 
-    margin-left: -7px; 
-}
-
-#awesome2 .ui-slider-tip,
-#awesome2 .ui-slider-tip:before,
-#awesome2 .ui-slider-tip:after {
-    background: transparent;
-    border: none;
-    font-size: 1.2em;
-}
-
-#awesome2 .ui-slider-pip {
-    width: 1%;
-    margin-left: -0.5%;
-}
-
-#awesome2 .ui-slider-pip > .ui-slider-label {
-    display: none;
-    height: 4px;
-}
-
-#awesome2 .ui-slider-pip > .ui-slider-line {
-    background: #aaa;
-}
-
-#awesome2 .ui-slider-pip:nth-of-type(5n+1) > .ui-slider-line {
-    height: 6px;
-    background: #777;
-}
-
-#awesome2 .ui-slider-pip:nth-of-type(5n+1) > .ui-slider-label {
-    display: block;
-    top: 8px;
-    color: #ccc;
-    font-size: 0.8em;
-}
-
-#awesome2 .ui-slider-pip:nth-of-type(10n+1) > .ui-slider-line {
-    height: 10px;
-    background: #222;
-}
-
-#awesome2 .ui-slider-pip:nth-of-type(10n+1) > .ui-slider-label {
-    display: block;
-    top: 12px;
-    color: #333;
-    font-size: 1em;
-}</pre>
-
-
-            <pre class="prettyprint lang-js">
-var $awesome2 = $("#awesome2").slider({ max: 100 , value: 50 });
-    $awesome2.slider("pips", { rest: "label" }).slider("float");</pre>
-
-            <div class="showcase">
-                <div id="awesome2"></div>
-                <p><em>This is 100% <code>css</code> changes; with only slightly configured <code>js</code> for pips</em></p>
-            </div>
-
-
-
-            <hr>
-
-
             <h2 class="no-margin-b" id="examples"><a href="#examples">Examples</a></h2>
             <p>Here is a list of examples with the code used to create them. Combined with CSS the limits are
                 nearly endless, using psuedo selectors like <code>:nth-child()</code> it's possible to show/hide
@@ -340,10 +191,7 @@ var $awesome2 = $("#awesome2").slider({ max: 100 , value: 50 });
                 creating very interesting sliders without muddying your logic!</p>
             
 
-            <hr><br>
-
-
-
+            <br><br>
 
 
             
@@ -498,6 +346,157 @@ $("#slider13").slider("float", { pips: true });</pre>
             <div class="showcase">
                 <div id="slider13"></div>
             </div>
+
+
+
+            <hr>
+            <br>
+
+
+            <h2 class="no-margin-b" id="themeing"><a href="#themeing">Styling</a></h2>
+            <p>The default styles are pretty robust, but you can override them yourself by
+                adding your own styles in your own stylesheet. Here's a couple of examples of
+                using CSS to change the look of the pips and floats.</p>
+                
+            <br>
+
+<a href="#" id="awesomecss">[ Show CSS ]</a>
+<pre class="prettyprint lang-css">
+#awesome .ui-slider-pip {
+    top: auto;
+    bottom: -5px;
+}
+
+#awesome .ui-slider-line {
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    margin-left: -2px;
+    background: #0073EA;
+}
+
+#awesome .ui-slider-tip {
+    background: #0073EA;
+    color: white;
+    border-color: #0073EA;
+}
+
+#awesome .ui-slider-tip:before,
+#awesome .ui-slider-tip:after {
+    border-top-color: #0073EA;
+}
+
+#awesome .ui-slider-pip-label {
+    color: #0073EA;
+}
+
+#awesome .ui-slider-label {
+    color: #0073EA;
+    top: 7px;
+}
+
+#awesome .ui-slider-pip-first .ui-slider-label {
+    left: -2px;
+    top: -5px;
+}
+
+#awesome .ui-slider-pip-last .ui-slider-label {
+    left: auto;
+    right: -20px;
+    top: -5px;
+}</pre>
+
+            <pre class="prettyprint lang-js">
+var $awesome = $("#awesome").slider({ max: 20 , value: 10 });
+    $awesome.slider("pips").slider("float");</pre>            
+
+            <div class="showcase">
+                <div id="awesome"></div>
+                <p><em>This is 100% <code>css</code> changes; with only the default <code>js</code> for pips</em></p>
+            </div>
+
+
+
+<a href="#" id="awesome2css">[ Show CSS ]</a>
+<pre class="prettyprint lang-css">
+#awesome2 {
+    margin-bottom: 3em;
+}
+
+#awesome2 .ui-slider-handle {
+    border-radius: 15px/10px;
+    background: #4F5861;
+    border-color: #4F5861;
+}
+
+#awesome2 .ui-slider-handle:after {
+    content: " ";
+    width: 0; 
+    height: 0;
+    border: 7px solid transparent;
+    border-top-color: #4F5861;
+    position: absolute;
+    bottom: -12px; 
+    left: 50%; 
+    margin-left: -7px; 
+}
+
+#awesome2 .ui-slider-tip,
+#awesome2 .ui-slider-tip:before,
+#awesome2 .ui-slider-tip:after {
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+}
+
+#awesome2 .ui-slider-pip {
+    width: 1%;
+    margin-left: -0.5%;
+}
+
+#awesome2 .ui-slider-pip > .ui-slider-label {
+    display: none;
+    height: 4px;
+}
+
+#awesome2 .ui-slider-pip > .ui-slider-line {
+    background: #aaa;
+}
+
+#awesome2 .ui-slider-pip:nth-of-type(5n+1) > .ui-slider-line {
+    height: 6px;
+    background: #777;
+}
+
+#awesome2 .ui-slider-pip:nth-of-type(5n+1) > .ui-slider-label {
+    display: block;
+    top: 8px;
+    color: #ccc;
+    font-size: 0.8em;
+}
+
+#awesome2 .ui-slider-pip:nth-of-type(10n+1) > .ui-slider-line {
+    height: 10px;
+    background: #222;
+}
+
+#awesome2 .ui-slider-pip:nth-of-type(10n+1) > .ui-slider-label {
+    display: block;
+    top: 12px;
+    color: #333;
+    font-size: 1em;
+}</pre>
+
+
+            <pre class="prettyprint lang-js">
+var $awesome2 = $("#awesome2").slider({ max: 100 , value: 50 });
+    $awesome2.slider("pips", { rest: "label" }).slider("float");</pre>
+
+            <div class="showcase">
+                <div id="awesome2"></div>
+                <p><em>This is 100% <code>css</code> changes; with only slightly configured <code>js</code> for pips</em></p>
+            </div>
+
 
 
 
