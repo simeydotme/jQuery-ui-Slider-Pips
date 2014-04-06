@@ -28,6 +28,9 @@ $(document).ready(function() {
     var $awesome = $("#awesome").slider({ max: 20 , value: 10 });
         $awesome.slider("pips").slider("float");
 
+    var $awesome2 = $("#awesome2").slider({ max: 100 , value: 50 });
+        $awesome2.slider("pips", { rest: "label" }).slider("float");
+
 
     var $slider5 = $("#slider5").slider({ max: 20 , value: 10 });
         $slider5.slider("pips");
@@ -85,6 +88,18 @@ $(document).ready(function() {
         .slider("float", {
             pips: true
         });
+
+
+
+
+
+
+    $("#awesomecss, #awesome2css").on("click", function(e) {
+
+        e.preventDefault();
+        $(this).next("pre").slideToggle();
+
+    }).next("pre").hide();
 
 
 });
