@@ -25,7 +25,7 @@
                     // "", string
 
                     formatLabel: function(value) {
-                        return options.prefix + value + options.suffix;
+                        return this.prefix + value + this.suffix;
                     }
                     // function
                     // must return a value to display in the pip labels
@@ -145,7 +145,7 @@
                     // "", string
 
                     formatLabel: function(value) {
-                        return options.prefix + value + options.suffix;
+                        return this.prefix + value + this.suffix;
                     }
                     // function
                     // must return a value to display in the floats
