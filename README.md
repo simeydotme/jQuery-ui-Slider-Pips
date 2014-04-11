@@ -63,13 +63,15 @@ $('.element').slider('float', {
 **labels:** `['array','of','labels']` or `false`  
 **prefix:** `"string"`  
 **suffix:** `"string"`  
+**formatLabel:** `function(val){ return this.prefix + val + this.suffix }`  
 
 ####Options for float:  
 **handle:** `true` or `false`  
 **pips:** `true` or `false`  
 **labels:** `['array','of','labels']` or `false`  
 **prefix:** `"string"`  
-**suffix:** `"string"` 
+**suffix:** `"string"`  
+**formatLabel:** `function(val){ return this.prefix + val + this.suffix }`  
 
 
   
@@ -97,6 +99,11 @@ http://opensource.org/licenses/MIT
 ------------------------------------
 
 ###Changlog:  
+
+- **Apr 11, 2014** - Update to `1.4`
+  - [Merge formatLabel feature from @wilsonhut](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/aee27c14ae36de1a68b3dc0d725e318340f553b7)
+
+***
 
 - **Mar 12, 2014** - Update to `1.3`
   - [Rewrite spacing and structure](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/aee27c14ae36de1a68b3dc0d725e318340f553b7)
