@@ -1,5 +1,3 @@
-/* jquery slider pips plugin, version 1.1 */
-    
     (function($) {
         
         var extensionMethods = {
@@ -23,8 +21,14 @@
                     prefix: "",
                     // "", string
 
-                    suffix: ""
+                    suffix: "",
                     // "", string
+
+                    formatLabel: function(value) {
+                        return options.prefix + value + options.suffix;
+                    }
+                    // function
+                    // must return a value to display in the pip labels
                     
                 };
                 
@@ -43,7 +47,6 @@
                  
                 // for every stop in the slider; we create a pip.
                 for( var i=0; i<=pips; i++ ) {
-                    
 
                     // create the label name, it's either the item in the array, or a number.
                     var label;
@@ -58,12 +61,11 @@
                         label = ""; 
                     }
                     
-                    
                     // hold a span element for the pip
                     var pipHtml = 
                         "<span class=\"ui-slider-pip ui-slider-pip-"+i+"\">"+
                             "<span class=\"ui-slider-line\"></span>"+
-                            "<span class=\"ui-slider-label\">"+ options.prefix + label + options.suffix +"</span>"+
+                            "<span class=\"ui-slider-label\">"+ options.formatLabel(label) +"</span>"+
                         "</span>";
                     
                     var $pip = $(pipHtml);
@@ -90,7 +92,6 @@
                     
                     }
                     
-                    
                     // if it's a horizontal slider we'll set the left offset,
                     // and the top if it's vertical.
                     if( slider.options.orientation === "horizontal" ) {
@@ -102,7 +103,6 @@
                         $pip.css({ bottom: "" + (100/pips)*i + "%"  });
                     
                     }
-                    
                     
                     // append the span to the slider.
                     slider.element.append( $pip );
@@ -116,12 +116,10 @@
     
         $.extend(true, $["ui"]["slider"].prototype, extensionMethods);
     
-    
     })(jQuery);
     
     
-    
-/* jquery slider float plugin, version 1.1 */
+
         
     (function($) {
 
@@ -143,8 +141,14 @@
                     prefix: "",
                     // "", string
                     
-                    suffix: ""
+                    suffix: "",
                     // "", string
+
+                    formatLabel: function(value) {
+                        return options.prefix + value + options.suffix;
+                    }
+                    // function
+                    // must return a value to display in the floats
 
                 };
 
@@ -199,8 +203,8 @@
                         }
 
                         $tip = [
-                            $("<span class=\"ui-slider-tip\">"+ options.prefix + vals[0] + options.suffix +"</span>"),
-                            $("<span class=\"ui-slider-tip\">"+ options.prefix + vals[1] + options.suffix +"</span>")
+                            $("<span class=\"ui-slider-tip\">"+ options.formatLabel(vals[0]) +"</span>"),
+                            $("<span class=\"ui-slider-tip\">"+ options.formatLabel(vals[1]) +"</span>")
                         ];
 
                     // else if its just a normal slider
@@ -223,7 +227,7 @@
 
 
                         // create a tip element
-                        $tip = $("<span class=\"ui-slider-tip\">"+ options.prefix + val + options.suffix +"</span>");
+                        $tip = $("<span class=\"ui-slider-tip\">"+ options.formatLabel(val) +"</span>");
                     
                     }
                     
@@ -266,7 +270,7 @@
 
                     }
                     
-                    $(ui.handle).find(".ui-slider-tip").html( options.prefix + val + options.suffix );
+                    $(ui.handle).find(".ui-slider-tip").html( options.formatLabel(val) );
 
                 });
             
@@ -279,19 +283,4 @@
         $.extend(true, $["ui"]["slider"].prototype, extensionMethods);
 
 
-    })(jQuery);     
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    })(jQuery);
