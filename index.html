@@ -265,9 +265,9 @@ $("#slider8").slider("pips", {
             <pre class="prettyprint lang-js">
 $("#slider9").slider({ max: 10, value: 5 });
 $("#slider9").slider("pips", { 
-    rest: 'label',  
-    prefix: '$' , 
-    suffix: '.00'
+    rest: "label",  
+    prefix: "$" , 
+    suffix: ".00"
 });</pre>
 
 
@@ -282,16 +282,11 @@ $("#slider9").slider("pips", {
                 We are also assigning custom <code>label</code> for each pip.</p>
 
             <pre class="prettyprint lang-js">
-var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 $("#slider10").slider({ min: 0, max: 11, value: 5 });
-
-$("#slider10").slider("pips" , {
-    rest: 'label', 
-    labels: months
-})
-
-.on("slidechange", function(e,ui) {
+$("#slider10").slider("pips" , { rest: "label", labels: months })
+$("#slider10").on("slidechange", function(e,ui) {
     $("#slider10output").text( "You selected " + months[ui.value] );
 });</pre>
 
@@ -299,6 +294,23 @@ $("#slider10").slider("pips" , {
             <div class="showcase">
                 <span id="slider10output" class="output">Nothing Selected.</span>
                 <div id="slider10"></div>
+            </div>
+
+
+
+
+            <p>The <code>labels</code> option also allows us to use non-roman numbers/letters.</p>
+
+            <pre class="prettyprint lang-js">
+var hanziNums = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+
+$("#sliderHanzi").slider({ min: 1, max: 10, value: 5 });
+$("#sliderHanzi").slider("pips" , { labels: hanziNums, rest: "label" });
+$("#sliderHanzi").slider("float" , { labels: hanziNums });</pre>
+
+
+            <div class="showcase">
+                <div id="sliderHanzi"></div>
             </div> 
                 
 
@@ -563,7 +575,7 @@ $slider.slider("pips", {
                     
             <pre class="prettyprint lang-js">
 // Default options for floats:
-$('div.slider').slider('float', {
+$("div.slider").slider("float", {
 
     handle: true,
     // boolean

@@ -6,7 +6,7 @@ $(document).ready(function() {
 
         animate: true ,
         stop: function(e,ui) {
-            ga('send', 'event', 'slider', 'interact', this.id );
+            ga("send", "event", "slider", "interact", this.id );
         }
 
     });
@@ -55,20 +55,31 @@ $(document).ready(function() {
 
     var $slider9 = $("#slider9").slider({ max: 10, value: 5 });
         $slider9.slider("pips" , {
-            rest: 'label',  
-            prefix: '$' , 
-            suffix: '.00'
+            rest: "label",  
+            prefix: "$" , 
+            suffix: ".00"
         });
 
 
-    var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     
-    var $slider10 = $("#slider10").slider({ min: 0, max: 11, value: 5 });
+    var $slider10 = $("#slider10").slider({ min: 1, max: 12, value: 5 });
         $slider10.slider("pips" , {
-            rest: 'label', 
+            rest: "label", 
             labels: months
         }).on("slidechange", function(e,ui) {
-            $("#slider10output").text( "You selected " + months[ui.value] );
+            $("#slider10output").text( "You selected " + months[ui.value-1] );
+        });
+
+
+    var hanziNums = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+    
+    var $slider10 = $("#sliderHanzi").slider({ min: 1, max: 10, value: 5 });
+        $slider10.slider("pips" , {
+            rest: "label", 
+            labels: hanziNums
+        }).slider("float" , {
+            labels: hanziNums
         });
 
 

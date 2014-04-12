@@ -239,8 +239,31 @@
 
 
 #slider9 .ui-slider-label {
+
     font-size: 12px;
     margin-left: -15px;
+
 }
 
 
+
+
+
+#sliderHanzi .ui-slider-label {
+
+    width: 4em;
+    margin-left: -2em;
+    top: 1em;
+
+}
+
+#sliderHanzi.ui-slider-float .ui-slider-tip {
+
+    font-size: 1.3em;
+    width: 2.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    margin-left: -1.3em;
+    top: -1.85em;
+
+}
