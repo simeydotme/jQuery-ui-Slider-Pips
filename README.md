@@ -101,7 +101,7 @@ http://opensource.org/licenses/MIT
 ###Changlog:  
 
 - **Apr 11, 2014** - Update to `1.4`
-  - [Merge formatLabel feature from @wilsonhut](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/aee27c14ae36de1a68b3dc0d725e318340f553b7)
+  - [Merge formatLabel feature from @wilsonhut](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/1e98b13ddb2960a07f47ecacd530f6de05329c95)
 
 ***
 
