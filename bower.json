@@ -1,0 +1,32 @@
+{
+    "name": "jQuery-ui-Slider-Pips",
+
+    "version": "1.4.0",
+
+    "main": [
+        "dist/jquery-ui-slider-pips.css",
+        "dist/jquery-ui-slider-pips.min.js"
+    ],
+
+    "ignore": [
+        ".gitattributes",
+        ".gitignore",
+        "Gruntfile.js",
+        "*.json",
+        "*.md",
+        "*.txt",
+        "*.html",        
+        "src",
+        "mode_modules"
+    ],
+
+    "dependencies": {
+        "jquery": ">=1.10.2",
+        "jqueryui": ">=1.9.2"
+    },
+
+    "devDependencies": {
+        
+    }
+
+}
