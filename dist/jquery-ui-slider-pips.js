@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.4.1 - 2014-04-15
+/*! jQuery-ui-Slider-Pips - v1.4.2 - 2014-04-18
 * Copyright (c) 2014 ; Licensed  */
     (function($) {
         

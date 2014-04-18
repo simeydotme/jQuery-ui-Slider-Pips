@@ -1,13 +1,29 @@
 {
     "name": "jQuery-ui-Slider-Pips",
-
-    "version": "1.4.1",
-
+    "version": "1.4.2",
+    "description": "A plugin to add little \"pips\" to the jQuery UI Slider widget",
     "main": [
         "dist/jquery-ui-slider-pips.css",
         "dist/jquery-ui-slider-pips.min.js"
     ],
-
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips.git"
+    },
+    "license": "MIT",
+    "keywords": [
+        "jquery",
+        "ui",
+        "slider",
+        "widget",
+        "pips",
+        "points",
+        "labels",
+        "floats"
+    ],
+    "authors": [
+        "Simon Goellner <simey.me@gmail.com>"
+    ],
     "ignore": [
         ".gitattributes",
         ".gitignore",
@@ -15,7 +31,7 @@
         "*.json",
         "*.md",
         "*.txt",
-        "*.html",        
+        "*.html",
         "src",
         "mode_modules"
     ],
