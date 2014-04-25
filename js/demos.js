@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     $.extend( $.ui.slider.prototype.options, { 
 
-        animate: 200 ,
+        animate: false ,
         stop: function(e,ui) {
             ga("send", "event", "slider", "interact", this.id );
         }
@@ -109,14 +109,12 @@ $(document).ready(function() {
         $awesome2.slider("pips", { rest: "label" }).slider("float");
 
 
-    var $modern = $("#modern").slider({
-
-        range: true,
-        min: 0, max: 10000
-
-    })
-    .slider("pips", { rest: "label", prefix: "$", suffix: ".00" })
-    .slider("float", { prefix: "$", suffix: ".00", event: "slidechange slide" });
+    var $modern = $("#modern").slider({ range: true, min: 0, max: 10000, values: [ 2000 , 8000 ] });
+        $modern.slider("pips", { rest: "label", suffix: " &hearts;", step: 500,
+        formatLabel: function(value) {
+            return value + "<b class=\"heart\">"+this.suffix+"</b>";
+        }
+    });
 
 
 
@@ -125,7 +123,7 @@ $(document).ready(function() {
 
 
 
-    $("#awesomecss, #awesome2css").on("click", function(e) {
+    $(".show-css").on("click", function(e) {
 
         e.preventDefault();
         $(this).next("pre").slideToggle();

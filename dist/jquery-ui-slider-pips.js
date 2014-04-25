@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.5.0 - 2014-04-25
+/*! jQuery-ui-Slider-Pips - v1.5.1 - 2014-04-25
 * Copyright (c) 2014 ; Licensed  */
     
     // PIPS
@@ -190,8 +190,7 @@
                 var slider = this,
                     $tip,
                     vals = [],
-                    val,
-                    pips = ( slider.options.max - slider.options.min ) / slider.options.step;
+                    val;
 
                 var options = {
 
@@ -210,7 +209,7 @@
                     suffix: "",
                     // "", string
 
-                    event: ( pips > 100 ) ? "slidechange" : "slidechange slide",
+                    event: "slidechange slide",
                     // "slidechange", "slide", "slidechange slide"
 
                     formatLabel: function(value) {
@@ -316,9 +315,10 @@
 
                 if( options.event !== "slide" && 
                     options.event !== "slidechange" && 
-                    options.event !== "slide slidechange" ) {
+                    options.event !== "slide slidechange" && 
+                    options.event !== "slidechange slide" ) {
 
-                    options.event = "slide";
+                    options.event = "slidechange slide";
                 
                 }
                 

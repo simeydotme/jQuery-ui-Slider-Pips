@@ -375,7 +375,7 @@ $("#slider13").slider("float", { pips: true });</pre>
                 
             <br>
 
-<a href="#" id="awesomecss">[ Show CSS ]</a>
+<a href="#" id="awesomecss" class="show-css">[ Show CSS ]</a>
 <pre class="prettyprint lang-css">
 #awesome .ui-slider-pip {
     top: auto;
@@ -432,7 +432,7 @@ var $awesome = $("#awesome").slider({ max: 20 , value: 10 });
 
 
 
-<a href="#" id="awesome2css">[ Show CSS ]</a>
+<a href="#" id="awesome2css" class="show-css">[ Show CSS ]</a>
 <pre class="prettyprint lang-css">
 #awesome2 {
     margin-bottom: 3em;
@@ -516,11 +516,93 @@ var $awesome2 = $("#awesome2").slider({ max: 100 , value: 50 });
 
 
 
-            <pre class="prettyprint lang-js"></pre>
+<a href="#" id="moderncss" class="show-css">[ Show CSS ]</a>
+<pre class="prettyprint lang-css">
+#modern.ui-slider {
+    font-size: 12px;
+    font-family: Verdana, sans-serif;
+    height: 8px;
+    border-radius: 3px 3px 0 0;
+    border: none;
+    background: #bdc3c7;
+    margin-bottom: 50px;
+}
+
+#modern.ui-slider .ui-slider-range {
+    background: #e74c3c;
+}
+
+#modern.ui-slider .ui-slider-handle {
+    width: 3px;
+    margin-left: -1px;
+    height: 20px;
+    top: 50%;
+    margin-top: -10px;
+    border-radius: 0;
+    border: none;
+    background: #c0392b;
+    border-radius: 2px;
+}
+
+#modern.ui-slider .ui-slider-handle.ui-state-focus,
+#modern.ui-slider .ui-slider-handle.ui-state-active {
+    background: #34495e;
+}
+
+#modern.ui-slider .ui-slider-handle:focus {
+    outline: none;
+}
+
+#modern.ui-slider-pips .ui-slider-pip {
+    top: 10px;
+    width: 20px;
+    margin-left: -10px
+}
+
+#modern.ui-slider-pips .ui-slider-label {
+    top: 10px;
+    width: 56px;
+    margin-left: -50px;
+    color: #555;
+    display: none;
+    text-align: right;
+}
+
+#modern.ui-slider-pips .ui-slider-label .heart {
+    color: #E74C3C;
+    font-size: 18px;
+    position: relative;
+    top: 2px;
+}
+
+#modern.ui-slider-pips .ui-slider-line {
+    height: 4px;
+    background: #bdc3c7;
+}
+
+#modern.ui-slider-pips .ui-slider-pip:nth-of-type(5n+1) > .ui-slider-line {
+    height: 8px;
+    background: #E74C3C;
+}
+
+#modern.ui-slider-pips .ui-slider-pip:nth-of-type(5n+1) > .ui-slider-label {
+    display: block;
+}</pre>
+
+
+            <pre class="prettyprint lang-js">
+var $modern = $("#modern").slider({ range: true, min: 0, max: 10000, values: [ 2000 , 8000 ] });
+    $modern.slider("pips", { rest: "label", suffix: " &hearts;", step: 500,
+    formatLabel: function(value) {
+        return value + "&lt;b class=\"heart\"&gt;"+this.suffix+"&lt;/b&gt;";
+    }
+});
+            </pre>
 
             <div class="showcase">
                 <div id="modern"></div>
-                <p></p>
+                <p><em>This is 100% <code>css</code> changes; with only slightly configured <code>js</code> for pips... there's also a
+                little function giving the hearts a <code>&lt;b&gt;</code> tag for styling</em></p>
             </div>
 
 
