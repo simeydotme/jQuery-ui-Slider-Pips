@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.4.2 - 2014-04-25
+/*! jQuery-ui-Slider-Pips - v1.5.0 - 2014-04-25
 * Copyright (c) 2014 ; Licensed  */
     
     // PIPS
@@ -25,7 +25,7 @@
                     // "label", "pip", false
 
                     labels: false,
-                    // [array]
+                    // [array], false
 
                     prefix: "",
                     // "", string
@@ -34,6 +34,7 @@
                     // "", string
 
                     step: ( pips > 100 ) ? Math.floor( pips * 0.1 ) : 1,
+                    // number
 
                     formatLabel: function(value) {
                         return this.prefix + value + this.suffix;
@@ -210,6 +211,7 @@
                     // "", string
 
                     event: ( pips > 100 ) ? "slidechange" : "slidechange slide",
+                    // "slidechange", "slide", "slidechange slide"
 
                     formatLabel: function(value) {
                         return this.prefix + value + this.suffix;
@@ -312,7 +314,14 @@
                 }
 
 
-                    
+                if( options.event !== "slide" && 
+                    options.event !== "slidechange" && 
+                    options.event !== "slide slidechange" ) {
+
+                    options.event = "slide";
+                
+                }
+                
                 // when slider changes, update handle tip label.
                 slider.element.on( options.event , function( e, ui ) {
 
