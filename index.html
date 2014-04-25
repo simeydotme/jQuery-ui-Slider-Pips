@@ -641,6 +641,15 @@ $slider.slider("pips", {
     // eg: "label", "pip" , false
     // determines labels for all other items on slider.
 
+    step: 1,
+    // number
+    // eg: 1, 10, 100
+    // wont render pips not in the step; say if we have
+    // a slider with 100 pips and set the step to 10; we
+    // will only see 1,10,20,30,40,50,60,70,80,90,100 even
+    // thought we can select any number between.
+    // stacks with normal slider step.
+
     labels: false,
     // array
     // eg: ["Mon","Tues","Weds","Thurs","Fri","Sat","Sun"]
