@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     $.extend( $.ui.slider.prototype.options, { 
 
-        animate: false ,
+        animate: 200 ,
         stop: function(e,ui) {
             ga("send", "event", "slider", "interact", this.id );
         }
@@ -112,12 +112,11 @@ $(document).ready(function() {
     var $modern = $("#modern").slider({
 
         range: true,
-        min: 0, max: 10000,
-        event: "slidechange"
+        min: 0, max: 10000
 
     })
     .slider("pips", { rest: "label", prefix: "$", suffix: ".00" })
-    .slider("float", { prefix: "$", suffix: ".00", event: "slide" });
+    .slider("float", { prefix: "$", suffix: ".00", event: "slidechange slide" });
 
 
 
