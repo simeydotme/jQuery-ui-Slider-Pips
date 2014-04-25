@@ -25,13 +25,6 @@ $(document).ready(function() {
         $slider3.slider("float");
 
 
-    var $awesome = $("#awesome").slider({ max: 20 , value: 10 });
-        $awesome.slider("pips").slider("float");
-
-    var $awesome2 = $("#awesome2").slider({ max: 100 , value: 50 });
-        $awesome2.slider("pips", { rest: "label" }).slider("float");
-
-
     var $slider5 = $("#slider5").slider({ max: 20 , value: 10 });
         $slider5.slider("pips");
 
@@ -99,6 +92,33 @@ $(document).ready(function() {
         .slider("float", {
             pips: true
         });
+
+
+
+
+
+
+
+
+
+
+    var $awesome = $("#awesome").slider({ max: 20 , value: 10 });
+        $awesome.slider("pips").slider("float");
+
+    var $awesome2 = $("#awesome2").slider({ min: -50, max: 50 , value: 50 });
+        $awesome2.slider("pips", { rest: "label" }).slider("float");
+
+
+    var $modern = $("#modern").slider({
+
+        range: true,
+        min: 0, max: 10000
+
+    })
+    .slider("pips", { rest: "label", prefix: "$", suffix: ".00" })
+    .slider("float", { prefix: "$", suffix: ".00", event: "slide" });
+
+
 
 
 
