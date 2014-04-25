@@ -1,5 +1,8 @@
-/*! jQuery-ui-Slider-Pips - v1.4.0 - 2014-04-12
+/*! jQuery-ui-Slider-Pips - v1.5.0 - 2014-04-25
 * Copyright (c) 2014 ; Licensed  */
+    
+    // PIPS
+
     (function($) {
         
         var extensionMethods = {
@@ -7,6 +10,7 @@
             pips: function( settings ) {
                 
                 var slider = this,
+                    $pip,
                     pips = ( slider.options.max - slider.options.min ) / slider.options.step;
 
                 var options = {
@@ -21,7 +25,7 @@
                     // "label", "pip", false
 
                     labels: false,
-                    // [array]
+                    // [array], false
 
                     prefix: "",
                     // "", string
@@ -30,6 +34,7 @@
                     // "", string
 
                     step: ( pips > 100 ) ? Math.floor( pips * 0.1 ) : 1,
+                    // number
 
                     formatLabel: function(value) {
                         return this.prefix + value + this.suffix;
@@ -46,6 +51,43 @@
                     .addClass("ui-slider-pips")
                     .find(".ui-slider-pip")
                     .remove();
+
+                // when we click on a label, we want to make sure the
+                // slider's handle actually goes to that label!
+                function labelClick() {
+
+                    var val = $(this).data("value"),
+                        $thisSlider = $(slider.element);
+
+                    if( slider.options.range ) {
+
+                        var sliderVals = $thisSlider.slider("values");
+
+                        // if the handles are at the same value
+                        if ( Math.abs( sliderVals[0] - val ) === Math.abs( sliderVals[1] - val ) ) {
+
+                            $thisSlider.slider("values", [ val , val ] );
+
+                        // or if the second handle is closest to our label
+                        } else if ( Math.abs( sliderVals[0] - val ) < Math.abs( sliderVals[1] - val ) ) {
+
+                            $thisSlider.slider("values", [ val , sliderVals[1] ] );
+
+                        // of if the first handle is closest to our label
+                        } else {
+
+                             $thisSlider.slider("values", [ sliderVals[0], val ] );
+
+                        }
+
+                    } else {
+
+                        $thisSlider.slider("value", val );
+
+                    }
+
+                }
+
                  
                 // for every stop in the slider; we create a pip.
                 for( var i=0; i<=pips; i++ ) {
@@ -53,12 +95,13 @@
                     if( 0 === i || pips === i || i % options.step === 0 ) {
 
                         // create the label name, it's either the item in the array, or a number.
-                        var label;
+                        var label,
+                            labelValue = slider.options.min + ( slider.options.step * i );
 
                         if(options.labels) {
                             label = options.labels[i];
                         } else {
-                            label = slider.options.min + ( slider.options.step * i );
+                            label = labelValue;
                         }
 
                         if( typeof(label) === "undefined" ) { 
@@ -72,7 +115,10 @@
                                 "<span class=\"ui-slider-label\">"+ options.formatLabel(label) +"</span>"+
                             "</span>";
                         
-                        var $pip = $(pipHtml);
+                        $pip = 
+                            $(pipHtml)
+                                .data("value", labelValue )
+                                .on("click", labelClick );
 
                         // first pip
                         if( 0 === i ) {
@@ -126,6 +172,14 @@
     
     
 
+
+
+
+
+
+
+
+    // FLOATS
         
     (function($) {
 
@@ -137,7 +191,7 @@
                     $tip,
                     vals = [],
                     val,
-                    pips = ( slider.options.max - slider.options.min ) / slider.options.step;;
+                    pips = ( slider.options.max - slider.options.min ) / slider.options.step;
 
                 var options = {
 
@@ -157,6 +211,7 @@
                     // "", string
 
                     event: ( pips > 100 ) ? "slidechange" : "slidechange slide",
+                    // "slidechange", "slide", "slidechange slide"
 
                     formatLabel: function(value) {
                         return this.prefix + value + this.suffix;
@@ -259,7 +314,14 @@
                 }
 
 
-                    
+                if( options.event !== "slide" && 
+                    options.event !== "slidechange" && 
+                    options.event !== "slide slidechange" ) {
+
+                    options.event = "slide";
+                
+                }
+                
                 // when slider changes, update handle tip label.
                 slider.element.on( options.event , function( e, ui ) {
 
