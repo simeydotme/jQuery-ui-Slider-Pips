@@ -3,21 +3,72 @@
 
 	/* ui slider pips */
 	
-	.ui-slider-horizontal.ui-slider-pips { margin-bottom: 1.4em; }
+	.ui-slider-horizontal.ui-slider-pips { 
+        margin-bottom: 1.4em; 
+    }
+
 	.ui-slider-pips .ui-slider-label,
-	.ui-slider-pips .ui-slider-pip-hide { display: none; }
-	.ui-slider-pips .ui-slider-pip-label .ui-slider-label { display: block; }
+	.ui-slider-pips .ui-slider-pip-hide { 
+        display: none; 
+    }
+	
+    .ui-slider-pips .ui-slider-pip-label .ui-slider-label { 
+        display: block; 
+    }
 	
 	
 	
 	.ui-slider-pips .ui-slider-pip { 
-		width: 2em; height: 1em; line-height: 1em; position: absolute;
-		font-size: 0.8em; color: #999; overflow: visible; text-align: center;
-		top: 20px; left: 20px; margin-left: -1em; cursor: pointer;
-	}
-	.ui-slider-pips .ui-slider-line { background: #999; width: 1px; height: 3px; position: absolute; left: 50%; }
-	.ui-slider-pips .ui-slider-label { position: absolute; top: 5px; left: 50%; margin-left: -1em; width: 2em; }
-	.ui-slider-pip:hover .ui-slider-label { color: black; font-weight: bold; }
+		
+        width: 2em; 
+        height: 1em; 
+        line-height: 1em; 
+        position: absolute;
+		top: 20px; 
+        left: 20px; 
+        margin-left: -1em; 
+
+        font-size: 0.8em; 
+        color: #999; 
+        overflow: visible; 
+        text-align: center;
+		cursor: pointer;
+
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+	
+    }
+
+	.ui-slider-pips .ui-slider-line { 
+
+        background: #999; 
+        position: absolute; 
+        width: 1px; 
+        height: 3px; 
+        left: 50%; 
+
+    }
+	
+    .ui-slider-pips .ui-slider-label { 
+
+        position: absolute; 
+        width: 2em; 
+        top: 5px; 
+        left: 50%; 
+        margin-left: -1em; 
+    
+    }
+
+	.ui-slider-pip:hover .ui-slider-label { 
+
+        color: black; 
+        font-weight: bold; 
+
+    }
 
 
 	/* vertical pips */
