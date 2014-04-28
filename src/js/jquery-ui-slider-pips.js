@@ -108,7 +108,7 @@
                         
                         // hold a span element for the pip
                         var pipHtml = 
-                            "<span class=\"ui-slider-pip ui-slider-pip-"+i+"\">"+
+                            "<span class=\"ui-slider-pip ui-slider-pip-"+labelValue+"\">"+
                                 "<span class=\"ui-slider-line\"></span>"+
                                 "<span class=\"ui-slider-label\">"+ options.formatLabel(label) +"</span>"+
                             "</span>";
