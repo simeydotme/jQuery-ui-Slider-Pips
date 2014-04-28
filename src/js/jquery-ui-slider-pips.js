@@ -86,6 +86,7 @@
 
                 }
 
+                var $collection = $();
                  
                 // for every stop in the slider; we create a pip.
                 for( var i=0; i<=pips; i++ ) {
@@ -151,13 +152,17 @@
                             $pip.css({ bottom: "" + (100/pips)*i + "%"  });
                         
                         }
+
+                        // add this current pip to the collection
+                        $collection = $collection.add( $pip );
                         
-                        // append the span to the slider.
-                        slider.element.append( $pip );
 
                     }
                 
                 }
+
+                // append the collection of pips.
+                slider.element.append( $collection );
                 
             }
             
