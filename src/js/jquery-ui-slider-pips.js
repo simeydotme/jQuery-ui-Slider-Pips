@@ -52,9 +52,9 @@
 
                 // when we click on a label, we want to make sure the
                 // slider's handle actually goes to that label!
-                function labelClick() {
+                function labelClick( label ) {
 
-                    var val = $(this).data("value"),
+                    var val = $(label).data("value"),
                         $thisSlider = $(slider.element);
 
                     if( slider.options.range ) {
@@ -114,10 +114,7 @@
                                 "<span class=\"ui-slider-label\">"+ options.formatLabel(label) +"</span>"+
                             "</span>";
                         
-                        $pip = 
-                            $(pipHtml)
-                                .data("value", labelValue )
-                                .on("click", labelClick );
+                        $pip = $(pipHtml).data("value", labelValue );
 
                         // first pip
                         if( 0 === i ) {
@@ -155,11 +152,18 @@
 
                         // add this current pip to the collection
                         $collection = $collection.add( $pip );
-                        
 
                     }
                 
                 }
+
+                // add events for clicking labels.. basically we dont
+                // want the slider to move unless we click on a pip
+                $collection
+                    .on("mousedown", function(e) {
+                        e.stopPropagation();
+                        labelClick( this );
+                    });
 
                 // append the collection of pips.
                 slider.element.append( $collection );
