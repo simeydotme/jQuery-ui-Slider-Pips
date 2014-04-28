@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.5.1 - 2014-04-25
+/*! jQuery-ui-Slider-Pips - v1.5.2 - 2014-04-28
 * Copyright (c) 2014 ; Licensed  */
     
     // PIPS
@@ -54,9 +54,9 @@
 
                 // when we click on a label, we want to make sure the
                 // slider's handle actually goes to that label!
-                function labelClick() {
+                function labelClick( label ) {
 
-                    var val = $(this).data("value"),
+                    var val = $(label).data("value"),
                         $thisSlider = $(slider.element);
 
                     if( slider.options.range ) {
@@ -88,11 +88,12 @@
 
                 }
 
+                var $collection = $();
                  
                 // for every stop in the slider; we create a pip.
                 for( var i=0; i<=pips; i++ ) {
 
-                    if( 0 === i || pips === i || i % options.step === 0 ) {
+                    if( 0 === i || pips === i || (i * slider.options.step) % options.step === 0 ) {
 
                         // create the label name, it's either the item in the array, or a number.
                         var label,
@@ -110,15 +111,12 @@
                         
                         // hold a span element for the pip
                         var pipHtml = 
-                            "<span class=\"ui-slider-pip ui-slider-pip-"+i+"\">"+
+                            "<span class=\"ui-slider-pip ui-slider-pip-"+labelValue+"\">"+
                                 "<span class=\"ui-slider-line\"></span>"+
                                 "<span class=\"ui-slider-label\">"+ options.formatLabel(label) +"</span>"+
                             "</span>";
                         
-                        $pip = 
-                            $(pipHtml)
-                                .data("value", labelValue )
-                                .on("click", labelClick );
+                        $pip = $(pipHtml).data("value", labelValue );
 
                         // first pip
                         if( 0 === i ) {
@@ -153,13 +151,24 @@
                             $pip.css({ bottom: "" + (100/pips)*i + "%"  });
                         
                         }
-                        
-                        // append the span to the slider.
-                        slider.element.append( $pip );
+
+                        // add this current pip to the collection
+                        $collection = $collection.add( $pip );
 
                     }
                 
                 }
+
+                // add events for clicking labels.. basically we dont
+                // want the slider to move unless we click on a pip
+                $collection
+                    .on("mousedown", function(e) {
+                        e.stopPropagation();
+                        labelClick( this );
+                    });
+
+                // append the collection of pips.
+                slider.element.append( $collection );
                 
             }
             
