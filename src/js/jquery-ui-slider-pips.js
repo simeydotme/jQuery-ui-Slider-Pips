@@ -90,7 +90,7 @@
                 // for every stop in the slider; we create a pip.
                 for( var i=0; i<=pips; i++ ) {
 
-                    if( 0 === i || pips === i || i % options.step === 0 ) {
+                    if( 0 === i || pips === i || (i * slider.options.step) % options.step === 0 ) {
 
                         // create the label name, it's either the item in the array, or a number.
                         var label,
