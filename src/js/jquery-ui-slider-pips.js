@@ -9,7 +9,7 @@
                 
                 var slider = this,
                     $pip,
-                    pips = ( slider.options.max - slider.options.min ) / slider.options.step;
+                    pips = Math.floor(( slider.options.max - slider.options.min ) / slider.options.step);
 
                 var options = {
                     
@@ -87,6 +87,10 @@
                 }
 
                 var $collection = $();
+                
+                if(slider.options.step > slider.options.max) {
+                    pips+=1;
+                }
                  
                 // for every stop in the slider; we create a pip.
                 for( var i=0; i<=pips; i++ ) {
@@ -96,6 +100,10 @@
                         // create the label name, it's either the item in the array, or a number.
                         var label,
                             labelValue = slider.options.min + ( slider.options.step * i );
+                            
+                        if(pips === i && slider.options.step > slider.options.max) {
+                            labelValue = slider.options.max;
+                        }
 
                         if(options.labels) {
                             label = options.labels[i];
