@@ -61,8 +61,18 @@
 
                         var sliderVals = $thisSlider.slider("values");
 
-                        // if the handles are at the same value
-                        if ( Math.abs( sliderVals[0] - val ) === Math.abs( sliderVals[1] - val ) ) {
+                        //if the handles are at the same value:
+                        //if user click righter then set right to val
+                        //if user click lefter then set left to val
+                        if (sliderVals[0] === sliderVals[1]) {
+                            if (val < sliderVals[0]) {
+                                $thisSlider.slider("values", [ val , sliderVals[1] ]);
+                            } else {
+                                $thisSlider.slider("values", [ sliderVals[0] , val ]);
+                            }
+
+                        // if the handles are at the same distance from value - glue them
+                        } else if (Math.abs(sliderVals[0] - val) === Math.abs(sliderVals[1] - val)) {
 
                             $thisSlider.slider("values", [ val , val ] );
 
