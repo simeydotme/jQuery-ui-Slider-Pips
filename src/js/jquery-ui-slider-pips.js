@@ -52,6 +52,8 @@
 
                 // when we click on a label, we want to make sure the
                 // slider's handle actually goes to that label!
+                // - without this code the label is just treated like a part
+                // - of the slider and there's no accuracy in the selected value
                 function labelClick( label ) {
 
                     var val = $(label).data("value"),
@@ -61,27 +63,35 @@
 
                         var sliderVals = $thisSlider.slider("values");
 
-                        //if the handles are at the same value:
-                        //if user click righter - set right to val
-                        //if user click lefter - set left to val
+                        // If the handles are together when we click a label...
                         if (sliderVals[0] === sliderVals[1]) {
+
+                            // ...and the label we clicked on is less, 
+                            // then move first handle to the label...
                             if (val < sliderVals[0]) {
+
                                 $thisSlider.slider("values", [ val , sliderVals[1] ]);
+
+                            // ...otherwise move the second handle to the label
                             } else {
+
                                 $thisSlider.slider("values", [ sliderVals[0] , val ]);
+                            
                             }
 
-                        // if the handles are at the same distance from value - glue them
+                        // if both handles are equidistant from the label we clicked on then
+                        // we bring them together at the label...
                         } else if (Math.abs(sliderVals[0] - val) === Math.abs(sliderVals[1] - val)) {
 
                             $thisSlider.slider("values", [ val , val ] );
 
-                        // or if the second handle is closest to our label
+                        // ...or if the second handle is closest to our label, bring second
+                        // handle to the label...
                         } else if ( Math.abs( sliderVals[0] - val ) < Math.abs( sliderVals[1] - val ) ) {
 
                             $thisSlider.slider("values", [ val , sliderVals[1] ] );
 
-                        // of if the first handle is closest to our label
+                        // ...or if the first handle is closest to our label, bring that handle.
                         } else {
 
                              $thisSlider.slider("values", [ sliderVals[0], val ] );
