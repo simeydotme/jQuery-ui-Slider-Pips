@@ -171,7 +171,7 @@
                             "<span class=\"ui-slider-label\" data-value=\""+labelValue+"\">"+ options.formatLabel(label) +"</span>"+
                         "</span>";
 
-                };
+                }
 
 
 
