@@ -164,13 +164,17 @@
                         "bottom: "+ percent;
 
 
-                    // add this current pip to the collection
-                    collection += 
-                        "<span class=\""+classes+"\" style=\""+css+"\">"+
-                            "<span class=\"ui-slider-line\"></span>"+
-                            "<span class=\"ui-slider-label\" data-value=\""+labelValue+"\">"+ options.formatLabel(label) +"</span>"+
-                        "</span>";
-
+				    var currentLength = slider.options.max - labelValue;
+				    var halfStepLength = (slider.options.step * options.step) / 2;
+				    if ("last" !== which && currentLength < halfStepLength) {
+				    } else {
+    					// add this current pip to the collection
+					    collection +=
+    						"<span class=\"" + classes + "\" style=\"" + css + "\">" +
+						    "<span class=\"ui-slider-line\"></span>" +
+						    "<span class=\"ui-slider-label\" data-value=\"" + labelValue + "\">" + options.formatLabel(label) + "</span>" +
+						    "</span>";
+				    }
                 };
 
 
