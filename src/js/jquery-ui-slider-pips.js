@@ -148,7 +148,7 @@
                         classes += ( false === options.last ) ? " ui-slider-pip-hide" : "";
 
                     // All other Pips
-                    } else {
+                    } else if ((slider.options.max - labelValue) > ((slider.options.step * options.step)/2)) {
 
                         percent = ((100/pips) * which).toFixed(4) + "%";
 
