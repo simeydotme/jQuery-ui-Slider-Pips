@@ -1,8 +1,9 @@
-"use strict";
 
 // PIPS
 
 (function($) {
+
+    "use strict";
 
     var extensionMethods = {
 
@@ -229,6 +230,8 @@
 // FLOATS
 
 (function($) {
+
+    "use strict";
 
     var extensionMethods = {
 
