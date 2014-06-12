@@ -104,11 +104,7 @@ http://opensource.org/licenses/MIT
 
 - **May 2, 2014** - [Merge with fix for seperating handles when pips are clicked](https://github.com/simeydotme/jQuery-ui-Slider-Pips/releases/tag/v1.5.3)
 
-***
-
 - **Apr 29, 2014** - [Fix issue with `step` feature, speed improvements](https://github.com/simeydotme/jQuery-ui-Slider-Pips/releases/tag/v1.5.2)
-
-***
 
 - **Apr 26, 2014** - [Introduce `step` Feature](https://github.com/simeydotme/jQuery-ui-Slider-Pips/releases/tag/v1.5.0)
 
