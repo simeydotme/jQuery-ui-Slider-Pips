@@ -1,4 +1,4 @@
-#jQuery UI Slider Pips (v1.4.0) 
+#jQuery UI Slider Pips (v1.5.5) 
 ####Plugin to add "pips" or "floats" to a JQUI Slider.
     
   
@@ -82,12 +82,13 @@ $('.element').slider('float', {
 All customisation should be done to the CSS file, or in your own CSS.  
 The base styles I've provided do a decent job in the Demo,   
 but they may need tweaking to suit your needs and UI theme.  
+For some inspiration and help with styling, [go to the styling section of the documentation.](http://simeydotme.github.io/jQuery-ui-Slider-Pips/#themeing)
   
 ------------------------------------
 
 ###Compatibility:   
 Modern Browsers, IE7+   
-_(will need some CSS work for IE7 display issues, I'm not interested in doing them :P)_
+_(To really support IE7 you will need to do some CSS changes.)_
 
 ------------------------------------
 
@@ -99,6 +100,19 @@ http://opensource.org/licenses/MIT
 ------------------------------------
 
 ###Changlog:  
+
+
+- **May 2, 2014** - [Merge with fix for seperating handles when pips are clicked](https://github.com/simeydotme/jQuery-ui-Slider-Pips/releases/tag/v1.5.3)
+
+***
+
+- **Apr 29, 2014** - [Fix issue with `step` feature, speed improvements](https://github.com/simeydotme/jQuery-ui-Slider-Pips/releases/tag/v1.5.2)
+
+***
+
+- **Apr 26, 2014** - [Introduce `step` Feature](https://github.com/simeydotme/jQuery-ui-Slider-Pips/releases/tag/v1.5.0)
+
+***
 
 - **Apr 11, 2014** - Update to `1.4`
   - [Merge formatLabel feature from @wilsonhut](https://github.com/simeydotme/jQuery-ui-Slider-Pips/commit/1e98b13ddb2960a07f47ecacd530f6de05329c95)
