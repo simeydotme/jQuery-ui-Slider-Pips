@@ -1,6 +1,6 @@
 {
     "name": "jQuery-ui-Slider-Pips",
-    "version": "1.5.5",
+    "version": "1.5.6",
     "description": "A plugin to add little \"pips\" to the jQuery UI Slider widget",
     "main": [
         "dist/jquery-ui-slider-pips.css",
@@ -33,7 +33,7 @@
         "*.txt",
         "*.html",
         "src",
-        "mode_modules"
+        "node_modules"
     ],
 
     "dependencies": {

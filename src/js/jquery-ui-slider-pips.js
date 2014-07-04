@@ -63,7 +63,7 @@
                 var val = $(label).data("value"),
                     $thisSlider = $(slider.element);
 
-                if ( slider.options.range ) {
+                if ( true === slider.options.range ) {
 
                     var sliderVals = $thisSlider.slider("values");
 

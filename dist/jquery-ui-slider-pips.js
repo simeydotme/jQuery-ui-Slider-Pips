@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.5.5 - 2014-05-14
+/*! jQuery-ui-Slider-Pips - v1.5.6 - 2014-07-04
 * Copyright (c) 2014 Simon Goellner <simey.me@gmail.com>; Licensed  */
 
 // PIPS
@@ -65,7 +65,7 @@
                 var val = $(label).data("value"),
                     $thisSlider = $(slider.element);
 
-                if ( slider.options.range ) {
+                if ( true === slider.options.range ) {
 
                     var sliderVals = $thisSlider.slider("values");
 
