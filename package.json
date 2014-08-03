@@ -33,7 +33,6 @@
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-jscs": "^0.6.2"
+    "grunt-contrib-copy": "~0.4.1"
   }
 }
