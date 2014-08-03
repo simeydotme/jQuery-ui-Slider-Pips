@@ -1,38 +1,39 @@
 {
-    "name": "jQuery-ui-Slider-Pips",
-    "version": "1.5.6",
-    "description": "A plugin to add little \"pips\" to the jQuery UI Slider widget",
-    "main": [
-        "dist/jquery-ui-slider-pips.css",
-        "dist/jquery-ui-slider-pips.min.js"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips.git"
-    },
-    "license": "MIT",
-    "keywords": [
-        "jquery",
-        "ui",
-        "slider",
-        "widget",
-        "pips",
-        "points",
-        "labels",
-        "floats"
-    ],
-    "author": "Simon Goellner <simey.me@gmail.com>",
-    "bugs": {
-        "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips/issues"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.1",
-        "grunt-contrib-uglify": "~0.2.2",
-        "grunt-contrib-jshint": "~0.6.3",
-        "grunt-contrib-concat": "~0.3.0",
-        "grunt-contrib-copy": "~0.4.1"
-    }
+  "name": "jQuery-ui-Slider-Pips",
+  "version": "1.5.7",
+  "description": "A plugin to add little \"pips\" to the jQuery UI Slider widget",
+  "main": [
+    "dist/jquery-ui-slider-pips.css",
+    "dist/jquery-ui-slider-pips.min.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jquery",
+    "ui",
+    "slider",
+    "widget",
+    "pips",
+    "points",
+    "labels",
+    "floats"
+  ],
+  "author": "Simon Goellner <simey.me@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips/issues"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-jscs": "^0.6.2"
+  }
 }
