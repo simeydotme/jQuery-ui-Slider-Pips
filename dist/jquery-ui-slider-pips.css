@@ -320,3 +320,64 @@
         right: auto;
         left: -11px;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* SELECTED STATES */
+    /* Comment out this chuck of code if you don't want to have
+        the new label colours shown */
+
+    .ui-slider-pips .ui-slider-pip-selected-initial,
+    .ui-slider-pips .ui-slider-pip-selected-initial-first,
+    .ui-slider-pips .ui-slider-pip-selected-initial-second {
+        font-weight: bold;        
+        color: #14CA82;
+    }
+
+    .ui-slider-pips .ui-slider-pip-selected-initial {
+
+    }
+
+    .ui-slider-pips .ui-slider-pip-selected-initial-first {
+
+    }
+
+    .ui-slider-pips .ui-slider-pip-selected-initial-second {
+        color: #1897C9;
+    }
+
+
+
+    .ui-slider-pips .ui-slider-pip-selected,
+    .ui-slider-pips .ui-slider-pip-selected-first,
+    .ui-slider-pips .ui-slider-pip-selected-second {
+        font-weight: bold;
+        color: #FF7A00;
+    }
+
+    .ui-slider-pips .ui-slider-pip-selected {
+
+    }
+
+    .ui-slider-pips .ui-slider-pip-selected-first {
+
+    }
+
+    .ui-slider-pips .ui-slider-pip-selected-second {
+        color: #E70081;
+    }
+
+
+
+
