@@ -9,12 +9,14 @@ Use it for creating a nicely-styled slider like shown below:
 
 [Documentation, Demos and Examples here](http://simeydotme.github.io/jQuery-ui-Slider-Pips/)
 
+Install with bower:  
+`bower install jquery-ui-slider-pips --save`
+
 ------------------------------------  
   
 ###Requirements:
   - jQuery (1.9+)
   - jQuery UI (1.10+)
-  - A Reason to use it
   
 ------------------------------------  
   
