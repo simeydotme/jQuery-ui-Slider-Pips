@@ -176,7 +176,7 @@
                 else if ( "last" === which ) { number = pips; }
 
                 // labelValue is the actual value of the pip based on the min/step
-                var labelValue = slider.options.min + ( slider.options.step * number );
+                var labelValue = parseInt(slider.options.min, 10) + ( slider.options.step * number );
 
                 // classLabel replaces any decimals with hyphens
                 var classLabel = labelValue.toString().replace(".","-");
