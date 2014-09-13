@@ -3,14 +3,16 @@
     
   
 This plugin **extends** the [jQuery UI Slider widget](http://jqueryui.com/slider/).  
-Use it for creating a nicely-styled slider like shown below:  
+Use it for creating a nicely-styled slider like shown below  
+[Documentation, Demos and Examples here](http://simeydotme.github.io/jQuery-ui-Slider-Pips/)
 
 ![Default settings for the plugin](http://files.simey.me/pips.jpg "Example of Pips plugin with default options")
 
-[Documentation, Demos and Examples here](http://simeydotme.github.io/jQuery-ui-Slider-Pips/)
 
-Install with bower:  
-`bower install jquery-ui-slider-pips --save`
+If you're using [Bower](http://bower.io) you can install this plugin quickly from the command-line! :)
+```bash
+bower install jquery-ui-slider-pips --save
+```
 
 ------------------------------------  
   
