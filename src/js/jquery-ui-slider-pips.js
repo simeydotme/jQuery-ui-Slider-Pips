@@ -295,7 +295,7 @@
             });
 
 
-            slider.element.on( "slide", function(e,ui) {
+            slider.element.on( "slide.selectPip slidechange.selectPip", function(e,ui) {
 
                 if( ui.values ) {
 

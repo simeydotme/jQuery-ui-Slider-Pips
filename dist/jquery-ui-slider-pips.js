@@ -1,5 +1,5 @@
-/*! jQuery-ui-Slider-Pips - v1.6.1 - 2014-08-22
-* Copyright (c) 2014 Simon Goellner <simey.me@gmail.com>; Licensed  */
+/*! jQuery-ui-Slider-Pips - v1.6.1 - 2014-09-13
+* Copyright (c) 2014 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
 
@@ -297,7 +297,7 @@
             });
 
 
-            slider.element.on( "slide", function(e,ui) {
+            slider.element.on( "slide.selectPip slidechange.selectPip", function(e,ui) {
 
                 if( ui.values ) {
 
