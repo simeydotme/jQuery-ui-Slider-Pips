@@ -1,4 +1,4 @@
-#jQuery UI Slider Pips (v1.6.1) 
+#jQuery UI Slider Pips (v1.6.2) 
 ####Plugin to add "pips" or "floats" to a JQUI Slider.
     
   
@@ -8,11 +8,13 @@ Use it for creating a nicely-styled slider like shown below
 
 ![Default settings for the plugin](http://files.simey.me/pips.jpg "Example of Pips plugin with default options")
 
-
+###Install
 If you're using [Bower](http://bower.io) you can install this plugin quickly from the command-line! :)
 ```bash
 bower install jquery-ui-slider-pips --save
 ```
+
+Otherwise, you may download the files in the `/dist/` folder.
 
 ------------------------------------  
   
