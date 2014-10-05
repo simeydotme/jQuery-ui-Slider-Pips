@@ -19,7 +19,9 @@
         "pips",
         "points",
         "labels",
-        "floats"
+        "floats",
+        "markers",
+        "waypoints"
     ],
     "authors": [
         "Simon Goellner <simey.me@gmail.com>"
