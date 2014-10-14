@@ -1,4 +1,4 @@
-#jQuery UI Slider Pips (v1.6.2) 
+#jQuery UI Slider Pips (v1.7.0) 
 ####Plugin to add "pips" or "floats" to a JQUI Slider.
     
   
