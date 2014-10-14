@@ -121,21 +121,15 @@ UpgradeLog*.XML
 
 
 ############
-## Windows
+## Windows / OSX
 ############
 
-# Windows image file caches
+# Image file caches
 Thumbs.db
+.DS_Store
 
 # Folder config file
 Desktop.ini
-
-
-############
-## Node
-############
-node_modules/
-
 
 
 #############
@@ -169,7 +163,16 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
-# Mac crap
-.DS_Store
 
+
+############
+## Node
+############
+node_modules/
+
+
+############
+## Bower
+############
+bower_components/
 demo.html
