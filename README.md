@@ -7,6 +7,7 @@ Use it for creating a nicely-styled slider like shown below
 [Documentation, Demos and Examples here](http://simeydotme.github.io/jQuery-ui-Slider-Pips/)
 
 ![Default settings for the plugin](http://files.simey.me/pips.jpg "Example of Pips plugin with default options")
+![Example of the slider in use](https://cloud.githubusercontent.com/assets/2817396/3999716/d887ebf2-2952-11e4-9044-0c1b6baba99a.gif "Slider being used by a person with a mouse")
 
 ###Install
 If you're using [Bower](http://bower.io) you can install this plugin quickly from the command-line! :)
