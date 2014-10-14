@@ -53,8 +53,6 @@
                 .find(".ui-slider-pip")
                 .remove();
 
-
-
             // small object with functions for marking pips as selected.
 
             var selectPip = {
@@ -96,9 +94,6 @@
                 }
 
             };
-
-
-
 
             // when we click on a label, we want to make sure the
             // slider's handle actually goes to that label!
@@ -161,7 +156,6 @@
 
             }
 
-
             function createPip( which ) {
 
                 var label,
@@ -178,8 +172,6 @@
 
                 // classLabel replaces any decimals with hyphens
                 var classLabel = labelValue.toString().replace(".","-");
-
-
 
                 // We need to set the human-readable label to either the
                 // corresponding element in the array, or the appropriate
@@ -218,6 +210,7 @@
                     label = labelValue;
 
                 }
+
 
 
                 // First Pip on the Slider
@@ -263,10 +256,6 @@
 
             }
 
-
-
-
-
             // we don't want the step ever to be a decimal.
             slider.options.pipStep = Math.round( slider.options.pipStep );
 
@@ -282,11 +271,6 @@
 
             // create our last pip
             collection += createPip("last");
-
-
-
-
-
 
             // add special classes to the pips that were set initially.
 
@@ -308,7 +292,6 @@
                     collection
                         .replace( oldClass[0] , newClass[0] )
                         .replace( oldClass[1] , newClass[1] );
-                
 
             } else {
 
@@ -321,16 +304,12 @@
 
             }
 
-
             // append the collection of pips.
             slider.element.append( collection );
-
-
 
             slider.element.on( "mouseup", ".ui-slider-label", function() {
                 labelClick( this );
             });
-
 
             slider.element.on( "slide.selectPip slidechange.selectPip", function(e,ui) {
 
@@ -346,9 +325,7 @@
 
             });
 
-
         }
-
 
     };
 
@@ -425,10 +402,6 @@
                 .find(".ui-slider-tip, .ui-slider-tip-label")
                 .remove();
 
-
-
-
-
             function getPipLabels( val, val2 ) {
 
                 // when checking the array we need to divide
@@ -494,8 +467,6 @@
 
                     }
 
-
-
                 }
 
                 else {
@@ -511,10 +482,6 @@
                 return vals;
 
             }
-
-
-
-
 
             // apply handle tip if settings allows.
             if ( options.handle ) {
@@ -551,7 +518,6 @@
 
             }
 
-
             if ( options.pips ) {
 
                 // if this slider also has pip-labels, we"ll make those into tips, too.
@@ -574,10 +540,6 @@
 
             }
 
-
-
-
-
             // check that the event option is actually valid against our
             // own list of the slider's events.
             if ( options.event !== "slide" &&
@@ -597,13 +559,10 @@
 
             });
 
-
         }
-
 
     };
 
     $.extend(true, $.ui.slider.prototype, extensionMethods);
-
 
 })(jQuery);
