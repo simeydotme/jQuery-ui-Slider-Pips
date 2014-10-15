@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.7.0 - 2014-10-14
+/*! jQuery-ui-Slider-Pips - v1.7.0 - 2014-10-15
 * Copyright (c) 2014 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -556,7 +556,7 @@
             // when slider changes, update handle tip label.
             slider.element.on( options.event , function( e, ui ) {
 
-                var val = getPipLabels( ui.value - slider.options.min );
+                var val = getPipLabels( ui.value );
                 $(ui.handle).find(".ui-slider-tip").html( options.formatLabel( val[0] ) );
 
             });

@@ -554,7 +554,7 @@
             // when slider changes, update handle tip label.
             slider.element.on( options.event , function( e, ui ) {
 
-                var val = getPipLabels( ui.value - slider.options.min );
+                var val = getPipLabels( ui.value );
                 $(ui.handle).find(".ui-slider-tip").html( options.formatLabel( val[0] ) );
 
             });
