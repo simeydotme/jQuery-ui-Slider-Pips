@@ -1,0 +1,38 @@
+{
+  "name": "jquery-ui-slider-pips-documentation",
+  "version": "0.1.0",
+  "description": "Documentation for the https://github.com/simeydotme/jQuery-ui-Slider-Pips plugin",
+  "main": "index.html",
+  "homepage": "https://github.com/simeydotme/jQuery-ui-Slider-Pips",
+  "authors": [
+    "simeydotme <simey.me@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simeydotme/jQuery-ui-Slider-Pips.git"
+  },
+  "keywords": [
+    "jquery",
+    "ui",
+    "slider",
+    "pips",
+    "markers",
+    "floats",
+    "plugin"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.4.7",
+    "jquery": "~2.1.1",
+    "jquery-ui": "~1.11.2",
+    "google-code-prettify": "~1.0.3"
+  }
+}
