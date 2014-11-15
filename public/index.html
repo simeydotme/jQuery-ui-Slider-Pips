@@ -20,8 +20,8 @@
         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Averia+Sans+Libre:300,700,300italic,700italic|Lato:400,300,700,900,100,500">
 
         <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
-        <link rel="stylesheet" href="bower_components/google-code-prettify/bin/prettify.min.css" />
+        <link rel="stylesheet" href="../bower_components/foundation/css/foundation.css" />
+        <link rel="stylesheet" href="../bower_components/google-code-prettify/bin/prettify.min.css" />
         <!-- endbower -->
 
         <!-- jquery ui -->
@@ -37,38 +37,17 @@
 
     <body>
 
-        <nav class="sidebar">
-        
-            <ul class="nav">
-            
-                <li class="sidebar__item">Installation</li>
-        
-            </ul>
-        
-        </nav>
-        
-        <header class="simey-header">
-        
-            <h1>
-                <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">Jquery UI Slider Pips</a>
-                <small>Making jQuery Sliders a little bit nicer</small>
-            </h1>
-        
-            <div id="share">
-        
-            </div>
-        
-        </header>
+        <!--(bake /body.html)-->
 
         <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/flick/jquery-ui.min.css">
 
         <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/fastclick/lib/fastclick.js"></script>
-        <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
-        <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
-        <script src="bower_components/foundation/js/foundation.js"></script>
-        <script src="bower_components/google-code-prettify/bin/prettify.min.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+        <script src="../bower_components/jquery.cookie/jquery.cookie.js"></script>
+        <script src="../bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+        <script src="../bower_components/foundation/js/foundation.js"></script>
+        <script src="../bower_components/google-code-prettify/bin/prettify.min.js"></script>
         <!-- endbower -->
         
         <!-- jquery ui -->
@@ -79,18 +58,7 @@
         <!-- slider:js -->
         <script src="dist/jquery-ui-slider-pips.js"></script>
         
-        <script>
-        
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        
-            ga('create', 'UA-15937605-8', 'simeydotme.github.io');
-            ga('require', 'displayfeatures');
-            ga('send', 'pageview');
-        
-        </script>
+        <!--(bake /analytics.html)-->
   
     </body>
 

@@ -180,6 +180,12 @@ node_modules/
 bower_components
 
 
+############
+## Sass
+############
+.sass-cache
+
+
 
 
 

@@ -31,8 +31,11 @@
   ],
   "dependencies": {
     "foundation": "~5.4.7",
-    "jquery": "~2.1.1",
-    "jquery-ui": "~1.11.2",
-    "google-code-prettify": "~1.0.3"
+    "jquery": "~1.11.1",
+    "google-code-prettify": "~1.0.3",
+    "modernizr": "~2.8.3"
+  },
+  "devDependencies": {
+    "jquery-ui": "~1.11.2"
   }
 }

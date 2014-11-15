@@ -1,0 +1,30 @@
+
+$sans: "Lato", "Helvetica Neue", "Roboto", "Arial", sans-serif;
+$alt: "Averia Sans Libre", serif;
+
+body {
+
+    font-family: $sans;
+    font-weight: 300;
+    color: #444;
+    background-color: #ddd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ 
+    font-family: $sans;
+    font-weight: 600;
+
+    small {
+    
+        font-family: $alt;
+        font-weight: 300;
+        display: block;
+        line-height: 1em;
+
+    }
+
+}
+
+
+@import "pretty";
