@@ -1,5 +1,40 @@
 .content {
 
-    padding-left: 20em;
+    padding-left: $sidebarWidth;
+
+    &__main {
+
+        padding: 0 5em;
+
+    }
+
+}
+
+
+.anchor[href^="#"] {
+
+    color: $fcolor;
+    
+    &:before {
+
+        @extend .icon;
+        @extend .icon--anchor;
+
+        position: absolute;
+        font-size: 0.7em;
+        transform: translate(-3em, 0.5em);
+        transition: all 0.2s ease;
+
+        color: $grad1;
+        opacity: 0;
+
+    }
+
+    &:hover:before {
+
+        opacity: 1;
+        transform: translate(-2em, 0.5em);
+
+    }
 
 }

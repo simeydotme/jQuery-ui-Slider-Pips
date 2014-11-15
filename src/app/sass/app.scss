@@ -1,5 +1,6 @@
 
 @import "vars";
+@import "icons";
 
 body {
 
@@ -13,6 +14,7 @@ h1, h2, h3, h4, h5, h6 {
  
     font-family: $sans;
     font-weight: 600;
+    color: darken($fcolor,20%);
 
     small {
     
@@ -20,7 +22,26 @@ h1, h2, h3, h4, h5, h6 {
         font-weight: 300;
         display: block;
         line-height: 1em;
+        
+        color: lighten($fcolor ,10%);
 
+    }
+
+}
+
+h1 {
+    
+    font-weight: 100;
+
+}
+
+a {
+
+    color: $grad1;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $link;
     }
 
 }
@@ -29,3 +50,4 @@ h1, h2, h3, h4, h5, h6 {
 @import "pretty";
 @import "sidebar";
 @import "content";
+@import "header";

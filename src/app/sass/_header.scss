@@ -1,0 +1,28 @@
+
+.header {
+    
+    margin: 4em 0;
+    padding: 4em 0;
+    text-align: center;
+    
+    color: $bcolor;
+    background: linear-gradient(148deg, $grad1 10%, $grad2 90%);
+    box-shadow: inset 0 0 100px -20px rgba(192, 72, 100, 0.4);
+    text-shadow: 0 1px 1px rgba(192, 72, 100, 0.7);
+
+    border-radius: $radius;
+
+    a {
+
+        color: white;
+
+    }
+
+    small {
+
+        color: white;
+        opacity: 0.8;
+
+    }
+
+}
