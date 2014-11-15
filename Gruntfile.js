@@ -35,13 +35,6 @@ module.exports = function(grunt) {
         },
 
 
-        uglify: {
-            options: {
-                banner: "<%= banner %>"
-            }
-        },
-
-
         jshint: {
             jshintrc: ".jshintrc",
             gruntfile: {
@@ -56,6 +49,18 @@ module.exports = function(grunt) {
         copy: {
             options: {
                 banner: "<%= banner %>"
+            },
+            fonts: {
+                src: "src/app/fonts/*",
+                dest: "dist/fonts/",
+                expand: true,
+                flatten: true
+            },
+            js: {
+                src: "src/app/js/*",
+                dest: "dist/js/",
+                expand: true,
+                flatten: true
             }
         },
 
@@ -91,6 +96,10 @@ module.exports = function(grunt) {
             sass: {
                 files: ["src/**/*.scss"],
                 tasks: ["sass"]
+            },
+            js: {
+                files: ["src/**/*.js"],
+                tasks: ["copy:js"]
             }
         }
 
@@ -114,7 +123,7 @@ module.exports = function(grunt) {
 
     // Tasks.
 
-    grunt.registerTask("build", ["jshint", "bake", "wiredep", "sass"]);
+    grunt.registerTask("build", ["jshint", "bake", "wiredep", "copy", "sass"]);
     
     grunt.registerTask("default", ["build", "watch"]);
 
