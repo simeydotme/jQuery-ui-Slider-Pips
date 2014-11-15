@@ -108,7 +108,6 @@ module.exports = function(grunt) {
     // These plugins provide necessary tasks.
 
     grunt.loadNpmTasks("grunt-bake");
-    grunt.loadNpmTasks("grunt-uncss");
     grunt.loadNpmTasks("grunt-usemin");
     grunt.loadNpmTasks("grunt-wiredep");
     grunt.loadNpmTasks("grunt-autoprefixer");
@@ -123,7 +122,7 @@ module.exports = function(grunt) {
 
     // Tasks.
 
-    grunt.registerTask("build", ["jshint", "bake", "wiredep", "sass", "uncss"]);
+    grunt.registerTask("build", ["jshint", "bake", "wiredep", "sass"]);
     
     grunt.registerTask("default", ["build", "watch"]);
 
