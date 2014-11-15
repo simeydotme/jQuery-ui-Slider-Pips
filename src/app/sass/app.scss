@@ -1,13 +1,12 @@
 
-$sans: "Lato", "Helvetica Neue", "Roboto", "Arial", sans-serif;
-$alt: "Averia Sans Libre", serif;
+@import "vars";
 
 body {
 
     font-family: $sans;
     font-weight: 300;
-    color: #444;
-    background-color: #ddd;
+    color: $fcolor;
+    background-color: $bcolor;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,3 +27,5 @@ h1, h2, h3, h4, h5, h6 {
 
 
 @import "pretty";
+@import "sidebar";
+@import "content";

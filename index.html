@@ -28,7 +28,7 @@
         <link rel="stylesheet" href="bower_components/jquery-ui/themes/flick/theme.css" />
         
         <!-- app:css -->
-        <link rel="stylesheet" href="public/dist/css/app.css" />
+        <link rel="stylesheet" href="dist/css/app.css" />
 
         <!-- slider:css -->
         <link rel="stylesheet" href="dist/jquery-ui-slider-pips.css" />
@@ -37,28 +37,35 @@
 
     <body>
 
-        <nav class="sidebar">
         
-            <ul class="nav">
+        <nav class="sidebar">
             
-                <li class="sidebar__item">Installation</li>
+            <h2 class="sidebar__title">Navigation</h2>
+        
+            <ul class="sidebar__nav">
+            
+                <li class="sidebar__item"><a href="#installation">Installation</a></li>
         
             </ul>
         
         </nav>
+        <section class="content">
         
-        <header class="simey-header">
+            <header class="simey-header">
+            
+                <h1>
+                    <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">Jquery UI Slider Pips</a>
+                    <small>Making jQuery Sliders a little bit nicer</small>
+                </h1>
+            
+                <div id="share">
+            
+                </div>
+            
+            </header>
+            <h2>Getting Started</h2>
         
-            <h1>
-                <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">Jquery UI Slider Pips</a>
-                <small>Making jQuery Sliders a little bit nicer</small>
-            </h1>
-        
-            <div id="share">
-        
-            </div>
-        
-        </header>
+        </section>
 
         <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/flick/jquery-ui.min.css">
 
@@ -74,6 +81,7 @@
         <!-- jquery ui -->
         <script src="bower_components/jquery-ui/ui/core.js"></script>
         <script src="bower_components/jquery-ui/ui/widget.js"></script>
+        <script src="bower_components/jquery-ui/ui/mouse.js"></script>
         <script src="bower_components/jquery-ui/ui/slider.js"></script>
 
         <!-- slider:js -->

@@ -1,0 +1,75 @@
+
+$listTransition: all 0.2s ease;
+
+.sidebar {
+    
+    position: fixed;
+    width: $sidebarWidth;
+    padding: 1em 1.5em;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: $fcolor;
+    color: $bcolor;
+    overflow: auto;
+
+    
+    a {
+
+        color: lighten($fcolor, 50%);
+        transition: $listTransition;
+
+        &:hover {
+
+            color: lighten($fcolor, 80%);
+
+        }
+
+    }
+
+
+
+
+
+    &__title {
+    
+        font-size: 1.4em;
+        color: $bcolor;
+
+    }
+
+    &__nav {
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    &__item {
+        
+        padding: 0.1em 0.3em;
+
+        &:before {
+
+            content: "\2023";
+            padding-right: 0.8em;
+            position: relative;
+            left: -15px;
+            opacity: 0;
+
+            transition: $listTransition;
+            
+        }
+
+        &:hover:before,
+        &.active {
+
+            left: 0;
+            opacity: 1;
+
+        }
+
+    }
+
+}

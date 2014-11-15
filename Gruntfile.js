@@ -18,11 +18,11 @@ module.exports = function(grunt) {
 
         bake: {
             options: {
-                basePath: "public/app/views"
+                basePath: "src/app/views"
             },
             build: {
                 files: {
-                    "index.html": "public/index.html"
+                    "index.html": "src/index.html"
                 }
             }
         },
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                 src: "Gruntfile.js"
             },
             srcfiles: {
-                src: ["public/app/**/*.js"]
+                src: ["src/**/*.js"]
             }
         },
 
@@ -66,15 +66,7 @@ module.exports = function(grunt) {
                     lineNumbers: true
                 },
                 files: {
-                    "public/dist/css/app.css": "public/app/sass/app.scss"
-                }
-            }
-        },
-
-        uncss: {
-            dist: {
-                files: {
-                    "public/dist/css/documentation.css": ["index.html"]
+                    "dist/css/app.css": "src/app/sass/app.scss"
                 }
             }
         },
@@ -84,7 +76,7 @@ module.exports = function(grunt) {
                 exclude: [ "/modernizr/", "/jquery-ui/" ]
             },
             task: {
-                src: [ "**/*.html" ]
+                src: [ "index.html" ]
             }
         },
 
@@ -93,11 +85,11 @@ module.exports = function(grunt) {
                 files: ["Gruntfile.js"]
             },
             render: {
-                files: ["public/**/*.html"],
+                files: ["src/**/*.html"],
                 tasks: ["bake", "wiredep"]
             },
             sass: {
-                files: ["**/*.scss"],
+                files: ["src/**/*.scss"],
                 tasks: ["sass"]
             }
         }
