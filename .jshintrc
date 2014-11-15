@@ -14,6 +14,7 @@
     "unused": true,
     "browser": true,
     "globals": {
-        "jQuery": true
+        "jQuery": true,
+        "prettyPrint": true
     }
 }
