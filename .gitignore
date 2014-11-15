@@ -131,12 +131,6 @@ Thumbs.db
 Desktop.ini
 
 
-############
-## Node
-############
-node_modules/
-
-
 
 #############
 ## Python
@@ -171,5 +165,22 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+
+
+############
+## Node
+############
+node_modules/
+
+
+############
+## Bower
+############
+bower_components
+
+
+
+
 
 demo.html
