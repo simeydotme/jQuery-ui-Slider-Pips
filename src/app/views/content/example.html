@@ -1,0 +1,48 @@
+<section class="block">
+
+    <h2>
+        <a href="#example" id="example" class="anchor">
+            Example
+        </a>
+    </h2>
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#tabs1-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#tabs1-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#tabs1-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="tabs1-result">
+
+            <div class="row">
+                <div class="large-6 small-12 columns">
+                    <p>go from this...</p>
+                    <div id="example-slider"></div>
+                </div>
+                <div class="large-6 small-12 columns">
+                    <p>to this!</p>
+                    <div id="example-slider-pips"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content" id="tabs1-html">
+
+            <pre data-lang="html">
+                &lt;div class="slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="tabs1-js">
+            <pre data-lang="js">
+                $(".slider").slider().slider("pips");
+            </pre>
+        </div>
+
+    </div>
+
+</section>

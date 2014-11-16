@@ -1,0 +1,21 @@
+.block {
+
+    padding: 4em 1em;
+
+    &:nth-child(even) {
+        background: white;
+    }
+
+    &:nth-child(1) {
+        padding-top: 0;
+    }
+
+    @media #{$small-up} { 
+        padding: 4em 3em;
+    }
+
+    @media #{$large-up} { 
+        padding: 4em 5em;
+    }
+
+}

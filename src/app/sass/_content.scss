@@ -1,10 +1,27 @@
 .content {
 
-    padding-left: $sidebarWidth;
+    padding-left: 0;
+    padding-bottom: 12em;
+    transition: $sidebarTransition;
+
+    @media #{$medium-up} { 
+        padding-left: $sidebarWidthSmall;
+    }
+
+    @media #{$large-up} { 
+        padding-left: $sidebarWidthLarge; 
+    }
 
     &__main {
 
-        padding: 0 5em;
+        h2 {
+            font-size: 2em; 
+        }
+
+        h3 { 
+            font-size: 1.5em;
+            color: lighten( $fcolor, 10% );
+        }
 
     }
 
@@ -25,15 +42,54 @@
         transform: translate(-3em, 0.5em);
         transition: all 0.2s ease;
 
-        color: $grad1;
+        color: $headerstart;
         opacity: 0;
 
     }
 
-    &:hover:before {
+    &:hover,
+    &:focus,
+    &:target {
+        
+        outline: none;
 
-        opacity: 1;
-        transform: translate(-2em, 0.5em);
+        &:before {
+
+            @media #{$medium-up} { 
+                opacity: 1;
+                transform: translate(-1.5em, 0.5em);
+            }
+
+        }
+
+    }
+
+}
+
+
+.uppercase {
+    
+    text-transform: uppercase;
+
+}
+
+
+
+
+
+
+.install-columns {
+    
+    .column,
+    .columns {
+
+        @media screen and (max-width: 1100px) { 
+            
+            float: none;
+            width: 100%;
+            position: static;
+
+        }
 
     }
 

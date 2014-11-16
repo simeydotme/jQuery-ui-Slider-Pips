@@ -51,6 +51,16 @@
 .icon--menu {
     &:before { content: "\e120"; }
 }
+.icon--download {
+    &:before { content: "\e122"; }
+}
+
 .icon--anchor {
     &:before { content: "\e600"; }
+}
+.icon--question {
+    &:before { content: "\e601"; }
+}
+.icon--eye {
+    &:before { content: "\e602"; }
 }

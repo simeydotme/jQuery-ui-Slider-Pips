@@ -1,0 +1,90 @@
+
+.tabs dd, 
+.tabs .tab-title {
+
+    width: 25%;
+
+    @media screen and (min-width: 750px) { 
+        
+        width: auto;
+
+    }
+    
+    > a {
+
+        font-family: inherit;
+        padding: 0.3em 0;
+        text-align: center;
+        background: transparent;
+
+        @media screen and (min-width: 750px) { 
+            
+            padding: 0.4em 2em;
+
+        }
+    
+    }
+
+    &.active > a {
+
+        background: $fcolor;
+        color: $bcolor;
+
+    }
+
+}
+
+.tabs {
+
+    padding: 0 1em;
+    margin: 2em -1em 0;
+
+    border-bottom: 1px solid;
+
+    &.code {
+
+        font-family: $code;
+
+    }
+
+    .icon {
+
+        position: relative;
+        top: 2px;
+
+        font-size: 1.1em;
+
+    }
+
+}
+
+.tabs-content {
+
+    margin-bottom: 2em;
+
+    pre.prettyprint {
+
+        margin: 0;
+        padding: 2em 2em;
+
+    }
+
+    .content {
+
+    }
+
+    [id$="-result"] {
+        
+        padding: 2em 0 0;
+
+    }
+
+    [id$="-html"],
+    [id$="-css"],
+    [id$="-js"] {
+
+        padding: 0;
+
+    }
+
+}

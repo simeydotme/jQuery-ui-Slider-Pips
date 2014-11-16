@@ -17,10 +17,10 @@
         <script src="bower_components/modernizr/modernizr.js"></script>
         
         <!-- fonts -->
-        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Averia+Sans+Libre:300,700,300italic,700italic|Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800">
+        <link rel="stylesheet" type="text/css" 
+            href="//fonts.googleapis.com/css?Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800">
 
         <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
         <link rel="stylesheet" href="bower_components/google-code-prettify/bin/prettify.min.css" />
         <!-- endbower -->
 
@@ -54,34 +54,190 @@
             
             <section class="content__main">
         
-                <header class="header">
+                <section class="block">
                 
-                    <h1 class="header__title">
-                        <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">Jquery UI Slider Pips</a>
-                        <small>Making jQuery Sliders a little bit nicer</small>
-                    </h1>
+                    <header class="header">
                 
-                    <div id="share">
+                        <h1 class="header__title">
+                            <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">Jquery UI Slider Pips</a>
+                            <small>Making jQuery Sliders a little bit nicer</small>
+                        </h1>
+                
+                        <div id="share">
+                
+                        </div>
+                
+                    </header>
+                
+                </section>
+        
+                <section class="block">
+                
+                    <h2>
+                        <a href="#example" id="example" class="anchor">
+                            Example
+                        </a>
+                    </h2>
+                
+                    <dl class="tabs code" data-tab>
+                        <dd class="active"><a href="#tabs1-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                        <dd><a href="#tabs1-html" title="html">&lt;/&gt;</a></dd>
+                        <dd><a href="#tabs1-js" title="jquery">($)</a></dd>
+                    </dl>
+                
+                    <div class="tabs-content">
+                
+                        <div class="content active" id="tabs1-result">
+                
+                            <div class="row">
+                                <div class="large-6 small-12 columns">
+                                    <p>go from this...</p>
+                                    <div id="example-slider"></div>
+                                </div>
+                                <div class="large-6 small-12 columns">
+                                    <p>to this!</p>
+                                    <div id="example-slider-pips"></div>
+                                </div>
+                            </div>
+                
+                        </div>
+                
+                        <div class="content" id="tabs1-html">
+                
+                            <pre data-lang="html">
+                                &lt;div class="slider"&gt;&lt;/div&gt;
+                            </pre>
+                
+                        </div>
+                
+                        <div class="content" id="tabs1-js">
+                            <pre data-lang="js">
+                                $(".slider").slider().slider("pips");
+                            </pre>
+                        </div>
                 
                     </div>
                 
-                </header>
-                <h2>
-                    <a href="#getting-started" class="anchor">
-                        Getting Started
-                    </a>
-                </h2>
+                </section>
+                <section class="block">
                 
-                <p>First off you're going to need to <strong>get the dependencies</strong>. <br>
-                    This plugin requires <a href="http://jquery.com">jQuery</a> and <a href="http://jqueryui.com">jQuery UI</a>
-                    to function correctly.</p>
+                    <h2>
+                        <a href="#getting-started" id="getting-started" class="anchor">
+                            Getting Started
+                        </a>
+                    </h2>
                 
-                <pre>
-                code
-                code
-                    code la
-                        oo
-                </pre>
+                    <p>First off we're going to need to <strong>load the dependencies</strong>. <br>
+                        This plugin requires <a href="http://jquery.com">jQuery</a> and <a href="http://jqueryui.com">jQuery UI</a>
+                        to function correctly.</p>
+                
+                    <pre data-lang="html">
+                        // include the jQuery and jQuery UI scripts
+                        &lt;script src="https://code.jquery.com/jquery-2.1.1.js"&gt;&lt;/script&gt;
+                        &lt;script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"&gt;&lt;/script&gt;
+                
+                        // plus a jQuery UI theme, here I use "flick"
+                        &lt;link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css"&gt;
+                    </pre>
+                
+                    <p><span class="round label tip"></span>If no other parts of <strong>jQuery UI</strong> are needed; then it is strongly recommended 
+                        <a href="http://jqueryui.com/download/#!version=1.11.2&amp;components=1110000000000000010000000000000000000&amp;zThemeParams=5d00000100ea05000000000000003d8888d844329a8dfe02723de3e5701258a13d5ba490adca99e4a02bf259c3083bccd292fbc7a815b30f470ff7ff66fa62b6dd388eb0ff95f693739fdbaa8434129ba964c9c618330e8d3698d18f5069869197a7edb7ba209c2ccade9dea94baa4a782a787eace2a1b08565447bae4412db4abad045349d9cb0fc7060aedefefdaac07401dda39c726dc250e5f78622446cf4a39bbeea63dd307c06c2362e8e26d7bb280690729a1abebd5f1738f5aac6321c77a387f1304195de162fb7581e71ef6c674d6acb08b15a16869876ad2d5896f919473079348d741e4a00bf904bf5f866cd04abc216db3dc5b4a189effddc2c54c7cc163c95759731e8bd7034b2c13913207f31fa0cafaef7f5b646c233a4ef7d962df2eb186164536a2904819f0908c694d0ffab5bcdbd9eced8cb0e7f4b5c20932dd38cad03620e65c24079c291dd3456ff0d5db07ab9a2cec4c84a44acc6fd22753c503e28ec1fa083aea2d17f17ab2a83605505738f671c83f0f8c5b20b273e0d15def5a631d504d63cfe7aa2ab9c5809c740725e4a63f63aa447bd7a1f50c17c65adcbf80bac308cf01348b1d08a8610c9375d7579e5297ccba18ed2be1ea3d39fe5de771" title="premade custom build link">
+                        to download a custom build with only the slider included.</a></p>
+                
+                </section>
+                <section class="block">
+                
+                    <h2>
+                        <a href="#installation" id="installation" class="anchor">
+                            Installation
+                        </a>
+                    </h2>
+                    
+                    <p>There's 2 options, either <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips/releases/latest">get 
+                        the latest files from Github</a>, or it's possible to <a href="http://bower.io/search/?q=pips">use Bower to manage dependencies</a>.</p>
+                
+                    <div class="row install-columns">
+                
+                        <div class="large-6 xsmall-12 columns">
+                
+                            <h3>Github</h3>
+                
+                            <a class="button" href="https://raw.githubusercontent.com/simeydotme/jQuery-ui-Slider-Pips/master/dist/jquery-ui-slider-pips.js">
+                                JS <i class="icon right icon--download"></i>
+                            </a>
+                
+                            <a class="button" href="https://raw.githubusercontent.com/simeydotme/jQuery-ui-Slider-Pips/master/dist/jquery-ui-slider-pips.css">
+                                CSS <i class="icon right icon--download"></i>
+                            </a>
+                
+                            <p>right-click, save as</p>
+                
+                        </div>
+                
+                        <div class="large-6 xsmall-12 columns">
+                
+                            <h3>Bower</h3>
+                            <pre class="inline" data-lang="bash">$ bower install jquery-ui-slider-pips --save</pre>
+                
+                            <p>Bower will install dependencies, too, so no need to download jQuery as above.</p>
+                        
+                        </div>
+                
+                    </div>
+                
+                </section>
+        
+        
+                <section class="block">
+                    
+                    <h2>
+                        <a href="#examples" id="examples" class="anchor">
+                            Examples
+                        </a>
+                    </h2>
+                
+                    
+                    <h3>
+                        <a href="#template" id="template" class="anchor">
+                            Basic Usage
+                        </a>
+                    </h3>
+                    
+                    <p>The most basic usage is to call the <code>pips</code> method on an initialised slider. This
+                        will add the markers and add a value to the beginning and end of the slider</p>
+                        
+                    
+                    <dl class="tabs code" data-tab>
+                        <dd><a href="#basic-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                        <dd><a href="#basic-html" title="html">&lt;/&gt;</a></dd>
+                        <dd class="active"><a href="#basic-js" title="jquery">($)</a></dd>
+                    </dl>
+                    
+                    <div class="tabs-content">
+                    
+                        <div class="content" id="basic-result">
+                    
+                            <div id="basic-pips"></div>
+                    
+                        </div>
+                    
+                        <div class="content" id="basic-html">
+                    
+                            <pre data-lang="html">
+                                &lt;div class="slider"&gt;&lt;/div&gt;
+                            </pre>
+                    
+                        </div>
+                    
+                        <div class="content active" id="basic-js">
+                            <pre data-lang="js">
+                                $(".slider").slider().slider("pips");
+                            </pre>
+                        </div>
+                    
+                    </div>
+                
+                </section>
             
             </section>
         
@@ -108,6 +264,7 @@
         <script src="dist/jquery-ui-slider-pips.js"></script>
 
         <!-- app:js -->
+        <script src="dist/js/examples.js"></script>
         <script src="dist/js/prettyPre.js"></script>
         <script src="dist/js/app.js"></script>
         

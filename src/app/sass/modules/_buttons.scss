@@ -1,0 +1,16 @@
+.button {
+
+    .icon {
+        
+        display: inline-block;
+        
+        &.left {
+            margin-right: 1em;
+        }
+        &.right {
+            margin-left: 1em;
+        }
+
+    }
+
+}

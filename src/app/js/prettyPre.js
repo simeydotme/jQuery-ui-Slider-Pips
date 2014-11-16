@@ -1,6 +1,8 @@
 
 (function($) {
 
+    "use strict";
+
     $(function() {
 
         $.fn.prettyPre = function( obj ) {
@@ -27,7 +29,11 @@
                 }
 
                 remove = new RegExp("\n" + lead, "g");
-                html = html.replace(remove, "\n");
+                
+                html = 
+                    html
+                        .replace(remove, "\n")
+                        .replace(/\s+$/g, "");
 
                 $this.html( html );
 
@@ -37,7 +43,14 @@
 
         $.fn.pretty = function() {
 
-            $(this).addClass("prettyprint");
+            $(this).each(function() {
+                
+                $(this)
+                    .addClass("prettyprint")
+                    .addClass( "lang-" + $(this).data("lang") );
+
+            });
+
             prettyPrint();
 
             return $(this);

@@ -7,13 +7,13 @@
 /* SPAN elements with the classes below are added by prettyprint. */
 /* plain text */
 .pln {
-  color: #cccccc;
+  color: #E0E0E0;
 }
 
 @media screen {
   /* string content */
   .str {
-    color: #99cc99;
+    color: #81E77E;
   }
 
   /* a keyword */
@@ -125,12 +125,14 @@
 }
 /* Style */
 pre.prettyprint {
-  background: #495563;
-  font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+
+  background: $fcolor;
+  font-family: $code;
   font-size: 12px;
   line-height: 1.5;
   border: 1px solid #cccccc;
   padding: 10px;
+
 }
 
 /* Specify class=linenums on a pre to get line numbering */
@@ -167,12 +169,29 @@ li.L9 {
 // Code examples
 // ---------------------------------------------------------------------------------------
 pre.prettyprint {
-  padding: 20px;
-  margin-top: 0;
-  margin-bottom: 2.5em;
+
+  padding: 1.2em 2em;
+  margin: 0 0.2em 2em;
+
+  @media #{$small-up} { 
+
+    padding: 1.8em 6.7em;
+    margin: 0 -6.7em 2em;
+
+  }
+
+  .row > .columns > &,
+  .row > .column > & {
+
+    margin: 0 0.2em 2em;
+    padding: 1.8em 2em;
+
+  }
+
+
   border: 0px;
   white-space: pre;
-  border-radius: 4px;
+  overflow-x: auto;
 
   ol {
     padding-left: 30px;

@@ -4,15 +4,34 @@ $listTransition: all 0.2s ease;
 .sidebar {
     
     position: fixed;
-    width: $sidebarWidth;
+    width: 100%;
+
+    font-size: 0.8em;
     padding: 1em 1.5em;
+
     top: 0;
     left: 0;
     height: 100%;
     background: $fcolor;
     color: $bcolor;
     overflow: auto;
+    
+    transform: translate( -100% , 0 );
+    transition: $sidebarTransition;
 
+    @media #{$medium-up} { 
+
+        transform: translate( 0 );
+        width: $sidebarWidthSmall;
+
+    }
+
+    @media #{$large-up} { 
+
+        width: $sidebarWidthLarge;
+        font-size: 1em;
+
+    }
     
     a {
         
@@ -28,7 +47,11 @@ $listTransition: all 0.2s ease;
 
     }
 
+    ul {
 
+        font-size: 1em;
+
+    }
 
 
 

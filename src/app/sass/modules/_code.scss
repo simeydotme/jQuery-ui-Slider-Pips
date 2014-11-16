@@ -1,0 +1,13 @@
+code {
+
+    font-family: $code;
+
+    color: $codecolor;
+    background-color: $codebg;    
+    border-color: darken( $codebg, 5% );
+
+    border-radius: 2px;
+
+    padding: 0.05em 0.6em 0.2em; 
+
+}

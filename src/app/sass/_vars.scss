@@ -1,14 +1,48 @@
 
+// foundation settings
+
+@import "../../../bower_components/foundation/scss/foundation/functions";
+
+$include-xl-html-grid-classes: true;
+$screen: "only screen";
+
+$xsmall-range: (0px, 500px) !default;
+$small-range: (501px, 700px) !default;
+$medium-range: (701px, 900px) !default;
+$large-range: (901px, 1100px) !default;
+$xlarge-range: (1101px, 1300px) !default;
+$xxlarge-range: (1301px, 99999999px) !default;
+
+$xsmall-up: $screen !default;
+$xsmall-only: "#{$screen} and (max-width: #{upper-bound($xsmall-range)})" !default;
+
+$small-up: "#{$screen} and (min-width:#{lower-bound($small-range)})" !default;
+$small-only: "#{$screen} and (min-width:#{lower-bound($small-range)}) and (max-width:#{upper-bound($small-range)})" !default;
+
+
+
+
+// app settings
+
 $sans: "Open Sans", "Helvetica Neue", "Roboto", "Arial", sans-serif;
-$alt: "Averia Sans Libre", serif;
+$alt: "Open Sans", "Helvetica Neue", "Roboto", "Arial", sans-serif;
+$code: "Menlo", "Bitstream Vera Sans Mono", "DejaVu Sans Mono", "Monaco", "Consolas", monospace;
 
 $fcolor: #434d5a;
-$bcolor: #eee;
+$bcolor: #FFFAF7;
 $link: #00C7D7;
 
-$grad1: #DE6262;
-$grad2: #FFB88C;
+$headerstart: #DE6262;
+$headerend: #FFB88C;
+
+$resultstart: #ECE9E6;
+$resultend: #ECF7FF;
+
+$codecolor: #7425ce;
+$codebg: #faf7ff;
 
 $radius: 4px;
 
-$sidebarWidth: 18em;
+$sidebarWidthLarge: 280px;
+$sidebarWidthSmall: 220px;
+$sidebarTransition: transform 0.3s ease, width 0.3s ease, padding 0.3s ease;

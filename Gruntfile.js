@@ -67,8 +67,8 @@ module.exports = function(grunt) {
         sass: {
             all: {
                 options: {
-                    style: "expanded",
-                    lineNumbers: true
+                    style: "nested",
+                    lineNumbers: false
                 },
                 files: {
                     "dist/css/app.css": "src/app/sass/app.scss"
@@ -78,10 +78,10 @@ module.exports = function(grunt) {
 
         wiredep: {
             options: {
-                exclude: [ "/modernizr/", "/jquery-ui/" ]
+                exclude: [ "/modernizr/", "/jquery-ui/", "bower_components/foundation/css/foundation.css" ]
             },
             task: {
-                src: [ "index.html" ]
+                src: [ "src/index.html", "index.html" ]
             }
         },
 

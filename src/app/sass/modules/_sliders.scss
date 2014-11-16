@@ -1,0 +1,36 @@
+
+$w: 1em;
+$h: 1.4em;
+
+.ui-slider {
+
+    &.ui-slider-horizontal {
+
+        .ui-slider-handle {
+
+            width: $w;
+            height: $h;
+            margin-left: -($w/2);
+            top: -0.4em;
+
+        }
+ 
+    }
+
+
+    &.ui-slider-vertical {
+
+        .ui-slider-handle {
+
+            width: $h;
+            height: $w;
+            margin-bottom: -($w/2);
+            left: -0.4em;
+
+        }
+
+        
+
+    }
+
+}

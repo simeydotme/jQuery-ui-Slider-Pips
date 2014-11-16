@@ -1,0 +1,18 @@
+.label {
+
+    &.tip {
+
+        @extend .icon;
+        
+        position: absolute;
+        transform: translate(-3.5em, 2px);
+
+        &:before {
+            
+            @extend .icon--question;
+
+        }
+
+    }
+
+}

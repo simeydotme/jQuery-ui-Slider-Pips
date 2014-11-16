@@ -1,5 +1,10 @@
 
 @import "vars";
+
+// import foundation
+@import "../../../bower_components/foundation/scss/normalize";
+@import "../../../bower_components/foundation/scss/foundation";
+
 @import "icons";
 
 body {
@@ -7,7 +12,7 @@ body {
     font-family: $sans;
     font-weight: 300;
     color: $fcolor;
-    background-color: $bcolor;
+    background-color: #FFFAF4;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,7 +42,7 @@ h1 {
 
 a {
 
-    color: $grad1;
+    color: $headerstart;
     transition: color 0.2s ease;
 
     &:hover {
@@ -51,3 +56,12 @@ a {
 @import "sidebar";
 @import "content";
 @import "header";
+
+@import "modules/sliders";
+
+@import "modules/blocks";
+@import "modules/rows";
+@import "modules/tabs";
+@import "modules/buttons";
+@import "modules/labels";
+@import "modules/code";
