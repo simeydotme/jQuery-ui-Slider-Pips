@@ -10,15 +10,20 @@
 
         $("#example-slider-pips")
             .slider({ max: 20, value: 3 })
-            .slider("pips");
+            .slider("pips")
+            .slider("float");
 
 
 
 
 
-        $("#basic-pips")
+        $("#example-pips")
             .slider({ max: 50, value: 10 })
             .slider("pips");
+
+        $("#example-float")
+            .slider({ max: 50, value: 10 })
+            .slider("float");
 
     });
 

@@ -18,7 +18,7 @@
         
         <!-- fonts -->
         <link rel="stylesheet" type="text/css" 
-            href="//fonts.googleapis.com/css?Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800">
+            href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800|Handlee">
 
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/google-code-prettify/bin/prettify.min.css" />
@@ -59,15 +59,26 @@
                     <header class="header">
                 
                         <h1 class="header__title">
-                            <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">Jquery UI Slider Pips</a>
+                            <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">Slider Pips</a>
                             <small>Making jQuery Sliders a little bit nicer</small>
                         </h1>
                 
-                        <div id="share">
-                
-                        </div>
-                
                     </header>
+                
+                    <div id="share">
+                        <a class="button" href="asdsa">
+                            You should tweet about this <i class="icon right icon--twitter"></i>
+                        </a>
+                        <a class="button grey" href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">
+                            Shut up and take me to github! <i class="icon right icon--github"></i>
+                        </a>
+                    </div>
+                
+                    <div id="help">
+                        <a class="button grey" href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">
+                            I need some help <i class="icon right icon--stackoverflow"></i>
+                        </a        
+                    </div>
                 
                 </section>
         
@@ -80,14 +91,14 @@
                     </h2>
                 
                     <dl class="tabs code" data-tab>
-                        <dd class="active"><a href="#tabs1-result" title="result"><i class="icon icon--eye"></i></a></dd>
-                        <dd><a href="#tabs1-html" title="html">&lt;/&gt;</a></dd>
-                        <dd><a href="#tabs1-js" title="jquery">($)</a></dd>
+                        <dd class="active"><a href="#example1-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                        <dd><a href="#example1-html" title="html">&lt;/&gt;</a></dd>
+                        <dd><a href="#example1-js" title="jquery">($)</a></dd>
                     </dl>
                 
                     <div class="tabs-content">
                 
-                        <div class="content active" id="tabs1-result">
+                        <div class="content active" id="example1-result">
                 
                             <div class="row">
                                 <div class="large-6 small-12 columns">
@@ -102,7 +113,7 @@
                 
                         </div>
                 
-                        <div class="content" id="tabs1-html">
+                        <div class="content" id="example1-html">
                 
                             <pre data-lang="html">
                                 &lt;div class="slider"&gt;&lt;/div&gt;
@@ -110,9 +121,9 @@
                 
                         </div>
                 
-                        <div class="content" id="tabs1-js">
+                        <div class="content" id="example1-js">
                             <pre data-lang="js">
-                                $(".slider").slider().slider("pips");
+                                $(".slider").slider().slider("pips").slider("float");
                             </pre>
                         </div>
                 
@@ -198,40 +209,98 @@
                 
                     
                     <h3>
-                        <a href="#template" id="template" class="anchor">
-                            Basic Usage
+                        <a href="#basic-pips" id="basic-pips" class="anchor">
+                            Basic Usage - Pips
                         </a>
                     </h3>
                     
-                    <p>The most basic usage is to call the <code>pips</code> method on an initialised slider. This
-                        will add the markers and add a value to the beginning and end of the slider</p>
+                    <p>The default way to use the plugin is to call the <code>pips</code> method on an initialised slider. This
+                        will add the markers along the slider, and place the <code>min/max</code> values to the beginning/end of the slider:</p>
                         
                     
                     <dl class="tabs code" data-tab>
-                        <dd><a href="#basic-result" title="result"><i class="icon icon--eye"></i></a></dd>
-                        <dd><a href="#basic-html" title="html">&lt;/&gt;</a></dd>
-                        <dd class="active"><a href="#basic-js" title="jquery">($)</a></dd>
+                        <dd><a href="#default-pips-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                        <dd><a href="#default-pips-html" title="html">&lt;/&gt;</a></dd>
+                        <dd class="active"><a href="#default-pips-js" title="jquery">($)</a></dd>
                     </dl>
                     
                     <div class="tabs-content">
                     
-                        <div class="content" id="basic-result">
+                        <div class="content" id="default-pips-result">
                     
-                            <div id="basic-pips"></div>
+                            <div id="example-pips"></div>
                     
                         </div>
                     
-                        <div class="content" id="basic-html">
+                        <div class="content" id="default-pips-html">
                     
                             <pre data-lang="html">
+                                &lt;!-- the HTML must have an element to reference, here we've 
+                                    created a div with the class "slider" <a href="#" data-active-tab="#default-pips-js">to reference in jQuery</a> --&gt;
+                    
                                 &lt;div class="slider"&gt;&lt;/div&gt;
                             </pre>
                     
                         </div>
                     
-                        <div class="content active" id="basic-js">
+                        <div class="content active" id="default-pips-js">
                             <pre data-lang="js">
+                                // to create the slider on the page we use jQuery to select the element
+                                // <a href="#" data-active-tab="#default-pips-html">from the HTML</a> and apply the .slider() method, then we apply the pips afterwards.
+                    
                                 $(".slider").slider().slider("pips");
+                            </pre>
+                        </div>
+                    
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <h3>
+                        <a href="#basic-floats" id="basic-floats" class="anchor">
+                            Basic Usage - Floats
+                        </a>
+                    </h3>
+                    
+                    <p>If floats are desired instead of pips, we can call the <code>float</code> method in place of <code>pips</code>:</p>
+                        
+                    
+                    <dl class="tabs code" data-tab>
+                        <dd><a href="#default-floats-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                        <dd><a href="#default-floats-html" title="html">&lt;/&gt;</a></dd>
+                        <dd class="active"><a href="#default-floats-js" title="jquery">($)</a></dd>
+                    </dl>
+                    
+                    <div class="tabs-content">
+                    
+                        <div class="content" id="default-floats-result">
+                    
+                            <div id="example-float"></div>
+                    
+                        </div>
+                    
+                        <div class="content" id="default-floats-html">
+                    
+                            <pre data-lang="html">
+                                &lt;!-- Your HTML must have an element to reference, here we've 
+                                    created a div with the class "slider" <a href="#" data-active-tab="#default-floats-js">to reference in jQuery</a> --&gt;
+                    
+                                &lt;div class="slider"&gt;&lt;/div&gt;
+                            </pre>
+                    
+                        </div>
+                    
+                        <div class="content active" id="default-floats-js">
+                            <pre data-lang="js">
+                                // we still select the jQuery element <a href="#" data-active-tab="#default-floats-html">from the HTML</a> like before, 
+                                // but now we supply the float method instead of pips.
+                    
+                                $(".slider").slider().slider("float");
                             </pre>
                         </div>
                     

@@ -7010,6 +7010,15 @@ th.hide-for-touch {
 .icon--eye:before {
   content: "\e602"; }
 
+.icon--stackoverflow:before {
+  content: "\e603"; }
+
+.icon--github:before {
+  content: "\e604"; }
+
+.icon--twitter:before {
+  content: "\e605"; }
+
 body {
   font-family: "Open Sans", "Helvetica Neue", "Roboto", "Arial", sans-serif;
   font-weight: 300;
@@ -7021,7 +7030,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: #171b20; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    font-family: "Open Sans", "Helvetica Neue", "Roboto", "Arial", sans-serif;
+    font-family: "Handlee", serif;
     font-weight: 300;
     display: block;
     line-height: 1em;
@@ -7030,11 +7039,26 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-weight: 100; }
 
-a {
+a,
+a > .com {
   color: #de6262;
   transition: color 0.2s ease; }
-  a:hover {
+  a:hover,
+  a > .com:hover {
     color: #00c7d7; }
+
+a > .com {
+  border-bottom: 1px dotted; }
+
+button,
+.button {
+  background: linear-gradient(160deg, #24a4dc 0%, #295dbb 100% );
+  text-shadow: 0 1px 1px #204891;
+  padding: 1em 2em 0.9em;
+  border-radius: 2px; }
+  button.grey,
+  .button.grey {
+    background: linear-gradient(160deg, #2c4c54 0%, #362a44 100% ); }
 
 /* Tomorrow Night Eighties Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
@@ -7355,8 +7379,7 @@ pre.prettyprint {
 
 .tabs {
   padding: 0 1em;
-  margin: 2em -1em 0;
-  border-bottom: 1px solid; }
+  margin: 2em 0 0; }
   .tabs.code {
     font-family: "Menlo", "Bitstream Vera Sans Mono", "DejaVu Sans Mono", "Monaco", "Consolas", monospace; }
   .tabs .icon, .tabs .anchor[href^="#"]:before, .tabs .label.tip {
@@ -7366,11 +7389,9 @@ pre.prettyprint {
 
 .tabs-content {
   margin-bottom: 2em; }
-  .tabs-content pre.prettyprint {
-    margin: 0;
-    padding: 2em 2em; }
   .tabs-content [id$="-result"] {
-    padding: 2em 0 0; }
+    padding: 3em 0 1em;
+    border-top: 1px solid; }
   .tabs-content [id$="-html"],
   .tabs-content [id$="-css"],
   .tabs-content [id$="-js"] {

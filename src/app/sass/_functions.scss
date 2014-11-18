@@ -1,0 +1,7 @@
+
+
+@function grad( $one: #fff, $two: #000, $deg: 90 ) {
+    
+    @return #{"linear-gradient(" + $deg +"deg, " + $one + " 0%, " + $two + " 100% )"};
+
+}

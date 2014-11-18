@@ -64,3 +64,13 @@
 .icon--eye {
     &:before { content: "\e602"; }
 }
+
+.icon--stackoverflow {
+    &:before { content: "\e603"; }
+}
+.icon--github {
+    &:before { content: "\e604"; }
+}
+.icon--twitter {
+    &:before { content: "\e605"; }
+}

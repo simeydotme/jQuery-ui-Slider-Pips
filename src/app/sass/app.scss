@@ -1,5 +1,7 @@
 
 @import "vars";
+@import "functions";
+@import "mixins";
 
 // import foundation
 @import "../../../bower_components/foundation/scss/normalize";
@@ -40,8 +42,8 @@ h1 {
 
 }
 
-a {
-
+%link {
+    
     color: $headerstart;
     transition: color 0.2s ease;
 
@@ -51,6 +53,28 @@ a {
 
 }
 
+a,
+a > .com {
+    @extend %link;
+}
+
+a > .com {
+    border-bottom: 1px dotted;
+}
+
+button,
+.button {
+
+    background: grad( $btn-start, $btn-end, 160 );
+    text-shadow: 0 1px 1px darken( $btn-end, 10% );
+    padding: 1em 2em 0.9em;
+    border-radius: 2px;
+    
+    &.grey {
+        background: grad( $btn-grey-start , $btn-grey-end , 160 );
+    }
+
+}
 
 @import "pretty";
 @import "sidebar";

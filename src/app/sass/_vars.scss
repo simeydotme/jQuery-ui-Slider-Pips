@@ -25,7 +25,7 @@ $small-only: "#{$screen} and (min-width:#{lower-bound($small-range)}) and (max-w
 // app settings
 
 $sans: "Open Sans", "Helvetica Neue", "Roboto", "Arial", sans-serif;
-$alt: "Open Sans", "Helvetica Neue", "Roboto", "Arial", sans-serif;
+$alt: "Handlee", serif;
 $code: "Menlo", "Bitstream Vera Sans Mono", "DejaVu Sans Mono", "Monaco", "Consolas", monospace;
 
 $fcolor: #434d5a;
@@ -34,6 +34,12 @@ $link: #00C7D7;
 
 $headerstart: #DE6262;
 $headerend: #FFB88C;
+
+$btn-start: #24A4DC;
+$btn-end: #295DBB;
+
+$btn-grey-start: #2C4C54;
+$btn-grey-end: #362A44 ;
 
 $resultstart: #ECE9E6;
 $resultend: #ECF7FF;

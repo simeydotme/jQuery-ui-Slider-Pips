@@ -37,9 +37,7 @@
 .tabs {
 
     padding: 0 1em;
-    margin: 2em -1em 0;
-
-    border-bottom: 1px solid;
+    margin: 2em 0 0;
 
     &.code {
 
@@ -64,8 +62,8 @@
 
     pre.prettyprint {
 
-        margin: 0;
-        padding: 2em 2em;
+        //margin: 0;
+        //padding: 2em 2em;
 
     }
 
@@ -75,7 +73,8 @@
 
     [id$="-result"] {
         
-        padding: 2em 0 0;
+        padding: 3em 0 1em;
+        border-top: 1px solid;
 
     }
 
