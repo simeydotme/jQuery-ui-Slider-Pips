@@ -78,7 +78,12 @@ module.exports = function(grunt) {
 
         wiredep: {
             options: {
-                exclude: [ "/modernizr/", "/jquery-ui/", "bower_components/foundation/css/foundation.css" ]
+                exclude: [ 
+                    "/modernizr/", 
+                    "/jquery-ui/", 
+                    "/google-code-prettify/", 
+                    "bower_components/foundation/css/foundation.css" 
+                ]
             },
             task: {
                 src: [ "src/index.html", "index.html" ]

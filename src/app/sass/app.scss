@@ -7,7 +7,7 @@
 @import "../../../bower_components/foundation/scss/normalize";
 @import "../../../bower_components/foundation/scss/foundation";
 
-@import "icons";
+@import "modules/icons";
 
 body {
 
@@ -62,24 +62,8 @@ a > .com {
     border-bottom: 1px dotted;
 }
 
-button,
-.button {
-
-    background: grad( $btn-start, $btn-end, 160 );
-    text-shadow: 0 1px 1px darken( $btn-end, 10% );
-    padding: 1em 2em 0.9em;
-    border-radius: 2px;
-    
-    &.grey {
-        background: grad( $btn-grey-start , $btn-grey-end , 160 );
-    }
-
-}
-
-@import "pretty";
-@import "sidebar";
-@import "content";
-@import "header";
+@import "modules/pretty";
+@import "modules/code";
 
 @import "modules/sliders";
 
@@ -88,4 +72,13 @@ button,
 @import "modules/tabs";
 @import "modules/buttons";
 @import "modules/labels";
-@import "modules/code";
+@import "modules/lists";
+
+
+@import "blocks/sidebar";
+@import "blocks/content";
+@import "blocks/header";
+@import "blocks/share-links";
+
+
+@import "examples";

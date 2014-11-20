@@ -1,4 +1,28 @@
+
+button,
 .button {
+
+    background: grad( $btn-start, $btn-end, 160 );
+    text-shadow: 0 1px 1px darken( $btn-end, 10% );
+    padding: 1em 2em 0.9em;
+    border-radius: 2px;
+    box-shadow: inset 0 0 1px 1px rgba(255,255,255,0);
+
+    transition: all 0.2s ease;
+    
+    &.dark {
+        background: grad( $btn-dark-start , $btn-dark-end , 160 );
+    }
+    
+    &.grey {
+        background: grad( $btn-grey-start , $btn-grey-end , 160 );
+    }
+
+    &:hover {
+
+        box-shadow: inset 0 0 1px 1px darken( $btn-end, 10% );
+
+    }
 
     .icon {
         

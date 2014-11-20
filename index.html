@@ -21,7 +21,6 @@
             href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800|Handlee">
 
         <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/google-code-prettify/bin/prettify.min.css" />
         <!-- endbower -->
 
         <!-- jquery ui -->
@@ -46,6 +45,8 @@
             
                 <li class="sidebar__item"><a href="#getting-started">Getting Started</a></li>
                 <li class="sidebar__item"><a href="#installation">Installation</a></li>
+                <li class="sidebar__item"><a href="#examples">Examples</a></li>
+                <li class="sidebar__item"><a href="#customisation">Customisation</a></li>
         
             </ul>
         
@@ -65,20 +66,30 @@
                 
                     </header>
                 
-                    <div id="share">
-                        <a class="button" href="asdsa">
-                            You should tweet about this <i class="icon right icon--twitter"></i>
-                        </a>
-                        <a class="button grey" href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">
-                            Shut up and take me to github! <i class="icon right icon--github"></i>
-                        </a>
-                    </div>
+                    <ul class="share-links">
+                        
+                        <li class="share-links__item">
+                            <a class="share-links__link" href="http://twitter.com/simeydotme">
+                                <i class="icon icon--twitter"></i> 
+                                @simeydotme
+                            </a>
+                        </li>
                 
-                    <div id="help">
-                        <a class="button grey" href="https://github.com/simeydotme/jQuery-ui-Slider-Pips">
-                            I need some help <i class="icon right icon--stackoverflow"></i>
-                        </a        
-                    </div>
+                        <li class="share-links__item">
+                            <a class="share-links__link" href="http://github.com/simeydotme/jQuery-ui-Slider-Pips">
+                                <i class="icon icon--github"></i> 
+                                $.ui.slider.pips
+                            </a>
+                        </li>
+                
+                        <li class="share-links__item">
+                            <a class="share-links__link" href="http://stackoverflow.com/search?q=jquery+ui+slider+pips">
+                                <i class="icon icon--stackoverflow"></i> 
+                                stackoverflow
+                            </a>
+                        </li>
+                
+                    </ul>
                 
                 </section>
         
@@ -138,6 +149,8 @@
                         </a>
                     </h2>
                 
+                    <p><span class="round label tip"></span><em><a href="#installation">Skip this if using Bower</a></em></p>
+                
                     <p>First off we're going to need to <strong>load the dependencies</strong>. <br>
                         This plugin requires <a href="http://jquery.com">jQuery</a> and <a href="http://jqueryui.com">jQuery UI</a>
                         to function correctly.</p>
@@ -164,7 +177,7 @@
                         </a>
                     </h2>
                     
-                    <p>There's 2 options, either <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips/releases/latest">get 
+                    <p>There's 2 options; either <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips/releases/latest">get 
                         the latest files from Github</a>, or it's possible to <a href="http://bower.io/search/?q=pips">use Bower to manage dependencies</a>.</p>
                 
                     <div class="row install-columns">
@@ -307,6 +320,89 @@
                     </div>
                 
                 </section>
+                    
+                <section class="block">
+                
+                    <h2>
+                        <a href="#customisation" id="customisation" class="anchor">
+                            Customisation
+                        </a>
+                    </h2>
+                
+                    
+                    <p>The plugin makes great use of <strong>presentation classes to provide a powerful amount of customisation</strong>. It's important the slider
+                        fits the unique style of your project, and with some modification you can get some really interesting results.</p>
+                        
+                    <pre data-lang="css">
+                        // here is a list of the presentation classes used in a heirarchical tree.
+                        
+                        .ui-slider.ui-slider-pips  {}
+                        .ui-slider-float {}
+                            .ui-slider-handle {}
+                                .ui-slider-tip {}
+                            .ui-slider-pip {}
+                            .ui-slider-pip-first {}
+                            .ui-slider-pip-last {}
+                            .ui-slider-pip-nth {}
+                            .ui-slider-pip-label {}
+                            .ui-slider-pip-hide {}
+                                .ui-slider-line {}
+                                .ui-slider-label {}
+                                .ui-slider-tip-label {}
+                    </pre>
+                    
+                    <h3>
+                        <a href="#styling" id="styling" class="anchor">
+                            Styling
+                        </a>
+                    </h3>
+                    
+                    <p>To make the <strong>code as succinct and performant</strong> as possible; there's only <strong>minimal javascript configuration</strong> on how the
+                        pips are displayed, positioned, formatted, etc. Instead <strong>the power lies in the hands of CSS</strong>.</p>
+                    
+                    <p>For example: instead of supplying an option to jQuery to make the pips sit above the slider, we should use CSS to override the
+                        positioning of the <code>.ui-slider-pip</code>, <code>.ui-slider-line</code> and  <code>.ui-slider-label</code> like so:</p>
+                    
+                    <dl class="tabs code" data-tab>
+                        <dd class="active"><a href="#styling-before-css" title="before">Before</a></dd>
+                        <dd><a href="#styling-after-css" title="after">After</a></dd>
+                    </dl>
+                    
+                        <div class="tabs-content">
+                    
+                            <div class="content active" id="styling-before-css">
+                                
+                                <pre data-lang="css">
+                                    /* using default css */
+                                </pre>
+                    
+                                <div id="styling-before-slider"></div>
+                    
+                            </div>
+                    
+                            <div class="content" id="styling-after-css">
+                                
+                                <pre data-lang="css">
+                                    /* customised css */
+                    
+                                    #styling-after-slider {
+                                        margin-top: 3em; 
+                                    }
+                                    #styling-after-slider .ui-slider-pip {
+                                        top: -12px; 
+                                    }
+                                    #styling-after-slider .ui-slider-pip .ui-slider-label {
+                                        top: -18px; 
+                                    }
+                                </pre>
+                    
+                                <div id="styling-after-slider"></div>
+                    
+                            </div>
+                    
+                        </div>
+                
+                </section>
             
             </section>
         
@@ -320,10 +416,13 @@
         <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
         <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
         <script src="bower_components/foundation/js/foundation.js"></script>
-        <script src="bower_components/google-code-prettify/bin/prettify.min.js"></script>
         <!-- endbower -->
+
+        <!-- prettify:js -->
+        <script src="bower_components/google-code-prettify/src/prettify.js"></script>
+        <script src="bower_components/google-code-prettify/src/lang-css.js"></script>
         
-        <!-- jquery ui -->
+        <!-- jqueryui:js -->
         <script src="bower_components/jquery-ui/ui/core.js"></script>
         <script src="bower_components/jquery-ui/ui/widget.js"></script>
         <script src="bower_components/jquery-ui/ui/mouse.js"></script>

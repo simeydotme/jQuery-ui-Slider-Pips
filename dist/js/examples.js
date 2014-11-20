@@ -25,6 +25,18 @@
             .slider({ max: 50, value: 10 })
             .slider("float");
 
+
+
+
+
+        $("#styling-before-slider")
+            .slider({ max: 20, value: 10 })
+            .slider("pips");
+
+        $("#styling-after-slider")
+            .slider({ max: 20, value: 10 })
+            .slider("pips");
+
     });
 
 }(jQuery));

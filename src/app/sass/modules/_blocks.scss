@@ -7,7 +7,13 @@
     }
 
     &:nth-child(1) {
+
         padding-top: 0;
+
+        @media #{$xsmall-only} {
+            padding-bottom: 0;
+        }
+
     }
 
     @media #{$small-up} { 
