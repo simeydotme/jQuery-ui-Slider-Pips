@@ -1,0 +1,44 @@
+.share-links {
+    
+    @extend .inline-list;
+
+    text-align: center;
+    font-weight: 400;
+
+    .share-links__item {
+
+        margin: 0.5em 1em;
+
+        @media screen and (max-width: 936px) {
+            
+            font-size: 0.9em;
+            margin: 0.5em 0.5em;
+
+        }
+
+        @media screen and (max-width: 430px) {
+
+            margin: 0.4em 0 0;
+            display: block;
+
+            &:nth-child(1) {
+                margin-top: 0;
+            }
+
+        }
+
+    }
+  
+    @media #{$xxlarge-up} {
+
+        text-align: left;
+
+    }
+
+    @media #{$xsmall-only} {
+
+        margin: 1em 0;
+
+    }
+
+}
