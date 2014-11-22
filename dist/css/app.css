@@ -7050,6 +7050,9 @@ a > .com {
 a > .com {
   border-bottom: 1px dotted; }
 
+small {
+  font-size: 0.8em; }
+
 /* Tomorrow Night Eighties Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 /* Pretty printing styles. Used with prettify.js. */
@@ -7201,10 +7204,10 @@ pre.prettyprint {
 
 code {
   font-family: "Menlo", "Bitstream Vera Sans Mono", "DejaVu Sans Mono", "Monaco", "Consolas", monospace;
-  font-weight: bold;
-  color: #7425ce;
-  background-color: #faf7ff;
-  border-color: #f4edff;
+  font-weight: 400;
+  color: #d8007b;
+  background-color: #f5f9ff;
+  border-color: #ebf3ff;
   border-radius: 2px;
   padding: 0.03em 0.3em 0.1em; }
 
@@ -7325,6 +7328,27 @@ button,
     margin: 0.5em 1em;
     float: none; }
 
+table {
+  font-weight: 400; }
+  table tr td,
+  table tr th {
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    vertical-align: top; }
+    table tr td:last-child,
+    table tr th:last-child {
+      border-right: none; }
+  table tr:last-child td,
+  table tr:last-child th {
+    border-bottom: none; }
+  table code {
+    font-weight: 400; }
+  table p {
+    font-size: inherit;
+    margin-top: 0; }
+    table p:only-child, table p:last-child {
+      margin: 0; }
+
 .sidebar {
   position: fixed;
   width: 100%;
@@ -7387,6 +7411,9 @@ button,
     font-size: 2em; }
   .content__main h3 {
     font-size: 1.5em;
+    color: #596677; }
+  .content__main h4 {
+    font-size: 1.3em;
     color: #596677; }
 
 .anchor[href^="#"] {
@@ -7464,6 +7491,9 @@ button,
   @media only screen and (max-width: 500px) {
     .share-links {
       margin: 1em 0; } }
+
+.options-table tr td:nth-child(2) {
+  min-width: 18em; }
 
 #styling-after-slider {
   margin-top: 3em; }

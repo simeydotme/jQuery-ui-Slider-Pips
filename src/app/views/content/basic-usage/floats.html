@@ -1,0 +1,48 @@
+<section class="sub-block">
+    
+    <h3>
+        <a href="#basic-float" id="basic-float" class="anchor">
+            Float
+        </a>
+    </h3>
+
+    <p>If floats are desired instead of pips, we can call the <code>float</code> method in place of <code>pips</code>:</p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd><a href="#default-floats-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#default-floats-html" title="html">&lt;/&gt;</a></dd>
+        <dd class="active"><a href="#default-floats-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content" id="default-floats-result">
+
+            <div id="example-float"></div>
+
+        </div>
+
+        <div class="content" id="default-floats-html">
+
+            <pre data-lang="html">
+                &lt;!-- Your HTML must have an element to reference, here we've 
+                    created a div with the class "slider" <a href="#" data-active-tab="#default-floats-js">to reference in jQuery</a> --&gt;
+
+                &lt;div class="slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content active" id="default-floats-js">
+            <pre data-lang="js">
+                // we still select the jQuery element <a href="#" data-active-tab="#default-floats-html">from the HTML</a> like before, 
+                // but now we supply the float method instead of pips.
+
+                $(".slider").slider().slider("float");
+            </pre>
+        </div>
+
+    </div>
+
+</section>

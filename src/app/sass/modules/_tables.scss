@@ -1,0 +1,54 @@
+table {
+
+    font-weight: 400;
+
+    tr {
+
+        td,
+        th {
+
+            border-right: 1px solid $table-border-color;
+            border-bottom: 1px solid $table-border-color;
+            vertical-align: top;
+
+            &:last-child {
+
+                border-right: none;
+
+            }
+
+        }
+
+        &:last-child {
+
+            td,
+            th {
+
+                border-bottom: none;
+                
+            }
+        }
+
+    }
+
+    code {
+
+        font-weight: 400;
+
+    }
+
+    p {
+        
+        font-size: inherit;
+        margin-top: 0;
+
+        &:only-child,
+        &:last-child {
+
+            margin: 0;
+
+        }
+
+    }
+
+}

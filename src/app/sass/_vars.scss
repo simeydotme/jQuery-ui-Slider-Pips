@@ -45,11 +45,12 @@ $btn-grey-start: #8d9496;
 $btn-grey-end: #585c5e;
 
 
-$resultstart: #ECE9E6;
-$resultend: #ECF7FF;
+// $resultstart: #ECE9E6;
+// $resultend: #ECF7FF;
 
-$codecolor: #7425ce;
-$codebg: #faf7ff;
+$codecolor: #D8007B;
+$codebg: #F5F9FF;
+$codeborder: darken( $codebg, 2% );
 
 $radius: 4px;
 

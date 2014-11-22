@@ -45,7 +45,12 @@
             
                 <li class="sidebar__item"><a href="#getting-started">Getting Started</a></li>
                 <li class="sidebar__item"><a href="#installation">Installation</a></li>
-                <li class="sidebar__item"><a href="#examples">Examples</a></li>
+                <li class="sidebar__item"><a href="#examples">Basic Usage</a>
+                    <ul class="sidebar__nav">
+                        <li class="sidebar__item"><a href="#basic-pips">Pips</a></li>
+                        <li class="sidebar__item"><a href="#basic-float">Float</a></li>
+                    </ul>
+                </li>
                 <li class="sidebar__item"><a href="#customisation">Customisation</a></li>
         
             </ul>
@@ -211,116 +216,113 @@
                 
                 </section>
         
-        
                 <section class="block">
                     
                     <h2>
-                        <a href="#examples" id="examples" class="anchor">
-                            Examples
+                        <a href="#basic-usage" id="basic-usage" class="anchor">
+                            Basic usage
                         </a>
                     </h2>
                 
-                    
-                    <h3>
-                        <a href="#basic-pips" id="basic-pips" class="anchor">
-                            Basic Usage - Pips
-                        </a>
-                    </h3>
-                    
-                    <p>The default way to use the plugin is to call the <code>pips</code> method on an initialised slider. This
-                        will add the markers along the slider, and place the <code>min/max</code> values to the beginning/end of the slider:</p>
+                    <section class="sub-block">
                         
+                        <h3>
+                            <a href="#basic-pips" id="basic-pips" class="anchor">
+                                Pips
+                            </a>
+                        </h3>
                     
-                    <dl class="tabs code" data-tab>
-                        <dd><a href="#default-pips-result" title="result"><i class="icon icon--eye"></i></a></dd>
-                        <dd><a href="#default-pips-html" title="html">&lt;/&gt;</a></dd>
-                        <dd class="active"><a href="#default-pips-js" title="jquery">($)</a></dd>
-                    </dl>
+                        <p>The default way to use the plugin is to call the <code>pips</code> method on an initialised slider. This
+                            will add the markers along the slider, and place the <code>min/max</code> values to the beginning/end of the slider:</p>
+                            
                     
-                    <div class="tabs-content">
+                        <dl class="tabs code" data-tab>
+                            <dd><a href="#default-pips-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                            <dd><a href="#default-pips-html" title="html">&lt;/&gt;</a></dd>
+                            <dd class="active"><a href="#default-pips-js" title="jquery">($)</a></dd>
+                        </dl>
                     
-                        <div class="content" id="default-pips-result">
+                        <div class="tabs-content">
                     
-                            <div id="example-pips"></div>
+                            <div class="content" id="default-pips-result">
+                    
+                                <div id="example-pips"></div>
+                    
+                            </div>
+                    
+                            <div class="content" id="default-pips-html">
+                    
+                                <pre data-lang="html">
+                                    &lt;!-- the HTML must have an element to reference, here we've 
+                                        created a div with the class "slider" <a href="#" data-active-tab="#default-pips-js">to reference in jQuery</a> --&gt;
+                    
+                                    &lt;div class="slider"&gt;&lt;/div&gt;
+                                </pre>
+                    
+                            </div>
+                    
+                            <div class="content active" id="default-pips-js">
+                                <pre data-lang="js">
+                                    // to create the slider on the page we use jQuery to select the element
+                                    // <a href="#" data-active-tab="#default-pips-html">from the HTML</a> and apply the .slider() method, then we apply the pips afterwards.
+                    
+                                    $(".slider").slider().slider("pips");
+                                </pre>
+                            </div>
                     
                         </div>
                     
-                        <div class="content" id="default-pips-html">
-                    
-                            <pre data-lang="html">
-                                &lt;!-- the HTML must have an element to reference, here we've 
-                                    created a div with the class "slider" <a href="#" data-active-tab="#default-pips-js">to reference in jQuery</a> --&gt;
-                    
-                                &lt;div class="slider"&gt;&lt;/div&gt;
-                            </pre>
-                    
-                        </div>
-                    
-                        <div class="content active" id="default-pips-js">
-                            <pre data-lang="js">
-                                // to create the slider on the page we use jQuery to select the element
-                                // <a href="#" data-active-tab="#default-pips-html">from the HTML</a> and apply the .slider() method, then we apply the pips afterwards.
-                    
-                                $(".slider").slider().slider("pips");
-                            </pre>
-                        </div>
-                    
-                    </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <h3>
-                        <a href="#basic-floats" id="basic-floats" class="anchor">
-                            Basic Usage - Floats
-                        </a>
-                    </h3>
-                    
-                    <p>If floats are desired instead of pips, we can call the <code>float</code> method in place of <code>pips</code>:</p>
+                    </section>
+                    <section class="sub-block">
                         
+                        <h3>
+                            <a href="#basic-float" id="basic-float" class="anchor">
+                                Float
+                            </a>
+                        </h3>
                     
-                    <dl class="tabs code" data-tab>
-                        <dd><a href="#default-floats-result" title="result"><i class="icon icon--eye"></i></a></dd>
-                        <dd><a href="#default-floats-html" title="html">&lt;/&gt;</a></dd>
-                        <dd class="active"><a href="#default-floats-js" title="jquery">($)</a></dd>
-                    </dl>
+                        <p>If floats are desired instead of pips, we can call the <code>float</code> method in place of <code>pips</code>:</p>
+                            
                     
-                    <div class="tabs-content">
+                        <dl class="tabs code" data-tab>
+                            <dd><a href="#default-floats-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                            <dd><a href="#default-floats-html" title="html">&lt;/&gt;</a></dd>
+                            <dd class="active"><a href="#default-floats-js" title="jquery">($)</a></dd>
+                        </dl>
                     
-                        <div class="content" id="default-floats-result">
+                        <div class="tabs-content">
                     
-                            <div id="example-float"></div>
+                            <div class="content" id="default-floats-result">
+                    
+                                <div id="example-float"></div>
+                    
+                            </div>
+                    
+                            <div class="content" id="default-floats-html">
+                    
+                                <pre data-lang="html">
+                                    &lt;!-- Your HTML must have an element to reference, here we've 
+                                        created a div with the class "slider" <a href="#" data-active-tab="#default-floats-js">to reference in jQuery</a> --&gt;
+                    
+                                    &lt;div class="slider"&gt;&lt;/div&gt;
+                                </pre>
+                    
+                            </div>
+                    
+                            <div class="content active" id="default-floats-js">
+                                <pre data-lang="js">
+                                    // we still select the jQuery element <a href="#" data-active-tab="#default-floats-html">from the HTML</a> like before, 
+                                    // but now we supply the float method instead of pips.
+                    
+                                    $(".slider").slider().slider("float");
+                                </pre>
+                            </div>
                     
                         </div>
                     
-                        <div class="content" id="default-floats-html">
-                    
-                            <pre data-lang="html">
-                                &lt;!-- Your HTML must have an element to reference, here we've 
-                                    created a div with the class "slider" <a href="#" data-active-tab="#default-floats-js">to reference in jQuery</a> --&gt;
-                    
-                                &lt;div class="slider"&gt;&lt;/div&gt;
-                            </pre>
-                    
-                        </div>
-                    
-                        <div class="content active" id="default-floats-js">
-                            <pre data-lang="js">
-                                // we still select the jQuery element <a href="#" data-active-tab="#default-floats-html">from the HTML</a> like before, 
-                                // but now we supply the float method instead of pips.
-                    
-                                $(".slider").slider().slider("float");
-                            </pre>
-                        </div>
-                    
-                    </div>
+                    </section>
                 
                 </section>
-                    
                 <section class="block">
                 
                     <h2>
@@ -330,43 +332,296 @@
                     </h2>
                 
                     
-                    <p>The plugin makes great use of <strong>presentation classes to provide a powerful amount of customisation</strong>. It's important the slider
-                        fits the unique style of your project, and with some modification you can get some really interesting results.</p>
+                    <section class="sub-block">
+                    
+                        <h3>
+                            <a href="#customisation-options" id="customisation-options" class="anchor">
+                                Options
+                            </a>
+                        </h3>
+                    
+                        <p>It is possible to supply configuration options to the pips plugin, this allows some basic way to control
+                            how the pips/floats are handled.</p>
+                            
+                        <pre data-lang="js">
+                            $(".slider")
+                                .slider()
+                                .slider("pips", {
+                                    /* options go here as an object */
+                                })
+                                .slider("float", {
+                                    /* options go here as an object */
+                                })
+                        </pre>
+                    
                         
-                    <pre data-lang="css">
-                        // here is a list of the presentation classes used in a heirarchical tree.
+                        <h4>Pips</h4>
+                        <p>A list of all the options available on the pips method:</p>
+                    
+                        <table class="options-table">
                         
-                        .ui-slider.ui-slider-pips  {}
-                        .ui-slider-float {}
-                            .ui-slider-handle {}
-                                .ui-slider-tip {}
-                            .ui-slider-pip {}
-                            .ui-slider-pip-first {}
-                            .ui-slider-pip-last {}
-                            .ui-slider-pip-nth {}
-                            .ui-slider-pip-label {}
-                            .ui-slider-pip-hide {}
-                                .ui-slider-line {}
-                                .ui-slider-label {}
-                                .ui-slider-tip-label {}
-                    </pre>
+                            <tr>
+                                <th scope="col">Option</th>
+                                <th scope="col">Values</th>
+                                <th scope="col">Default</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">first</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">"label"</code>, 
+                                    <code data-type="string">"pip"</code> or 
+                                    <code data-type="bool">false</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">"label"</code>
+                                </td>
+                                <td>
+                                    <p>Determines the style of <strong>the first pip</strong> on the slider</p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">last</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">"label"</code>, 
+                                    <code data-type="string">"pip"</code> or 
+                                    <code data-type="bool">false</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">"label"</code>
+                                </td>
+                                <td>
+                                    <p>Determines the style of <strong>the final pip</strong> on the slider</p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">rest</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">"label"</code>, 
+                                    <code data-type="string">"pip"</code> or 
+                                    <code data-type="bool">false</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">"pip"</code>
+                                </td>
+                                <td>
+                                    <p>Determines the style of <strong>all other pips</strong> on the slider</p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">step</code>
+                                </td>
+                                <td>
+                                    <code data-type="number">number</code>
+                                </td>
+                                <td>
+                                    <code data-type="number">1 / 5%</code>
+                                </td>
+                                <td>
+                                    <p>The <code>step</code> parameter will <strong>only generate every <code>nth</code> pip</strong>.<br>
+                                        eg: If we set <code>step: 2</code>, then we will only get the values: 0, 2, 4, 6, 8... generated.</p>
+                                    <p><small>note: if the slider has a value over 100, step is set to 5% of the value</small></p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">labels</code>
+                                </td>
+                                <td>
+                                    <code data-type="number">array</code> or
+                                    <code data-type="bool">false</code>
+                                </td>
+                                <td>
+                                    <code data-type="bool">false</code>
+                                </td>
+                                <td>
+                                    <p>Will <strong>override the values</strong> of the pips with an array of given values.<br> 
+                                        eg: <code>["Monday", "Tuesday", "Wednesday", ... ]</code></p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">prefix</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">string</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">""</code>
+                                </td>
+                                <td>
+                                    <p>Adds a string value <strong>before the pip label</strong>.<br> 
+                                        eg: <code>prefix: $</code> = > <strong>$1, $2, $3, $4, ...</strong></p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">suffix</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">string</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">""</code>
+                                </td>
+                                <td>
+                                    <p>Adds a string value <strong>after the pip label</strong>.<br>
+                                        eg: <code>suffix: °c</code> = > <strong>1&deg;c, 2&deg;c, 3&deg;c, 4&deg;c, ...</strong></p>
+                                </td>
+                            </tr>
                     
-                    <h3>
-                        <a href="#styling" id="styling" class="anchor">
-                            Styling
-                        </a>
-                    </h3>
+                        </table>
                     
-                    <p>To make the <strong>code as succinct and performant</strong> as possible; there's only <strong>minimal javascript configuration</strong> on how the
-                        pips are displayed, positioned, formatted, etc. Instead <strong>the power lies in the hands of CSS</strong>.</p>
+                        
+                        <h4>Float</h4>
+                        <p>A list of all the options available on the float method:</p>
                     
-                    <p>For example: instead of supplying an option to jQuery to make the pips sit above the slider, we should use CSS to override the
-                        positioning of the <code>.ui-slider-pip</code>, <code>.ui-slider-line</code> and  <code>.ui-slider-label</code> like so:</p>
+                        <table class="options-table">
+                        
+                            <tr>
+                                <th scope="col">Option</th>
+                                <th scope="col">Values</th>
+                                <th scope="col">Default</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">handle</code>
+                                </td>
+                                <td>
+                                    <code data-type="number">boolean</code>
+                                </td>
+                                <td>
+                                    <code data-type="bool">true</code>
+                                </td>
+                                <td>
+                                    <p>Determines if the float effect should <strong>appear on the slider handle</strong></p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">pips</code>
+                                </td>
+                                <td>
+                                    <code data-type="number">boolean</code>
+                                </td>
+                                <td>
+                                    <code data-type="bool">false</code>
+                                </td>
+                                <td>
+                                    <p>Determines if the float effect should <strong>appear on the pips</strong></p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">labels</code>
+                                </td>
+                                <td>
+                                    <code data-type="number">array</code> or
+                                    <code data-type="bool">false</code>
+                                </td>
+                                <td>
+                                    <code data-type="bool">false</code>
+                                </td>
+                                <td>
+                                    <p>Will <strong>override the values</strong> of the floats with an array of given values.<br> 
+                                        eg: <code>["Monday", "Tuesday", "Wednesday", ... ]</code></p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">prefix</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">string</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">""</code>
+                                </td>
+                                <td>
+                                    <p>Adds a string value <strong>before the float label</strong>.<br> 
+                                        eg: <code>prefix: $</code> = > <strong>$1, $2, $3, $4, ...</strong></p>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td scope="row">
+                                    <code data-type="string">suffix</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">string</code>
+                                </td>
+                                <td>
+                                    <code data-type="string">""</code>
+                                </td>
+                                <td>
+                                    <p>Adds a string value <strong>after the float label</strong>.<br>
+                                        eg: <code>suffix: °c</code> = > <strong>1&deg;c, 2&deg;c, 3&deg;c, 4&deg;c, ...</strong></p>
+                                </td>
+                            </tr>
                     
-                    <dl class="tabs code" data-tab>
-                        <dd class="active"><a href="#styling-before-css" title="before">Before</a></dd>
-                        <dd><a href="#styling-after-css" title="after">After</a></dd>
-                    </dl>
+                        </table>
+                       
+                    
+                    </section>
+                    
+                    <section class="sub-block">
+                        
+                        <h3>
+                            <a href="#customisation-styling" id="customisation-styling" class="anchor">
+                                Styling
+                            </a>
+                        </h3>
+                    
+                        <p>The plugin makes great use of <strong>presentation classes to provide a powerful amount of customisation</strong>. It's important the slider
+                            fits the unique style of your project, and with some modification you can get some really interesting results.</p>
+                            
+                        <pre data-lang="css">
+                            // here is a list of the presentation classes used in a heirarchical tree.
+                            
+                            .ui-slider.ui-slider-pips  {}
+                            .ui-slider-float {}
+                                .ui-slider-handle {}
+                                    .ui-slider-tip {}
+                                .ui-slider-pip {}
+                                .ui-slider-pip-first {}
+                                .ui-slider-pip-last {}
+                                .ui-slider-pip-nth {}
+                                .ui-slider-pip-label {}
+                                .ui-slider-pip-hide {}
+                                    .ui-slider-line {}
+                                    .ui-slider-label {}
+                                    .ui-slider-tip-label {}
+                        </pre>
+                    
+                        <p>To make the <strong>code as succinct and performant</strong> as possible; there's only <strong>minimal javascript configuration</strong> on how the
+                            pips are displayed, positioned, formatted, etc. Instead <strong>the power lies in the hands of CSS</strong>.</p>
+                    
+                        <p>For example: instead of supplying an option to jQuery to make the pips sit above the slider, we should use CSS to override the
+                            positioning of the <code>.ui-slider-pip</code>, <code>.ui-slider-line</code> and  <code>.ui-slider-label</code> like so:</p>
+                    
+                        <dl class="tabs code" data-tab>
+                            <dd class="active"><a href="#styling-before-css" title="before">Before</a></dd>
+                            <dd><a href="#styling-after-css" title="after">After</a></dd>
+                        </dl>
                     
                         <div class="tabs-content">
                     
@@ -401,8 +656,21 @@
                             </div>
                     
                         </div>
+                    
+                    </section>
                 
                 </section>
+                <section class="block">
+                    
+                    <h2>
+                        <a href="#examples" id="examples" class="anchor">
+                            Examples
+                        </a>
+                    </h2>
+                
+                
+                </section>
+                
             
             </section>
         

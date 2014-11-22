@@ -1,0 +1,18 @@
+
+.options-table {
+    
+    tr {
+
+        td {
+
+            &:nth-child(2) {
+
+                min-width: 18em;
+
+            }
+
+        }
+
+    }
+
+}

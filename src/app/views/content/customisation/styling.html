@@ -1,0 +1,76 @@
+
+<section class="sub-block">
+    
+    <h3>
+        <a href="#customisation-styling" id="customisation-styling" class="anchor">
+            Styling
+        </a>
+    </h3>
+
+    <p>The plugin makes great use of <strong>presentation classes to provide a powerful amount of customisation</strong>. It's important the slider
+        fits the unique style of your project, and with some modification you can get some really interesting results.</p>
+        
+    <pre data-lang="css">
+        // here is a list of the presentation classes used in a heirarchical tree.
+        
+        .ui-slider.ui-slider-pips  {}
+        .ui-slider-float {}
+            .ui-slider-handle {}
+                .ui-slider-tip {}
+            .ui-slider-pip {}
+            .ui-slider-pip-first {}
+            .ui-slider-pip-last {}
+            .ui-slider-pip-nth {}
+            .ui-slider-pip-label {}
+            .ui-slider-pip-hide {}
+                .ui-slider-line {}
+                .ui-slider-label {}
+                .ui-slider-tip-label {}
+    </pre>
+
+    <p>To make the <strong>code as succinct and performant</strong> as possible; there's only <strong>minimal javascript configuration</strong> on how the
+        pips are displayed, positioned, formatted, etc. Instead <strong>the power lies in the hands of CSS</strong>.</p>
+
+    <p>For example: instead of supplying an option to jQuery to make the pips sit above the slider, we should use CSS to override the
+        positioning of the <code>.ui-slider-pip</code>, <code>.ui-slider-line</code> and  <code>.ui-slider-label</code> like so:</p>
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#styling-before-css" title="before">Before</a></dd>
+        <dd><a href="#styling-after-css" title="after">After</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="styling-before-css">
+            
+            <pre data-lang="css">
+                /* using default css */
+            </pre>
+
+            <div id="styling-before-slider"></div>
+
+        </div>
+
+        <div class="content" id="styling-after-css">
+            
+            <pre data-lang="css">
+                /* customised css */
+
+                #styling-after-slider {
+                    margin-top: 3em; 
+                }
+                #styling-after-slider .ui-slider-pip {
+                    top: -12px; 
+                }
+                #styling-after-slider .ui-slider-pip .ui-slider-label {
+                    top: -18px; 
+                }
+            </pre>
+
+            <div id="styling-after-slider"></div>
+
+        </div>
+
+    </div>
+
+</section>
