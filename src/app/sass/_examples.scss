@@ -16,3 +16,23 @@
     }
 
 }
+
+
+
+#prefix-suffix-slider {
+
+    .ui-slider-label {
+        margin-left: -1.75em;
+    }
+
+    @media screen and (max-width: 1040px) {
+
+        .ui-slider-pip:nth-of-type(2n+1) {
+            .ui-slider-label {
+                display: none;
+            }
+        }
+
+    }
+
+}

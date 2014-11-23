@@ -57,6 +57,29 @@
                 rest: false
             });
 
+
+
+
+
+        $("#show-only-pips-slider")
+            .slider({ max: 4, value: 2 })
+            .slider("pips", {
+                first: "pip",
+                last: "pip"
+            });
+
+
+
+
+
+        $("#prefix-suffix-slider")
+            .slider({ min: 0, max: 100, value: 50, step: 10 })
+            .slider("pips", {
+                rest: "label",
+                prefix: "&dollar;",
+                suffix: ".00&cent;"
+            });
+
     });
 
 }(jQuery));

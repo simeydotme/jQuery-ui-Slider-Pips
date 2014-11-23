@@ -1,0 +1,82 @@
+<section class="sub-block">
+    
+    <h3>
+        <a href="#example-prefix-suffix" id="example-prefix-suffix" class="anchor">
+            Prefix / Suffix
+        </a>
+    </h3>
+
+    <p>If we need to add some content/context to our values, we can specify a <code>prefix</code>
+        and/or <code>suffix</code> to spice things up. It would not be possible with css <code>:before</code>
+        and <code>:after</code> because we already use these psuedo-elements for styling.</p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#prefix-suffix-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#prefix-suffix-slider-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#prefix-suffix-slider-css" title="css">{;}</a></dd>
+        <dd><a href="#prefix-suffix-slider-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="prefix-suffix-slider-result">
+
+            <div id="prefix-suffix-slider"></div>
+
+            <p><span class="round label tip"></span> Check out the <a href="#prefix-suffix-slider-css">CSS</a> &amp; 
+                <a href="#prefix-suffix-slider-js">JS</a> code, and also try resizing your browser to see the slider respond.</p>
+
+        </div>
+
+        <div class="content" id="prefix-suffix-slider-html">
+
+            <pre data-lang="html">
+                &lt;div class="slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="prefix-suffix-slider-css">
+
+            <pre data-lang="css">
+                
+                /* Because of the prefix/suffix we need to shift the labels left
+                    a little bit so they are still aligned centrally. */
+
+                #prefix-suffix-slider .ui-slider-label {
+                  margin-left: -1.75em; 
+                }
+                
+                /* We also use a media query so the pips do not crowd-over each other
+                    when we get to a small screen size */
+
+                @media screen and (max-width: 1040px) {
+                    #prefix-suffix-slider .ui-slider-pip:nth-of-type(2n+1) .ui-slider-label {
+                        display: none; 
+                    } 
+                }
+            </pre>
+
+        </div>
+
+        <div class="content" id="prefix-suffix-slider-js">
+            <pre data-lang="js">
+                $(".slider")
+                    .slider({ 
+                        min: 0, 
+                        max: 100, 
+                        value: 50, 
+                        step: 10 
+                    })
+                    .slider("pips", {
+                        rest: "label",
+                        prefix: "&dollar;",
+                        suffix: ".00&cent;"
+                    });
+            </pre>
+        </div>
+
+    </div>
+
+</section>

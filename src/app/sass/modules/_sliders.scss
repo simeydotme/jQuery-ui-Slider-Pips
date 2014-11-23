@@ -6,6 +6,8 @@ $h: 1.4em;
 
     &.ui-slider-horizontal {
 
+        margin-bottom: 4em;
+
         .ui-slider-handle {
 
             width: $w;
@@ -28,8 +30,6 @@ $h: 1.4em;
             left: -0.4em;
 
         }
-
-        
 
     }
 

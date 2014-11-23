@@ -1,0 +1,50 @@
+<section class="sub-block">
+    
+    <h3>
+        <a href="#example-only-pips" id="example-only-pips" class="anchor">
+            Only Show Pips
+        </a>
+    </h3>
+
+    <p>Instead of having the values shown for the first/last point, we could only show pips. This might
+        be good when we just need to show the user how many options they have without giving explicit values.</p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#show-only-pips-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#show-only-pips-slider-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#show-only-pips-slider-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="show-only-pips-slider-result">
+
+            <div id="show-only-pips-slider"></div>
+
+        </div>
+
+        <div class="content" id="show-only-pips-slider-html">
+
+            <pre data-lang="html">
+                &lt;div class="slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="show-only-pips-slider-js">
+            <pre data-lang="js">
+                $(".slider")
+                    .slider({
+                        max: 4
+                    })
+                    .slider("pips", {
+                        first: "pip",
+                        last: "pip"
+                    });
+            </pre>
+        </div>
+
+    </div>
+
+</section>

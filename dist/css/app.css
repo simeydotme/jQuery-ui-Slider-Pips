@@ -7215,11 +7215,13 @@ code {
   border-radius: 2px;
   padding: 0.03em 0.3em 0.1em; }
 
-.ui-slider.ui-slider-horizontal .ui-slider-handle {
-  width: 1em;
-  height: 1.4em;
-  margin-left: -0.5em;
-  top: -0.4em; }
+.ui-slider.ui-slider-horizontal {
+  margin-bottom: 4em; }
+  .ui-slider.ui-slider-horizontal .ui-slider-handle {
+    width: 1em;
+    height: 1.4em;
+    margin-left: -0.5em;
+    top: -0.4em; }
 .ui-slider.ui-slider-vertical .ui-slider-handle {
   width: 1.4em;
   height: 1em;
@@ -7560,3 +7562,9 @@ table {
     top: -12px; }
     #styling-after-slider .ui-slider-pip .ui-slider-label {
       top: -18px; }
+
+#prefix-suffix-slider .ui-slider-label {
+  margin-left: -1.75em; }
+@media screen and (max-width: 1040px) {
+  #prefix-suffix-slider .ui-slider-pip:nth-of-type(2n+1) .ui-slider-label {
+    display: none; } }
