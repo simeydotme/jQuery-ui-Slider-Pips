@@ -5,6 +5,10 @@
 
     $(function() {
 
+
+        $.ui.slider.prototype.options.animate = "fast";
+
+
         $("#example-slider")
             .slider({ max: 20, value: 3 });
 

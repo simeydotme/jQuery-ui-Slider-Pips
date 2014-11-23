@@ -1,6 +1,6 @@
 
-$w: 1em;
-$h: 1.4em;
+$w: 15px;
+$h: 25px;
 
 .ui-slider {
 
@@ -12,8 +12,8 @@ $h: 1.4em;
 
             width: $w;
             height: $h;
-            margin-left: -($w/2);
-            top: -0.4em;
+            margin-left: -7px;
+            top: -7px;
 
         }
  
@@ -26,8 +26,39 @@ $h: 1.4em;
 
             width: $h;
             height: $w;
-            margin-bottom: -($w/2);
-            left: -0.4em;
+            margin-bottom: -7px;
+            left: -7px;
+
+        }
+
+    }
+
+}
+
+.ui-widget-content {
+ 
+    .ui-slider-handle {
+
+        &.ui-state-default {
+
+            background: $fcolor;
+            border-color: $fcolor;
+
+        }
+
+        &.ui-state-focus,
+        &.ui-state-hover,
+        &.ui-state-active {
+
+            background: $link;
+            border-color: $link;
+
+        }
+
+        &.ui-state-focus {
+
+            outline: none;
+            border-color: $fcolor;
 
         }
 

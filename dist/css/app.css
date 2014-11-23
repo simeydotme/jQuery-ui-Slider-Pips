@@ -7218,15 +7218,25 @@ code {
 .ui-slider.ui-slider-horizontal {
   margin-bottom: 4em; }
   .ui-slider.ui-slider-horizontal .ui-slider-handle {
-    width: 1em;
-    height: 1.4em;
-    margin-left: -0.5em;
-    top: -0.4em; }
+    width: 15px;
+    height: 25px;
+    margin-left: -7px;
+    top: -7px; }
 .ui-slider.ui-slider-vertical .ui-slider-handle {
-  width: 1.4em;
-  height: 1em;
-  margin-bottom: -0.5em;
-  left: -0.4em; }
+  width: 25px;
+  height: 15px;
+  margin-bottom: -7px;
+  left: -7px; }
+
+.ui-widget-content .ui-slider-handle.ui-state-default {
+  background: #434d5a;
+  border-color: #434d5a; }
+.ui-widget-content .ui-slider-handle.ui-state-focus, .ui-widget-content .ui-slider-handle.ui-state-hover, .ui-widget-content .ui-slider-handle.ui-state-active {
+  background: #00c7d7;
+  border-color: #00c7d7; }
+.ui-widget-content .ui-slider-handle.ui-state-focus {
+  outline: none;
+  border-color: #434d5a; }
 
 .block {
   padding: 4em 1em; }
