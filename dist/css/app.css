@@ -7193,6 +7193,10 @@ pre.prettyprint {
   overflow-x: auto; }
   @media only screen and (min-width: 501px) {
     pre.prettyprint {
+      padding: 1.8em 4em;
+      margin: 0 -4em 2em; } }
+  @media only screen and (min-width: 901px) {
+    pre.prettyprint {
       padding: 1.8em 6.7em;
       margin: 0 -6.7em 2em; } }
   .row > .columns > pre.prettyprint, .row > .column > pre.prettyprint {
@@ -7237,6 +7241,11 @@ code {
   @media only screen and (min-width: 901px) {
     .block {
       padding: 4em 5em; } }
+
+.sub-block {
+  padding: 0 0 4em; }
+  .sub-block:last-child {
+    padding: 0; }
 
 .row {
   width: auto;
@@ -7328,6 +7337,12 @@ button,
     margin: 0.5em 1em;
     float: none; }
 
+@media screen and (max-width: 1000px) {
+  .table-wrapper {
+    overflow-x: scroll; }
+    .table-wrapper table {
+      min-width: 800px; } }
+
 table {
   font-weight: 400; }
   table tr td,
@@ -7352,7 +7367,7 @@ table {
 .sidebar {
   position: fixed;
   width: 100%;
-  font-size: 0.8em;
+  font-size: 1em;
   padding: 1em 1.5em;
   top: 0;
   left: 0;
@@ -7360,11 +7375,15 @@ table {
   background: #434d5a;
   color: #fffaf7;
   overflow: auto;
-  transform: translate(-100%, 0);
+  z-index: 4815;
+  transform: translate3d(-100%, 0, 0);
   transition: transform 0.3s ease, width 0.3s ease, padding 0.3s ease; }
+  .sidebar--open {
+    transform: translate3d(0, 0, 0); }
   @media only screen and (min-width: 701px) {
     .sidebar {
-      transform: translate(0);
+      font-size: 0.8em;
+      transform: translate3d(0, 0, 0);
       width: 220px; } }
   @media only screen and (min-width: 901px) {
     .sidebar {
@@ -7393,9 +7412,49 @@ table {
     transform: translate(-2em, 0.1em);
     opacity: 0;
     transition: all 0.2s ease; }
-  .sidebar__item:hover:before, .sidebar__item.active {
+  .sidebar__item:hover:before, .sidebar__item--active:before {
     transform: translate(-1em, 0.1em);
     opacity: 1; }
+  .sidebar__item--active a {
+    color: #00c7d7; }
+  .sidebar__item .sidebar__nav {
+    font-size: 0.9em; }
+  .sidebar__toggle {
+    position: fixed;
+    font-size: 1.5em;
+    width: 1em;
+    height: 1em;
+    bottom: 0.3em;
+    right: 0.3em;
+    padding: 1em;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #434d5a;
+    transition: all 0.4s ease;
+    z-index: 4815162342; }
+    @media only screen and (min-width: 701px) {
+      .sidebar__toggle {
+        opacity: 0;
+        transform: translate(5em, 0); } }
+    .sidebar__toggle [class^=icon] {
+      position: absolute;
+      width: 1em;
+      height: 1em;
+      left: 50%;
+      top: 50%;
+      margin: -0.5em 0 0 -0.5em;
+      transition: all 0.3s ease; }
+    .sidebar__toggle .icon--cross {
+      opacity: 0;
+      transform: translate(-2em, 0); }
+    .sidebar__toggle--active {
+      color: #00c7d7; }
+      .sidebar__toggle--active .icon--cross {
+        opacity: 1;
+        transform: translate(0, 0); }
+      .sidebar__toggle--active .icon--menu {
+        opacity: 0;
+        transform: translate(2em, 0); }
 
 .content {
   padding-left: 0;

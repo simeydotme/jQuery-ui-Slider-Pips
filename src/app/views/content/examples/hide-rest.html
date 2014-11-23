@@ -1,0 +1,50 @@
+<section class="sub-block">
+    
+    <h3>
+        <a href="#example-hide-rest" id="example-hide-labels-and-pips" class="anchor">
+            Hide Labels &amp; Pips
+        </a>
+    </h3>
+
+    <p>It is possible to hide all the pips if we want a slider to <strong>show just the min/max</strong> values.</p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#hide-rest-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#hide-rest-slider-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#hide-rest-slider-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="hide-rest-slider-result">
+
+            <div id="hide-rest-slider"></div>
+
+        </div>
+
+        <div class="content" id="hide-rest-slider-html">
+
+            <pre data-lang="html">
+                &lt;div class="slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="hide-rest-slider-js">
+            <pre data-lang="js">
+                $(".slider")
+                    .slider({
+                        max: 12,
+                        range: true,
+                        values: [5, 15]
+                    })
+                    .slider("pips", {
+                        rest: false
+                    });
+            </pre>
+        </div>
+
+    </div>
+
+</section>

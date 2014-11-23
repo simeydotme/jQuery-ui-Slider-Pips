@@ -37,6 +37,11 @@
     <body>
 
         
+        <a href="#" class="sidebar__toggle">
+            <i class="icon icon--menu"></i>
+            <i class="icon icon--cross"></i>
+        </a>
+        
         <nav class="sidebar">
             
             <h2 class="sidebar__title">Navigation</h2>
@@ -48,10 +53,28 @@
                 <li class="sidebar__item"><a href="#examples">Basic Usage</a>
                     <ul class="sidebar__nav">
                         <li class="sidebar__item"><a href="#basic-pips">Pips</a></li>
-                        <li class="sidebar__item"><a href="#basic-float">Float</a></li>
+                        <li class="sidebar__item sidebar__item--active"><a href="#basic-float">Float</a></li>
                     </ul>
                 </li>
-                <li class="sidebar__item"><a href="#customisation">Customisation</a></li>
+        
+                <li class="sidebar__item"><a href="#customisation">Customisation</a>
+                    <ul class="sidebar__nav">
+                        <li class="sidebar__item"><a href="#customisation-options">Options</a>
+                            <ul class="sidebar__nav">
+                                <li class="sidebar__item"><a href="#options-pips">Pips</a></li>
+                                <li class="sidebar__item"><a href="#options-float">Float</a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar__item"><a href="#customisation-styling">Styling</a></li>
+                    </ul>
+                </li>
+        
+                <li class="sidebar__item"><a href="#examples">Examples</a>
+                    <ul class="sidebar__nav">
+                        <li class="sidebar__item"><a href="#example-show-all-labels">Show All Labels</a></li>
+                        <li class="sidebar__item"><a href="#example-hide-labels-and-pips">Hide Labels &amp; Pips</a></li>
+                    </ul>
+                </li>
         
             </ul>
         
@@ -354,232 +377,251 @@
                                 })
                         </pre>
                     
-                        
-                        <h4>Pips</h4>
+                    </section>
+                    
+                    <section class="sub-block">
+                    
+                        <h4>
+                            <a href="#options-pips" id="options-pips" class="anchor">
+                                Pips
+                            </a>
+                        </h4>
                         <p>A list of all the options available on the pips method:</p>
-                    
-                        <table class="options-table">
                         
-                            <tr>
-                                <th scope="col">Option</th>
-                                <th scope="col">Values</th>
-                                <th scope="col">Default</th>
-                                <th scope="col">Description</th>
-                            </tr>
+                        <div class="table-wrapper">
+                            <table class="options-table">
                             
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">first</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">"label"</code>, 
-                                    <code data-type="string">"pip"</code> or 
-                                    <code data-type="bool">false</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">"label"</code>
-                                </td>
-                                <td>
-                                    <p>Determines the style of <strong>the first pip</strong> on the slider</p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">last</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">"label"</code>, 
-                                    <code data-type="string">"pip"</code> or 
-                                    <code data-type="bool">false</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">"label"</code>
-                                </td>
-                                <td>
-                                    <p>Determines the style of <strong>the final pip</strong> on the slider</p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">rest</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">"label"</code>, 
-                                    <code data-type="string">"pip"</code> or 
-                                    <code data-type="bool">false</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">"pip"</code>
-                                </td>
-                                <td>
-                                    <p>Determines the style of <strong>all other pips</strong> on the slider</p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">step</code>
-                                </td>
-                                <td>
-                                    <code data-type="number">number</code>
-                                </td>
-                                <td>
-                                    <code data-type="number">1 / 5%</code>
-                                </td>
-                                <td>
-                                    <p>The <code>step</code> parameter will <strong>only generate every <code>nth</code> pip</strong>.<br>
-                                        eg: If we set <code>step: 2</code>, then we will only get the values: 0, 2, 4, 6, 8... generated.</p>
-                                    <p><small>note: if the slider has a value over 100, step is set to 5% of the value</small></p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">labels</code>
-                                </td>
-                                <td>
-                                    <code data-type="number">array</code> or
-                                    <code data-type="bool">false</code>
-                                </td>
-                                <td>
-                                    <code data-type="bool">false</code>
-                                </td>
-                                <td>
-                                    <p>Will <strong>override the values</strong> of the pips with an array of given values.<br> 
-                                        eg: <code>["Monday", "Tuesday", "Wednesday", ... ]</code></p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">prefix</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">string</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">""</code>
-                                </td>
-                                <td>
-                                    <p>Adds a string value <strong>before the pip label</strong>.<br> 
-                                        eg: <code>prefix: $</code> = > <strong>$1, $2, $3, $4, ...</strong></p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">suffix</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">string</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">""</code>
-                                </td>
-                                <td>
-                                    <p>Adds a string value <strong>after the pip label</strong>.<br>
-                                        eg: <code>suffix: °c</code> = > <strong>1&deg;c, 2&deg;c, 3&deg;c, 4&deg;c, ...</strong></p>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <th scope="col">Option</th>
+                                    <th scope="col">Values</th>
+                                    <th scope="col">Default</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">first</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">"label"</code>, 
+                                        <code data-type="string">"pip"</code> or 
+                                        <code data-type="bool">false</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">"label"</code>
+                                    </td>
+                                    <td>
+                                        <p>Determines the style of <strong>the first pip</strong> on the slider</p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">last</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">"label"</code>, 
+                                        <code data-type="string">"pip"</code> or 
+                                        <code data-type="bool">false</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">"label"</code>
+                                    </td>
+                                    <td>
+                                        <p>Determines the style of <strong>the final pip</strong> on the slider</p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">rest</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">"label"</code>, 
+                                        <code data-type="string">"pip"</code> or 
+                                        <code data-type="bool">false</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">"pip"</code>
+                                    </td>
+                                    <td>
+                                        <p>Determines the style of <strong>all other pips</strong> on the slider</p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">step</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="number">number</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="number">1 / 5%</code>
+                                    </td>
+                                    <td>
+                                        <p>The <code>step</code> parameter will <strong>only generate every <code>nth</code> pip</strong>.<br>
+                                            eg: If we set <code>step: 2</code>, then we will only get the values: 0, 2, 4, 6, 8... generated.</p>
+                                        <p><small>note: if the slider has a value over 100, step is set to 5% of the value</small></p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">labels</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="number">array</code> or
+                                        <code data-type="bool">false</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="bool">false</code>
+                                    </td>
+                                    <td>
+                                        <p>Will <strong>override the values</strong> of the pips with an array of given values.<br> 
+                                            eg: <code>["Monday", "Tuesday", "Wednesday", ... ]</code></p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">prefix</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">string</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">""</code>
+                                    </td>
+                                    <td>
+                                        <p>Adds a string value <strong>before the pip label</strong>.<br> 
+                                            eg: <code>prefix: $</code> => <strong>$1, $2, $3, $4, ...</strong></p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">suffix</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">string</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">""</code>
+                                    </td>
+                                    <td>
+                                        <p>Adds a string value <strong>after the pip label</strong>.<br>
+                                            eg: <code>suffix: °c</code> => <strong>1&deg;c, 2&deg;c, 3&deg;c, 4&deg;c, ...</strong></p>
+                                    </td>
+                                </tr>
                     
-                        </table>
+                            </table>
+                        </div>
                     
-                        
-                        <h4>Float</h4>
+                    </section>
+                    
+                    
+                    
+                    <section class="sub-block">
+                    
+                        <h4>
+                            <a href="#options-float" id="options-float" class="anchor">
+                                Float
+                            </a>
+                        </h4>
                         <p>A list of all the options available on the float method:</p>
                     
-                        <table class="options-table">
-                        
-                            <tr>
-                                <th scope="col">Option</th>
-                                <th scope="col">Values</th>
-                                <th scope="col">Default</th>
-                                <th scope="col">Description</th>
-                            </tr>
+                        <div class="table-wrapper">
+                            <table class="options-table">
                             
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">handle</code>
-                                </td>
-                                <td>
-                                    <code data-type="number">boolean</code>
-                                </td>
-                                <td>
-                                    <code data-type="bool">true</code>
-                                </td>
-                                <td>
-                                    <p>Determines if the float effect should <strong>appear on the slider handle</strong></p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">pips</code>
-                                </td>
-                                <td>
-                                    <code data-type="number">boolean</code>
-                                </td>
-                                <td>
-                                    <code data-type="bool">false</code>
-                                </td>
-                                <td>
-                                    <p>Determines if the float effect should <strong>appear on the pips</strong></p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">labels</code>
-                                </td>
-                                <td>
-                                    <code data-type="number">array</code> or
-                                    <code data-type="bool">false</code>
-                                </td>
-                                <td>
-                                    <code data-type="bool">false</code>
-                                </td>
-                                <td>
-                                    <p>Will <strong>override the values</strong> of the floats with an array of given values.<br> 
-                                        eg: <code>["Monday", "Tuesday", "Wednesday", ... ]</code></p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">prefix</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">string</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">""</code>
-                                </td>
-                                <td>
-                                    <p>Adds a string value <strong>before the float label</strong>.<br> 
-                                        eg: <code>prefix: $</code> = > <strong>$1, $2, $3, $4, ...</strong></p>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <td scope="row">
-                                    <code data-type="string">suffix</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">string</code>
-                                </td>
-                                <td>
-                                    <code data-type="string">""</code>
-                                </td>
-                                <td>
-                                    <p>Adds a string value <strong>after the float label</strong>.<br>
-                                        eg: <code>suffix: °c</code> = > <strong>1&deg;c, 2&deg;c, 3&deg;c, 4&deg;c, ...</strong></p>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <th scope="col">Option</th>
+                                    <th scope="col">Values</th>
+                                    <th scope="col">Default</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">handle</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="number">boolean</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="bool">true</code>
+                                    </td>
+                                    <td>
+                                        <p>Determines if the float effect should <strong>appear on the slider handle</strong></p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">pips</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="number">boolean</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="bool">false</code>
+                                    </td>
+                                    <td>
+                                        <p>Determines if the float effect should <strong>appear on the pips</strong></p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">labels</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="number">array</code> or
+                                        <code data-type="bool">false</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="bool">false</code>
+                                    </td>
+                                    <td>
+                                        <p>Will <strong>override the values</strong> of the floats with an array of given values.<br> 
+                                            eg: <code>["Monday", "Tuesday", "Wednesday", ... ]</code></p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">prefix</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">string</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">""</code>
+                                    </td>
+                                    <td>
+                                        <p>Adds a string value <strong>before the float label</strong>.<br> 
+                                            eg: <code>prefix: $</code> => <strong>$1, $2, $3, $4, ...</strong></p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td scope="row">
+                                        <code data-type="string">suffix</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">string</code>
+                                    </td>
+                                    <td>
+                                        <code data-type="string">""</code>
+                                    </td>
+                                    <td>
+                                        <p>Adds a string value <strong>after the float label</strong>.<br>
+                                            eg: <code>suffix: °c</code> => <strong>1&deg;c, 2&deg;c, 3&deg;c, 4&deg;c, ...</strong></p>
+                                    </td>
+                                </tr>
                     
-                        </table>
-                       
+                            </table>
+                        </div>
                     
                     </section>
                     
@@ -591,7 +633,7 @@
                             </a>
                         </h3>
                     
-                        <p>The plugin makes great use of <strong>presentation classes to provide a powerful amount of customisation</strong>. It's important the slider
+                        <p>The plugin makes great use of <strong>presentation classes</strong> to provide <strong>powerful customisation</strong>. It's important the slider
                             fits the unique style of your project, and with some modification you can get some really interesting results.</p>
                             
                         <pre data-lang="css">
@@ -610,6 +652,8 @@
                                     .ui-slider-line {}
                                     .ui-slider-label {}
                                     .ui-slider-tip-label {}
+                                .ui-slider-pip-selected-initial {}
+                                .ui-slider-pip-selected {}
                         </pre>
                     
                         <p>To make the <strong>code as succinct and performant</strong> as possible; there's only <strong>minimal javascript configuration</strong> on how the
@@ -668,6 +712,105 @@
                         </a>
                     </h2>
                 
+                    <section class="sub-block">
+                        
+                        <h3>
+                            <a href="#example-show-rest" id="example-show-all-labels" class="anchor">
+                                Show All Labels
+                            </a>
+                        </h3>
+                    
+                        <p>By default we only show the labels for the <strong>first</strong> and <strong>final</strong> pips, shown below is
+                            an example of <strong>labels being applied to all pips.</strong></p>
+                            
+                    
+                        <dl class="tabs code" data-tab>
+                            <dd class="active"><a href="#show-rest-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                            <dd><a href="#show-rest-slider-html" title="html">&lt;/&gt;</a></dd>
+                            <dd><a href="#show-rest-slider-js" title="jquery">($)</a></dd>
+                        </dl>
+                    
+                        <div class="tabs-content">
+                    
+                            <div class="content active" id="show-rest-slider-result">
+                    
+                                <div id="show-rest-slider"></div>
+                    
+                            </div>
+                    
+                            <div class="content" id="show-rest-slider-html">
+                    
+                                <pre data-lang="html">
+                                    &lt;div class="slider"&gt;&lt;/div&gt;
+                                </pre>
+                    
+                            </div>
+                    
+                            <div class="content" id="show-rest-slider-js">
+                                <pre data-lang="js">
+                                    $(".slider")
+                                        .slider({
+                                            max: 12
+                                        })
+                                        .slider("pips", {
+                                            rest: "label"
+                                        });
+                                </pre>
+                            </div>
+                    
+                        </div>
+                    
+                    </section>
+                    <section class="sub-block">
+                        
+                        <h3>
+                            <a href="#example-hide-rest" id="example-hide-labels-and-pips" class="anchor">
+                                Hide Labels &amp; Pips
+                            </a>
+                        </h3>
+                    
+                        <p>It is possible to hide all the pips if we want a slider to <strong>show just the min/max</strong> values.</p>
+                            
+                    
+                        <dl class="tabs code" data-tab>
+                            <dd class="active"><a href="#hide-rest-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                            <dd><a href="#hide-rest-slider-html" title="html">&lt;/&gt;</a></dd>
+                            <dd><a href="#hide-rest-slider-js" title="jquery">($)</a></dd>
+                        </dl>
+                    
+                        <div class="tabs-content">
+                    
+                            <div class="content active" id="hide-rest-slider-result">
+                    
+                                <div id="hide-rest-slider"></div>
+                    
+                            </div>
+                    
+                            <div class="content" id="hide-rest-slider-html">
+                    
+                                <pre data-lang="html">
+                                    &lt;div class="slider"&gt;&lt;/div&gt;
+                                </pre>
+                    
+                            </div>
+                    
+                            <div class="content" id="hide-rest-slider-js">
+                                <pre data-lang="js">
+                                    $(".slider")
+                                        .slider({
+                                            max: 12,
+                                            range: true,
+                                            values: [5, 15]
+                                        })
+                                        .slider("pips", {
+                                            rest: false
+                                        });
+                                </pre>
+                            </div>
+                    
+                        </div>
+                    
+                    </section>
                 
                 </section>
                 

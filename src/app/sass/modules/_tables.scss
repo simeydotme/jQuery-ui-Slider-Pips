@@ -1,3 +1,22 @@
+
+
+.table-wrapper {
+
+    @media screen and (max-width: 1000px) {
+
+        overflow-x: scroll;
+
+        table {
+
+            min-width: 800px;
+
+        }
+
+    }
+
+}
+
+
 table {
 
     font-weight: 400;

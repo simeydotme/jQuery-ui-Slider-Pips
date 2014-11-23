@@ -6,7 +6,7 @@ $listTransition: all 0.2s ease;
     position: fixed;
     width: 100%;
 
-    font-size: 0.8em;
+    font-size: 1em;
     padding: 1em 1.5em;
 
     top: 0;
@@ -15,13 +15,22 @@ $listTransition: all 0.2s ease;
     background: $fcolor;
     color: $bcolor;
     overflow: auto;
+    z-index: 4815;
     
-    transform: translate( -100% , 0 );
+    transform: translate3d( -100% , 0 , 0 );
     transition: $sidebarTransition;
 
-    @media #{$medium-up} { 
+    &--open {
 
-        transform: translate( 0 );
+        transform: translate3d( 0, 0, 0 );
+
+    }
+
+
+    @media #{$medium-up} { 
+        
+        font-size: 0.8em;
+        transform: translate3d( 0, 0, 0 );
         width: $sidebarWidthSmall;
 
     }
@@ -88,10 +97,80 @@ $listTransition: all 0.2s ease;
         }
 
         &:hover:before,
-        &.active {
+        &--active:before {
 
             transform: translate(-1em, 0.1em);
             opacity: 1;
+
+        }
+
+        &--active a {
+
+            color: $link;
+
+        }
+
+        .sidebar__nav {
+            
+            font-size: 0.9em;
+
+        }
+
+    }
+
+    &__toggle {
+
+        position: fixed;
+        font-size: 1.5em;
+        width: 1em;
+        height: 1em;
+        bottom: 0.3em;
+        right: 0.3em;
+        padding: 1em;
+        overflow: hidden;
+
+        border-radius: $radius;
+        background: $fcolor;
+        
+        transition: all 0.4s ease;
+        z-index: 4815162342;
+
+        @media #{$medium-up} {
+
+            opacity: 0;
+            transform: translate( 5em, 0 );
+
+        }
+
+        [class^=icon] {
+
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            left: 50%;
+            top: 50%;
+            margin: -0.5em 0 0 -0.5em;
+            transition: all 0.3s ease;
+
+        }
+
+        .icon--cross {
+            opacity: 0;
+            transform: translate(-2em, 0)
+        }
+
+        &--active {
+
+            color: $link;
+
+            .icon--cross {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+            .icon--menu {
+                opacity: 0;
+                transform: translate(2em, 0);
+            }
 
         }
 

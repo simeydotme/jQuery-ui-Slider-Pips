@@ -37,6 +37,26 @@
             .slider({ max: 20, value: 10 })
             .slider("pips");
 
+
+
+
+
+        $("#show-rest-slider")
+            .slider({ max: 12, value: 6 })
+            .slider("pips", {
+                rest: "label"
+            });
+
+
+
+
+
+        $("#hide-rest-slider")
+            .slider({ max: 12, range: true, values: [3, 9] })
+            .slider("pips", {
+                rest: false
+            });
+
     });
 
 }(jQuery));

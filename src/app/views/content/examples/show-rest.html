@@ -1,0 +1,49 @@
+<section class="sub-block">
+    
+    <h3>
+        <a href="#example-show-rest" id="example-show-all-labels" class="anchor">
+            Show All Labels
+        </a>
+    </h3>
+
+    <p>By default we only show the labels for the <strong>first</strong> and <strong>final</strong> pips, shown below is
+        an example of <strong>labels being applied to all pips.</strong></p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#show-rest-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#show-rest-slider-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#show-rest-slider-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="show-rest-slider-result">
+
+            <div id="show-rest-slider"></div>
+
+        </div>
+
+        <div class="content" id="show-rest-slider-html">
+
+            <pre data-lang="html">
+                &lt;div class="slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="show-rest-slider-js">
+            <pre data-lang="js">
+                $(".slider")
+                    .slider({
+                        max: 12
+                    })
+                    .slider("pips", {
+                        rest: "label"
+                    });
+            </pre>
+        </div>
+
+    </div>
+
+</section>

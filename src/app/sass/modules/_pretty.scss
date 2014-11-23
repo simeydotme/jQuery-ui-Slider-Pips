@@ -175,6 +175,13 @@ pre.prettyprint {
 
   @media #{$small-up} { 
 
+    padding: 1.8em 4em;
+    margin: 0 -4em 2em;
+
+  }
+
+  @media #{$large-up} { 
+
     padding: 1.8em 6.7em;
     margin: 0 -6.7em 2em;
 
