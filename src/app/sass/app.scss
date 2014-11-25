@@ -54,7 +54,8 @@ h1 {
 }
 
 a,
-a > .com {
+pre a > .com,
+code a > .com {
     @extend %link;
 }
 

@@ -45,13 +45,13 @@
 
             $(this).each(function() {
                 
+                var lang = $(this).data("lang") || "";
+
                 $(this)
-                    .addClass("prettyprint")
-                    .addClass( "lang-" + $(this).data("lang") );
+                    .addClass( "prettyprint" )
+                    .addClass( "lang-" + lang );
 
             });
-
-            prettyPrint();
 
             return $(this);
 

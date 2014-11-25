@@ -5,7 +5,11 @@
 
     $(function() {
 
+        $("code").pretty();
         $("pre").prettyPre().pretty();
+        prettyPrint();
+
+
         $(document).foundation();
 
 
@@ -36,9 +40,10 @@
             $toggle = $(".sidebar__toggle"),
             ev = ( Modernizr.touch ) ? "touchstart" : "click";
 
-        $toggle.on( ev, function() {
+        $toggle.on( ev, function(e) {
             $sidebar.toggleClass("sidebar--open");
             $toggle.toggleClass("sidebar__toggle--active");
+            e.preventDefault();
         });
 
 

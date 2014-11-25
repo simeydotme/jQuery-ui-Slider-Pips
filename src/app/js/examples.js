@@ -66,7 +66,7 @@
 
 
         $("#show-only-pips-slider")
-            .slider({ max: 4, value: 2 })
+            .slider({ max: 30, value: 20 })
             .slider("pips", {
                 first: "pip",
                 last: "pip"
@@ -82,6 +82,37 @@
                 rest: "label",
                 prefix: "&dollar;",
                 suffix: ".00&cent;"
+            });
+
+
+
+
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        var activeMonth = new Date().getMonth();
+
+        $("#custom-labels-output").text( "You selected " + months[activeMonth] );
+
+        $("#custom-labels-slider")
+            .slider({ min: 0, max: months.length-1, value: activeMonth })
+            .slider("pips", {
+                rest: "label",
+                labels: months
+            })
+            .on("slidechange", function(e,ui) {
+                $("#custom-labels-output").text( "You selected " + months[ui.value] );
+            });
+            //.trigger("slidechange");
+
+
+
+
+        var hanzi = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+
+        $("#hanzi-labels-slider")
+            .slider({ min: 0, max: hanzi.length-1, value: 3 })
+            .slider("pips", {
+                rest: "label",
+                labels: hanzi
             });
 
     });

@@ -1,0 +1,122 @@
+<section class="sub-block">
+    
+    <h3>
+        <a href="#example-custom-labels" id="example-custom-labels" class="anchor">
+            Custom Labels
+        </a>
+    </h3>
+
+    <p>It's possible with <code>rest: "label"</code> to set some custom <code>labels</code> to the slider instead of the
+        default values. It's important to note here that the slider will still return it's integer value when
+        you call <code>$(".slider").slider("value");</code>.</p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#custom-labels-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#custom-labels-slider-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#custom-labels-slider-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="custom-labels-slider-result">
+            
+            <p id="custom-labels-output" class="panel callout radius text-center"></p>
+            <div id="custom-labels-slider"></div>
+
+        </div>
+
+        <div class="content" id="custom-labels-slider-html">
+
+            <pre data-lang="html">
+                &lt;div class="slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="custom-labels-slider-js">
+            <pre data-lang="js">
+                // set up an array to hold the months
+                var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                // lets be fancy for the demo and select the current month.
+                var activeMonth = new Date().getMonth();
+                
+                $(".slider")
+
+                    // activate the slider with options
+                    .slider({ 
+                        min: 0, 
+                        max: months.length-1, 
+                        value: activeMonth 
+                    })
+
+                    // add pips with the labels set to "months"
+                    .slider("pips", {
+                        rest: "label",
+                        labels: months
+                    })
+
+                    // and whenever the slider changes, lets echo out the month
+                    .on("slidechange", function(e,ui) {
+                        $("#labels-months-output").text( "You selected " + months[ui.value] );
+                    });
+            </pre>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    
+    <h3>
+        <a href="#example-hanzi-labels" id="example-hanzi-labels" class="anchor">
+            More Custom Labels
+        </a>
+    </h3>
+
+    <p>Here's another example using <code>labels</code> except here we replace roman numbers with
+        the Chinese/Hanzi equivalent.</p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#hanzi-labels-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#hanzi-labels-slider-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#hanzi-labels-slider-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="hanzi-labels-slider-result">
+
+            <div id="hanzi-labels-slider"></div>
+
+        </div>
+
+        <div class="content" id="hanzi-labels-slider-html">
+
+            <pre data-lang="html">
+                &lt;div class="slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="hanzi-labels-slider-js">
+            <pre data-lang="js">
+                var hanzi = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+
+                $("#hanzi-labels-slider")
+                    .slider({ min: 0, max: hanzi.length-1, value: 3 })
+                    .slider("pips", {
+                        rest: "label",
+                        labels: hanzi
+                    });
+            </pre>
+        </div>
+
+    </div>
+
+</section>

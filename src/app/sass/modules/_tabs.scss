@@ -76,6 +76,13 @@
         padding: 3em 0 1em;
         border-top: 1px solid;
 
+        @media #{$xsmall-only} {
+
+            padding-left: 2em;
+            padding-right: 2em;
+
+        }
+
     }
 
     [id$="-html"],
