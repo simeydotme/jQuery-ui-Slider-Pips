@@ -1,13 +1,29 @@
 
 $listTransition: all 0.2s ease;
 
+body {
+
+    &.nav--active {
+
+        overflow: hidden;
+
+        @media #{$medium-up} { 
+
+            overflow: auto;
+
+        }
+
+    }
+
+}
+
 .sidebar {
     
     position: fixed;
     width: 100%;
 
     font-size: 1em;
-    padding: 1em 1.5em;
+    padding: 1em 1.5em 4em;
 
     top: 0;
     left: 0;

@@ -39,6 +39,54 @@
 
 
 #hanzi-labels-slider {
+
     font-family: "SimHei", "Hei", sans-serif;
-    font-size: 1.2em;
+
+    .ui-slider-handle {
+
+        .ui-slider-tip {
+
+            font-size: 1.4em;
+            width: 42px;
+            margin-left: -22px;
+            height: 33px;
+            line-height: 30px;
+            top: -40px;
+
+            background: $fcolor;
+            border-color: $fcolor;
+            color: white;
+
+            &:before,
+            &:after {
+                border-top-color: $fcolor;
+            }
+
+        }
+
+    }
+
+    .ui-slider-pip {
+
+        font-size: 1.2em;
+
+    }
+
+}
+
+
+
+
+
+
+#steps-fivepercent-slider {
+
+    .ui-slider-tip {
+        
+        visibility: visible;
+        opacity: 1;
+        top: -30px;
+
+    }
+
 }

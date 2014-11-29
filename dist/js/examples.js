@@ -113,7 +113,44 @@
             .slider("pips", {
                 rest: "label",
                 labels: hanzi
+            })
+            .slider("float", {
+                labels: hanzi
             });
+
+
+
+
+
+        $("#steps-default-slider")
+            .slider({ min: 0, max: 100, step: 20 })
+            .slider("pips", {
+                rest: "label"
+            });
+
+
+
+
+
+        $("#steps-fivepercent-slider")
+            .slider({ min: 0, max: 1000, range: true, values: [200, 800] })
+            .slider("pips", {
+                rest: "label"
+            })
+            .slider("float");
+
+
+
+
+
+        $("#steps-stacking-slider")
+            .slider({ min: 0, max: 1000, step: 100 })
+            .slider("pips", {
+                rest: "label",
+                step: 2
+            })
+            .slider("float");
+                    
 
     });
 

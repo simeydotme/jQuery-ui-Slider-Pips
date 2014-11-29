@@ -65,12 +65,12 @@
 
     </div>
 
+</section>
 
 
 
-
-
-
+    
+<section class="sub-block">
     
     <h3>
         <a href="#example-hanzi-labels" id="example-hanzi-labels" class="anchor">
@@ -85,6 +85,7 @@
     <dl class="tabs code" data-tab>
         <dd class="active"><a href="#hanzi-labels-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
         <dd><a href="#hanzi-labels-slider-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#hanzi-labels-slider-css" title="css">{;}</a></dd>
         <dd><a href="#hanzi-labels-slider-js" title="jquery">($)</a></dd>
     </dl>
 
@@ -104,12 +105,49 @@
 
         </div>
 
+        <div class="content" id="hanzi-labels-slider-css">
+
+            <pre data-lang="css">
+                #hanzi-labels-slider {
+                    font-family: "SimHei", "Hei", sans-serif;
+                }
+
+                #hanzi-labels-slider .ui-sliper-pip {
+                    font-size: 1.4em; 
+                }
+                  
+                #hanzi-labels-slider .ui-slider-handle .ui-slider-tip {
+                    font-size: 1.4em;
+                    width: 42px;
+                    margin-left: -22px;
+                    height: 33px;
+                    line-height: 30px;
+                    top: -40px;
+                    background: #434d5a;
+                    border-color: #434d5a;
+                    color: white; 
+                }
+                
+                #hanzi-labels-slider .ui-slider-handle .ui-slider-tip:before, 
+                #hanzi-labels-slider .ui-slider-handle .ui-slider-tip:after {
+                    border-top-color: #434d5a; 
+                }
+            </pre>
+
+        </div>
+
         <div class="content" id="hanzi-labels-slider-js">
             <pre data-lang="js">
                 var hanzi = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
 
                 $("#hanzi-labels-slider")
-                    .slider({ min: 0, max: hanzi.length-1, value: 3 })
+
+                    .slider({ 
+                        min: 0, 
+                        max: hanzi.length-1, 
+                        value: 3 
+                    })
+
                     .slider("pips", {
                         rest: "label",
                         labels: hanzi

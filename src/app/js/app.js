@@ -38,12 +38,16 @@
 
         var $sidebar = $(".sidebar"),
             $toggle = $(".sidebar__toggle"),
+            $body = $("body"),
             ev = ( Modernizr.touch ) ? "touchstart" : "click";
 
         $toggle.on( ev, function(e) {
+
             $sidebar.toggleClass("sidebar--open");
             $toggle.toggleClass("sidebar__toggle--active");
+            $body.toggleClass("nav--active");
             e.preventDefault();
+
         });
 
 

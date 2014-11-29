@@ -74,6 +74,17 @@
                     <ul class="sidebar__nav">
                         <li class="sidebar__item"><a href="#example-show-all-labels">Show All Labels</a></li>
                         <li class="sidebar__item"><a href="#example-hide-labels-and-pips">Hide Labels &amp; Pips</a></li>
+                        <li class="sidebar__item"><a href="#example-only-pips">Only Show Pips</a></li>
+                        <li class="sidebar__item"><a href="#example-prefix-suffix">Prefix/Suffix</a></li>
+                        <li class="sidebar__item"><a href="#example-custom-labels">Custom Labels</a></li>
+                        <li class="sidebar__item"><a href="#example-hanzi-labels">More Custom Labels</a></li>
+                        <li class="sidebar__item"><a href="#example-steps">Steps</a>
+                            <ul class="sidebar__nav">
+                                <li class="sidebar__item"><a href="#example-steps-fivepercent">5% Interval</a></li>
+                                <li class="sidebar__item"><a href="#example-steps-stacking">Stacking</a></li>
+                                <li class="sidebar__item"><a href="#example-steps-table">Step Table</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
         
@@ -1015,12 +1026,12 @@
                     
                         </div>
                     
+                    </section>
                     
                     
                     
-                    
-                    
-                    
+                        
+                    <section class="sub-block">
                         
                         <h3>
                             <a href="#example-hanzi-labels" id="example-hanzi-labels" class="anchor">
@@ -1035,6 +1046,7 @@
                         <dl class="tabs code" data-tab>
                             <dd class="active"><a href="#hanzi-labels-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
                             <dd><a href="#hanzi-labels-slider-html" title="html">&lt;/&gt;</a></dd>
+                            <dd><a href="#hanzi-labels-slider-css" title="css">{;}</a></dd>
                             <dd><a href="#hanzi-labels-slider-js" title="jquery">($)</a></dd>
                         </dl>
                     
@@ -1054,12 +1066,49 @@
                     
                             </div>
                     
+                            <div class="content" id="hanzi-labels-slider-css">
+                    
+                                <pre data-lang="css">
+                                    #hanzi-labels-slider {
+                                        font-family: "SimHei", "Hei", sans-serif;
+                                    }
+                    
+                                    #hanzi-labels-slider .ui-sliper-pip {
+                                        font-size: 1.4em; 
+                                    }
+                                      
+                                    #hanzi-labels-slider .ui-slider-handle .ui-slider-tip {
+                                        font-size: 1.4em;
+                                        width: 42px;
+                                        margin-left: -22px;
+                                        height: 33px;
+                                        line-height: 30px;
+                                        top: -40px;
+                                        background: #434d5a;
+                                        border-color: #434d5a;
+                                        color: white; 
+                                    }
+                                    
+                                    #hanzi-labels-slider .ui-slider-handle .ui-slider-tip:before, 
+                                    #hanzi-labels-slider .ui-slider-handle .ui-slider-tip:after {
+                                        border-top-color: #434d5a; 
+                                    }
+                                </pre>
+                    
+                            </div>
+                    
                             <div class="content" id="hanzi-labels-slider-js">
                                 <pre data-lang="js">
                                     var hanzi = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
                     
                                     $("#hanzi-labels-slider")
-                                        .slider({ min: 0, max: hanzi.length-1, value: 3 })
+                    
+                                        .slider({ 
+                                            min: 0, 
+                                            max: hanzi.length-1, 
+                                            value: 3 
+                                        })
+                    
                                         .slider("pips", {
                                             rest: "label",
                                             labels: hanzi
@@ -1068,6 +1117,192 @@
                             </div>
                     
                         </div>
+                    
+                    </section>
+                    <section class="sub-block">
+                        
+                        <h3>
+                            <a href="#example-steps" id="example-steps" class="anchor">
+                                Steps
+                            </a>
+                        </h3>
+                    
+                        <p>Steps can be a little complicated. The default slider allows us to skip along the slider 
+                            in a pattern. eg: <code>0, 20, 40...</code><br>
+                    
+                            Steps are hard-wired in to the slider and so the <code>pips</code> and <code>labels</code> 
+                            will match the <code>step</code> value.</p>
+                    
+                        <dl class="tabs code" data-tab>
+                            <dd class="active"><a href="#steps-default-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                            <dd><a href="#steps-default-slider-html" title="html">&lt;/&gt;</a></dd>
+                            <dd><a href="#steps-default-slider-js" title="jquery">($)</a></dd>
+                        </dl>
+                    
+                        <div class="tabs-content">
+                    
+                            <div class="content active" id="steps-default-slider-result">
+                    
+                                <div id="steps-default-slider"></div>
+                    
+                            </div>
+                    
+                            <div class="content" id="steps-default-slider-html">
+                    
+                                <pre data-lang="html">
+                                    &lt;div class="slider"&gt;&lt;/div&gt;
+                                </pre>
+                    
+                            </div>
+                    
+                            <div class="content" id="steps-default-slider-js">
+                                <pre data-lang="js">
+                                    $(".slider")
+                    
+                                        .slider({ 
+                                            min: 0, 
+                                            max: 100, 
+                                            step: 20 
+                                        })
+                    
+                                        .slider("pips", {
+                                            rest: "label"
+                                        });
+                                </pre>
+                            </div>
+                    
+                        </div>
+                    
+                    
+                    
+                        <h4>
+                            <a href="#example-steps-fivepercent" id="example-steps-fivepercent" class="anchor">
+                                5% Interval
+                            </a>
+                        </h4>
+                        
+                        <p>If we have more than 100 items on the slider <code>(max - min >= 100)</code>, then the 
+                            <code>.slider("pips");</code> method will only show the <code>pips</code> at a 5% interval. 
+                            This is because we really do not want to be adding thousands of dom elements to the page for the <code>pips</code>.
+                            It can have a dramatic effect on performance for the user. Additionally every <code>pip</code> requires 
+                            it's own pixel on the screen... so if we had more than 1000 <code>pips</code>, we would need a 
+                            screen size of at least 1000px wide.</p>
+                        
+                        <dl class="tabs code" data-tab>
+                            <dd class="active"><a href="#steps-fivepercent-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                            <dd><a href="#steps-fivepercent-slider-html" title="html">&lt;/&gt;</a></dd>
+                            <dd><a href="#steps-fivepercent-slider-css" title="css">{;}</a></dd>
+                            <dd><a href="#steps-fivepercent-slider-js" title="jquery">($)</a></dd>
+                        </dl>
+                        
+                        <div class="tabs-content">
+                        
+                            <div class="content active" id="steps-fivepercent-slider-result">
+                                
+                                <div id="steps-fivepercent-slider"></div>
+                        
+                            </div>
+                        
+                            <div class="content" id="steps-fivepercent-slider-html">
+                        
+                                <pre data-lang="html">
+                                    &lt;div class="slider"&gt;&lt;/div&gt;
+                                </pre>
+                        
+                            </div>
+                        
+                            <div class="content" id="steps-fivepercent-slider-css">
+                        
+                                <pre data-lang="css">
+                                    #steps-fivepercent-slider .ui-slider-tip {
+                                        visibility: visible;
+                                        opacity: 1;
+                                        top: -30px;
+                                    }
+                                </pre>
+                        
+                            </div>
+                        
+                            <div class="content" id="steps-fivepercent-slider-js">
+                                <pre data-lang="js">
+                                    $(".slider")
+                        
+                                        .slider({ 
+                                            min: 0, 
+                                            max: 1000, 
+                                            range: true, 
+                                            values: [200, 800] 
+                                        })
+                        
+                                        .slider("pips", {
+                                            rest: "label"
+                                        })
+                        
+                                        .slider("float");
+                        
+                                </pre>
+                            </div>
+                        
+                        </div>
+                        <h4>
+                            <a href="#example-steps-stacking" id="example-steps-stacking" class="anchor">
+                                Stacking
+                            </a>
+                        </h4>
+                        
+                        <p>When a slider has the <code>.slider("pips");</code> method applied to it, the <code>pips</code>
+                            method may also take a <code>step</code> option to allow additional control over the way
+                            <code>pips</code> are stepped visually. This option has no effect on the slider's functionality.</p>
+                        
+                        <p>The <code>step</code> value on the <code>.slider("pips");</code> method is multiplicative; meaning it will
+                            only show every <code>nth</code> step that exists from the main <code>.slider();</code> method.
+                        
+                        <dl class="tabs code" data-tab>
+                            <dd class="active"><a href="#steps-stacking-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                            <dd><a href="#steps-stacking-slider-html" title="html">&lt;/&gt;</a></dd>
+                            <dd><a href="#steps-stacking-slider-js" title="jquery">($)</a></dd>
+                        </dl>
+                        
+                        <div class="tabs-content">
+                        
+                            <div class="content active" id="steps-stacking-slider-result">
+                                
+                                <div id="steps-stacking-slider"></div>
+                        
+                            </div>
+                        
+                            <div class="content" id="steps-stacking-slider-html">
+                        
+                                <pre data-lang="html">
+                                    &lt;div class="slider"&gt;&lt;/div&gt;
+                                </pre>
+                        
+                            </div>
+                        
+                            <div class="content" id="steps-stacking-slider-js">
+                                <pre data-lang="js">
+                                    $(".slider")
+                        
+                                    .slider({ 
+                                        min: 0, 
+                                        max: 1000, 
+                                        step: 100 
+                                    })
+                        
+                                    .slider("pips", {
+                                        rest: "label",
+                                        step: 2
+                                    })
+                        
+                                    .slider("float");
+                        
+                                </pre>
+                            </div>
+                        
+                        </div>
+                        
+                        
+                        
                     
                     </section>
                 

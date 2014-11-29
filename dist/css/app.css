@@ -7417,11 +7417,17 @@ table {
     table p:only-child, table p:last-child {
       margin: 0; }
 
+body.nav--active {
+  overflow: hidden; }
+  @media only screen and (min-width: 701px) {
+    body.nav--active {
+      overflow: auto; } }
+
 .sidebar {
   position: fixed;
   width: 100%;
   font-size: 1em;
-  padding: 1em 1.5em;
+  padding: 1em 1.5em 4em;
   top: 0;
   left: 0;
   height: 100%;
@@ -7621,5 +7627,23 @@ table {
     display: none; } }
 
 #hanzi-labels-slider {
-  font-family: "SimHei", "Hei", sans-serif;
-  font-size: 1.2em; }
+  font-family: "SimHei", "Hei", sans-serif; }
+  #hanzi-labels-slider .ui-slider-handle .ui-slider-tip {
+    font-size: 1.4em;
+    width: 42px;
+    margin-left: -22px;
+    height: 33px;
+    line-height: 30px;
+    top: -40px;
+    background: #434d5a;
+    border-color: #434d5a;
+    color: white; }
+    #hanzi-labels-slider .ui-slider-handle .ui-slider-tip:before, #hanzi-labels-slider .ui-slider-handle .ui-slider-tip:after {
+      border-top-color: #434d5a; }
+  #hanzi-labels-slider .ui-slider-pip {
+    font-size: 1.2em; }
+
+#steps-fivepercent-slider .ui-slider-tip {
+  visibility: visible;
+  opacity: 1;
+  top: -30px; }
