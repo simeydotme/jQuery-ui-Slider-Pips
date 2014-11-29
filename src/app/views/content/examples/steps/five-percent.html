@@ -1,0 +1,69 @@
+<h4>
+    <a href="#example-steps-fivepercent" id="example-steps-fivepercent" class="anchor">
+        5% Interval
+    </a>
+</h4>
+
+<p>If we have more than 100 items on the slider <code>(max - min >= 100)</code>, then the 
+    <code>.slider("pips");</code> method will only show the <code>pips</code> at a 5% interval. 
+    This is because we really do not want to be adding thousands of dom elements to the page for the <code>pips</code>.
+    It can have a dramatic effect on performance for the user. Additionally every <code>pip</code> requires 
+    it's own pixel on the screen... so if we had more than 1000 <code>pips</code>, we would need a 
+    screen size of at least 1000px wide.</p>
+
+<dl class="tabs code" data-tab>
+    <dd class="active"><a href="#steps-fivepercent-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+    <dd><a href="#steps-fivepercent-slider-html" title="html">&lt;/&gt;</a></dd>
+    <dd><a href="#steps-fivepercent-slider-css" title="css">{;}</a></dd>
+    <dd><a href="#steps-fivepercent-slider-js" title="jquery">($)</a></dd>
+</dl>
+
+<div class="tabs-content">
+
+    <div class="content active" id="steps-fivepercent-slider-result">
+        
+        <div id="steps-fivepercent-slider"></div>
+
+    </div>
+
+    <div class="content" id="steps-fivepercent-slider-html">
+
+        <pre data-lang="html">
+            &lt;div class="slider"&gt;&lt;/div&gt;
+        </pre>
+
+    </div>
+
+    <div class="content" id="steps-fivepercent-slider-css">
+
+        <pre data-lang="css">
+            #steps-fivepercent-slider .ui-slider-tip {
+                visibility: visible;
+                opacity: 1;
+                top: -30px;
+            }
+        </pre>
+
+    </div>
+
+    <div class="content" id="steps-fivepercent-slider-js">
+        <pre data-lang="js">
+            $(".slider")
+
+                .slider({ 
+                    min: 0, 
+                    max: 1000, 
+                    range: true, 
+                    values: [200, 800] 
+                })
+
+                .slider("pips", {
+                    rest: "label"
+                })
+
+                .slider("float");
+
+        </pre>
+    </div>
+
+</div>

@@ -1,0 +1,56 @@
+<h4>
+    <a href="#example-steps-stacking" id="example-steps-stacking" class="anchor">
+        Stacking
+    </a>
+</h4>
+
+<p>When a slider has the <code>.slider("pips");</code> method applied to it, the <code>pips</code>
+    method may also take a <code>step</code> option to allow additional control over the way
+    <code>pips</code> are stepped visually. This option has no effect on the slider's functionality.</p>
+
+<p>The <code>step</code> value on the <code>.slider("pips");</code> method is multiplicative; meaning it will
+    only show every <code>nth</code> step that exists from the main <code>.slider();</code> method.
+
+<dl class="tabs code" data-tab>
+    <dd class="active"><a href="#steps-stacking-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+    <dd><a href="#steps-stacking-slider-html" title="html">&lt;/&gt;</a></dd>
+    <dd><a href="#steps-stacking-slider-js" title="jquery">($)</a></dd>
+</dl>
+
+<div class="tabs-content">
+
+    <div class="content active" id="steps-stacking-slider-result">
+        
+        <div id="steps-stacking-slider"></div>
+
+    </div>
+
+    <div class="content" id="steps-stacking-slider-html">
+
+        <pre data-lang="html">
+            &lt;div class="slider"&gt;&lt;/div&gt;
+        </pre>
+
+    </div>
+
+    <div class="content" id="steps-stacking-slider-js">
+        <pre data-lang="js">
+            $(".slider")
+
+            .slider({ 
+                min: 0, 
+                max: 1000, 
+                step: 100 
+            })
+
+            .slider("pips", {
+                rest: "label",
+                step: 2
+            })
+
+            .slider("float");
+
+        </pre>
+    </div>
+
+</div>

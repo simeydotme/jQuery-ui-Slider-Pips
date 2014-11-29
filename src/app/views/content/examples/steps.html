@@ -1,0 +1,63 @@
+<section class="sub-block">
+    
+    <h3>
+        <a href="#example-steps" id="example-steps" class="anchor">
+            Steps
+        </a>
+    </h3>
+
+    <p>Steps can be a little complicated. The default slider allows us to skip along the slider 
+        in a pattern. eg: <code>0, 20, 40...</code><br>
+
+        Steps are hard-wired in to the slider and so the <code>pips</code> and <code>labels</code> 
+        will match the <code>step</code> value.</p>
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#steps-default-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#steps-default-slider-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#steps-default-slider-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="steps-default-slider-result">
+
+            <div id="steps-default-slider"></div>
+
+        </div>
+
+        <div class="content" id="steps-default-slider-html">
+
+            <pre data-lang="html">
+                &lt;div class="slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="steps-default-slider-js">
+            <pre data-lang="js">
+                $(".slider")
+
+                    .slider({ 
+                        min: 0, 
+                        max: 100, 
+                        step: 20 
+                    })
+
+                    .slider("pips", {
+                        rest: "label"
+                    });
+            </pre>
+        </div>
+
+    </div>
+
+
+
+    <!--(bake /content/examples/steps/five-percent.html)-->
+    <!--(bake /content/examples/steps/stacking.html)-->
+    <!--(bake /content/examples/steps/step-table.html)-->
+    
+    
+
+</section>
