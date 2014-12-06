@@ -2,18 +2,15 @@
 
     padding: 4em 1em;
 
-    &:nth-child(even) {
-        background: white;
-    }
-
     &:nth-child(1) {
-
         padding-top: 0;
-
         @media #{$xsmall-only} {
             padding-bottom: 0;
         }
+    }
 
+    &:nth-child(even) {
+        background: white;
     }
 
     @media #{$small-up} { 
@@ -28,12 +25,27 @@
 
 .sub-block {
 
-    padding: 0 0 4em;
+    padding: 3em 0.5em;
+    margin: 0 -0.5em;
+    border-bottom: 1px solid darken($bcolor, 10%);
+
+    &:nth-child(1) {
+        padding-top: 0;
+    }
+
+    @media #{$small-up} { 
+        padding: 3em 1em;
+        margin: 0 -1em;
+    }
+
+    @media #{$large-up} { 
+        padding: 4em 2em;
+        margin: 0 -2em;
+    }
 
     &:last-child {
-        
-        padding: 0;
-
+        padding-bottom: 0;
+        border-bottom: none;
     }
 
 }

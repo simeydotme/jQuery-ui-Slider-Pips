@@ -90,7 +90,7 @@
         var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         var activeMonth = new Date().getMonth();
 
-        $("#custom-labels-output").text( "You selected " + months[activeMonth] );
+        $("#custom-labels-output").text( "The current month is: " + months[activeMonth] );
 
         $("#custom-labels-slider")
             .slider({ min: 0, max: months.length-1, value: activeMonth })
@@ -99,7 +99,7 @@
                 labels: months
             })
             .on("slidechange", function(e,ui) {
-                $("#custom-labels-output").text( "You selected " + months[ui.value] );
+                $("#custom-labels-output").text( "You selected " + months[ui.value] + " (" + ui.value + ")");
             });
             //.trigger("slidechange");
 
@@ -150,7 +150,58 @@
                 step: 2
             })
             .slider("float");
+
+
+
+
+
+        $(".step-table-slider-11")
+            .slider({ min: 0, max: 50 })
+            .slider("pips");
+
+        $(".step-table-slider-51")
+            .slider({ min: 0, max: 50, step: 5 })
+            .slider("pips");
+
+        $(".step-table-slider-101")
+            .slider({ min: 0, max: 50, step: 10 })
+            .slider("pips");
+
+        $(".step-table-slider-12")
+            .slider({ min: 0, max: 50 })
+            .slider("pips", { step: 2 });
+
+        $(".step-table-slider-52")
+            .slider({ min: 0, max: 50, step: 5 })
+            .slider("pips", { step: 2 });
+
+        $(".step-table-slider-102")
+            .slider({ min: 0, max: 50, step: 10 })
+            .slider("pips", { step: 2 });
+
+        $(".step-table-slider-15")
+            .slider({ min: 0, max: 50 })
+            .slider("pips", { step: 5 });
+
+        $(".step-table-slider-55")
+            .slider({ min: 0, max: 50, step: 5 })
+            .slider("pips", { step: 5 });
+
+        $(".step-table-slider-105")
+            .slider({ min: 0, max: 50, step: 10 })
+            .slider("pips", { step: 5 });
+
+        $(".step-table-slider-33")
+            .slider({ min: 0, max: 50, step: 3 })
+            .slider("pips", { step: 3 });
+
+        $(".step-table-slider-66")
+            .slider({ min: 0, max: 50, step: 6 })
+            .slider("pips", { step: 6 });
                     
+
+
+        $("[class^=step-table-slider-]").slider("float");
 
     });
 

@@ -7,8 +7,8 @@
     </h3>
 
     <p>It's possible with <code>rest: "label"</code> to set some custom <code>labels</code> to the slider instead of the
-        default values. It's important to note here that the slider will still return it's integer value when
-        you call <code>$(".slider").slider("value");</code>.</p>
+        default values. It's important to note here that the slider will still return its integer value when 
+        <code>$(".slider").slider("value");</code> is called.</p>
         
 
     <dl class="tabs code" data-tab>
@@ -58,7 +58,7 @@
 
                     // and whenever the slider changes, lets echo out the month
                     .on("slidechange", function(e,ui) {
-                        $("#labels-months-output").text( "You selected " + months[ui.value] );
+                        $("#labels-months-output").text( "You selected " + months[ui.value] + " (" + ui.value + ")");
                     });
             </pre>
         </div>

@@ -7277,13 +7277,13 @@ code {
 
 .block {
   padding: 4em 1em; }
-  .block:nth-child(even) {
-    background: white; }
   .block:nth-child(1) {
     padding-top: 0; }
     @media only screen and (max-width: 500px) {
       .block:nth-child(1) {
         padding-bottom: 0; } }
+  .block:nth-child(even) {
+    background: white; }
   @media only screen and (min-width: 501px) {
     .block {
       padding: 4em 3em; } }
@@ -7292,9 +7292,22 @@ code {
       padding: 4em 5em; } }
 
 .sub-block {
-  padding: 0 0 4em; }
+  padding: 3em 0.5em;
+  margin: 0 -0.5em;
+  border-bottom: 1px solid #ffdac4; }
+  .sub-block:nth-child(1) {
+    padding-top: 0; }
+  @media only screen and (min-width: 501px) {
+    .sub-block {
+      padding: 3em 1em;
+      margin: 0 -1em; } }
+  @media only screen and (min-width: 901px) {
+    .sub-block {
+      padding: 4em 2em;
+      margin: 0 -2em; } }
   .sub-block:last-child {
-    padding: 0; }
+    padding-bottom: 0;
+    border-bottom: none; }
 
 .row {
   width: auto;
@@ -7612,6 +7625,13 @@ body.nav--active {
 
 .options-table tr td:nth-child(2) {
   min-width: 18em; }
+
+.step-table tr td {
+  vertical-align: middle; }
+  .step-table tr td:nth-child(3) {
+    min-width: 350px; }
+.step-table .ui-slider.ui-slider-horizontal {
+  margin-bottom: 1.3em; }
 
 #styling-after-slider {
   margin-top: 3em; }

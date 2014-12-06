@@ -1,0 +1,23 @@
+
+.step-table {
+
+    tr {
+
+        td {
+            
+            vertical-align: middle;
+
+            &:nth-child(3) {
+                min-width: 350px;
+            }
+        }
+
+    }
+
+    .ui-slider.ui-slider-horizontal {
+        
+        margin-bottom: 1.3em;
+
+    }
+
+}
