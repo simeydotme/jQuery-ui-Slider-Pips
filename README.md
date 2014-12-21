@@ -39,6 +39,11 @@ _Below methods are chainable, I've shown them separate for clarity_
   
 ####Default usage:
 
+```html
+<!-- this widget needs an empty div tag. Note the class used on this div and on the jquery selectors below need to be the same... -->
+<div class="element"></div>
+```
+
 ```javascript
 // if you just want the defaults, copy & paste this code.
 $('.element').slider().slider('pips').slider('float');
