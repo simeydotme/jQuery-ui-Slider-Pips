@@ -174,5 +174,16 @@ node_modules/
 ############
 ## Bower
 ############
-bower_components/
+bower_components
+
+
+############
+## Sass
+############
+.sass-cache
+
+
+
+#########################################
+
 demo.html
