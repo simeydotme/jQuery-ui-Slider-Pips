@@ -51,16 +51,22 @@ module.exports = function(grunt) {
                 banner: "<%= banner %>"
             },
             fonts: {
-                src: "src/app/fonts/*",
+                cwd: "src/app/fonts/",
+                src: "**",
                 dest: "dist/fonts/",
-                expand: true,
-                flatten: true
+                expand: true
             },
             js: {
-                src: "src/app/js/*",
+                cwd: "src/app/js/",
+                src: "**",
                 dest: "dist/js/",
-                expand: true,
-                flatten: true
+                expand: true
+            },
+            img: {
+                cwd: "src/app/img/",
+                src: "**",
+                dest: "dist/img/",
+                expand: true
             }
         },
 
@@ -105,6 +111,10 @@ module.exports = function(grunt) {
             js: {
                 files: ["src/**/*.js"],
                 tasks: ["copy:js"]
+            },
+            img: {
+                files: ["src/img/**/*"],
+                tasks: ["copy:img"]
             },
             livereload: {
 
