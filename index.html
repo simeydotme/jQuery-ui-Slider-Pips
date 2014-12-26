@@ -51,7 +51,7 @@
             
                 <li class="sidebar__item"><a href="#getting-started">Getting Started</a></li>
                 <li class="sidebar__item"><a href="#installation">Installation</a></li>
-                <li class="sidebar__item"><a href="#examples">Basic Usage</a>
+                <li class="sidebar__item"><a href="#basic-usage">Basic Usage</a>
                     <ul class="sidebar__nav">
                         <li class="sidebar__item"><a href="#basic-pips">Pips</a></li>
                         <li class="sidebar__item sidebar__item--active"><a href="#basic-float">Float</a></li>
@@ -81,12 +81,16 @@
                         <li class="sidebar__item"><a href="#example-steps">Steps</a>
                             <ul class="sidebar__nav">
                                 <li class="sidebar__item"><a href="#example-steps-fivepercent">5% Interval</a></li>
-                                <li class="sidebar__item"><a href="#example-steps-stacking">Stacking</a></li>
+                                <li class="sidebar__item"><a href="#example-steps-stacking">Multiplicative Steps</a></li>
                                 <li class="sidebar__item"><a href="#example-steps-table">Step Table</a></li>
                             </ul>
                         </li>
+                        <li class="sidebar__item"><a href="#example-vertical">Vertical Sliders</a></li>
                     </ul>
                 </li>
+        
+                <li class="sidebar__item"><a href="#styling">Styling</a>
+                <li class="sidebar__item"><a href="#browser-support">Browser Support</a>
         
             </ul>
         
@@ -1248,7 +1252,7 @@
                         </div>
                         <h4>
                             <a href="#example-steps-stacking" id="example-steps-stacking" class="anchor">
-                                Stacking
+                                Multiplicative Steps
                             </a>
                         </h4>
                         
@@ -1257,7 +1261,7 @@
                             <code>pips</code> are stepped visually. This option has no effect on the slider's functionality.</p>
                         
                         <p>The <code>step</code> value on the <code>.slider("pips");</code> method is multiplicative; meaning it will
-                            only show every <code>nth</code> step that exists from the main <code>.slider();</code> method.
+                            only show every <code>nth</code> step that exists from the main <code>.slider();</code> method.</p>
                         
                         <dl class="tabs code" data-tab>
                             <dd class="active"><a href="#steps-stacking-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
@@ -1308,7 +1312,7 @@
                             </a>
                         </h4>
                         
-                        <p>To further explain hwo the multiplicative <code>steps</code> option works there is a table below 
+                        <p>To further explain how the multiplicative <code>step</code> option works there is a table below 
                             showing the resulting sliders with a selection of different <code>step</code> options.</p>
                         
                         
@@ -1387,17 +1391,131 @@
                                     <td><div class="step-table-slider-66"></div></td>
                                 </tr>
                                 
-                        
-                        
                             </table>
                         </div>
                         
                         
                     
                     </section>
+                    <section class="sub-block">
+                        
+                        <h3>
+                            <a href="#example-vertical" id="example-vertical" class="anchor">
+                                Vertical Sliders
+                            </a>
+                        </h3>
+                    
+                        <p>All functionality that we've seen so far will also apply to vertical sliders. There's no limitation here
+                            except that your CSS may have to be slightly different to account for the slider being vertical.</p>
+                    
+                        <dl class="tabs code" data-tab>
+                            <dd class="active"><a href="#vertical-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                            <dd><a href="#vertical-slider-html" title="html">&lt;/&gt;</a></dd>
+                            <dd><a href="#vertical-slider-css" title="css">{;}</a></dd>
+                            <dd><a href="#vertical-slider-js" title="jquery">($)</a></dd>
+                        </dl>
+                    
+                        <div class="tabs-content">
+                    
+                            <div class="content active" id="vertical-slider-result">
+                    
+                                <div id="vertical-slider"></div>
+                    
+                            </div>
+                    
+                            <div class="content" id="vertical-slider-html">
+                    
+                                <pre data-lang="html">
+                                    &lt;div class="slider"&gt;&lt;/div&gt;
+                                </pre>
+                    
+                            </div>
+                    
+                            <div class="content" id="vertical-slider-css">
+                    
+                                <pre data-lang="css">
+                                    #vertical-slider {
+                                        height: 150px;
+                                        margin-left: 30px;
+                                    }
+                                </pre>
+                    
+                            </div>
+                    
+                            <div class="content" id="vertical-slider-js">
+                                <pre data-lang="js">
+                                    $(".slider")
+                    
+                                        .slider({ 
+                                            min: 0, 
+                                            max: 20,
+                                            orientation: "vertical"
+                                        })
+                    
+                                        .slider("pips", {
+                                            rest: "label",
+                                            step: "5"
+                                        });
+                                </pre>
+                            </div>
+                    
+                        </div>    
+                    
+                    </section>
                 
                 </section>
+                <section class="block">
+                    
+                    <h2>
+                        <a href="#styling" id="styling" class="anchor">
+                            Styling
+                        </a>
+                    </h2>
+                    
+                    <p>Coming Soon: A bunch of examples on how to get the most out of your slider with CSS styling.</p>
                 
+                </section>
+                <section class="block">
+                    
+                    <h2>
+                        <a href="#browser-support" id="browser-support" class="anchor">
+                            Browser Support
+                        </a>
+                    </h2>
+                    
+                    <ul class="browser-list">
+                        <li class="browser-list__item">
+                            <img src="dist/img/browsers/ch.png"><br>
+                
+                        </li>
+                        <li class="browser-list__item">
+                            <img src="dist/img/browsers/ff.png"><br>
+                
+                        </li>
+                        <li class="browser-list__item">
+                            <img src="dist/img/browsers/ie.png"><br>
+                            7+
+                        </li>
+                        <li class="browser-list__item">
+                            <img src="dist/img/browsers/sa.png"><br>
+                
+                        </li>
+                        <li class="browser-list__item">
+                            <img src="dist/img/browsers/op.png"><br>
+                
+                        </li>
+                    </ul>
+                
+                    <!-- thanks to https://github.com/alrra/browser-logos for the logos. -->
+                
+                    <p>Any feedback on issues or compatibility problems in certain browsers is greatly
+                        appreciated, please <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips/issues">leave it at my github page</a>.</p>
+                
+                    <p>Although the slider should function corrently in IE7+, you may find that some of the CSS
+                        styles can not be applied correctly to IE7. This is just a matter of doing a little
+                        CSS work to style the slider how you like.</p>
+                
+                </section>
             
             </section>
         
@@ -1416,10 +1534,10 @@
         <script src="bower_components/google-code-prettify/src/lang-css.js"></script>
         
         <!-- jqueryui:js -->
-        <script src="bower_components/jquery-ui/ui/core.js"></script>
-        <script src="bower_components/jquery-ui/ui/widget.js"></script>
-        <script src="bower_components/jquery-ui/ui/mouse.js"></script>
-        <script src="bower_components/jquery-ui/ui/slider.js"></script>
+        <script src="bower_components/jqueryui/ui/core.js"></script>
+        <script src="bower_components/jqueryui/ui/widget.js"></script>
+        <script src="bower_components/jqueryui/ui/mouse.js"></script>
+        <script src="bower_components/jqueryui/ui/slider.js"></script>
 
         <!-- slider:js -->
         <script src="dist/jquery-ui-slider-pips.js"></script>

@@ -199,9 +199,19 @@
             .slider({ min: 0, max: 50, step: 6 })
             .slider("pips", { step: 6 });
                     
+        $("[class^=step-table-slider-]")
+            .slider("float");
 
 
-        $("[class^=step-table-slider-]").slider("float");
+
+
+
+        $("#vertical-slider")
+            .slider({ min: 0, max: 20, orientation: "vertical" })
+            .slider("pips", {
+                rest: "label",
+                step: "5"
+            });
 
     });
 
