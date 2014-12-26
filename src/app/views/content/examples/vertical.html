@@ -1,0 +1,65 @@
+<section class="sub-block">
+    
+    <h3>
+        <a href="#example-vertical" id="example-vertical" class="anchor">
+            Vertical Sliders
+        </a>
+    </h3>
+
+    <p>All functionality that we've seen so far will also apply to vertical sliders. There's no limitation here
+        except that your CSS may have to be slightly different to account for the slider being vertical.</p>
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#vertical-slider-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#vertical-slider-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#vertical-slider-css" title="css">{;}</a></dd>
+        <dd><a href="#vertical-slider-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="vertical-slider-result">
+
+            <div id="vertical-slider"></div>
+
+        </div>
+
+        <div class="content" id="vertical-slider-html">
+
+            <pre data-lang="html">
+                &lt;div class="slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="vertical-slider-css">
+
+            <pre data-lang="css">
+                #vertical-slider {
+                    height: 150px;
+                    margin-left: 30px;
+                }
+            </pre>
+
+        </div>
+
+        <div class="content" id="vertical-slider-js">
+            <pre data-lang="js">
+                $(".slider")
+
+                    .slider({ 
+                        min: 0, 
+                        max: 20,
+                        orientation: "vertical"
+                    })
+
+                    .slider("pips", {
+                        rest: "label",
+                        step: "5"
+                    });
+            </pre>
+        </div>
+
+    </div>    
+
+</section>
