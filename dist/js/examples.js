@@ -5,8 +5,18 @@
 
     $(function() {
 
+        $.extend( $.ui.slider.prototype.options, { 
 
-        $.ui.slider.prototype.options.animate = "fast";
+            animate: "fast",
+
+            stop: function() {
+
+                var ident = this.id || this.className;
+                ga("send", "event", "slider", "interact", ident );
+
+            }
+
+        });
 
 
         $("#example-slider")
