@@ -6,6 +6,13 @@ This plugin **extends** the [jQuery UI Slider widget](http://jqueryui.com/slider
 Use it for creating a nicely-styled slider like shown below  
 [Documentation, Demos and Examples here](http://simeydotme.github.io/jQuery-ui-Slider-Pips/)
 
+===  
+
+##### Warning:  
+There is a incompatibility with jqueryui 1.11.2 where if using a step value which is not divisible by the max value then you will have unevenly placed pips and labels. - nothing  I can do for now and so the next update for this plugin will break backwards-compatibility. Apologies.  
+
+===
+
 ![Default settings for the plugin](http://files.simey.me/pips.jpg "Example of Pips plugin with default options")
 ![Example of the slider in use](https://cloud.githubusercontent.com/assets/2817396/3999716/d887ebf2-2952-11e4-9044-0c1b6baba99a.gif "Slider being used by a person with a mouse")
 
@@ -31,6 +38,11 @@ Include the CSS file; edit as you please.
 _Below methods are chainable, I've shown them separate for clarity_
   
 ####Default usage:
+
+```html
+<!-- this widget needs an empty div tag. Note the class used on this div and on the jquery selectors below need to be the same... -->
+<div class="element"></div>
+```
 
 ```javascript
 // if you just want the defaults, copy & paste this code.
