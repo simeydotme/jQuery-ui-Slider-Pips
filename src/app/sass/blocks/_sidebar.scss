@@ -57,26 +57,6 @@ body {
         font-size: 1em;
 
     }
-    
-    a {
-        
-        display: block;
-        color: lighten($fcolor, 50%);
-        transition: $listTransition;
-
-        &:hover {
-
-            color: lighten($fcolor, 80%);
-
-        }
-
-    }
-
-    ul {
-
-        font-size: 1em;
-
-    }
 
 
 
@@ -92,13 +72,25 @@ body {
         list-style: none;
         margin: 0;
         padding: 0 1em;
+        font-size: 1em;
 
     }
 
     &__item {
-        
-        a { 
+    
+        a {
+            
+            display: block; 
             padding: 0.2em 0;
+            color: lighten($fcolor, 50%);
+            transition: $listTransition;
+
+            &:hover {
+
+                color: lighten($fcolor, 65%);
+
+            }
+
         }
 
         &:before {
@@ -120,7 +112,8 @@ body {
 
         }
 
-        &--active a {
+        &--active > a,
+        &--active > a:hover {
 
             color: $link;
 
