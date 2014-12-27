@@ -82,27 +82,13 @@ module.exports = function(grunt) {
             }
         },
 
-        wiredep: {
-            options: {
-                exclude: [ 
-                    "/modernizr/", 
-                    "/jquery-ui/", 
-                    "/google-code-prettify/", 
-                    "bower_components/foundation/css/foundation.css" 
-                ]
-            },
-            task: {
-                src: [ "src/index.html", "index.html" ]
-            }
-        },
-
         watch: {
             config: {
                 files: ["Gruntfile.js"]
             },
             render: {
                 files: ["src/**/*.html"],
-                tasks: ["bake", "wiredep"]
+                tasks: ["bake", "bowerout"]
             },
             sass: {
                 files: ["src/**/*.scss"],
@@ -124,6 +110,21 @@ module.exports = function(grunt) {
               files: ["dist/**/*", "index.html"]
 
             },
+        },
+
+        useminPrepare: {
+            html: "index.html",
+            options: {
+                dest: "dist"
+            }
+        },
+
+        usemin: {
+            html: "index.html",
+            options: {
+                dest: "dist",
+                root: "/"
+            }
         }
 
 
@@ -133,7 +134,6 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks("grunt-bake");
     grunt.loadNpmTasks("grunt-usemin");
-    grunt.loadNpmTasks("grunt-wiredep");
     grunt.loadNpmTasks("grunt-autoprefixer");
 
     grunt.loadNpmTasks("grunt-contrib-copy");
@@ -142,12 +142,30 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks("grunt-contrib-cssmin");
     grunt.loadNpmTasks("grunt-contrib-uglify");
 
     // Tasks.
 
-    grunt.registerTask("build", ["jshint", "bake", "wiredep", "copy", "sass"]);
-    
-    grunt.registerTask("default", ["build", "watch"]);
+    grunt.registerTask("bowerout", [
+        "useminPrepare", 
+        "concat:generated", 
+        "uglify:generated", 
+        "cssmin:generated",
+        "usemin"
+    ]);
+
+    grunt.registerTask("build", [
+        "jshint", 
+        "bake", 
+        "copy", 
+        "sass", 
+        "bowerout"
+    ]);
+
+    grunt.registerTask("default", [
+        "build", 
+        "watch"
+    ]);
 
 };

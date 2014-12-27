@@ -14,23 +14,24 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- modernizer -->
+        <!-- build:js js/modernizr.js -->
         <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
         
         <!-- fonts -->
         <link rel="stylesheet" type="text/css" 
             href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800|Handlee">
 
-        <!-- bower:css -->
-        <!-- endbower -->
-
         <!-- jquery ui -->
+        <!-- build:css css/jquery-ui.css -->
         <link rel="stylesheet" href="bower_components/jquery-ui/themes/flick/jquery-ui.css" />
         <link rel="stylesheet" href="bower_components/jquery-ui/themes/flick/theme.css" />
+        <!-- endbuild -->
 
-        <!-- slider:css -->
+        <!-- slider -->
         <link rel="stylesheet" href="dist/jquery-ui-slider-pips.css" />
         
-        <!-- app:css -->
+        <!-- app -->
         <link rel="stylesheet" href="dist/css/app.css" />
         
         <!--(bake /analytics.html)-->
@@ -40,29 +41,36 @@
     <body>
 
         <!--(bake /body.html)-->
-
-        <!-- bower:js -->
-        <script src="../bower_components/jquery/dist/jquery.js"></script>
-        <script src="../bower_components/fastclick/lib/fastclick.js"></script>
-        <script src="../bower_components/jquery.cookie/jquery.cookie.js"></script>
-        <script src="../bower_components/jquery-placeholder/jquery.placeholder.js"></script>
-        <script src="../bower_components/foundation/js/foundation.js"></script>
-        <!-- endbower -->
-
-        <!-- prettify:js -->
-        <script src="bower_components/google-code-prettify/src/prettify.js"></script>
-        <script src="bower_components/google-code-prettify/src/lang-css.js"></script>
         
-        <!-- jqueryui:js -->
-        <script src="bower_components/jqueryui/ui/core.js"></script>
-        <script src="bower_components/jqueryui/ui/widget.js"></script>
-        <script src="bower_components/jqueryui/ui/mouse.js"></script>
-        <script src="bower_components/jqueryui/ui/slider.js"></script>
+        <!-- jquery -->
+        <!-- build:js js/jquery.js -->
+            <script src="bower_components/jquery/dist/jquery.js"></script>
+        <!-- endbuild -->
+        
+        <!-- foundation -->
+        <!-- prettify -->
+        <!-- jqueryui -->
+        <!-- build:js js/bower-libs.js -->
 
-        <!-- slider:js -->
+            <script src="bower_components/fastclick/lib/fastclick.js"></script>
+            <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+            <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+            <script src="bower_components/foundation/js/foundation.js"></script>
+
+            <script src="bower_components/google-code-prettify/src/prettify.js"></script>
+            <script src="bower_components/google-code-prettify/src/lang-css.js"></script>
+            
+            <script src="bower_components/jqueryui/ui/core.js"></script>
+            <script src="bower_components/jqueryui/ui/widget.js"></script>
+            <script src="bower_components/jqueryui/ui/mouse.js"></script>
+            <script src="bower_components/jqueryui/ui/slider.js"></script>
+
+        <!-- endbuild -->
+
+        <!-- slider -->
         <script src="dist/jquery-ui-slider-pips.js"></script>
 
-        <!-- app:js -->
+        <!-- app -->
         <script src="dist/js/examples.js"></script>
         <script src="dist/js/prettyPre.js"></script>
         <script src="dist/js/app.js"></script>

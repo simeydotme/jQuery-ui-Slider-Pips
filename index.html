@@ -14,23 +14,19 @@
         <meta name="viewport" content="width=device-width">
 
         <!-- modernizer -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
+        <script src="dist/js/modernizr.js"></script>
         
         <!-- fonts -->
         <link rel="stylesheet" type="text/css" 
             href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800|Handlee">
 
-        <!-- bower:css -->
-        <!-- endbower -->
-
         <!-- jquery ui -->
-        <link rel="stylesheet" href="bower_components/jquery-ui/themes/flick/jquery-ui.css" />
-        <link rel="stylesheet" href="bower_components/jquery-ui/themes/flick/theme.css" />
+        <link rel="stylesheet" href="dist/css/jquery-ui.css">
 
-        <!-- slider:css -->
+        <!-- slider -->
         <link rel="stylesheet" href="dist/jquery-ui-slider-pips.css" />
         
-        <!-- app:css -->
+        <!-- app -->
         <link rel="stylesheet" href="dist/css/app.css" />
         
         <script>
@@ -67,7 +63,7 @@
                 <li class="sidebar__item"><a href="#basic-usage">Basic Usage</a>
                     <ul class="sidebar__nav">
                         <li class="sidebar__item"><a href="#basic-pips">Pips</a></li>
-                        <li class="sidebar__item sidebar__item--active"><a href="#basic-float">Float</a></li>
+                        <li class="sidebar__item"><a href="#basic-float">Float</a></li>
                     </ul>
                 </li>
         
@@ -190,7 +186,7 @@
                         </div>
                 
                         <div class="content" id="example1-js">
-                            <pre data-lang="js">
+                            <pre data-lang="Gruntfile.js">
                                 $(".slider").slider().slider("pips").slider("float");
                             </pre>
                         </div>
@@ -314,7 +310,7 @@
                             </div>
                     
                             <div class="content active" id="default-pips-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     // to create the slider on the page we use jQuery to select the element
                                     // <a href="#" data-active-tab="#default-pips-html">from the HTML</a> and apply the .slider() method, then we apply the pips afterwards.
                     
@@ -362,7 +358,7 @@
                             </div>
                     
                             <div class="content active" id="default-floats-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     // we still select the jQuery element <a href="#" data-active-tab="#default-floats-html">from the HTML</a> like before, 
                                     // but now we supply the float method instead of pips.
                     
@@ -395,7 +391,7 @@
                         <p>It is possible to supply configuration options to the pips plugin, this allows some basic way to control
                             how the pips/floats are handled.</p>
                             
-                        <pre data-lang="js">
+                        <pre data-lang="Gruntfile.js">
                             $(".slider")
                                 .slider()
                                 .slider("pips", {
@@ -778,7 +774,7 @@
                             </div>
                     
                             <div class="content" id="show-rest-slider-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     $(".slider")
                                         .slider({
                                             max: 12
@@ -827,7 +823,7 @@
                             </div>
                     
                             <div class="content" id="hide-rest-slider-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     $(".slider")
                                         .slider({
                                             max: 12,
@@ -879,7 +875,7 @@
                             </div>
                     
                             <div class="content" id="show-only-pips-slider-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     $(".slider")
                                         .slider({
                                             max: 30
@@ -954,7 +950,7 @@
                             </div>
                     
                             <div class="content" id="prefix-suffix-slider-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     $(".slider")
                                         .slider({ 
                                             min: 0, 
@@ -1015,7 +1011,7 @@
                             </div>
                     
                             <div class="content" id="custom-labels-slider-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     // set up an array to hold the months
                                     var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
                                     // lets be fancy for the demo and select the current month.
@@ -1117,7 +1113,7 @@
                             </div>
                     
                             <div class="content" id="hanzi-labels-slider-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     var hanzi = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
                     
                                     $("#hanzi-labels-slider")
@@ -1179,7 +1175,7 @@
                             </div>
                     
                             <div class="content" id="steps-default-slider-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     $(".slider")
                     
                                         .slider({ 
@@ -1247,7 +1243,7 @@
                             </div>
                         
                             <div class="content" id="steps-fivepercent-slider-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     $(".slider")
                         
                                         .slider({ 
@@ -1303,7 +1299,7 @@
                             </div>
                         
                             <div class="content" id="steps-stacking-slider-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     $(".slider")
                         
                                     .slider({ 
@@ -1460,7 +1456,7 @@
                             </div>
                     
                             <div class="content" id="vertical-slider-js">
-                                <pre data-lang="js">
+                                <pre data-lang="Gruntfile.js">
                                     $(".slider")
                     
                                         .slider({ 
@@ -1537,29 +1533,19 @@
             </section>
         
         </section>
-
-        <!-- bower:js -->
-        <script src="bower_components/jquery/dist/jquery.js"></script>
-        <script src="bower_components/fastclick/lib/fastclick.js"></script>
-        <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
-        <script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
-        <script src="bower_components/foundation/js/foundation.js"></script>
-        <!-- endbower -->
-
-        <!-- prettify:js -->
-        <script src="bower_components/google-code-prettify/src/prettify.js"></script>
-        <script src="bower_components/google-code-prettify/src/lang-css.js"></script>
         
-        <!-- jqueryui:js -->
-        <script src="bower_components/jqueryui/ui/core.js"></script>
-        <script src="bower_components/jqueryui/ui/widget.js"></script>
-        <script src="bower_components/jqueryui/ui/mouse.js"></script>
-        <script src="bower_components/jqueryui/ui/slider.js"></script>
+        <!-- jquery -->
+        <script src="dist/js/jquery.js"></script>
+        
+        <!-- foundation -->
+        <!-- prettify -->
+        <!-- jqueryui -->
+        <script src="dist/js/bower-libs.js"></script>
 
-        <!-- slider:js -->
+        <!-- slider -->
         <script src="dist/jquery-ui-slider-pips.js"></script>
 
-        <!-- app:js -->
+        <!-- app -->
         <script src="dist/js/examples.js"></script>
         <script src="dist/js/prettyPre.js"></script>
         <script src="dist/js/app.js"></script>
