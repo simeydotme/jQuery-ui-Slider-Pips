@@ -52,8 +52,8 @@ $('.element').slider().slider('pips').slider('float');
 ####Advanced usage with options:
 ```javascript
 
-// First of all attach a slider to an element.
-$('.element').slider();
+// First of all attach a slider to an element. If you want to customize the range of values, you do it in the initialization.
+$('.element').slider({min: 20, max: 65});
 
 // Then you can give it pips and labels!  
 $('.element').slider('pips', {  
