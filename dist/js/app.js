@@ -13,6 +13,9 @@
         $(document).foundation();
 
 
+        $(".share-links__link").on("click", function() {
+            ga("send", "event", "social", $(this).data("share") );
+        });
 
 
         $("a[data-active-tab]").on("click", function(e) {
