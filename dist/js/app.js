@@ -48,12 +48,11 @@
             anchors,
             anchorsLength,
             paintAnchor,
-            scrollTimer,
+            scrollTimer;
 
-            ev = ( Modernizr.touch ) ? "touchend" : "click";
 
         $toggle
-            .on( ev, function(e) {
+            .on( "click", function(e) {
 
                 $sidebar.toggleClass("sidebar--open");
                 $toggle.toggleClass("sidebar__toggle--active");
