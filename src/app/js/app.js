@@ -50,7 +50,7 @@
             paintAnchor,
             scrollTimer,
 
-            ev = ( Modernizr.touch ) ? "touchstart" : "click";
+            ev = ( Modernizr.touch ) ? "touchend" : "click";
 
         $toggle
             .on( ev, function(e) {
