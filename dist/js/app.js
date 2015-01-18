@@ -5,11 +5,6 @@
 
     $(function() {
 
-        $("code").pretty();
-        $("pre").prettyPre().pretty();
-        prettyPrint();
-
-
         $(document).foundation();
 
 
@@ -128,6 +123,19 @@
         if ( !!window.location.hash ) {
             $sidebar.find( "[href=" +window.location.hash+ "]" ).trigger("focus");
         }
+
+
+
+
+
+
+
+        
+
+        $("code").pretty();
+        $("pre").prettyPre().pretty();
+        prettyPrint();
+
     });
 
 }(jQuery));

@@ -28,7 +28,7 @@ $(function() {
         mine = "🐕",
         $baa = $("<audio src='dist/sound/baa.mp3'></audio>");
 
-    $("#styling-emoji").twemoji();
+    $("#styling-emoji h3, #styling-emoji-js pre").twemoji();
 
     $("#emoji-slider")
 
