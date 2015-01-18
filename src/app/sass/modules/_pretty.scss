@@ -9,79 +9,48 @@
 
 pre {
 
-  .pln {
-    color: #E0E0E0;
-  }
+  .pln { color: #eee; }
 
   @media screen {
     /* string content */
-    .str {
-      color: #81E77E;
-    }
-
+    .str { color: #81E77E; }
     /* a keyword */
-    .kwd {
-      color: #cc99cc;
-    }
-
+    .kwd { color: #cc99cc; }
     /* a comment */
-    .com {
-      color: #999999;
-    }
-
+    .com { color: #999999; }
     /* a type name */
-    .typ {
-      color: #6699cc;
-    }
-
+    .typ { color: #6699cc; }
     /* a literal value */
-    .lit {
-      color: #f99157;
-    }
-
+    .lit { color: #f99157; }
     /* punctuation */
-    .pun {
-      color: #cccccc;
-    }
-
+    .pun { color: #dedede; }
     /* lisp open bracket */
-    .opn {
-      color: #cccccc;
-    }
-
+    .opn { color: #dedede; }
     /* lisp close bracket */
-    .clo {
-      color: #cccccc;
-    }
-
+    .clo { color: #dedede; }
     /* a markup tag name */
-    .tag {
-      color: #f2777a;
-    }
-
+    .tag { color: #f2777a; }
     /* a markup attribute name */
-    .atn {
-      color: #f99157;
-    }
-
+    .atn { color: #f99157; }
     /* a markup attribute value */
-    .atv {
-      color: #66cccc;
-    }
-
+    .atv { color: #55ccdd; }
     /* a declaration */
-    .dec {
-      color: #f99157;
-    }
-
+    .dec { color: #f99157; }
     /* a variable name */
-    .var {
-      color: #f2777a;
-    }
-
+    .var { color: #f2777a; }
     /* a function name */
-    .fun {
-      color: #6699cc;
+    .fun { color: #6699cc; }
+  }
+
+  &.lang-css {
+    @media screen {
+      
+      .pln { color: #55ccdd; }
+      /* a keyword */
+      .kwd { color: #dedede; }
+      /* a literal value */
+      .lit { color: #f2777a; }
+
     }
   }
 }
@@ -94,74 +63,33 @@ code {
 
   @media screen {
     /* string content */
-    .str {
-      color: #F84E5F;
-    }
-
+    .str { color: #F84E5F; }
     /* a keyword */
-    .kwd {
-      color: #F84E5F;
-    }
-
+    .kwd { color: #F84E5F; }
     /* a comment */
-    .com {
-      color: #666;
-    }
-
+    .com { color: #666; }
     /* a type name */
-    .typ {
-      color: #30566D;
-    }
-
+    .typ { color: #30566D; }
     /* a literal value */
-    .lit {
-      color: #30566D;
-    }
-
+    .lit { color: #30566D; }
     /* punctuation */
-    .pun {
-      color: #333;
-    }
-
+    .pun { color: #333; }
     /* lisp open bracket */
-    .opn {
-      color: #cccccc;
-    }
-
+    .opn { color: #cccccc; }
     /* lisp close bracket */
-    .clo {
-      color: #cccccc;
-    }
-
+    .clo { color: #cccccc; }
     /* a markup tag name */
-    .tag {
-      color: #f2777a;
-    }
-
+    .tag { color: #f2777a; }
     /* a markup attribute name */
-    .atn {
-      color: #f99157;
-    }
-
+    .atn { color: #f99157; }
     /* a markup attribute value */
-    .atv {
-      color: #66cccc;
-    }
-
+    .atv { color: #66cccc; }
     /* a declaration */
-    .dec {
-      color: #f99157;
-    }
-
+    .dec { color: #f99157; }
     /* a variable name */
-    .var {
-      color: #f2777a;
-    }
-
+    .var { color: #f2777a; }
     /* a function name */
-    .fun {
-      color: #6699cc;
-    }
+    .fun { color: #6699cc; }  
   }
 }
 /* Use higher contrast and text-weight for printable form. */

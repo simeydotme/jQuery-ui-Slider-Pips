@@ -1,0 +1,84 @@
+#circles-slider {
+
+    &.ui-slider {
+
+        border-radius: 20px;
+        background: $fcolor;
+        border: none;
+        height: 10px;
+        margin: 1em 4em 4em;
+
+    }
+
+    .ui-slider-handle {
+
+        border-radius: 23px;
+        height: 23px;
+        width: 23px;
+        top: -7px;
+        margin-left: -11px;
+        border: 2px solid $bcolor;
+
+    }
+
+    .ui-slider-pip {
+        
+        top: 3px;
+
+        .ui-slider-line {
+         
+            width: 4px;
+            height: 4px;
+            border-radius: 4px;
+            margin-left: -2px;
+            background: $bcolor;
+
+        }
+
+        &.ui-slider-pip-last,
+        &.ui-slider-pip-first {
+
+            top: -7px;
+
+            .ui-slider-line {
+                display: none;
+            }
+
+            .ui-slider-label {
+                margin: 0;
+            }
+
+        }
+
+        &.ui-slider-pip-first .ui-slider-label {
+
+            left: -2em;
+            text-align: right;
+            
+        }
+
+        &.ui-slider-pip-last .ui-slider-label {
+
+            left: 2em;
+            text-align: left;
+            
+        }
+        
+        &.ui-slider-pip-selected-initial {
+            font-weight: normal;
+        }
+        
+        &.ui-slider-pip-selected {
+            font-weight: bold;
+        }
+
+        &.ui-slider-pip-selected,
+        &.ui-slider-pip-selected-initial {
+
+            color: $fcolor;
+
+        }
+
+    }
+
+}

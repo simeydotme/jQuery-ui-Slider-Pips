@@ -1,0 +1,132 @@
+#scale-slider {
+
+    &.ui-slider {
+
+        border-radius: 0px;
+        background: lighten($fcolor,50%);
+        border: none;
+        height: 2px;
+        margin: 1em 4em 4em;
+
+        .ui-slider-range {
+
+            background: $fcolor;
+            height: 4px;
+            top: -1px;
+
+            transition: all 0.2s ease-out;
+
+        }
+
+    }
+
+    .ui-slider-handle {
+        
+        $rotate: 10deg;
+
+        border-radius: 2px;
+        height: 20px;
+        width: 12px;
+        top: -26px;
+        border: none;
+
+        &:nth-of-type(n+1) {
+            transform: rotateZ(-$rotate);
+            margin-left: -9px;
+        }
+
+        &:nth-of-type(n+2) {
+            transform: rotateZ($rotate);
+            margin-left: -3px;
+        }
+
+        &:after {
+            
+            content: "";
+            border: 6px solid transparent;
+            width: 0;
+            height: 0;
+            position: absolute;
+            bottom: -11px;
+
+            border-top-color: $fcolor;
+
+        }
+
+        &.ui-slider-handle.ui-state-focus, 
+        &.ui-slider-handle.ui-state-hover, 
+        &.ui-slider-handle.ui-state-active {
+
+            &:after {
+                border-top-color: $link;
+            }
+
+        }
+
+    }
+
+    .ui-slider-pip {
+            
+        top: 2px;
+
+        .ui-slider-label {
+
+            display: none;
+            background: transparentize($fcolor,1);
+            color: $fcolor;
+            border-radius: 4px;
+            padding: 0.3em 0;
+            width: 2.4em;
+            margin-left: -1.2em;
+
+            transition: all 0.2s ease-out;
+
+        }
+
+        .ui-slider-line {
+            height: 4px;
+        }
+        
+        &:nth-of-type(5n+3) {
+
+            .ui-slider-line {
+                height: 8px;
+            }
+
+        }
+        
+        &:nth-of-type(10n+3) {
+
+            .ui-slider-line {
+                height: 12px;
+            }
+
+            .ui-slider-label {
+                top: 16px;
+                display: block;
+            }
+
+        }
+
+        &.ui-slider-pip-last {
+
+            .ui-slider-line {
+                margin-left: -1px;
+            }
+
+        }
+
+        &.ui-slider-pip-selected, 
+        &.ui-slider-pip-selected-first, 
+        &.ui-slider-pip-selected-second {
+            
+            .ui-slider-label {
+                background: transparentize($fcolor,0.3);
+                color: $bcolor;
+            }
+
+        }
+
+    }
+
+}

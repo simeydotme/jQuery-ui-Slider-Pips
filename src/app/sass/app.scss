@@ -91,7 +91,6 @@ small {
 @import "modules/lists";
 @import "modules/tables";
 
-
 @import "blocks/sidebar";
 @import "blocks/content";
 @import "blocks/header";
@@ -99,6 +98,9 @@ small {
 @import "blocks/options-table";
 @import "blocks/step-table";
 @import "blocks/browsers";
+
+@import "styling/circles";
+@import "styling/scale";
 
 
 @import "examples";

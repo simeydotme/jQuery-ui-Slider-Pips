@@ -1,0 +1,114 @@
+<section class="sub-block">
+    
+    <h3>
+        <a href="#styling-circles" id="styling-circles" class="anchor">
+            Circular Pips
+        </a>
+    </h3>
+
+    <p>Here's a quick example showing that it's possible to move the <code>pips</code> inside the slider area.
+        We've given them a thicker, rounded appearance with a minimal feel. Also the <code>first</code> and <code>last</code>
+        <code>pips</code> are positioned at the beginning and end of the slider, respectively. 
+        -- Be sure to <a href="#styling-circles" data-active-tab="#styling-circles-css">check out the css</a> to see how it's done!</p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#styling-circles-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#styling-circles-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#styling-circles-css" title="css">{;}</a></dd>
+        <dd><a href="#styling-circles-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="styling-circles-result">
+
+            <div id="circles-slider"></div>
+
+        </div>
+
+        <div class="content" id="styling-circles-html">
+
+            <pre data-lang="html">
+                &lt;div id="circles-slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="styling-circles-css">
+
+            <pre data-lang="css">
+            
+                #circles-slider.ui-slider {
+                  border-radius: 20px;
+                  background: #434d5a;
+                  border: none;
+                  height: 10px;
+                  margin: 1em 4em 4em; }
+
+                #circles-slider .ui-slider-handle {
+                  border-radius: 23px;
+                  height: 23px;
+                  width: 23px;
+                  top: -7px;
+                  margin-left: -11px;
+                  border: 2px solid #fffaf7; }
+
+                #circles-slider .ui-slider-pip {
+                  top: 3px; }
+
+                  #circles-slider .ui-slider-pip .ui-slider-line {
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 4px;
+                    margin-left: -2px;
+                    background: #fffaf7; }
+
+                  #circles-slider .ui-slider-pip.ui-slider-pip-last,
+                  #circles-slider .ui-slider-pip.ui-slider-pip-first {
+                    top: -7px; }
+
+                    #circles-slider .ui-slider-pip.ui-slider-pip-last .ui-slider-line,
+                    #circles-slider .ui-slider-pip.ui-slider-pip-first .ui-slider-line {
+                      display: none; }
+
+                    #circles-slider .ui-slider-pip.ui-slider-pip-last .ui-slider-label,
+                    #circles-slider .ui-slider-pip.ui-slider-pip-first .ui-slider-label {
+                      margin: 0; }
+
+                  #circles-slider .ui-slider-pip.ui-slider-pip-first .ui-slider-label {
+                    left: -2em;
+                    text-align: right; }
+
+                  #circles-slider .ui-slider-pip.ui-slider-pip-last .ui-slider-label {
+                    left: 2em;
+                    text-align: left; }
+
+                  #circles-slider .ui-slider-pip.ui-slider-pip-selected-initial {
+                    font-weight: normal; }
+
+                  #circles-slider .ui-slider-pip.ui-slider-pip-selected {
+                    font-weight: bold; }
+
+                  #circles-slider .ui-slider-pip.ui-slider-pip-selected,
+                  #circles-slider .ui-slider-pip.ui-slider-pip-selected-initial {
+                    color: #434d5a; }
+
+            </pre>
+
+        </div>
+
+        <div class="content" id="styling-circles-js">
+            <pre data-lang="js">
+                $("#circles-slider")
+                    .slider({
+                        max: 10,
+                        value: 5
+                    })
+                    .slider("pips");
+            </pre>
+        </div>
+
+    </div>
+
+</section>

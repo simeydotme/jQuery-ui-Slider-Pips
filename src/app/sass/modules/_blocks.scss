@@ -10,7 +10,14 @@
     }
 
     &:nth-child(even) {
+
         background: white;
+
+        .sub-block {
+
+            border-bottom-color: lighten($fcolor,50%);
+
+        }
     }
 
     @media #{$small-up} { 

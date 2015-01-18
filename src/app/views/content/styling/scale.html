@@ -1,0 +1,139 @@
+<section class="sub-block">
+    
+    <h3>
+        <a href="#styling-scale" id="styling-scale" class="anchor">
+            Scale Slider
+        </a>
+    </h3>
+
+    <p>Description
+        -- Be sure to <a href="#styling-scale" data-active-tab="#styling-scale-css">check out the css</a> to see how it's done!</p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#styling-scale-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#styling-scale-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#styling-scale-css" title="css">{;}</a></dd>
+        <dd><a href="#styling-scale-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="styling-scale-result">
+
+            <div id="scale-slider"></div>
+
+        </div>
+
+        <div class="content" id="styling-scale-html">
+
+            <pre data-lang="html">
+                &lt;div id="scale-slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="styling-scale-css">
+
+            <pre data-lang="css">
+                
+                #scale-slider.ui-slider {
+                  border-radius: 0px;
+                  background: #c7cdd5;
+                  border: none;
+                  height: 2px;
+                  margin: 1em 4em 4em; }
+                  
+                  #scale-slider.ui-slider .ui-slider-range {
+                    background: #434d5a;
+                    height: 4px;
+                    top: -1px;
+                    transition: all 0.2s ease-out; }
+
+                #scale-slider .ui-slider-handle {
+                  border-radius: 2px;
+                  height: 20px;
+                  width: 12px;
+                  top: -26px;
+                  border: none; }
+                  
+                  #scale-slider .ui-slider-handle:nth-of-type(n+1) {
+                    transform: rotateZ(-10deg);
+                    margin-left: -9px; }
+                  
+                  #scale-slider .ui-slider-handle:nth-of-type(n+2) {
+                    transform: rotateZ(10deg);
+                    margin-left: -3px; }
+                  
+                  #scale-slider .ui-slider-handle:after {
+                    content: "";
+                    border: 6px solid transparent;
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    bottom: -11px;
+                    border-top-color: #434d5a; }
+                  
+                  #scale-slider .ui-slider-handle.ui-slider-handle.ui-state-focus:after,
+                  #scale-slider .ui-slider-handle.ui-slider-handle.ui-state-hover:after,
+                  #scale-slider .ui-slider-handle.ui-slider-handle.ui-state-active:after {
+                    border-top-color: #00c7d7; }
+
+                #scale-slider .ui-slider-pip {
+                  top: 2px; }
+                  
+                  #scale-slider .ui-slider-pip .ui-slider-label {
+                    display: none;
+                    background: rgba(67, 77, 90, 0);
+                    color: #434d5a;
+                    border-radius: 4px;
+                    padding: 0.3em 0;
+                    width: 2.4em;
+                    margin-left: -1.2em;
+                    transition: all 0.2s ease-out; }
+                  
+                  #scale-slider .ui-slider-pip .ui-slider-line {
+                    height: 4px; }
+                  
+                  #scale-slider .ui-slider-pip:nth-of-type(5n+3) .ui-slider-line {
+                    height: 8px; }
+                  
+                  #scale-slider .ui-slider-pip:nth-of-type(10n+3) .ui-slider-line {
+                    height: 12px; }
+                  
+                  #scale-slider .ui-slider-pip:nth-of-type(10n+3) .ui-slider-label {
+                    top: 16px;
+                    display: block; }
+                  
+                  #scale-slider .ui-slider-pip.ui-slider-pip-last .ui-slider-line {
+                    margin-left: -1px; }
+                  
+                  #scale-slider .ui-slider-pip.ui-slider-pip-selected .ui-slider-label, 
+                  #scale-slider .ui-slider-pip.ui-slider-pip-selected-first .ui-slider-label, 
+                  #scale-slider .ui-slider-pip.ui-slider-pip-selected-second .ui-slider-label {
+                    background: rgba(67, 77, 90, 0.7);
+                    color: #fffaf7; }
+
+
+            </pre>
+
+        </div>
+
+        <div class="content" id="styling-scale-js">
+            <pre data-lang="js">
+                $("#scale-slider")
+                    .slider({
+                        max: 50,
+                        min: -50,
+                        values: [-20, 20],
+                        range: true
+                    })
+                    .slider("pips", {
+                        rest: "label"
+                    });
+            </pre>
+        </div>
+
+    </div>
+
+</section>
