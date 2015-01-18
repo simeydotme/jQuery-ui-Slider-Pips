@@ -125,7 +125,7 @@
 
         }).trigger("resize");
 
-        if ( !window.location.hash || window.location.hash !== "" ) {
+        if ( !!window.location.hash ) {
             $sidebar.find( "[href=" +window.location.hash+ "]" ).trigger("focus");
         }
     });
