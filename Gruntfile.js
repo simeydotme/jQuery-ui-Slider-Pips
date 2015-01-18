@@ -69,10 +69,6 @@ module.exports = function(grunt) {
                 src: "**",
                 dest: "dist/img/",
                 expand: true
-            },
-            index: {
-                src: "src/index.html",
-                dest: "index.html"
             }
         },
 
@@ -80,7 +76,7 @@ module.exports = function(grunt) {
             all: {
                 options: {
                     style: "nested",
-                    lineNumbers: false
+                    lineNumbers: true
                 },
                 files: {
                     "dist/css/app.css": "src/app/sass/app.scss"
@@ -172,6 +168,11 @@ module.exports = function(grunt) {
         },
 
         watch: {
+
+            options: {
+                reload: true
+            },
+
             config: {
                 files: ["Gruntfile.js"]
             },
