@@ -1,13 +1,17 @@
-<section class="sub-block">
+<section class="sub-block" id="styling-scale">
     
     <h3>
-        <a href="#styling-scale" id="styling-scale" class="anchor">
+        <a href="#styling-scale" class="anchor">
             Scale Slider
         </a>
     </h3>
 
-    <p>Description
-        -- Be sure to <a href="#styling-scale" data-active-tab="#styling-scale-css">check out the css</a> to see how it's done!</p>
+    <p>We have an example, here, of a slider set up with a range and in the <code>pips</code> plugin we tell
+        it to use <code>labels</code> for every single value (<code>-50</code> ~ <code>50</code>) but we've hidden all the labels with 
+        <code>display:none;</code> and then used css3 <code>:nth-of-type(10n+3)</code> to show every
+        10th label 
+
+        &mdash; Be sure to <a href="#styling-scale" data-active-tab="#styling-scale-css">check out the css</a> to see how it's done!</p>
         
 
     <dl class="tabs code" data-tab>
@@ -45,7 +49,8 @@
                   margin: 1em 4em 4em; }
                   
                   #scale-slider.ui-slider .ui-slider-range {
-                    background: #434d5a;
+                    background: linear-gradient(to right, #434d5a 0%, #00c7d7 50%, #434d5a 100%)
+                    border: 1px solid rgba(67, 77, 90, 0.5);
                     height: 4px;
                     top: -1px;
                     transition: all 0.2s ease-out; }

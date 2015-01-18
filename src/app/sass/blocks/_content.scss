@@ -28,41 +28,10 @@
             color: lighten( $fcolor, 10% );
         }
 
-    }
-
-}
-
-
-.anchor[href^="#"] {
-
-    color: $fcolor;
-    
-    &:before {
-
-        @extend .icon;
-        @extend .icon--anchor;
-
-        position: absolute;
-        font-size: 0.7em;
-        transform: translate(-3em, 0.5em);
-        transition: all 0.2s ease;
-
-        color: $headerstart;
-        opacity: 0;
-
-    }
-
-    &:hover,
-    &:focus,
-    &:target {
-        
-        outline: none;
-
-        &:before {
-
-            @media #{$medium-up} { 
-                opacity: 1;
-                transform: translate(-1.5em, 0.5em);
+        h2, h3, h4 {
+            
+            .emoji {
+                top: -3px;
             }
 
         }

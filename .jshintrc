@@ -16,6 +16,7 @@
     "globals": {
         "jQuery": true,
         "$": true,
-        "prettyPrint": true
+        "prettyPrint": true,
+        "twemoji": true
     }
 }

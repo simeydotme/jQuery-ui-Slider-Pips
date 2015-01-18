@@ -3,6 +3,8 @@ module.exports = function(grunt) {
 
     require("time-grunt")(grunt);
 
+    var path = require("path");
+
     // Project configuration.
     grunt.initConfig({
         // Metadata.
@@ -64,10 +66,22 @@ module.exports = function(grunt) {
                 dest: "dist/js/",
                 expand: true
             },
+            sound: {
+                cwd: "src/app/sound/",
+                src: "**",
+                dest: "dist/sound/",
+                expand: true
+            },
             img: {
                 cwd: "src/app/img/",
                 src: "**",
                 dest: "dist/img/",
+                expand: true
+            },
+            emoji: {
+                cwd: "bower_components/twemoji",
+                src: "**/*.png",
+                dest: "dist/img/twemoji/",
                 expand: true
             }
         },
@@ -142,6 +156,17 @@ module.exports = function(grunt) {
 
                     ]
                 }
+            },
+
+            helpers: {
+                files: {
+                    "dist/js/helpers.js": [
+
+                        "src/app/js/prettyPre.js",
+                        "src/app/js/twemojiWrapper.js"
+
+                    ]
+                }
             }
 
         },
@@ -197,7 +222,7 @@ module.exports = function(grunt) {
               // Here we watch the files the sass task will compile to
               // These files are sent to the live reload server after sass compiles to them
               options: { livereload: true },
-              files: ["dist/**/*"]
+              files: ["dist/css/**/*", "dist/js/**/*"]
 
             },
         }

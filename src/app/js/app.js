@@ -43,12 +43,8 @@
             $sidebar = $(".sidebar"),
             $toggle = $(".sidebar__toggle"),
             $body = $("body"),
-            $anchors = $(".anchor"),
 
-            anchors,
-            anchorsLength,
-            paintAnchor,
-            scrollTimer;
+            sidebarTimer;
 
 
         $toggle
@@ -61,56 +57,77 @@
 
             });
 
-        anchors = $anchors.map(function(){
-            return { 
-                "name": $(this).attr("href"), 
-                "scroll": Math.floor($(this).offset().top) 
-            };
-        });
 
-        anchorsLength = anchors.length;
 
-        paintAnchor = function() {
 
-            var top = window.scrollY,
-                l = anchorsLength,
-                anchorsTemp = {
-                    "name": "",
-                    "scroll": 0
+
+
+
+        function prettySidebar() {
+
+            var $anchors = $(".anchor"),
+                scrollTimer,
+
+            anchors = $anchors.map(function(){
+                return { 
+                    "name": $(this).attr("href"), 
+                    "scroll": Math.floor($(this).offset().top) 
                 };
+            }),
 
-            while( l-- ) {
-                if( anchors[l].scroll - 50 > anchorsTemp.scroll && anchors[l].scroll - 50 <= top ) {
-                    anchorsTemp = anchors[l];
+            anchorsLength = anchors.length,
+
+            paintAnchor = function() {
+
+                var top = window.scrollY,
+                    l = anchorsLength,
+                    anchorsTemp = {
+                        "name": "",
+                        "scroll": 0
+                    };
+
+                while( l-- ) {
+                    if( anchors[l].scroll - 70 > anchorsTemp.scroll && anchors[l].scroll - 70 <= top ) {
+                        anchorsTemp = anchors[l];
+                    }
                 }
-            }
-
-            $sidebar
-                .find(".sidebar__item")
-                .removeClass("sidebar__item--active");
-
-            if( anchorsTemp.scroll > 0 ) {
 
                 $sidebar
-                    .find("[href=" + anchorsTemp.name + "]")
-                    .parent(".sidebar__item")
-                    .addClass("sidebar__item--active");
+                    .find(".sidebar__item")
+                    .removeClass("sidebar__item--active");
 
-            }
+                if( anchorsTemp.scroll > 0 ) {
 
-        };
+                    $sidebar
+                        .find("[href=" + anchorsTemp.name + "]")
+                        .parent(".sidebar__item")
+                        .addClass("sidebar__item--active");
 
-        $window
-            .off(".navscroll")
-            .on("scroll.navscroll", function() {
+                }
 
-                clearTimeout( scrollTimer );
-                scrollTimer = setTimeout( paintAnchor, 100 );
+            };
 
-            });
+            $window
+                .off(".navscroll")
+                .on("scroll.navscroll", function() {
 
+                    clearTimeout( scrollTimer );
+                    scrollTimer = setTimeout( paintAnchor, 100 );
 
+                }).trigger("scroll");
 
+        }
+
+        $window.on("resize", function() {
+
+            clearTimeout( sidebarTimer );
+            sidebarTimer = setTimeout( prettySidebar , 2000 );
+
+        }).trigger("resize");
+
+        if ( !window.location.hash || window.location.hash !== "" ) {
+            $sidebar.find( "[href=" +window.location.hash+ "]" ).trigger("focus");
+        }
     });
 
 }(jQuery));

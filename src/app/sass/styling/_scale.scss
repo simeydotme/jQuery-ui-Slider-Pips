@@ -8,9 +8,16 @@
         height: 2px;
         margin: 1em 4em 4em;
 
+        @media screen and (max-width: 1040px) {
+
+            margin: 1em 0.5em 4em;
+
+        }
+
         .ui-slider-range {
 
-            background: $fcolor;
+            background: linear-gradient(to right, $fcolor 0%, $link 50%, $fcolor 100%);
+            border: 1px solid transparentize( $fcolor, 0.5 );
             height: 4px;
             top: -1px;
 

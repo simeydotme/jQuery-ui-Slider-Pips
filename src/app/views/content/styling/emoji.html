@@ -1,0 +1,119 @@
+<section class="sub-block" id="styling-emoji">
+    
+    <h3>
+        <a href="#styling-emoji" class="anchor">
+            Emoji !!! 😎
+        </a>
+    </h3>
+
+    <p>Here we have some fun with Emoji! There's not a lot of CSS in this slider, instead the styling is
+        done mostly with javascript.
+        &mdash; Be sure to <a href="#styling-emoji" data-active-tab="#styling-emoji-css">check out the css</a> 
+        and <a href="#styling-emoji" data-active-tab="#styling-emoji-js">then the js</a>  to see how it's done!</p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#styling-emoji-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#styling-emoji-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#styling-emoji-css" title="css">{;}</a></dd>
+        <dd><a href="#styling-emoji-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="styling-emoji-result">
+            
+            <p class="emoji-slider-question">What's your favourite animal?!</p>
+            <div id="emoji-slider"></div>
+
+        </div>
+
+        <div class="content" id="styling-emoji-html">
+
+            <pre data-lang="html">
+                &lt;div id="emoji-slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="styling-emoji-css">
+
+            <pre data-lang="css">
+                
+                #emoji-slider .emoji {
+                  max-height: 2em;
+                  transform: scale(0.9);
+                  transition: transform 0.2s ease-out; }
+                
+                #emoji-slider .ui-slider-pip-selected .emoji {
+                  transform: scale(1.3); }
+                
+                #emoji-slider .ui-slider-line {
+                  display: none; }
+
+            </pre>
+
+        </div>
+
+        <div class="content" id="styling-emoji-js">
+            <pre data-lang="js">
+
+                // store the array of animals for use later in the slider
+                // taken from <a href="http://apps.timwhitlock.info/emoji/tables/unicode#block-5-uncategorized">apps.timwhitlock.info</a> &lt;3
+                var emoji = [ "🐌", "🐐", "🐘", "🐙", "🐞", "🐠", "🐈", "🐕", "🐦", "🐬", "🐖", "🐇", "🐅", "🐃" ],
+                    // my favourite is a dog! of course!
+                    mine = "🐕";
+
+                $("#emoji-slider")
+                    
+                    // create a slider with 14 values (0-13)
+                    // and the default is a cat, obviously! ( emoji[6] === "🐈" )
+                    .slider({
+                        max: 13,
+                        value: 6
+                    })
+                    
+                    // now activate the pips and set it to have labels for all
+                    // items, and then set the labels to the array of animals from earlier
+                    .slider("pips", {
+                        rest: "label",
+                        labels: emoji
+                    })
+                    
+                    // whenever the slider changes value, we want to update the
+                    // text above the slider with a kawaii message!
+                    .on("slidechange", function( e, ui ) {
+                            
+                            // save the messages into variables
+                            var mineIs = ( emoji[ui.value] === mine ) ? "Mine too!! 😂✌" : "But mine is a " + mine + "! 😞",
+                                yoursIs = "Oh golly gosh, your favourite animal is a " + emoji[ui.value] + "? &mdash; " + mineIs;
+                            
+                            // fade the question out quickly (using css)
+                            $(".emoji-slider-question")
+                                .css({ opacity: 0 });
+                            
+                            // then fade it back in with the new message
+                            // and use a custom function to display the emoji.
+                            setTimeout(function() {
+
+                                $(".emoji-slider-question")
+                                    .html( yoursIs )
+                                    .twemoji()
+                                    .css({ opacity: 1 });
+
+                            }, 200 );
+
+                    
+                    });
+                
+                // lastly after the slider is initialised we need to
+                // tell it to display out emoji on every label, but this
+                // is a custom function, <a href="https://github.com/twitter/twemoji">you can find it at github</a>
+                $("#emoji-slider .ui-slider-label").twemoji();
+
+            </pre>
+        </div>
+
+    </div>
+
+</section>

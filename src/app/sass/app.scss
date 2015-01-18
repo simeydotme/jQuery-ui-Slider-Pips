@@ -90,6 +90,7 @@ small {
 @import "modules/labels";
 @import "modules/lists";
 @import "modules/tables";
+@import "modules/emoji";
 
 @import "blocks/sidebar";
 @import "blocks/content";
@@ -98,9 +99,11 @@ small {
 @import "blocks/options-table";
 @import "blocks/step-table";
 @import "blocks/browsers";
+@import "blocks/anchors";
 
 @import "styling/circles";
 @import "styling/scale";
+@import "styling/emoji";
 
 
 @import "examples";
