@@ -38,6 +38,7 @@
             $sidebar = $(".sidebar"),
             $toggle = $(".sidebar__toggle"),
             $body = $("body"),
+            $content = $(".content"),
 
             sidebarTimer;
 
@@ -49,6 +50,21 @@
                 $toggle.toggleClass("sidebar__toggle--active");
                 $body.toggleClass("nav--active");
                 e.preventDefault();
+
+            });
+
+
+        $content
+            .on("click", function(e) {
+
+                if( $sidebar.hasClass("sidebar--open") ) {
+
+                    $sidebar.removeClass("sidebar--open");
+                    $toggle.removeClass("sidebar__toggle--active");
+                    $body.removeClass("nav--active");
+                    e.preventDefault();
+
+                }
 
             });
 
