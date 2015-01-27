@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 
         // Task configuration.
 
-        clean: [ "dist" ],
+        clean: [ "dist", ".tmp" ],
 
         bake: {
             options: {
@@ -93,8 +93,15 @@ module.exports = function(grunt) {
                     lineNumbers: true
                 },
                 files: {
-                    "dist/css/app.css": "src/app/sass/app.scss"
+                    ".tmp/css/app.css": "src/app/sass/app.scss"
                 }
+            }
+        },
+
+        autoprefixer: {
+            all: {
+                src: ".tmp/css/app.css",
+                dest: ".tmp/css/app.css"
             }
         },
 
@@ -188,6 +195,14 @@ module.exports = function(grunt) {
                         "bower_components/jquery-ui-slider-pips/dist/jquery-ui-slider-pips.css"
                     ]
                 }
+            },
+
+            app: {
+                files: {
+                    "dist/css/app.min.css": [
+                        ".tmp/css/app.css"
+                    ]
+                }
             }
 
         },
@@ -246,19 +261,15 @@ module.exports = function(grunt) {
 
     // Tasks.
 
-    grunt.registerTask("build", [
+    grunt.registerTask("default", [
         "clean",
         "jshint", 
         "sass", 
+        "autoprefixer", 
         "cssmin",
         "uglify",
         "bake",
         "copy"
-    ]);
-
-    grunt.registerTask("default", [
-        "build", 
-        "watch"
     ]);
 
 };
