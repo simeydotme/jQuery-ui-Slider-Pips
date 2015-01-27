@@ -1,5 +1,3 @@
-/*! jQuery-ui-Slider-Pips - v1.7.2 - 2014-10-19
-* Copyright (c) 2014 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
 
@@ -103,8 +101,9 @@
             // - of the slider and there's no accuracy in the selected value
             function labelClick( label ) {
 
-                if (slider.option('disabled'))
+                if (slider.option("disabled")) {
                     return;
+                }
 
                 var val = $(label).data("value"),
                     $thisSlider = slider.element;
