@@ -66,6 +66,12 @@ module.exports = function(grunt) {
                 dest: "dist/js/",
                 expand: true
             },
+            pips: {
+                cwd: "bower_components/jquery-ui-slider-pips/dist/",
+                src: "jquery-ui-slider-pips.js",
+                dest: "dist/js/",
+                expand: true
+            },
             sound: {
                 cwd: "src/app/sound/",
                 src: "**",
@@ -150,16 +156,6 @@ module.exports = function(grunt) {
                         "bower_components/google-code-prettify/src/lang-css.js",
                         
                         "bower_components/twemoji/twemoji.js"
-
-                    ]
-                }
-            },
-
-            pips: {
-                files: {
-                    "dist/js/jquery-ui-slider-pips.js": [
-
-                        "bower_components/jquery-ui-slider-pips/dist/jquery-ui-slider-pips.js"
 
                     ]
                 }

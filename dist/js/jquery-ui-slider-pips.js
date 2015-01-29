@@ -1,1 +1,570 @@
-!function($){"use strict";var a={pips:function(a){function b(a){var b=$(a).data("value"),c=d.element;if(!0===d.options.range){var e,f=c.slider("values");e=f[0]===f[1]?b<f[0]?[b,f[1]]:[f[0],b]:Math.abs(f[0]-b)===Math.abs(f[1]-b)?[b,b]:Math.abs(f[0]-b)<Math.abs(f[1]-b)?[b,f[1]]:[f[0],b],c.slider("values",e),h.range(e)}else c.slider("value",b),h.single(b)}function c(a){var b,c,e=a,h="ui-slider-pip",i="";"first"===a?e=0:"last"===a&&(e=f);var j=d.options.min+d.options.step*e,k=j.toString().replace(".","-");return b="array"===$.type(g.labels)?g.labels[e]||"":"object"===$.type(g.labels)?"first"===a?g.labels.first||"":"last"===a?g.labels.last||"":"array"===$.type(g.labels.rest)?g.labels.rest[e-1]||"":j:j,"first"===a?(c="0%",h+=" ui-slider-pip-first",h+="label"===g.first?" ui-slider-pip-label":"",h+=!1===g.first?" ui-slider-pip-hide":""):"last"===a?(c="100%",h+=" ui-slider-pip-last",h+="label"===g.last?" ui-slider-pip-label":"",h+=!1===g.last?" ui-slider-pip-hide":""):(c=(100/f*a).toFixed(4)+"%",h+="label"===g.rest?" ui-slider-pip-label":"",h+=!1===g.rest?" ui-slider-pip-hide":""),h+=" ui-slider-pip-"+k,i="horizontal"===d.options.orientation?"left: "+c:"bottom: "+c,'<span class="'+h+'" style="'+i+'"><span class="ui-slider-line"></span><span class="ui-slider-label" data-value="'+j+'">'+g.formatLabel(b)+"</span></span>"}var d=this,e="",f=(d.options.max-d.options.min)/d.options.step,g={first:"label",last:"label",rest:"pip",labels:!1,prefix:"",suffix:"",step:f>100?Math.floor(.05*f):1,formatLabel:function(a){return this.prefix+a+this.suffix}};$.extend(g,a),d.options.pipStep=g.step,d.element.addClass("ui-slider-pips").find(".ui-slider-pip").remove();var h={single:function(a){var b=this.resetClasses();b.filter(".ui-slider-pip-"+a).addClass("ui-slider-pip-selected")},range:function(a){var b=this.resetClasses();b.filter(".ui-slider-pip-"+a[0]).addClass("ui-slider-pip-selected-first"),b.filter(".ui-slider-pip-"+a[1]).addClass("ui-slider-pip-selected-second")},resetClasses:function(){var a=d.element.find(".ui-slider-pip").removeClass("ui-slider-pip-selected ui-slider-pip-selected-first ui-slider-pip-selected-second");return a}};d.options.pipStep=Math.round(d.options.pipStep),e+=c("first");for(var i=1;f>i;i++)0===i%d.options.pipStep&&(e+=c(i));e+=c("last");var j,k;d.options.values?(j=["ui-slider-pip-"+d.options.values[0],"ui-slider-pip-"+d.options.values[1]],k=["ui-slider-pip-"+d.options.values[0]+" ui-slider-pip-selected-initial-first","ui-slider-pip-"+d.options.values[1]+" ui-slider-pip-selected-initial-second"],e=e.replace(j[0],k[0]).replace(j[1],k[1])):(j="ui-slider-pip-"+d.options.value,k="ui-slider-pip-"+d.options.value+" ui-slider-pip-selected-initial",e=e.replace(j,k)),d.element.append(e),d.element.on("mouseup",".ui-slider-label",function(){b(this)}),d.element.on("slide.selectPip slidechange.selectPip",function(a,b){b.values?h.range(b.values):h.single(b.value)})}};$.extend(!0,$.ui.slider.prototype,a)}(jQuery),function($){"use strict";var a={"float":function(a){function b(a,b){var c=[],e=a/d.options.step,g=b/d.options.step;return"array"===$.type(f.labels)?(c[0]=f.labels[e-d.options.min]||a,b&&(c[1]=f.labels[g-d.options.min]||b)):"object"===$.type(f.labels)?(c[0]=d.options.min===a?f.labels.first||d.options.min:d.options.max===a?f.labels.last||d.options.max:"array"===$.type(f.labels.rest)?f.labels.rest[e-d.options.min-1]||a:a,b&&(c[1]=d.options.min===b?f.labels.first||d.options.min:d.options.max===b?f.labels.last||d.options.max:"array"===$.type(f.labels.rest)?f.labels.rest[g-d.options.min-1]||b:b)):(c[0]=a,b&&(c[1]=b)),c}var c,d=this,e=[],f={handle:!0,pips:!1,labels:!1,prefix:"",suffix:"",event:"slidechange slide",formatLabel:function(a){return this.prefix+a+this.suffix}};$.extend(f,a),d.options.value<d.options.min&&(d.options.value=d.options.min),d.options.value>d.options.max&&(d.options.value=d.options.max),d.options.values&&(d.options.values[0]<d.options.min&&(d.options.values[0]=d.options.min),d.options.values[1]<d.options.min&&(d.options.values[1]=d.options.min),d.options.values[0]>d.options.max&&(d.options.values[0]=d.options.max),d.options.values[1]>d.options.max&&(d.options.values[1]=d.options.max)),d.element.addClass("ui-slider-float").find(".ui-slider-tip, .ui-slider-tip-label").remove(),f.handle&&(d.options.values?(e=b(d.options.values[0],d.options.values[1]),c=[$('<span class="ui-slider-tip">'+f.formatLabel(e[0])+"</span>"),$('<span class="ui-slider-tip">'+f.formatLabel(e[1])+"</span>")]):(e=b(d.options.value),c=$('<span class="ui-slider-tip">'+f.formatLabel(e[0])+"</span>")),d.element.find(".ui-slider-handle").each(function(a,b){$(b).append(c[a])})),f.pips&&d.element.find(".ui-slider-label").each(function(a,c){var d,e=$(c),g=e.data("value"),h=e.data("value");h=b(g)[0],d=$('<span class="ui-slider-tip-label">'+f.formatLabel(h)+"</span>").insertAfter(e)}),"slide"!==f.event&&"slidechange"!==f.event&&"slide slidechange"!==f.event&&"slidechange slide"!==f.event&&(f.event="slidechange slide"),d.element.on(f.event,function(a,c){var d=b(c.value);$(c.handle).find(".ui-slider-tip").html(f.formatLabel(d[0]))})}};$.extend(!0,$.ui.slider.prototype,a)}(jQuery);
+/*! jQuery-ui-Slider-Pips - v1.7.2 - 2014-10-19
+* Copyright (c) 2014 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
+
+// PIPS
+
+(function($) {
+
+    "use strict";
+
+    var extensionMethods = {
+
+        pips: function( settings ) {
+
+            var slider = this,
+                collection = "",
+                pips = ( slider.options.max - slider.options.min ) / slider.options.step,
+                options = {
+
+                    first: "label",
+                    // "label", "pip", false
+
+                    last: "label",
+                    // "label", "pip", false
+
+                    rest: "pip",
+                    // "label", "pip", false
+
+                    labels: false,
+                    // [array], { first: "string", rest: [array], last: "string" }, false
+
+                    prefix: "",
+                    // "", string
+
+                    suffix: "",
+                    // "", string
+
+                    step: ( pips > 100 ) ? Math.floor( pips * 0.05 ) : 1,
+                    // number
+
+                    formatLabel: function(value) {
+                        return this.prefix + value + this.suffix;
+                    }
+                    // function
+                    // must return a value to display in the pip labels
+
+                };
+
+            $.extend( options, settings );
+
+            slider.options.pipStep = options.step;
+
+            // get rid of all pips that might already exist.
+            slider.element
+                .addClass("ui-slider-pips")
+                .find(".ui-slider-pip")
+                .remove();
+
+            // small object with functions for marking pips as selected.
+
+            var selectPip = {
+
+                single: function(value) {
+
+                    var $pips = this.resetClasses();
+
+                    $pips
+                        .filter(".ui-slider-pip-" + value )
+                        .addClass("ui-slider-pip-selected");
+
+                },
+
+                range: function(values) {
+
+                    var $pips = this.resetClasses();
+
+                    $pips
+                        .filter(".ui-slider-pip-" + values[0] )
+                        .addClass("ui-slider-pip-selected-first");
+
+                    $pips
+                        .filter(".ui-slider-pip-" + values[1] )
+                        .addClass("ui-slider-pip-selected-second");
+
+
+                },
+
+                resetClasses: function() {
+
+                    var $pips = 
+                        slider.element
+                            .find(".ui-slider-pip")
+                            .removeClass("ui-slider-pip-selected ui-slider-pip-selected-first ui-slider-pip-selected-second");
+                    
+                    return $pips;
+
+                }
+
+            };
+
+            // when we click on a label, we want to make sure the
+            // slider's handle actually goes to that label!
+            // - without this code the label is just treated like a part
+            // - of the slider and there's no accuracy in the selected value
+            function labelClick( label ) {
+
+                var val = $(label).data("value"),
+                    $thisSlider = slider.element;
+
+                if ( true === slider.options.range ) {
+
+                    var sliderVals = $thisSlider.slider("values");
+                    var finalVals;
+
+                    // If the handles are together when we click a label...
+                    if (sliderVals[0] === sliderVals[1]) {
+
+                        // ...and the label we clicked on is less,
+                        // then move first handle to the label...
+                        if (val < sliderVals[0]) {
+
+                            finalVals = [ val , sliderVals[1] ];
+
+                        // ...otherwise move the second handle to the label
+                        } else {
+
+                           finalVals = [ sliderVals[0] , val ];
+
+                        }
+
+                    // if both handles are equidistant from the label we clicked on then
+                    // we bring them together at the label...
+                    } else if (Math.abs(sliderVals[0] - val) === Math.abs(sliderVals[1] - val)) {
+
+                        finalVals = [ val , val ];
+
+                    // ...or if the second handle is closest to our label, bring second
+                    // handle to the label...
+                    } else if ( Math.abs( sliderVals[0] - val ) < Math.abs( sliderVals[1] - val ) ) {
+
+                       finalVals = [ val , sliderVals[1] ];
+
+                    // ...or if the first handle is closest to our label, bring that handle.
+                    } else {
+
+                         finalVals = [ sliderVals[0], val ];
+
+                    }
+
+                    $thisSlider.slider("values", finalVals);
+                    selectPip.range( finalVals );
+
+                } else {
+
+                    $thisSlider.slider("value", val );
+                    selectPip.single( val );
+
+                }
+
+            }
+
+            function createPip( which ) {
+
+                var label,
+                    percent,
+                    number = which,
+                    classes = "ui-slider-pip",
+                    css = "";
+
+                if ( "first" === which ) { number = 0; }
+                else if ( "last" === which ) { number = pips; }
+
+                // labelValue is the actual value of the pip based on the min/step
+                var labelValue = slider.options.min + ( slider.options.step * number );
+
+                // classLabel replaces any decimals with hyphens
+                var classLabel = labelValue.toString().replace(".","-");
+
+                // We need to set the human-readable label to either the
+                // corresponding element in the array, or the appropriate
+                // item in the object... or an empty string.
+
+                if( $.type(options.labels) === "array" ) {
+                    label = options.labels[number] || "";
+                }
+
+                else if( $.type( options.labels ) === "object" ) {
+
+                    // set first label
+                    if( "first" === which ) {
+                        label = options.labels.first || "";
+                    }
+
+                    // set last label
+                    else if( "last" === which ) {
+                        label = options.labels.last || "";
+                    }
+
+                    // set other labels, but our index should start at -1
+                    // because of the first pip.
+                    else if( $.type( options.labels.rest ) === "array" ) {
+                        label = options.labels.rest[ number - 1 ] || "";
+                    } 
+
+                    // urrggh, the options must be f**ked, just show nothing.
+                    else {
+                        label = labelValue;
+                    }
+                }
+
+                else {
+
+                    label = labelValue;
+
+                }
+
+
+
+                // First Pip on the Slider
+                if ( "first" === which ) {
+
+                    percent = "0%";
+
+                    classes += " ui-slider-pip-first";
+                    classes += ( "label" === options.first ) ? " ui-slider-pip-label" : "";
+                    classes += ( false === options.first ) ? " ui-slider-pip-hide" : "";
+
+                // Last Pip on the Slider
+                } else if ( "last" === which ) {
+
+                    percent = "100%";
+
+                    classes += " ui-slider-pip-last";
+                    classes += ( "label" === options.last ) ? " ui-slider-pip-label" : "";
+                    classes += ( false === options.last ) ? " ui-slider-pip-hide" : "";
+
+                // All other Pips
+                } else {
+
+                    percent = ((100/pips) * which).toFixed(4) + "%";
+
+                    classes += ( "label" === options.rest ) ? " ui-slider-pip-label" : "";
+                    classes += ( false === options.rest ) ? " ui-slider-pip-hide" : "";
+
+                }
+
+                classes += " ui-slider-pip-"+classLabel;
+
+                css = ( slider.options.orientation === "horizontal" ) ?
+                    "left: "+ percent :
+                    "bottom: "+ percent;
+
+
+                // add this current pip to the collection
+                return  "<span class=\""+classes+"\" style=\""+css+"\">"+
+                            "<span class=\"ui-slider-line\"></span>"+
+                            "<span class=\"ui-slider-label\" data-value=\""+labelValue+"\">"+ options.formatLabel(label) +"</span>"+
+                        "</span>";
+
+            }
+
+            // we don't want the step ever to be a decimal.
+            slider.options.pipStep = Math.round( slider.options.pipStep );
+
+            // create our first pip
+            collection += createPip("first");
+
+            // for every stop in the slider; we create a pip.
+            for( var i = 1; i < pips; i++ ) {
+                if( 0 === i % slider.options.pipStep ) {
+                    collection += createPip( i );
+                }
+            }
+
+            // create our last pip
+            collection += createPip("last");
+
+            // add special classes to the pips that were set initially.
+
+            var oldClass, newClass;
+
+            if( slider.options.values ) {
+
+                oldClass = [
+                    "ui-slider-pip-"+slider.options.values[0], 
+                    "ui-slider-pip-"+slider.options.values[1]
+                ];
+
+                newClass = [
+                    "ui-slider-pip-"+slider.options.values[0] + " ui-slider-pip-selected-initial-first", 
+                    "ui-slider-pip-"+slider.options.values[1] + " ui-slider-pip-selected-initial-second"
+                ];
+
+                collection = 
+                    collection
+                        .replace( oldClass[0] , newClass[0] )
+                        .replace( oldClass[1] , newClass[1] );
+
+            } else {
+
+                oldClass = "ui-slider-pip-"+slider.options.value;
+                newClass = "ui-slider-pip-"+slider.options.value + " ui-slider-pip-selected-initial";
+
+                collection = 
+                    collection
+                        .replace( oldClass , newClass );
+
+            }
+
+            // append the collection of pips.
+            slider.element.append( collection );
+
+            slider.element.on( "mouseup", ".ui-slider-label", function() {
+                labelClick( this );
+            });
+
+            slider.element.on( "slide.selectPip slidechange.selectPip", function(e,ui) {
+
+                if( ui.values ) {
+
+                    selectPip.range( ui.values );
+
+                } else {
+
+                    selectPip.single( ui.value );
+
+                }
+
+            });
+
+        }
+
+    };
+
+    $.extend(true, $.ui.slider.prototype, extensionMethods);
+
+})(jQuery);
+
+
+
+
+
+
+
+
+
+
+// FLOATS
+
+(function($) {
+
+    "use strict";
+
+    var extensionMethods = {
+
+        float: function( settings ) {
+
+            var slider = this,
+                $tip,
+                vals = [];
+
+            var options = {
+
+                handle: true,
+                // false
+
+                pips: false,
+                // true
+
+                labels: false,
+                // array
+
+                prefix: "",
+                // "", string
+
+                suffix: "",
+                // "", string
+
+                event: "slidechange slide",
+                // "slidechange", "slide", "slidechange slide"
+
+                formatLabel: function(value) {
+                    return this.prefix + value + this.suffix;
+                }
+                // function
+                // must return a value to display in the floats
+
+            };
+
+            $.extend( options, settings );
+
+            if ( slider.options.value < slider.options.min ) { slider.options.value = slider.options.min; }
+            if ( slider.options.value > slider.options.max ) { slider.options.value = slider.options.max; }
+
+            if ( slider.options.values ) {
+                if ( slider.options.values[0] < slider.options.min ) { slider.options.values[0] = slider.options.min; }
+                if ( slider.options.values[1] < slider.options.min ) { slider.options.values[1] = slider.options.min; }
+                if ( slider.options.values[0] > slider.options.max ) { slider.options.values[0] = slider.options.max; }
+                if ( slider.options.values[1] > slider.options.max ) { slider.options.values[1] = slider.options.max; }
+            }
+
+            // add a class for the CSS
+            slider.element
+                .addClass("ui-slider-float")
+                .find(".ui-slider-tip, .ui-slider-tip-label")
+                .remove();
+
+            function getPipLabels( val, val2 ) {
+
+                // when checking the array we need to divide
+                // by the step option, so we store those values here.
+
+                var vals = [],
+                    stepVal = val / slider.options.step,
+                    stepVal2 = val2 / slider.options.step;
+
+                // now we just get the values we need to return
+
+                if( $.type( options.labels ) === "array" ) {
+
+                    vals[0] = options.labels[ stepVal - slider.options.min ] || val;
+
+                    if( val2 ) {
+                        vals[1] = options.labels[ stepVal2 - slider.options.min ] || val2;
+                    }
+
+                }
+
+                else if( $.type( options.labels ) === "object" ) {
+
+                    // first handle
+
+                    if( slider.options.min === val ) {
+                        vals[0] = options.labels.first || slider.options.min;
+                    }
+
+                    else if( slider.options.max === val ) {
+                        vals[0] = options.labels.last || slider.options.max;
+                    }
+
+                    else if( $.type( options.labels.rest ) === "array" ) {
+                        vals[0] = options.labels.rest[ stepVal - slider.options.min - 1] || val;
+                    } 
+
+                    else {
+                        vals[0] = val;
+                    }
+
+
+
+                    if( val2 ) {
+
+                        // second handle
+
+                        if( slider.options.min === val2 ) {
+                            vals[1] = options.labels.first || slider.options.min;
+                        }
+
+                        else if( slider.options.max === val2 ) {
+                            vals[1] = options.labels.last || slider.options.max;
+                        }
+
+                        else if( $.type( options.labels.rest ) === "array" ) {
+                            vals[1] = options.labels.rest[ stepVal2 - slider.options.min - 1] || val2;
+                        } 
+
+                        else {
+                            vals[1] = val2;
+                        }
+
+                    }
+
+                }
+
+                else {
+
+                    vals[0] = val;
+
+                    if( val2 ) {
+                        vals[1] = val2;
+                    }
+
+                }
+
+                return vals;
+
+            }
+
+            // apply handle tip if settings allows.
+            if ( options.handle ) {
+
+                // if this is a range slider
+                if ( slider.options.values ) {
+
+                    // We need to set the human-readable label to either the
+                    // corresponding element in the array, or the appropriate
+                    // item in the object... or an empty string.
+
+                    vals = getPipLabels( slider.options.values[0] , slider.options.values[1] );
+
+                    $tip = [
+                        $("<span class=\"ui-slider-tip\">"+ options.formatLabel(vals[0]) +"</span>"),
+                        $("<span class=\"ui-slider-tip\">"+ options.formatLabel(vals[1]) +"</span>")
+                    ];
+
+                // else if its just a normal slider
+                } else {
+                   
+                    vals = getPipLabels( slider.options.value );
+
+                    // create a tip element
+                    $tip = $("<span class=\"ui-slider-tip\">"+ options.formatLabel(vals[0]) +"</span>");
+
+                }
+
+
+                // now we append it to all the handles
+                slider.element.find(".ui-slider-handle").each( function(k,v) {
+                    $(v).append($tip[k]);
+                });
+
+            }
+
+            if ( options.pips ) {
+
+                // if this slider also has pip-labels, we"ll make those into tips, too.
+                slider.element.find(".ui-slider-label").each(function(k,v) {
+
+                    var $this = $(v),
+                        val = $this.data("value"),
+                        label = $this.data("value"),
+                        $tip;
+
+
+                    label = getPipLabels( val )[0];
+
+                    // create a tip element
+                    $tip =
+                        $("<span class=\"ui-slider-tip-label\">" + options.formatLabel( label ) + "</span>")
+                            .insertAfter( $this );
+
+                });
+
+            }
+
+            // check that the event option is actually valid against our
+            // own list of the slider's events.
+            if ( options.event !== "slide" &&
+                options.event !== "slidechange" &&
+                options.event !== "slide slidechange" &&
+                options.event !== "slidechange slide" ) {
+
+                options.event = "slidechange slide";
+
+            }
+
+            // when slider changes, update handle tip label.
+            slider.element.on( options.event , function( e, ui ) {
+
+                var val = getPipLabels( ui.value );
+                $(ui.handle).find(".ui-slider-tip").html( options.formatLabel( val[0] ) );
+
+            });
+
+        }
+
+    };
+
+    $.extend(true, $.ui.slider.prototype, extensionMethods);
+
+})(jQuery);
