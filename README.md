@@ -1,4 +1,4 @@
-#jQuery UI Slider Pips (v1.7.3) 
+#jQuery UI Slider Pips (v1.7.5) 
 ####Plugin to add "pips" or "floats" to a JQUI Slider.
     
   
@@ -76,10 +76,10 @@ $('.element').slider('float', {
 ```
 
 ####Options for pips:  
-**first:** `'pip'` or `'label'` or `false`  
-**last:** `'pip'` or `'label'` or `false`  
-**rest:** `'pip'` or `'label'` or `false`  
-**labels:** `['array','of','labels']` or `false`  
+**first:** `"pip"` or `"label"` or `false`  
+**last:** `"pip"` or `"label"` or `false`  
+**rest:** `"pip"` or `"label"` or `false`  
+**labels:** `[]` or `{first: "", last: "", rest: [] }` or `false`  
 **prefix:** `"string"`  
 **suffix:** `"string"`  
 **formatLabel:** `function(val){ return this.prefix + val + this.suffix }`  
@@ -87,7 +87,7 @@ $('.element').slider('float', {
 ####Options for float:  
 **handle:** `true` or `false`  
 **pips:** `true` or `false`  
-**labels:** `['array','of','labels']` or `false`  
+**labels:** `[]` or `{first: "", last: "", rest: [] }` or `false`  
 **prefix:** `"string"`  
 **suffix:** `"string"`  
 **formatLabel:** `function(val){ return this.prefix + val + this.suffix }`  
