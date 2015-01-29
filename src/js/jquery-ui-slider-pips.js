@@ -245,7 +245,24 @@
 
                 }
 
-                classes += " ui-slider-pip-"+classLabel;
+                classes += " ui-slider-pip-" + classLabel;
+
+
+                // add classes for the initial-selected values.
+                if ( slider.options.values && slider.options.values.length ) {
+                    if ( labelValue === slider.options.values[0] ) {
+                        classes += " ui-slider-pip-selected-initial-first";
+                    }
+                    if ( labelValue === slider.options.values[1] ) {
+                        classes += " ui-slider-pip-selected-initial-second";
+                    }
+                } else {
+                    if ( labelValue === slider.options.value ) {
+                        classes += " ui-slider-pip-selected-initial";
+                    }
+                }
+
+
 
                 css = ( slider.options.orientation === "horizontal" ) ?
                     "left: "+ percent :
@@ -260,7 +277,7 @@
 
             }
 
-            // we don't want the step ever to be a decimal.
+            // we don't want the step ever to be a float.
             slider.options.pipStep = Math.round( slider.options.pipStep );
 
             // create our first pip
@@ -276,38 +293,6 @@
             // create our last pip
             collection += createPip("last");
 
-            // add special classes to the pips that were set initially.
-
-            var oldClass, newClass;
-
-            if( slider.options.values ) {
-
-                oldClass = [
-                    "ui-slider-pip-"+slider.options.values[0], 
-                    "ui-slider-pip-"+slider.options.values[1]
-                ];
-
-                newClass = [
-                    "ui-slider-pip-"+slider.options.values[0] + " ui-slider-pip-selected-initial-first", 
-                    "ui-slider-pip-"+slider.options.values[1] + " ui-slider-pip-selected-initial-second"
-                ];
-
-                collection = 
-                    collection
-                        .replace( oldClass[0] , newClass[0] )
-                        .replace( oldClass[1] , newClass[1] );
-
-            } else {
-
-                oldClass = "ui-slider-pip-"+slider.options.value;
-                newClass = "ui-slider-pip-"+slider.options.value + " ui-slider-pip-selected-initial";
-
-                collection = 
-                    collection
-                        .replace( oldClass , newClass );
-
-            }
-
             // append the collection of pips.
             slider.element.append( collection );
 
@@ -317,13 +302,27 @@
 
             slider.element.on( "slide.selectPip slidechange.selectPip", function(e,ui) {
 
-                if( ui.values ) {
+                var value, values,
+                    $slider = $(this);
 
-                    selectPip.range( ui.values );
+                if ( !ui ) {
+
+                    value = $slider.slider("value");
+                    values = $slider.slider("values");
+
+                    if ( values.length ) {
+                        selectPip.range( values );
+                    } else {
+                        selectPip.single( value );
+                    }
 
                 } else {
 
-                    selectPip.single( ui.value );
+                    if ( ui.values ) {
+                        selectPip.range( ui.values );
+                    } else if ( ui.value ) {
+                        selectPip.single( ui.value );
+                    }
 
                 }
 
