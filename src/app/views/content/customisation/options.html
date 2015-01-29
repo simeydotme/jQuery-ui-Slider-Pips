@@ -44,15 +44,15 @@
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">first</code>
+                    <code>first</code>
                 </td>
                 <td>
-                    <code data-type="string">"label"</code>, 
-                    <code data-type="string">"pip"</code> or 
-                    <code data-type="bool">false</code>
+                    <code>"label"</code>, 
+                    <code>"pip"</code> or 
+                    <code>false</code>
                 </td>
                 <td>
-                    <code data-type="string">"label"</code>
+                    <code>"label"</code>
                 </td>
                 <td>
                     <p>Determines the style of <strong>the first pip</strong> on the slider</p>
@@ -61,15 +61,15 @@
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">last</code>
+                    <code>last</code>
                 </td>
                 <td>
-                    <code data-type="string">"label"</code>, 
-                    <code data-type="string">"pip"</code> or 
-                    <code data-type="bool">false</code>
+                    <code>"label"</code>, 
+                    <code>"pip"</code> or 
+                    <code>false</code>
                 </td>
                 <td>
-                    <code data-type="string">"label"</code>
+                    <code>"label"</code>
                 </td>
                 <td>
                     <p>Determines the style of <strong>the final pip</strong> on the slider</p>
@@ -78,15 +78,15 @@
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">rest</code>
+                    <code>rest</code>
                 </td>
                 <td>
-                    <code data-type="string">"label"</code>, 
-                    <code data-type="string">"pip"</code> or 
-                    <code data-type="bool">false</code>
+                    <code>"label"</code>, 
+                    <code>"pip"</code> or 
+                    <code>false</code>
                 </td>
                 <td>
-                    <code data-type="string">"pip"</code>
+                    <code>"pip"</code>
                 </td>
                 <td>
                     <p>Determines the style of <strong>all other pips</strong> on the slider</p>
@@ -95,13 +95,13 @@
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">step</code>
+                    <code>step</code>
                 </td>
                 <td>
-                    <code data-type="number">number</code>
+                    <code>number</code>
                 </td>
                 <td>
-                    <code data-type="number">1 / 5%</code>
+                    <code>1 / 5%</code>
                 </td>
                 <td>
                     <p>The <code>step</code> parameter will <strong>only generate every <code>nth</code> pip</strong>.<br>
@@ -112,30 +112,31 @@
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">labels</code>
+                    <code>labels</code>
                 </td>
                 <td>
-                    <code data-type="number">array</code> or
-                    <code data-type="bool">false</code>
+                    <code>array</code> or
+                    <code>object</code> or
+                    <code>false</code>
                 </td>
                 <td>
-                    <code data-type="bool">false</code>
+                    <code>false</code>
                 </td>
                 <td>
                     <p>Will <strong>override the values</strong> of the pips with an array of given values.<br> 
-                        eg: <code>["Monday", "Tuesday", "Wednesday", ... ]</code></p>
+                        eg: <code>[ "Monday", "Tuesday", "Wednesday", ... ]</code> <br>or <code>{ "first": "Monday", "last": "Sunday" }</code></p>
                 </td>
             </tr>
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">prefix</code>
+                    <code>prefix</code>
                 </td>
                 <td>
-                    <code data-type="string">string</code>
+                    <code>string</code>
                 </td>
                 <td>
-                    <code data-type="string">""</code>
+                    <code>""</code>
                 </td>
                 <td>
                     <p>Adds a string value <strong>before the pip label</strong>.<br> 
@@ -145,13 +146,13 @@
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">suffix</code>
+                    <code>suffix</code>
                 </td>
                 <td>
-                    <code data-type="string">string</code>
+                    <code>string</code>
                 </td>
                 <td>
-                    <code data-type="string">""</code>
+                    <code>""</code>
                 </td>
                 <td>
                     <p>Adds a string value <strong>after the pip label</strong>.<br>
@@ -187,13 +188,13 @@
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">handle</code>
+                    <code>handle</code>
                 </td>
                 <td>
-                    <code data-type="number">boolean</code>
+                    <code>boolean</code>
                 </td>
                 <td>
-                    <code data-type="bool">true</code>
+                    <code>true</code>
                 </td>
                 <td>
                     <p>Determines if the float effect should <strong>appear on the slider handle</strong></p>
@@ -202,13 +203,13 @@
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">pips</code>
+                    <code>pips</code>
                 </td>
                 <td>
-                    <code data-type="number">boolean</code>
+                    <code>boolean</code>
                 </td>
                 <td>
-                    <code data-type="bool">false</code>
+                    <code>false</code>
                 </td>
                 <td>
                     <p>Determines if the float effect should <strong>appear on the pips</strong></p>
@@ -217,30 +218,31 @@
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">labels</code>
+                    <code>labels</code>
                 </td>
                 <td>
-                    <code data-type="number">array</code> or
-                    <code data-type="bool">false</code>
+                    <code>array</code> or
+                    <code>object</code> or
+                    <code>false</code>
                 </td>
                 <td>
-                    <code data-type="bool">false</code>
+                    <code>false</code>
                 </td>
                 <td>
                     <p>Will <strong>override the values</strong> of the floats with an array of given values.<br> 
-                        eg: <code>["Monday", "Tuesday", "Wednesday", ... ]</code></p>
+                        eg: <code>["Monday", "Tuesday", "Wednesday", ... ]</code> <br>or <code>{ "first": "Monday", "last": "Sunday" }</code></p>
                 </td>
             </tr>
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">prefix</code>
+                    <code>prefix</code>
                 </td>
                 <td>
-                    <code data-type="string">string</code>
+                    <code>string</code>
                 </td>
                 <td>
-                    <code data-type="string">""</code>
+                    <code>""</code>
                 </td>
                 <td>
                     <p>Adds a string value <strong>before the float label</strong>.<br> 
@@ -250,13 +252,13 @@
             
             <tr>
                 <td scope="row">
-                    <code data-type="string">suffix</code>
+                    <code>suffix</code>
                 </td>
                 <td>
-                    <code data-type="string">string</code>
+                    <code>string</code>
                 </td>
                 <td>
-                    <code data-type="string">""</code>
+                    <code>""</code>
                 </td>
                 <td>
                     <p>Adds a string value <strong>after the float label</strong>.<br>
