@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.7.4 - 2015-01-30
+/*! jQuery-ui-Slider-Pips - v1.7.5 - 2015-02-22
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -279,7 +279,7 @@
 
             }
 
-            // we don't want the step ever to be a float.
+            // we don't want the step ever to be a floating point.
             slider.options.pipStep = Math.round( slider.options.pipStep );
 
             // create our first pip
@@ -413,17 +413,17 @@
                 // by the step option, so we store those values here.
 
                 var vals = [],
-                    stepVal = val / slider.options.step,
-                    stepVal2 = val2 / slider.options.step;
+                    stepVal = Math.ceil(( val - slider.options.min ) / slider.options.step),
+                    stepVal2 = Math.ceil(( val2 - slider.options.min ) / slider.options.step);
 
                 // now we just get the values we need to return
 
                 if( $.type( options.labels ) === "array" ) {
 
-                    vals[0] = options.labels[ stepVal - slider.options.min ] || val;
+                    vals[0] = options.labels[ stepVal ] || val;
 
                     if( val2 ) {
-                        vals[1] = options.labels[ stepVal2 - slider.options.min ] || val2;
+                        vals[1] = options.labels[ stepVal2 ] || val2;
                     }
 
                 }
