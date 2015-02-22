@@ -439,7 +439,7 @@
                     }
 
                     else if( $.type( options.labels.rest ) === "array" ) {
-                        vals[0] = options.labels.rest[ stepVal - slider.options.min - 1] || val;
+                        vals[0] = options.labels.rest[ stepVal - 1 ] || val;
                     } 
 
                     else {
@@ -461,7 +461,7 @@
                         }
 
                         else if( $.type( options.labels.rest ) === "array" ) {
-                            vals[1] = options.labels.rest[ stepVal2 - slider.options.min - 1] || val2;
+                            vals[1] = options.labels.rest[ stepVal2 - 1] || val2;
                         } 
 
                         else {

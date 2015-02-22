@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.7.5 - 2015-02-22
+/*! jQuery-ui-Slider-Pips - v1.7.6 - 2015-02-22
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -441,7 +441,7 @@
                     }
 
                     else if( $.type( options.labels.rest ) === "array" ) {
-                        vals[0] = options.labels.rest[ stepVal - slider.options.min - 1] || val;
+                        vals[0] = options.labels.rest[ stepVal - 1 ] || val;
                     } 
 
                     else {
@@ -463,7 +463,7 @@
                         }
 
                         else if( $.type( options.labels.rest ) === "array" ) {
-                            vals[1] = options.labels.rest[ stepVal2 - slider.options.min - 1] || val2;
+                            vals[1] = options.labels.rest[ stepVal2 - 1] || val2;
                         } 
 
                         else {
