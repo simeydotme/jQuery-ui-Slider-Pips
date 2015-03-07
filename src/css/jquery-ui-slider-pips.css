@@ -118,8 +118,11 @@
 
     /* remove the godawful looking focus outline on handle and float */
     .ui-slider-float .ui-slider-handle:focus,
+    .ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip-label,
     .ui-slider-float .ui-slider-handle:focus .ui-slider-tip,
-    .ui-slider-float .ui-slider-handle:focus .ui-slider-tip-label {
+    .ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip-label,
+    .ui-slider-float .ui-slider-handle:focus .ui-slider-tip-label
+    .ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip-label {
         outline: none;
     }
     
@@ -164,7 +167,10 @@
     /* show the tooltip on hover or focus */
     /* also switch transition delay around */    
     .ui-slider-float .ui-slider-handle:hover .ui-slider-tip,
+    .ui-slider-float .ui-slider-handle.ui-state-hover .ui-slider-tip,
     .ui-slider-float .ui-slider-handle:focus .ui-slider-tip,
+    .ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip,
+    .ui-slider-float .ui-slider-handle.ui-state-active .ui-slider-tip,
     .ui-slider-float .ui-slider-pip:hover .ui-slider-tip-label {
     
         opacity: 1;
@@ -265,7 +271,10 @@
 
 
     .ui-slider-vertical.ui-slider-float .ui-slider-handle:hover .ui-slider-tip,
+    .ui-slider-vertical.ui-slider-float .ui-slider-handle.ui-state-hover .ui-slider-tip,
     .ui-slider-vertical.ui-slider-float .ui-slider-handle:focus .ui-slider-tip,
+    .ui-slider-vertical.ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip,
+    .ui-slider-vertical.ui-slider-float .ui-slider-handle.ui-state-active .ui-slider-tip,
     .ui-slider-vertical.ui-slider-float .ui-slider-pip:hover .ui-slider-tip-label {
         top: 50%;
         margin-top: -11px;
@@ -341,43 +350,35 @@
     /* Comment out this chuck of code if you don't want to have
         the new label colours shown */
 
-    .ui-slider-pips .ui-slider-pip-selected-initial,
-    .ui-slider-pips .ui-slider-pip-selected-initial-first,
-    .ui-slider-pips .ui-slider-pip-selected-initial-second {
+    .ui-slider-pips [class*=ui-slider-pip-initial] {
+
         font-weight: bold;        
         color: #14CA82;
-    }
-
-    .ui-slider-pips .ui-slider-pip-selected-initial {
 
     }
 
-    .ui-slider-pips .ui-slider-pip-selected-initial-first {
+    .ui-slider-pips .ui-slider-pip-initial-1 {
 
     }
 
-    .ui-slider-pips .ui-slider-pip-selected-initial-second {
+    .ui-slider-pips .ui-slider-pip-initial-2 {
         color: #1897C9;
     }
 
 
 
-    .ui-slider-pips .ui-slider-pip-selected,
-    .ui-slider-pips .ui-slider-pip-selected-first,
-    .ui-slider-pips .ui-slider-pip-selected-second {
+    .ui-slider-pips [class*=i-slider-pip-selected] {
+
         font-weight: bold;
         color: #FF7A00;
-    }
-
-    .ui-slider-pips .ui-slider-pip-selected {
 
     }
 
-    .ui-slider-pips .ui-slider-pip-selected-first {
+    .ui-slider-pips .ui-slider-pip-selected-1 {
 
     }
 
-    .ui-slider-pips .ui-slider-pip-selected-second {
+    .ui-slider-pips .ui-slider-pip-selected-2 {
         color: #E70081;
     }
 
