@@ -1,0 +1,104 @@
+#alternating-slider {
+
+    .ui-slider-pip {
+        
+        .ui-slider-line {
+
+            height: 8px;
+            top: -5px;
+
+        }
+
+        &:nth-child(even) {
+
+            top: -33px;
+            height: 15px;
+            transform: scale(0.8) translateY(3px);
+            opacity: 0.8;
+
+            .ui-slider-line {
+
+                top: 22px;
+                height: 9px;
+
+            }
+
+            &.ui-slider-pip-selected-1,
+            &.ui-slider-pip-selected-2,
+            &.ui-slider-pip-selected-3,
+            &.ui-slider-pip-selected-4 {
+
+                .ui-slider-label {
+
+                    top: -3px;
+
+                }
+
+            }
+
+        }
+
+    }
+    
+    .ui-slider-pip-initial-1 .ui-slider-label { color: #E80949; }
+    .ui-slider-pip-initial-2 .ui-slider-label { color: #FF03CB; }
+    .ui-slider-pip-initial-3 .ui-slider-label { color: #C309E8; }
+    .ui-slider-pip-initial-4 .ui-slider-label { color: #920AFF; }
+
+    .ui-slider-pip-selected-1,
+    .ui-slider-pip-selected-2,
+    .ui-slider-pip-selected-3,
+    .ui-slider-pip-selected-4 {
+        .ui-slider-label {
+
+            color: white;
+            width: 2.4em;
+            padding: 4px 0;
+            margin-left: -1.2em;
+            border-radius: 2px;
+
+        }
+    }
+
+    .ui-slider-pip-selected-1 .ui-slider-label { background-color: #E80949; }
+    .ui-slider-pip-selected-2 .ui-slider-label { background-color: #FF03CB; }
+    .ui-slider-pip-selected-3 .ui-slider-label { background-color: #C309E8; }
+    .ui-slider-pip-selected-4 .ui-slider-label { background-color: #920AFF; }
+    
+
+    .ui-slider-tip {
+
+        width: 34px;
+        margin-left: -17px;
+        top: -1px;
+        background: $link;
+        color: white;
+        border: none;
+        line-height: 27px;
+        height: 25px;
+
+        &:before,
+        &:after {
+
+            display: none;
+
+        }
+
+    }
+        
+    .ui-slider-handle.ui-state-active .ui-slider-tip, 
+    .ui-slider-handle.ui-state-focus .ui-slider-tip, 
+    .ui-slider-handle.ui-state-hover .ui-slider-tip, 
+    .ui-slider-handle:focus .ui-slider-tip, 
+    .ui-slider-handle:hover .ui-slider-tip {
+
+        top: -1px;
+
+    }
+
+    .ui-slider-handle.ui-state-focus {
+
+        z-index: 100;
+        
+    }
+}

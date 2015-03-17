@@ -7,13 +7,15 @@
 
         $(document).foundation();
 
+        var ev = ( Modernizr.touch ) ? "touchend" : "click";
 
-        $(".share-links__link").on("click", function() {
+
+        $(".share-links__link").on( ev , function() {
             ga("send", "event", "social", $(this).data("share") );
         });
 
 
-        $("a[data-active-tab]").on("click", function(e) {
+        $("a[data-active-tab]").on( ev , function(e) {
 
             var $this = $(this),
                 tab = $this.data("active-tab");
@@ -43,30 +45,34 @@
             sidebarTimer;
 
 
-        $toggle
-            .on( "click", function(e) {
+        var toggleMenu = function(e) {
 
-                $sidebar.toggleClass("sidebar--open");
-                $toggle.toggleClass("sidebar__toggle--active");
-                $body.toggleClass("nav--active");
+            $sidebar.toggleClass("sidebar--open");
+            $toggle.toggleClass("sidebar__toggle--active");
+            $body.toggleClass("nav--active");
+            e.preventDefault();
+
+        };
+
+        var closeMenu = function(e) {
+
+            if( $sidebar.hasClass("sidebar--open") ) {
+
+                $sidebar.removeClass("sidebar--open");
+                $toggle.removeClass("sidebar__toggle--active");
+                $body.removeClass("nav--active");
                 e.preventDefault();
 
-            });
+            }
 
+        };
+
+
+        $toggle
+            .on( ev , toggleMenu );
 
         $content
-            .on("click", function(e) {
-
-                if( $sidebar.hasClass("sidebar--open") ) {
-
-                    $sidebar.removeClass("sidebar--open");
-                    $toggle.removeClass("sidebar__toggle--active");
-                    $body.removeClass("nav--active");
-                    e.preventDefault();
-
-                }
-
-            });
+            .on( ev , closeMenu );
 
 
 

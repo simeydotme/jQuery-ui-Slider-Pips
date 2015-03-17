@@ -8,6 +8,19 @@ $(function() {
         .slider("pips");
 
 
+    $("#alternating-slider")
+        .slider({
+            max: 1000,
+            values: [0, 300, 700, 1000]
+        })
+        .slider("pips", {
+            step: 25,
+            rest: "label",
+            labels: { first: "Min", last: "Max" }
+        })
+        .slider("float");
+
+
 
     $("#scale-slider")
         .slider({

@@ -86,7 +86,7 @@ module.exports = function(grunt) {
             },
             emoji: {
                 cwd: "bower_components/twemoji",
-                src: "**/*.png",
+                src: "**/36x36/*.png",
                 dest: "dist/img/twemoji/",
                 expand: true
             }
