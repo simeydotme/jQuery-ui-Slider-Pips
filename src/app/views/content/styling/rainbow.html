@@ -1,0 +1,115 @@
+<section class="sub-block" id="styling-rainbow">
+    
+    <h3>
+        <a href="#styling-rainbow" class="anchor">
+            Rainbow Color Picker
+        </a>
+    </h3>
+
+    <p>Lets create an imaginary slider where the user is asked to choose a color, instead of a number.
+      We can achieve this by using labels set to each point on the slider, but then use some nice CSS
+      to show alternating colors on different sides of the bar and also add colours to each pip label. 
+
+      &mdash; Be sure to <a href="#styling-rainbow" data-active-tab="#styling-rainbow-css">check out the css</a> 
+        to see how it's done!</p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#styling-rainbow-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#styling-rainbow-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#styling-rainbow-css" title="css">{;}</a></dd>
+        <dd><a href="#styling-rainbow-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="styling-rainbow-result">
+
+            <div id="rainbow-slider"></div>
+
+        </div>
+
+        <div class="content" id="styling-rainbow-html">
+
+            <pre data-lang="html">
+                &lt;div id="rainbow-slider"&gt;&lt;/div&gt;
+            </pre>
+
+        </div>
+
+        <div class="content" id="styling-rainbow-css">
+
+            <pre data-lang="css">
+              #rainbow-slider {
+                background: linear-gradient(to right, #720000 0%, #ff4c4c 16%, #f7f733 32%, #3be240 50%, #6dccff 68%, #ca5aed 84%, #4c0041 100%);
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 30px;
+                border: none;
+                box-shadow: inset 0 0 0px 1px rgba(0, 0, 0, 0.18);
+                height: 10px; }
+
+                #rainbow-slider .ui-slider-handle {
+                  background: rgba(255, 255, 255, 0.21);
+                  border-color: rgba(0, 0, 0, 0.56);
+                  box-shadow: inset 0 0 2px 2px rgba(255, 255, 255, 0.89);
+                  border-radius: 20px;
+                  top: -8px; }
+
+                  #rainbow-slider .ui-slider-handle.ui-state-hover, 
+                  #rainbow-slider .ui-slider-handle:hover, 
+                  #rainbow-slider .ui-slider-handle.ui-state-focus, 
+                  #rainbow-slider .ui-slider-handle:focus, 
+                  #rainbow-slider .ui-slider-handle.ui-state-active {
+                    background: rgba(255, 255, 255, 0.21); }
+
+                #rainbow-slider .ui-slider-pip .ui-slider-label {
+                  width: 6em;
+                  margin-left: -3em; }
+
+                  #rainbow-slider .ui-slider-pip .ui-slider-label[data-value="0"] { color: #720000; }
+                  #rainbow-slider .ui-slider-pip .ui-slider-label[data-value="1"] { color: #ff4c4c; }
+                  #rainbow-slider .ui-slider-pip .ui-slider-label[data-value="2"] { color: #ed6b25; }
+                  #rainbow-slider .ui-slider-pip .ui-slider-label[data-value="3"] { color: #f7f733; }
+                  #rainbow-slider .ui-slider-pip .ui-slider-label[data-value="4"] { color: #8beb3a; }
+                  #rainbow-slider .ui-slider-pip .ui-slider-label[data-value="5"] { color: #3be240; }
+                  #rainbow-slider .ui-slider-pip .ui-slider-label[data-value="6"] { color: #46dbce; }
+                  #rainbow-slider .ui-slider-pip .ui-slider-label[data-value="7"] { color: #6dccff; }
+                  #rainbow-slider .ui-slider-pip .ui-slider-label[data-value="8"] { color: #ad6bef; }
+                  #rainbow-slider .ui-slider-pip .ui-slider-label[data-value="9"] { color: #ca5aed; }
+                  #rainbow-slider .ui-slider-pip .ui-slider-label[data-value="10"] { color: #4c0041; }
+
+                #rainbow-slider .ui-slider-pip .ui-slider-line {
+                  top: 1px; }
+
+                #rainbow-slider .ui-slider-pip:nth-of-type(odd) {
+                  top: auto;
+                  bottom: 32px; }
+
+                  #rainbow-slider .ui-slider-pip:nth-of-type(odd) .ui-slider-line {
+                    top: 21px; }
+
+            </pre>
+
+        </div>
+
+        <div class="content" id="styling-rainbow-js">
+            <pre data-lang="js">
+              var rainbow = ["Infra-Red", "Red", "Orange", "Yellow", "Lime", "Green", "Turquoise", "Blue", "Indigo", "Violet", "Ultra-Violet"];
+
+              $("#rainbow-slider")
+                  .slider({
+                      max: rainbow.length - 1,
+                      min: 0,
+                      value: 8
+                  })
+                  .slider("pips", {
+                      rest: "label",
+                      labels: rainbow
+                  });
+            </pre>
+        </div>
+
+    </div>
+
+</section>

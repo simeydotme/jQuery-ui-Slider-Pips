@@ -35,6 +35,21 @@ $(function() {
 
 
 
+    var rainbow = ["Infra-Red", "Red", "Orange", "Yellow", "Lime", "Green", "Turquoise", "Blue", "Indigo", "Violet", "Ultra-Violet"];
+
+    $("#rainbow-slider")
+        .slider({
+            max: rainbow.length - 1,
+            min: 0,
+            value: 8
+        })
+        .slider("pips", {
+            rest: "label",
+            labels: rainbow
+        });
+
+
+
 
 
     var emoji = [ "🐌", "🐐", "🐘", "🐙", "🐞", "🐠", "🐈", "🐕", "🐦", "🐬", "🐖", "🐇", "🐅", "🐃" ],

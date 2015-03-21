@@ -1,0 +1,95 @@
+
+$infra: rgba(114,0,0,1);
+$red: rgba(255,76,76,1);
+$orange: rgb(237, 107, 37);
+$yellow: rgba(247,247,51,1);
+$lime: rgb(139, 235, 58);
+$green: rgba(59,226,64,1);
+$turquoise: rgb(70, 219, 206);
+$blue: rgba(109,204,255,1);
+$indigo: rgb(173, 107, 239);
+$violet: rgba(202,90,237,1);
+$ultra: rgba(76,0,65,1);
+
+#styling-rainbow-result {
+
+    padding: 5em 5em 1em;
+
+}
+
+#rainbow-slider {
+
+    background: linear-gradient(to right, $infra 0%, $red 16%, $yellow 32%, $green 50%, $blue 68%, $violet 84%, $ultra 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: 30px;
+    border: none;
+    box-shadow: inset 0 0 0px 1px rgba(0, 0, 0, 0.18);
+
+    height: 10px;
+
+    .ui-slider-handle {
+
+        background: rgba(255, 255, 255, 0.21);
+        border-color: rgba(0, 0, 0, 0.56);
+        box-shadow: inset 0 0 2px 2px rgba(255, 255, 255, 0.89);
+        border-radius: 20px;
+
+        top: -8px;
+
+        &.ui-state-hover,
+        &:hover,
+        &.ui-state-focus,
+        &:focus,
+        &.ui-state-active {
+
+            background: rgba(255, 255, 255, 0.21);;
+
+        }
+
+    }
+
+    .ui-slider-pip {
+
+        .ui-slider-label {
+
+            width: 6em;
+            margin-left: -3em;
+
+            &[data-value="0"] { color: $infra; }
+            &[data-value="1"] { color: $red; }
+            &[data-value="2"] { color: $orange; }
+            &[data-value="3"] { color: $yellow; }
+            &[data-value="4"] { color: $lime; }
+            &[data-value="5"] { color: $green; }
+            &[data-value="6"] { color: $turquoise; }
+            &[data-value="7"] { color: $blue; }
+            &[data-value="8"] { color: $indigo; }
+            &[data-value="9"] { color: $violet; }
+            &[data-value="10"] { color: $ultra; }
+
+        }
+
+        .ui-slider-line {
+
+            top: 1px;
+
+        }
+        
+        &:nth-of-type( odd ) {
+        
+            top: auto;
+            bottom: 32px;
+
+            .ui-slider-line {
+
+                top: 21px;
+
+            }
+
+        }
+
+    }
+
+}
