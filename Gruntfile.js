@@ -105,6 +105,9 @@ module.exports = function(grunt) {
         },
 
         autoprefixer: {
+            options: {
+                browsers: ["last 2 versions", "ie 9", "ie 10"]
+            },
             all: {
                 src: ".tmp/css/app.css",
                 dest: ".tmp/css/app.css"
@@ -218,7 +221,7 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: ["src/**/*.scss"],
-                tasks: ["sass", "cssmin"]
+                tasks: ["sass", "autoprefixer", "cssmin"]
             },
             js: {
                 files: ["src/**/*.js"],
