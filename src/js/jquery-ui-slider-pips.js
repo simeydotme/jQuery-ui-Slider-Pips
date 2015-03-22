@@ -322,7 +322,7 @@
 
                     if ( ui.values ) {
                         selectPip.range( ui.values );
-                    } else if ( ui.value ) {
+                    } else {
                         selectPip.single( ui.value );
                     }
 

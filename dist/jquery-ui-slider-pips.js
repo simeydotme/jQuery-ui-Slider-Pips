@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.7.6 - 2015-03-07
+/*! jQuery-ui-Slider-Pips - v1.8.1 - 2015-03-22
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -324,7 +324,7 @@
 
                     if ( ui.values ) {
                         selectPip.range( ui.values );
-                    } else if ( ui.value ) {
+                    } else {
                         selectPip.single( ui.value );
                     }
 
