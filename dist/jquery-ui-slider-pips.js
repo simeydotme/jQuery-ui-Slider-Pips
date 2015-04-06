@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.8.1 - 2015-03-22
+/*! jQuery-ui-Slider-Pips - v1.8.3 - 2015-04-06
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -142,6 +142,8 @@
                     selectPip.range( finalVals );
 
                 } else {
+                    
+                    $handles.trigger("focus.selectPip");
 
                     $thisSlider.slider("value", val );
                     selectPip.single( val );
