@@ -90,8 +90,8 @@ module.exports = function(grunt) {
     // Default task.
     grunt.registerTask("default", ["jshint", "concat", "uglify", "copy"]);
 
-    grunt.registerTask("patch", ["bump-only:patch", "default", "bump-commit"]);
-    grunt.registerTask("minor", ["bump-only:minor", "default", "bump-commit"]);
-    grunt.registerTask("major", ["bump-only:major", "default", "bump-commit"]);
+    grunt.registerTask("patch", ["bump-only:patch", "default"]);
+    grunt.registerTask("minor", ["bump-only:minor", "default"]);
+    grunt.registerTask("major", ["bump-only:major", "default"]);
 
 };
