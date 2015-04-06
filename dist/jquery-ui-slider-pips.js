@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.8.3 - 2015-04-06
+/*! jQuery-ui-Slider-Pips - v1.9.0 - 2015-04-06
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -301,10 +301,17 @@
             // store the pips for setting classes later.
             $pips = slider.element.find(".ui-slider-pip");
 
-            slider.element.on( "mousedown.selectPip mouseup.selectPip", ".ui-slider-label", function(e) {
+
+
+            slider.element.on("mouseup.selectPip", ".ui-slider-label", function(e) {
+
                 e.stopPropagation();
                 labelClick( this );
+
             });
+
+
+
 
             slider.element.on( "slide.selectPip slidechange.selectPip", function(e,ui) {
 
@@ -333,6 +340,9 @@
                 }
 
             });
+
+
+
 
         }
 
