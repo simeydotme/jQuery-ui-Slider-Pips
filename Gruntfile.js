@@ -60,6 +60,21 @@ module.exports = function(grunt) {
                     flatten: true
                 }]
             }
+        },
+
+        bump: {
+            options: {
+                files: ["package.json", "bower.json"],
+                updateConfigs: [],
+                commit: true,
+                commitMessage: "Release v%VERSION%",
+                commitFiles: ["package.json", "bower.json"],
+                createTag: true,
+                tagName: "v%VERSION%",
+                tagMessage: "Version %VERSION%",
+                push: false,
+                gitDescribeOptions: "--tags --always --abbrev=1 --dirty=-d"
+            }
         }
 
 
@@ -70,8 +85,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-contrib-copy");
+    grunt.loadNpmTasks("grunt-bump");
 
     // Default task.
     grunt.registerTask("default", ["jshint", "concat", "uglify", "copy"]);
+
+    grunt.registerTask("patch", ["bump-only:patch", "default", "bump-commit"]);
+    grunt.registerTask("minor", ["bump-only:minor", "default", "bump-commit"]);
+    grunt.registerTask("major", ["bump-only:major", "default", "bump-commit"]);
 
 };
