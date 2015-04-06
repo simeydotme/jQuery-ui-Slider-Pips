@@ -93,8 +93,8 @@ module.exports = function(grunt) {
     // Default task.
     grunt.registerTask("default", ["workhorse"]);
 
-    grunt.registerTask("patch", ["bump-only:patch", "workhorse"]);
-    grunt.registerTask("minor", ["bump-only:minor", "workhorse"]);
-    grunt.registerTask("major", ["bump-only:major", "workhorse"]);
+    grunt.registerTask("patch", ["bump-only:patch", "workhorse", "bump-commit"]);
+    grunt.registerTask("minor", ["bump-only:minor", "workhorse", "bump-commit"]);
+    grunt.registerTask("major", ["bump-only:major", "workhorse", "bump-commit"]);
 
 };
