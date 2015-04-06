@@ -65,7 +65,7 @@ module.exports = function(grunt) {
         bump: {
             options: {
                 files: ["package.json", "bower.json"],
-                updateConfigs: [],
+                updateConfigs: ["pkg"],
                 commit: true,
                 commitMessage: "Release v%VERSION%",
                 commitFiles: ["package.json", "bower.json"],
@@ -86,12 +86,15 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-bump");
-
+    
+    // Workhorse
+    grunt.registerTask("workhorse", ["jshint", "concat", "uglify", "copy"]);
+    
     // Default task.
-    grunt.registerTask("default", ["jshint", "concat", "uglify", "copy"]);
+    grunt.registerTask("default", ["workhorse"]);
 
-    grunt.registerTask("patch", ["bump-only:patch", "default"]);
-    grunt.registerTask("minor", ["bump-only:minor", "default"]);
-    grunt.registerTask("major", ["bump-only:major", "default"]);
+    grunt.registerTask("patch", ["bump-only:patch", "workhorse"]);
+    grunt.registerTask("minor", ["bump-only:minor", "workhorse"]);
+    grunt.registerTask("major", ["bump-only:major", "workhorse"]);
 
 };
