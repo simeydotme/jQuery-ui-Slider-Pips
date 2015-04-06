@@ -299,10 +299,17 @@
             // store the pips for setting classes later.
             $pips = slider.element.find(".ui-slider-pip");
 
-            slider.element.on( "mousedown.selectPip mouseup.selectPip", ".ui-slider-label", function(e) {
+
+
+            slider.element.on("mouseup.selectPip", ".ui-slider-label", function(e) {
+
                 e.stopPropagation();
                 labelClick( this );
+
             });
+
+
+
 
             slider.element.on( "slide.selectPip slidechange.selectPip", function(e,ui) {
 
@@ -331,6 +338,9 @@
                 }
 
             });
+
+
+
 
         }
 
