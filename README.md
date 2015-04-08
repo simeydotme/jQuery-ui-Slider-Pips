@@ -101,7 +101,7 @@ $('.element').slider('float', {
 All customisation should be done to the CSS file, or in your own CSS.  
 The base styles I've provided do a decent job in the Demo,   
 but they may need tweaking to suit your needs and UI theme.  
-For some inspiration and help with styling, [go to the styling section of the documentation.](http://simeydotme.github.io/jQuery-ui-Slider-Pips/#themeing)
+For some inspiration and help with styling, [go to the styling section of the documentation.](http://simeydotme.github.io/jQuery-ui-Slider-Pips/#styling)
   
 ------------------------------------
 
