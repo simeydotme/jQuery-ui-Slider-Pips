@@ -66,8 +66,10 @@
 
                     this.resetClasses();
 
+                    var classLabel = value.toString().replace(".","-");
+
                     $pips
-                        .filter(".ui-slider-pip-" + value )
+                        .filter(".ui-slider-pip-" + classLabel )
                         .addClass("ui-slider-pip-selected");
 
                 },
@@ -78,8 +80,10 @@
 
                     for( i = 0; i < values.length; i++ ) {
 
+                        var classLabel = values[i].toString().replace(".","-");
+
                         $pips
-                            .filter(".ui-slider-pip-" + values[i] )
+                            .filter(".ui-slider-pip-" + classLabel )
                             .addClass("ui-slider-pip-selected-" + (i+1) );
 
                     }
