@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.9.0 - 2015-04-06
+/*! jQuery-ui-Slider-Pips - v1.9.1 - 2015-04-26
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -69,7 +69,7 @@
                     this.resetClasses();
 
                     $pips
-                        .filter(".ui-slider-pip-" + value )
+                        .filter(".ui-slider-pip-" + this.classLabel(value) )
                         .addClass("ui-slider-pip-selected");
 
                 },
@@ -81,10 +81,16 @@
                     for( i = 0; i < values.length; i++ ) {
 
                         $pips
-                            .filter(".ui-slider-pip-" + values[i] )
+                            .filter(".ui-slider-pip-" + this.classLabel(values[i]) )
                             .addClass("ui-slider-pip-selected-" + (i+1) );
 
                     }
+
+                },
+
+                classLabel: function(value) {
+
+                    return value.toString().replace(".","-");
 
                 },
 
