@@ -66,10 +66,8 @@
 
                     this.resetClasses();
 
-                    var classLabel = value.toString().replace(".","-");
-
                     $pips
-                        .filter(".ui-slider-pip-" + classLabel )
+                        .filter(".ui-slider-pip-" + this.classLabel(value) )
                         .addClass("ui-slider-pip-selected");
 
                 },
@@ -80,13 +78,17 @@
 
                     for( i = 0; i < values.length; i++ ) {
 
-                        var classLabel = values[i].toString().replace(".","-");
-
                         $pips
-                            .filter(".ui-slider-pip-" + classLabel )
+                            .filter(".ui-slider-pip-" + this.classLabel(values[i]) )
                             .addClass("ui-slider-pip-selected-" + (i+1) );
 
                     }
+
+                },
+
+                classLabel: function(value) {
+
+                    return value.toString().replace(".","-");
 
                 },
 
