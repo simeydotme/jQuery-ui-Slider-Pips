@@ -35,7 +35,7 @@
     "google-code-prettify": "~1.0.3",
     "modernizr": "~2.8.3",
     "twemoji": "~1.2.0",
-    "jquery-ui-slider-pips": "~1.8.1"
+    "jquery-ui-slider-pips": "~1.9.1"
   },
   "devDependencies": {
     "jquery-ui": "~1.11.2"
