@@ -306,12 +306,12 @@
             $pips = slider.element.find(".ui-slider-pip");
 
 
-
-            slider.element.on("mouseup.selectPip", ".ui-slider-label", function(e) {
-
-                e.stopPropagation();
-                labelClick( this );
-
+            slider.element.on("mousedown.selectPip", function() {
+                slider.element
+                    .off("mouseup.selectPip")
+                    .one("mouseup.selectPip", ".ui-slider-label", function() {
+                        labelClick( this );
+                    });
             });
 
 
