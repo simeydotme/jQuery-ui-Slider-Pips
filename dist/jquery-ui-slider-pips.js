@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.9.1 - 2015-04-26
+/*! jQuery-ui-Slider-Pips - v1.9.2 - 2015-05-07
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -308,12 +308,12 @@
             $pips = slider.element.find(".ui-slider-pip");
 
 
-
-            slider.element.on("mouseup.selectPip", ".ui-slider-label", function(e) {
-
-                e.stopPropagation();
-                labelClick( this );
-
+            slider.element.on("mousedown.selectPip", function() {
+                slider.element
+                    .off("mouseup.selectPip")
+                    .one("mouseup.selectPip", ".ui-slider-label", function() {
+                        labelClick( this );
+                    });
             });
 
 
