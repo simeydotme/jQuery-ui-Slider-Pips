@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.9.2 - 2015-05-07
+/*! jQuery-ui-Slider-Pips - v1.10.0 - 2015-05-17
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -86,6 +86,22 @@
 
                     }
 
+                    if ( slider.options.range ) {
+
+                        $pips.each(function(k,v) {
+
+                            var pipVal = $(v).children(".ui-slider-label").data("value");
+
+                            if( pipVal > values[0] && pipVal < values[1] ) {
+
+                                $(v).addClass("ui-slider-pip-inrange");
+
+                            }
+
+                        });
+
+                    }
+
                 },
 
                 classLabel: function(value) {
@@ -96,8 +112,10 @@
 
                 resetClasses: function() {
 
+                    var regex = /(^|\s*)(ui-slider-pip-selected|ui-slider-pip-inrange)(-{1,2}\d+|\s|$)/gi;
+
                     $pips.removeClass( function (index, css) {
-                        return ( css.match(/(^|\s)ui-slider-pip-selected(\S+|\s|$)/g) || [] ).join(" ");
+                        return ( css.match(regex) || [] ).join(" ");
                     });
 
                 }
@@ -257,6 +275,17 @@
                         if ( labelValue === slider.options.values[i] ) {
                             classes += " ui-slider-pip-initial-" + (i+1);
                             classes += " ui-slider-pip-selected-" + (i+1);
+                        }
+
+                    }
+
+                    if ( slider.options.range ) {
+
+                        if( labelValue > slider.options.values[0] && 
+                            labelValue < slider.options.values[1] ) {
+
+                            classes += " ui-slider-pip-inrange";
+
                         }
 
                     }
