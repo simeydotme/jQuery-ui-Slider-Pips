@@ -367,10 +367,16 @@
 
 
 
-    .ui-slider-pips [class*=i-slider-pip-selected] {
+    .ui-slider-pips [class*=ui-slider-pip-selected] {
 
         font-weight: bold;
         color: #FF7A00;
+
+    }
+
+    .ui-slider-pips .ui-slider-pip-inrange {
+
+        color: black;
 
     }
 
@@ -382,6 +388,13 @@
         color: #E70081;
     }
 
+
+    .ui-slider-pips [class*=ui-slider-pip-selected] .ui-slider-line,
+    .ui-slider-pips .ui-slider-pip-inrange .ui-slider-line {
+
+        background: black;
+
+    }
 
 
 
