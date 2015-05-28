@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.10.0 - 2015-05-17
+/*! jQuery-ui-Slider-Pips - v1.10.0 - 2015-05-28
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -44,9 +44,13 @@
 
                 formatLabel: function(value) {
                     return this.prefix + value + this.suffix;
-                }
+                },
                 // function
                 // must return a value to display in the pip labels
+
+                highlightInitial: false
+                // boolean
+                // add ui-slider-pip-initial to the initial value of the slider
 
             };
 
@@ -273,7 +277,7 @@
                     for( i = 0; i < slider.options.values.length; i++ ) {
 
                         if ( labelValue === slider.options.values[i] ) {
-                            classes += " ui-slider-pip-initial-" + (i+1);
+                            classes += (options.highlightInitial) ? " ui-slider-pip-initial-" + (i+1) : "";
                             classes += " ui-slider-pip-selected-" + (i+1);
                         }
 
@@ -281,7 +285,7 @@
 
                     if ( slider.options.range ) {
 
-                        if( labelValue > slider.options.values[0] && 
+                        if( labelValue > slider.options.values[0] &&
                             labelValue < slider.options.values[1] ) {
 
                             classes += " ui-slider-pip-inrange";
@@ -293,7 +297,7 @@
                 } else {
 
                     if ( labelValue === slider.options.value ) {
-                        classes += " ui-slider-pip-initial";
+                        classes += (options.highlightInitial) ? " ui-slider-pip-initial" : "";
                         classes += " ui-slider-pip-selected";
                     }
 
