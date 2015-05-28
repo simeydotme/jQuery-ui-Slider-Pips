@@ -83,7 +83,7 @@ $('.element').slider('float', {
 **prefix:** `"string"`  
 **suffix:** `"string"`  
 **formatLabel:** `function(val){ return this.prefix + val + this.suffix }` 
-**highlightInitial** `true` or `false`
+**highlightInitial:** `true` or `false`
 
 ####Options for float:  
 **handle:** `true` or `false`  
