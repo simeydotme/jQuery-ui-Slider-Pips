@@ -8,8 +8,8 @@ Use it for creating a nicely-styled slider like shown below
 
 ===  
 
-##### Warning:  
-There is a incompatibility with jqueryui 1.11.2 where if using a step value which is not divisible by the max value then you will have unevenly placed pips and labels. - nothing  I can do for now and so the next update for this plugin will break backwards-compatibility. Apologies.  
+##### Update:  
+The plugin is now _(since 06/06/2015)_ compatible with the `1.11.2` update to the jqueryui library.
 
 ===
 
