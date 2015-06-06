@@ -372,15 +372,7 @@
 
 
 
-        }
-
-    };
-
-    $.extend(true, $.ui.slider.prototype, extensionMethods);
-
-})(jQuery);
-
-
+        },
 
 
 
@@ -390,12 +382,6 @@
 
 
 // FLOATS
-
-(function($) {
-
-    "use strict";
-
-    var extensionMethods = {
 
         float: function( settings ) {
 
