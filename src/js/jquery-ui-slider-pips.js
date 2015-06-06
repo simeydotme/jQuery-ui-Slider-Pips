@@ -161,14 +161,11 @@
                         }
                     }
 
-                    $thisSlider.slider("values", finalVals);
                     selectPip.range( finalVals );
 
                 } else {
                     
                     $handles.trigger("focus.selectPip");
-
-                    $thisSlider.slider("value", val );
                     selectPip.single( val );
 
                 }
