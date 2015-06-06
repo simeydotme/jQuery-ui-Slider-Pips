@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.10.1 - 2015-06-06
+/*! jQuery-ui-Slider-Pips - v1.10.2 - 2015-06-06
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -374,15 +374,7 @@
 
 
 
-        }
-
-    };
-
-    $.extend(true, $.ui.slider.prototype, extensionMethods);
-
-})(jQuery);
-
-
+        },
 
 
 
@@ -392,12 +384,6 @@
 
 
 // FLOATS
-
-(function($) {
-
-    "use strict";
-
-    var extensionMethods = {
 
         float: function( settings ) {
 
