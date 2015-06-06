@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.10.0 - 2015-05-17
+/*! jQuery-ui-Slider-Pips - v1.10.1 - 2015-06-06
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -11,11 +11,12 @@
 
         pips: function( settings ) {
 
-            var i,
-                p,
-                slider = this,
-                collection = "",
-                pips = ( slider.options.max - slider.options.min ) / slider.options.step,
+            var slider = this, i, p, collection = "",
+                min = slider._valueMin(),
+                max = slider._valueMax(),
+                value = slider._value(),
+                values = slider._values(),
+                pips = ( max - min ) / slider.options.step,
                 $handles = slider.element.find(".ui-slider-handle"),
                 $pips;
 
@@ -146,7 +147,7 @@
                     finalVals,
                     closestVal;
 
-                if ( slider.options.values && slider.options.values.length ) {
+                if ( values && values.length ) {
 
                     finalVals = sliderVals = $thisSlider.slider("values");
                     comparedVals = sliderVals.map(function(v) {
@@ -162,14 +163,11 @@
                         }
                     }
 
-                    $thisSlider.slider("values", finalVals);
                     selectPip.range( finalVals );
 
                 } else {
                     
                     $handles.trigger("focus.selectPip");
-
-                    $thisSlider.slider("value", val );
                     selectPip.single( val );
 
                 }
@@ -191,7 +189,7 @@
                 else if ( "last" === which ) { number = pips; }
 
                 // labelValue is the actual value of the pip based on the min/step
-                var labelValue = slider.options.min + ( slider.options.step * number );
+                var labelValue = min + ( slider.options.step * number );
 
                 // classLabel replaces any decimals with hyphens
                 var classLabel = labelValue.toString().replace(".","-");
@@ -268,11 +266,11 @@
 
 
                 // add classes for the initial-selected values.
-                if ( slider.options.values && slider.options.values.length ) {
+                if ( values && values.length ) {
 
-                    for( i = 0; i < slider.options.values.length; i++ ) {
+                    for( i = 0; i < values.length; i++ ) {
 
-                        if ( labelValue === slider.options.values[i] ) {
+                        if ( labelValue === values[i] ) {
                             classes += " ui-slider-pip-initial-" + (i+1);
                             classes += " ui-slider-pip-selected-" + (i+1);
                         }
@@ -281,8 +279,8 @@
 
                     if ( slider.options.range ) {
 
-                        if( labelValue > slider.options.values[0] && 
-                            labelValue < slider.options.values[1] ) {
+                        if( labelValue > values[0] && 
+                            labelValue < values[1] ) {
 
                             classes += " ui-slider-pip-inrange";
 
@@ -292,7 +290,7 @@
 
                 } else {
 
-                    if ( labelValue === slider.options.value ) {
+                    if ( labelValue === value ) {
                         classes += " ui-slider-pip-initial";
                         classes += " ui-slider-pip-selected";
                     }
@@ -350,27 +348,24 @@
 
             slider.element.on( "slide.selectPip slidechange.selectPip", function(e,ui) {
 
-                var value, values,
-                    $slider = $(this);
-
-                if ( !ui ) {
-
-                    value = $slider.slider("value");
+                var $slider = $(this),
+                    value = $slider.slider("value"), 
                     values = $slider.slider("values");
 
-                    if ( values.length ) {
-                        selectPip.range( values );
-                    } else {
-                        selectPip.single( value );
-                    }
+                if ( ui ) {
+
+                    value = ui.value;
+                    values = ui.values;
+
+                }
+
+                if ( values && values.length ) {
+
+                    selectPip.range( values );
 
                 } else {
 
-                    if ( ui.values ) {
-                        selectPip.range( ui.values );
-                    } else {
-                        selectPip.single( ui.value );
-                    }
+                    selectPip.single( value );
 
                 }
 
@@ -408,6 +403,10 @@
 
             var i,
                 slider = this,
+                min = slider._valueMin(),
+                max = slider._valueMax(),
+                value = slider._value(),
+                values = slider._values(),
                 tipValues = [],
                 $handles = slider.element.find(".ui-slider-handle");
 
@@ -441,24 +440,24 @@
 
             $.extend( options, settings );
 
-            if ( slider.options.value < slider.options.min ) { 
-                slider.options.value = slider.options.min; 
+            if ( value < min ) { 
+                value = min; 
             }
 
-            if ( slider.options.value > slider.options.max ) { 
-                slider.options.value = slider.options.max; 
+            if ( value > max ) { 
+                value = max; 
             }
 
-            if ( slider.options.values && slider.options.values.length ) {
+            if ( values && values.length ) {
 
-                for( i = 0; i < slider.options.values.length; i++ ) {
+                for( i = 0; i < values.length; i++ ) {
 
-                    if ( slider.options.values[i] < slider.options.min ) { 
-                        slider.options.values[i] = slider.options.min; 
+                    if ( values[i] < min ) { 
+                        values[i] = min; 
                     }
 
-                    if ( slider.options.values[i] > slider.options.max ) { 
-                        slider.options.values[i] = slider.options.max; 
+                    if ( values[i] > max ) { 
+                        values[i] = max; 
                     }
 
                 }
@@ -478,7 +477,7 @@
 
                 var vals = [],
                     steppedVals = values.map(function(v) {
-                        return Math.ceil(( v - slider.options.min ) / slider.options.step);
+                        return Math.ceil(( v - min ) / slider.options.step);
                     });
 
                 // now we just get the values we need to return
@@ -499,12 +498,12 @@
 
                     for( i = 0; i < values.length; i++ ) {
 
-                        if( values[i] === slider.options.min ) {
-                            vals[i] = options.labels.first || slider.options.min;
+                        if( values[i] === min ) {
+                            vals[i] = options.labels.first || min;
                         }
 
-                        else if( values[i] === slider.options.max ) {
-                            vals[i] = options.labels.last || slider.options.max;
+                        else if( values[i] === max ) {
+                            vals[i] = options.labels.last || max;
                         }
 
                         else if( $.type( options.labels.rest ) === "array" ) {
@@ -540,9 +539,9 @@
                 // corresponding element in the array, or the appropriate
                 // item in the object... or an empty string.
 
-                tipValues = ( slider.options.values && slider.options.values.length ) ? 
-                    getPipLabels( slider.options.values ) :
-                    getPipLabels( [ slider.options.value ] );
+                tipValues = ( values && values.length ) ? 
+                    getPipLabels( values ) :
+                    getPipLabels( [ value ] );
 
                 for( i = 0; i < tipValues.length; i++ ) {
 
