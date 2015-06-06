@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.8.1 - 2015-03-22
+/*! jQuery-ui-Slider-Pips - v1.10.2 - 2015-06-06
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -11,11 +11,12 @@
 
         pips: function( settings ) {
 
-            var i,
-                p,
-                slider = this,
-                collection = "",
-                pips = ( slider.options.max - slider.options.min ) / slider.options.step,
+            var slider = this, i, p, collection = "",
+                min = slider._valueMin(),
+                max = slider._valueMax(),
+                value = slider._value(),
+                values = slider._values(),
+                pips = ( max - min ) / slider.options.step,
                 $handles = slider.element.find(".ui-slider-handle"),
                 $pips;
 
@@ -69,7 +70,7 @@
                     this.resetClasses();
 
                     $pips
-                        .filter(".ui-slider-pip-" + value )
+                        .filter(".ui-slider-pip-" + this.classLabel(value) )
                         .addClass("ui-slider-pip-selected");
 
                 },
@@ -81,17 +82,41 @@
                     for( i = 0; i < values.length; i++ ) {
 
                         $pips
-                            .filter(".ui-slider-pip-" + values[i] )
+                            .filter(".ui-slider-pip-" + this.classLabel(values[i]) )
                             .addClass("ui-slider-pip-selected-" + (i+1) );
+
+                    }
+
+                    if ( slider.options.range ) {
+
+                        $pips.each(function(k,v) {
+
+                            var pipVal = $(v).children(".ui-slider-label").data("value");
+
+                            if( pipVal > values[0] && pipVal < values[1] ) {
+
+                                $(v).addClass("ui-slider-pip-inrange");
+
+                            }
+
+                        });
 
                     }
 
                 },
 
+                classLabel: function(value) {
+
+                    return value.toString().replace(".","-");
+
+                },
+
                 resetClasses: function() {
 
+                    var regex = /(^|\s*)(ui-slider-pip-selected|ui-slider-pip-inrange)(-{1,2}\d+|\s|$)/gi;
+
                     $pips.removeClass( function (index, css) {
-                        return ( css.match(/(^|\s)ui-slider-pip-selected(\S+|\s|$)/g) || [] ).join(" ");
+                        return ( css.match(regex) || [] ).join(" ");
                     });
 
                 }
@@ -122,7 +147,7 @@
                     finalVals,
                     closestVal;
 
-                if ( slider.options.values && slider.options.values.length ) {
+                if ( values && values.length ) {
 
                     finalVals = sliderVals = $thisSlider.slider("values");
                     comparedVals = sliderVals.map(function(v) {
@@ -138,12 +163,11 @@
                         }
                     }
 
-                    $thisSlider.slider("values", finalVals);
                     selectPip.range( finalVals );
 
                 } else {
-
-                    $thisSlider.slider("value", val );
+                    
+                    $handles.trigger("focus.selectPip");
                     selectPip.single( val );
 
                 }
@@ -165,7 +189,7 @@
                 else if ( "last" === which ) { number = pips; }
 
                 // labelValue is the actual value of the pip based on the min/step
-                var labelValue = slider.options.min + ( slider.options.step * number );
+                var labelValue = min + ( slider.options.step * number );
 
                 // classLabel replaces any decimals with hyphens
                 var classLabel = labelValue.toString().replace(".","-");
@@ -242,20 +266,31 @@
 
 
                 // add classes for the initial-selected values.
-                if ( slider.options.values && slider.options.values.length ) {
+                if ( values && values.length ) {
 
-                    for( i = 0; i < slider.options.values.length; i++ ) {
+                    for( i = 0; i < values.length; i++ ) {
 
-                        if ( labelValue === slider.options.values[i] ) {
+                        if ( labelValue === values[i] ) {
                             classes += " ui-slider-pip-initial-" + (i+1);
                             classes += " ui-slider-pip-selected-" + (i+1);
                         }
 
                     }
 
+                    if ( slider.options.range ) {
+
+                        if( labelValue > values[0] && 
+                            labelValue < values[1] ) {
+
+                            classes += " ui-slider-pip-inrange";
+
+                        }
+
+                    }
+
                 } else {
 
-                    if ( labelValue === slider.options.value ) {
+                    if ( labelValue === value ) {
                         classes += " ui-slider-pip-initial";
                         classes += " ui-slider-pip-selected";
                     }
@@ -299,48 +334,47 @@
             // store the pips for setting classes later.
             $pips = slider.element.find(".ui-slider-pip");
 
-            slider.element.on( "mousedown.selectPip mouseup.selectPip", ".ui-slider-label", function(e) {
-                e.stopPropagation();
-                labelClick( this );
+
+            slider.element.on("mousedown.selectPip", function() {
+                slider.element
+                    .off("mouseup.selectPip")
+                    .one("mouseup.selectPip", ".ui-slider-label", function() {
+                        labelClick( this );
+                    });
             });
+
+
+
 
             slider.element.on( "slide.selectPip slidechange.selectPip", function(e,ui) {
 
-                var value, values,
-                    $slider = $(this);
-
-                if ( !ui ) {
-
-                    value = $slider.slider("value");
+                var $slider = $(this),
+                    value = $slider.slider("value"), 
                     values = $slider.slider("values");
 
-                    if ( values.length ) {
-                        selectPip.range( values );
-                    } else {
-                        selectPip.single( value );
-                    }
+                if ( ui ) {
+
+                    value = ui.value;
+                    values = ui.values;
+
+                }
+
+                if ( values && values.length ) {
+
+                    selectPip.range( values );
 
                 } else {
 
-                    if ( ui.values ) {
-                        selectPip.range( ui.values );
-                    } else {
-                        selectPip.single( ui.value );
-                    }
+                    selectPip.single( value );
 
                 }
 
             });
 
-        }
-
-    };
-
-    $.extend(true, $.ui.slider.prototype, extensionMethods);
-
-})(jQuery);
 
 
+
+        },
 
 
 
@@ -351,16 +385,14 @@
 
 // FLOATS
 
-(function($) {
-
-    "use strict";
-
-    var extensionMethods = {
-
         float: function( settings ) {
 
             var i,
                 slider = this,
+                min = slider._valueMin(),
+                max = slider._valueMax(),
+                value = slider._value(),
+                values = slider._values(),
                 tipValues = [],
                 $handles = slider.element.find(".ui-slider-handle");
 
@@ -394,24 +426,24 @@
 
             $.extend( options, settings );
 
-            if ( slider.options.value < slider.options.min ) { 
-                slider.options.value = slider.options.min; 
+            if ( value < min ) { 
+                value = min; 
             }
 
-            if ( slider.options.value > slider.options.max ) { 
-                slider.options.value = slider.options.max; 
+            if ( value > max ) { 
+                value = max; 
             }
 
-            if ( slider.options.values && slider.options.values.length ) {
+            if ( values && values.length ) {
 
-                for( i = 0; i < slider.options.values.length; i++ ) {
+                for( i = 0; i < values.length; i++ ) {
 
-                    if ( slider.options.values[i] < slider.options.min ) { 
-                        slider.options.values[i] = slider.options.min; 
+                    if ( values[i] < min ) { 
+                        values[i] = min; 
                     }
 
-                    if ( slider.options.values[i] > slider.options.max ) { 
-                        slider.options.values[i] = slider.options.max; 
+                    if ( values[i] > max ) { 
+                        values[i] = max; 
                     }
 
                 }
@@ -431,7 +463,7 @@
 
                 var vals = [],
                     steppedVals = values.map(function(v) {
-                        return Math.ceil(( v - slider.options.min ) / slider.options.step);
+                        return Math.ceil(( v - min ) / slider.options.step);
                     });
 
                 // now we just get the values we need to return
@@ -452,12 +484,12 @@
 
                     for( i = 0; i < values.length; i++ ) {
 
-                        if( values[i] === slider.options.min ) {
-                            vals[i] = options.labels.first || slider.options.min;
+                        if( values[i] === min ) {
+                            vals[i] = options.labels.first || min;
                         }
 
-                        else if( values[i] === slider.options.max ) {
-                            vals[i] = options.labels.last || slider.options.max;
+                        else if( values[i] === max ) {
+                            vals[i] = options.labels.last || max;
                         }
 
                         else if( $.type( options.labels.rest ) === "array" ) {
@@ -493,9 +525,9 @@
                 // corresponding element in the array, or the appropriate
                 // item in the object... or an empty string.
 
-                tipValues = ( slider.options.values && slider.options.values.length ) ? 
-                    getPipLabels( slider.options.values ) :
-                    getPipLabels( [ slider.options.value ] );
+                tipValues = ( values && values.length ) ? 
+                    getPipLabels( values ) :
+                    getPipLabels( [ value ] );
 
                 for( i = 0; i < tipValues.length; i++ ) {
 
