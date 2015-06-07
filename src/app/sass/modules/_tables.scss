@@ -49,6 +49,19 @@ table {
             }
         }
 
+        &.divider {
+            
+            td {
+
+                height: 3px;
+                background: #ddd;
+                padding: 0;
+                border: none;
+
+            }
+
+        }
+
     }
 
     code {

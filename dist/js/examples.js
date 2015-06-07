@@ -165,53 +165,63 @@
 
 
 
+
+        var stepmin = 0;
+        var stepmax = 20;
+
+
         $(".step-table-slider-11")
-            .slider({ min: 0, max: 50 })
-            .slider("pips");
+            .slider({ min: stepmin, max: stepmax })
+            .slider("pips", { rest: "label" });
+
+        $(".step-table-slider-21")
+            .slider({ min: stepmin, max: stepmax, step: 2 })
+            .slider("pips", { rest: "label" });
 
         $(".step-table-slider-51")
-            .slider({ min: 0, max: 50, step: 5 })
-            .slider("pips");
+            .slider({ min: stepmin, max: stepmax, step: 5 })
+            .slider("pips", { rest: "label" });
 
-        $(".step-table-slider-101")
-            .slider({ min: 0, max: 50, step: 10 })
-            .slider("pips");
+
 
         $(".step-table-slider-12")
-            .slider({ min: 0, max: 50 })
-            .slider("pips", { step: 2 });
+            .slider({ min: stepmin, max: stepmax })
+            .slider("pips", { step: 2, rest: "label" });
+
+        $(".step-table-slider-2-52")
+            .slider({ min: stepmin, max: stepmax, step: 2.5 })
+            .slider("pips", { step: 2, rest: "label" });
 
         $(".step-table-slider-52")
-            .slider({ min: 0, max: 50, step: 5 })
-            .slider("pips", { step: 2 });
+            .slider({ min: stepmin, max: stepmax, step: 5 })
+            .slider("pips", { step: 2, rest: "label" });
 
-        $(".step-table-slider-102")
-            .slider({ min: 0, max: 50, step: 10 })
-            .slider("pips", { step: 2 });
+
 
         $(".step-table-slider-15")
-            .slider({ min: 0, max: 50 })
-            .slider("pips", { step: 5 });
+            .slider({ min: stepmin, max: stepmax })
+            .slider("pips", { step: 5, rest: "label" });
 
-        $(".step-table-slider-55")
-            .slider({ min: 0, max: 50, step: 5 })
-            .slider("pips", { step: 5 });
+        $(".step-table-slider-0-55")
+            .slider({ min: stepmin, max: stepmax, step: 0.5 })
+            .slider("pips", { step: 5, rest: "label" });
 
-        $(".step-table-slider-105")
-            .slider({ min: 0, max: 50, step: 10 })
-            .slider("pips", { step: 5 });
+        $(".step-table-slider-35")
+            .slider({ min: stepmin, max: stepmax, step: 3 })
+            .slider("pips", { step: 5, rest: "label" });
 
-        $(".step-table-slider-33")
-            .slider({ min: 0, max: 50, step: 3 })
-            .slider("pips", { step: 3 });
 
-        $(".step-table-slider-66")
-            .slider({ min: 0, max: 50, step: 6 })
-            .slider("pips", { step: 6 });
-                    
-        $("[class^=step-table-slider-]")
-            .slider("float");
 
+        $(".step-table-slider-32")
+            .slider({ min: stepmin, max: stepmax, step: 3 })
+            .slider("pips", { step: 2, rest: "label" });
+
+        $(".step-table-slider-2-53")
+            .slider({ min: stepmin, max: stepmax, step: 2.5 })
+            .slider("pips", { step: 3, rest: "label" });
+
+
+        $("[class^=step-table-slider-]").slider("float");
 
 
 

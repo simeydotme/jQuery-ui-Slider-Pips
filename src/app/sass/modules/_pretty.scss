@@ -67,7 +67,7 @@ code {
     /* a keyword */
     .kwd { color: #F84E5F; }
     /* a comment */
-    .com { color: #666; }
+    .com { color: darken( $codebg, 22% ); }
     /* a type name */
     .typ { color: #30566D; }
     /* a literal value */

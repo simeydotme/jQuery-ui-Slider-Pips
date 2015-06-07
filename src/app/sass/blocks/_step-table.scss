@@ -15,8 +15,29 @@
     }
 
     .ui-slider.ui-slider-horizontal {
-        
-        margin-bottom: 1.3em;
+
+        margin: 0.6em 0 1.4em;
+        height: 5px;
+        background: $link;
+        border-color: $link;
+
+        .ui-slider-handle {
+
+            height: 17px;
+
+        }
+
+        .ui-slider-pip {
+
+            top: 8px;
+
+            &[class*=ui-slider-pip-selected] {
+
+                color: $codecolor;
+
+            }
+            
+        }
 
     }
 
