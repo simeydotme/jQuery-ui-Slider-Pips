@@ -147,21 +147,26 @@
         font-size: 12px;
         opacity: 0;
         color: #333;
-        
-        -webkit-transition-duration: 200ms, 200ms, 0;
-        -moz-transition-duration: 200ms, 200ms, 0;
-        -ms-transition-duration: 200ms, 200ms, 0;
-        transition-duration: 200ms, 200ms, 0;
 
         -webkit-transition-property: opacity, top, visibility;
         -moz-transition-property: opacity, top, visibility;
         -ms-transition-property: opacity, top, visibility;
         transition-property: opacity, top, visibility;
+
+        -webkit-transition-timing-function: ease-in;
+        -moz-transition-timing-function: ease-in;
+        -ms-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+
+        -webkit-transition-duration: 200ms, 200ms, 0ms;
+        -moz-transition-duration: 200ms, 200ms, 0ms;
+        -ms-transition-duration: 200ms, 200ms, 0ms;
+        transition-duration: 200ms, 200ms, 0ms;
         
-        -webkit-transition-delay: 0, 0, 200ms;
-        -moz-transition-delay: 0, 0, 200ms;
-        -ms-transition-delay: 0, 0, 200ms;
-        transition-delay: 0, 0, 200ms;
+        -webkit-transition-delay: 0ms, 0ms, 200ms;
+        -moz-transition-delay: 0ms, 0ms, 200ms;
+        -ms-transition-delay: 0ms, 0ms, 200ms;
+        transition-delay: 0ms, 0ms, 200ms;
     }
     
     /* show the tooltip on hover or focus */
@@ -177,10 +182,15 @@
         top: -30px;
         visibility: visible;
 
-        -webkit-transition-delay:200ms, 200ms, 0;
-        -moz-transition-delay:200ms, 200ms, 0;
-        -ms-transition-delay:200ms, 200ms, 0;
-        transition-delay:200ms, 200ms, 0;
+        -webkit-transition-timing-function: ease-out;
+        -moz-transition-timing-function: ease-out;
+        -ms-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+
+        -webkit-transition-delay:200ms, 200ms, 0ms;
+        -moz-transition-delay:200ms, 200ms, 0ms;
+        -ms-transition-delay:200ms, 200ms, 0ms;
+        transition-delay:200ms, 200ms, 0ms;
         
     }
     
