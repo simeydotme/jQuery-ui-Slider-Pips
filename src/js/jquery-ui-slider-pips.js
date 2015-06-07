@@ -9,7 +9,9 @@
 
         pips: function( settings ) {
 
-            var slider = this, i, p, collection = "",
+            var slider = this, i, j, p, collection = "",
+                mousedownHandlers = $._data( slider.element.get(0), "events").mousedown,
+                originalMousedown,
                 min = slider._valueMin(),
                 max = slider._valueMax(),
                 value = slider._value(),
@@ -121,6 +123,55 @@
 
             };
 
+            function getClosestHandle( val ) {
+
+                var h, k,
+                    sliderVals,
+                    comparedVals,
+                    closestVal,
+                    tempHandles = [],
+                    closestHandle = 0;
+
+                if( values && values.length ) {
+
+                    // get the current values of the slider handles
+                    sliderVals = slider.element.slider("values");
+
+                    // find the offset value from the `val` for each
+                    // handle, and store it in a new array
+                    comparedVals = $.map( sliderVals, function(v) {
+                        return Math.abs( v - val );
+                    });
+
+                    // figure out the closest handles to the value
+                    closestVal = Math.min.apply( Math, comparedVals );
+
+                    // If a comparedVal is the closestVal, then
+                    // set the value accordingly, and set the closest handle.
+                    for( h = 0; h < comparedVals.length; h++ ) {
+                        if( comparedVals[h] === closestVal ) {
+                            tempHandles.push(h);
+                        }
+                    }
+
+                    // set the closest handle to the first handle in array,
+                    // just incase we have no _lastChangedValue to compare to.
+                    closestHandle = tempHandles[0];
+
+                    // now we want to find out if any of the closest handles were
+                    // the last changed handle, if so we specify that handle to change
+                    for( k = 0; k < tempHandles.length; k++ ) {
+                        if( slider._lastChangedValue === tempHandles[k] ) {
+                            closestHandle = tempHandles[k];
+                        }
+                    }
+
+                }
+
+                return closestHandle;
+
+            }
+
             // when we click on a label, we want to make sure the
             // slider's handle actually goes to that label!
             // so we check all the handles and see which one is closest
@@ -137,38 +188,20 @@
                     return;
                 }
 
-                var h,
-                    val = $(label).data("value"),
-                    $thisSlider = slider.element,
-                    sliderVals,
-                    comparedVals,
-                    finalVals,
-                    closestVal;
+                var val = $(label).data("value"),
+                    indexToChange = getClosestHandle( val );
 
                 if ( values && values.length ) {
 
-                    finalVals = sliderVals = $thisSlider.slider("values");
-                    comparedVals = sliderVals.map(function(v) {
-                        return Math.abs( v - val );
-                    });
-
-                    closestVal = Math.min.apply( Math, comparedVals );
-
-                    for( h = 0; h < comparedVals.length; h++ ) {
-                        if( comparedVals[h] === closestVal ) {
-                            finalVals[h] = val;
-                            $handles.eq(h).trigger("focus.selectPip");
-                        }
-                    }
-
-                    selectPip.range( finalVals );
+                    slider.element.slider("values", indexToChange, val );
 
                 } else {
-                    
-                    $handles.trigger("focus.selectPip");
-                    selectPip.single( val );
+
+                    slider.element.slider("value", val );
 
                 }
+
+                slider._lastChangedValue = indexToChange;
 
             }
 
@@ -333,12 +366,50 @@
             $pips = slider.element.find(".ui-slider-pip");
 
 
-            slider.element.on("mousedown.selectPip", function() {
-                slider.element
-                    .off("mouseup.selectPip")
-                    .one("mouseup.selectPip", ".ui-slider-label", function() {
-                        labelClick( this );
-                    });
+
+
+            // loop through all the mousedown handlers on the slider,
+            // and store the original namespaced (.slider) event handler so
+            // we can trigger it later.
+            for( j = 0; j < mousedownHandlers.length; j++ ) {
+                if( mousedownHandlers[j].namespace === "slider" ) {
+                    originalMousedown = mousedownHandlers[j].handler;
+                }
+            }
+
+            // unbind the mousedown.slider event, because it interferes with
+            // the labelClick() method (stops smooth animation), and decide
+            // if we want to trigger the original event based on which element
+            // was clicked.
+            slider.element
+                .off("mousedown.slider")
+                .on("mousedown.selectPip", function(e) {
+
+                    var $target = $(e.target),
+                        closest = getClosestHandle( $target.data("value") ),
+                        $handle = $handles.eq( closest );
+
+                    $handle.addClass("ui-state-active");
+
+                    if( $target.is(".ui-slider-label") ) {
+
+                        labelClick( $target );
+
+                        slider.element
+                            .one("mouseup.selectPip", function() {
+
+                                $handle
+                                    .removeClass("ui-state-active")
+                                    .focus();
+
+                            });
+
+                    } else {
+
+                        originalMousedown(e);
+
+                    }
+
             });
 
 
@@ -460,7 +531,7 @@
                 // by the step option, so we store those values here.
 
                 var vals = [],
-                    steppedVals = values.map(function(v) {
+                    steppedVals = $.map( values, function(v) {
                         return Math.ceil(( v - min ) / slider.options.step);
                     });
 
