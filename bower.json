@@ -40,7 +40,7 @@
 
     "dependencies": {
         "jquery": ">=1.10.2",
-        "jqueryui": ">=1.9.2"
+        "jquery-ui": ">=1.9.2"
     },
 
     "devDependencies": {
