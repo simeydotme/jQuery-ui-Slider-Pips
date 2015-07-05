@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.10.4 - 2015-06-08
+/*! jQuery-ui-Slider-Pips - v1.10.5 - 2015-07-05
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -74,6 +74,23 @@
                     $pips
                         .filter(".ui-slider-pip-" + this.classLabel(value) )
                         .addClass("ui-slider-pip-selected");
+
+                    if ( slider.options.range ) {
+
+                        $pips.each(function(k,v) {
+
+                            var pipVal = $(v).children(".ui-slider-label").data("value");
+
+                            if (( slider.options.range === "min" && pipVal < value ) ||
+                                ( slider.options.range === "max" && pipVal > value )) {
+
+                                $(v).addClass("ui-slider-pip-inrange");
+
+                            }
+
+                        });
+
+                    }
 
                 },
 
@@ -304,8 +321,10 @@
                     for( i = 0; i < values.length; i++ ) {
 
                         if ( labelValue === values[i] ) {
+
                             classes += " ui-slider-pip-initial-" + (i+1);
                             classes += " ui-slider-pip-selected-" + (i+1);
+
                         }
 
                     }
@@ -324,8 +343,21 @@
                 } else {
 
                     if ( labelValue === value ) {
+
                         classes += " ui-slider-pip-initial";
                         classes += " ui-slider-pip-selected";
+
+                    }
+
+                    if ( slider.options.range ) {
+
+                        if (( slider.options.range === "min" && labelValue < value ) ||
+                            ( slider.options.range === "max" && labelValue > value )) {
+
+                            classes += " ui-slider-pip-inrange";
+
+                        }
+
                     }
 
                 }

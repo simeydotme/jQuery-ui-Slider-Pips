@@ -2152,6 +2152,25 @@
                                         #flat-slider.ui-slider.ui-slider-vertical .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
                                           width: 12px; }
                     
+                                        #flat-slider.ui-slider.ui-slider-vertical .ui-slider-handle .ui-slider-tip,
+                                        #flat-slider.ui-slider.ui-slider-vertical .ui-slider-handle[class*=ui-state-] .ui-slider-tip {
+                                          visibility: visible;
+                                          opacity: 1;
+                                          border: none;
+                                          background: transparent;
+                                          left: 50%;
+                                          width: 30px;
+                                          margin-left: -15px;
+                                          text-align: center;
+                                          color: white;
+                                          font-weight: normal;
+                                          top: 10px;
+                                          -webkit-transform: rotateZ(45deg);
+                                                  transform: rotateZ(45deg); }
+                    
+                                          #flat-slider.ui-slider.ui-slider-vertical .ui-slider-handle .ui-slider-tip:before,
+                                          #flat-slider.ui-slider.ui-slider-vertical .ui-slider-handle[class*=ui-state-] .ui-slider-tip:before {
+                                            display: none; }
                     
                                   #flat-slider .ui-slider-handle,
                                   #flat-slider .ui-slider-range,
@@ -2192,6 +2211,10 @@
                                           min: 0,
                                           range: true,
                                           values: [15, 35]
+                                      })
+                                      .slider("pips", {
+                                          first: "pip",
+                                          last: "pip"
                                       });
                     
                                   $("#flat-slider-vertical-1, #flat-slider-vertical-2, #flat-slider-vertical-3")
@@ -2201,13 +2224,12 @@
                                           range: "min",
                                           value: 20,
                                           orientation: "vertical"
-                                      });
-                    
-                                  $("#flat-slider, #flat-slider-vertical-1, #flat-slider-vertical-2, #flat-slider-vertical-3")
+                                      })
                                       .slider("pips", {
                                           first: "pip",
                                           last: "pip"
-                                      });
+                                      })
+                                      .slider("float");
                                 </pre>
                             </div>
                     
