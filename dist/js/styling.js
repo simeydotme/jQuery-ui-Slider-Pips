@@ -1,11 +1,16 @@
 $(function() {
 
+
+
     $("#circles-slider")
         .slider({
             max: 10,
             value: 5
         })
         .slider("pips");
+
+
+
 
 
     $("#alternating-slider")
@@ -22,6 +27,9 @@ $(function() {
 
 
 
+
+
+
     $("#scale-slider")
         .slider({
             max: 50,
@@ -32,6 +40,9 @@ $(function() {
         .slider("pips", {
             rest: "label"
         });
+
+
+
 
 
 
@@ -47,6 +58,53 @@ $(function() {
             rest: "label",
             labels: rainbow
         });
+
+
+
+
+
+
+    $("#flat-slider")
+        .slider({
+            max: 50,
+            min: 0,
+            range: true,
+            values: [15, 35]
+        });
+
+    $("#flat-slider-vertical-1")
+        .slider({
+            max: 25,
+            min: 0,
+            range: "min",
+            value: 5,
+            orientation: "vertical"
+        });
+
+    $("#flat-slider-vertical-2")
+        .slider({
+            max: 25,
+            min: 0,
+            range: "min",
+            value: 12,
+            orientation: "vertical"
+        });
+
+    $("#flat-slider-vertical-3")
+        .slider({
+            max: 25,
+            min: 0,
+            range: "min",
+            value: 20,
+            orientation: "vertical"
+        });
+
+    $("#flat-slider, #flat-slider-vertical-1, #flat-slider-vertical-2, #flat-slider-vertical-3")
+        .slider("pips", {
+            first: "pip",
+            last: "pip"
+        });
+
 
 
 
