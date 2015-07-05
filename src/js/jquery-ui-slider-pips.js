@@ -73,6 +73,23 @@
                         .filter(".ui-slider-pip-" + this.classLabel(value) )
                         .addClass("ui-slider-pip-selected");
 
+                    if ( slider.options.range ) {
+
+                        $pips.each(function(k,v) {
+
+                            var pipVal = $(v).children(".ui-slider-label").data("value");
+
+                            if (( slider.options.range === "min" && pipVal < value ) ||
+                                ( slider.options.range === "max" && pipVal > value )) {
+
+                                $(v).addClass("ui-slider-pip-inrange");
+
+                            }
+
+                        });
+
+                    }
+
                 },
 
                 range: function(values) {
@@ -302,8 +319,10 @@
                     for( i = 0; i < values.length; i++ ) {
 
                         if ( labelValue === values[i] ) {
+
                             classes += " ui-slider-pip-initial-" + (i+1);
                             classes += " ui-slider-pip-selected-" + (i+1);
+
                         }
 
                     }
@@ -322,8 +341,21 @@
                 } else {
 
                     if ( labelValue === value ) {
+
                         classes += " ui-slider-pip-initial";
                         classes += " ui-slider-pip-selected";
+
+                    }
+
+                    if ( slider.options.range ) {
+
+                        if (( slider.options.range === "min" && labelValue < value ) ||
+                            ( slider.options.range === "max" && labelValue > value )) {
+
+                            classes += " ui-slider-pip-inrange";
+
+                        }
+
                     }
 
                 }
