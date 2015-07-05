@@ -1,0 +1,195 @@
+<section class="sub-block" id="styling-flat">
+    
+    <h3>
+        <a href="#styling-flat" class="anchor">
+            Flat Slider
+        </a>
+    </h3>
+
+    <p>Here's a nice example of a modern, flat style slider using pips. There are no labels so this
+      kind of slider would be purely visual without much help to the user for knowing their real chosen
+      value. In this example we make use of the <code>.ui-slider-pip-inrange</code> class to create the
+      nice "filled in" effect on the pips.</p> 
+
+    <p>The style is <a href="http://codepen.io/thebabydino/details/RNEEZP/">borrowed from Ana Tudor's codepen</a>
+      which she states is taken from somewhere else. (I couldn't find the source).</p>
+
+    <p>Be sure to <a href="#styling-flat" data-active-tab="#styling-flat-css">check out the css</a> 
+        to see how it's done!</p>
+        
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#styling-flat-result" title="result"><i class="icon icon--eye"></i></a></dd>
+        <dd><a href="#styling-flat-html" title="html">&lt;/&gt;</a></dd>
+        <dd><a href="#styling-flat-css" title="css">{;}</a></dd>
+        <dd><a href="#styling-flat-js" title="jquery">($)</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="styling-flat-result">
+
+            <div id="flat-slider"></div>
+
+            <div class="vertical">
+              
+              <div id="flat-slider-vertical-1"></div>
+              <div id="flat-slider-vertical-2"></div>
+              <div id="flat-slider-vertical-3"></div>
+
+            </div>
+
+        </div>
+
+        <div class="content" id="styling-flat-html">
+
+            <pre data-lang="html">
+              &lt;div id="flat-slider"&gt;&lt;/div&gt;
+
+              &lt;div class="vertical"&gt;
+                
+                &lt;div id="flat-slider-vertical-1"&gt;&lt;/div&gt;
+                &lt;div id="flat-slider-vertical-2"&gt;&lt;/div&gt;
+                &lt;div id="flat-slider-vertical-3"&gt;&lt;/div&gt;
+
+              &lt;/div&gt;
+
+            </pre>
+
+        </div>
+
+        <div class="content" id="styling-flat-css">
+
+            <pre data-lang="css">
+              #flat-slider.ui-slider {
+                background: #d5cebc;
+                border: none;
+                border-radius: 0; }
+
+                #flat-slider.ui-slider .ui-slider-handle {
+                  width: 20px;
+                  height: 20px;
+                  border-radius: 50% 50% 0;
+                  border-color: transparent;
+                  transition: border 0.4s ease; }
+
+                  #flat-slider.ui-slider .ui-slider-handle.ui-state-hover, 
+                  #flat-slider.ui-slider .ui-slider-handle.ui-state-focus, 
+                  #flat-slider.ui-slider .ui-slider-handle.ui-state-active {
+                    border-color: #172f38; }
+
+                #flat-slider.ui-slider .ui-slider-pip .ui-slider-line {
+                  background: #d5cebc;
+                  transition: all 0.4s ease; }
+
+                #flat-slider.ui-slider.ui-slider-horizontal {
+                  height: 6px; }
+
+                  #flat-slider.ui-slider.ui-slider-horizontal .ui-slider-handle {
+                    -webkit-transform: rotateZ(45deg);
+                            transform: rotateZ(45deg);
+                    top: -25px;
+                    margin-left: -10px; }
+
+                  #flat-slider.ui-slider.ui-slider-horizontal .ui-slider-pip {
+                    top: 10px; }
+
+                    #flat-slider.ui-slider.ui-slider-horizontal .ui-slider-pip .ui-slider-line {
+                      width: 2px;
+                      height: 10px;
+                      margin-left: -1px; }
+
+                    #flat-slider.ui-slider.ui-slider-horizontal .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line {
+                      height: 20px; }
+
+                    #flat-slider.ui-slider.ui-slider-horizontal .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+                      height: 12px; }
+
+                #flat-slider.ui-slider.ui-slider-vertical {
+                  width: 6px;
+                  height: 125px;
+                  display: inline-block;
+                  margin: 0 15%; }
+
+                  #flat-slider.ui-slider.ui-slider-vertical .ui-slider-handle {
+                    -webkit-transform: rotateZ(-45deg);
+                            transform: rotateZ(-45deg);
+                    left: -25px;
+                    margin-bottom: -10px; }
+
+                  #flat-slider.ui-slider.ui-slider-vertical .ui-slider-pip {
+                    left: 10px; }
+
+                    #flat-slider.ui-slider.ui-slider-vertical .ui-slider-pip .ui-slider-line {
+                      height: 2px;
+                      width: 10px;
+                      margin-top: -1px; }
+
+                    #flat-slider.ui-slider.ui-slider-vertical .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line {
+                      width: 20px; }
+
+                    #flat-slider.ui-slider.ui-slider-vertical .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+                      width: 12px; }
+
+
+              #flat-slider .ui-slider-handle,
+              #flat-slider .ui-slider-range,
+              #flat-slider .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line,
+              #flat-slider .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+                background-color: #25daa5; }
+
+
+              #flat-slider-vertical-1 .ui-slider-handle,
+              #flat-slider-vertical-1 .ui-slider-range,
+              #flat-slider-vertical-1 .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line,
+              #flat-slider-vertical-1 .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+                background-color: #f27793; }
+
+
+              #flat-slider-vertical-2 .ui-slider-handle,
+              #flat-slider-vertical-2 .ui-slider-range,
+              #flat-slider-vertical-2 .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line,
+              #flat-slider-vertical-2 .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+                background-color: #bd77f2; }
+
+
+              #flat-slider-vertical-3 .ui-slider-handle,
+              #flat-slider-vertical-3 .ui-slider-range,
+              #flat-slider-vertical-3 .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line,
+              #flat-slider-vertical-3 .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+                background-color: #67c3ec; }
+
+            </pre>
+
+        </div>
+
+        <div class="content" id="styling-flat-js">
+            <pre data-lang="js">
+              $("#flat-slider")
+                  .slider({
+                      max: 50,
+                      min: 0,
+                      range: true,
+                      values: [15, 35]
+                  });
+
+              $("#flat-slider-vertical-1, #flat-slider-vertical-2, #flat-slider-vertical-3")
+                  .slider({
+                      max: 25,
+                      min: 0,
+                      range: "min",
+                      value: 20,
+                      orientation: "vertical"
+                  });
+
+              $("#flat-slider, #flat-slider-vertical-1, #flat-slider-vertical-2, #flat-slider-vertical-3")
+                  .slider("pips", {
+                      first: "pip",
+                      last: "pip"
+                  });
+            </pre>
+        </div>
+
+    </div>
+
+</section>
