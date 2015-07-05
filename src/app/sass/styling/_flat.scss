@@ -136,6 +136,30 @@
 
             }
 
+            .ui-slider-handle .ui-slider-tip,
+            .ui-slider-handle[ class *= ui-state- ] .ui-slider-tip {
+                
+                visibility: visible;
+                opacity: 1;
+                border: none;
+                background: transparent;
+                left: 50%;
+                width: 30px;
+                margin-left: -15px;
+                text-align: center;
+                color: white;
+                font-weight: normal;
+                top: 10px;
+                transform: rotateZ(45deg);
+
+                &:before {
+
+                    display: none;
+
+                }
+
+            }
+
         }
 
     }
