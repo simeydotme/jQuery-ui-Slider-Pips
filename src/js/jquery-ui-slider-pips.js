@@ -59,7 +59,9 @@
                 return;
             }
 
-            slider.options.pipStep = options.step;
+
+            // we don't want the step ever to be a floating point.
+            slider.options.pipStep = Math.round( options.step );
 
             // get rid of all pips that might already exist.
             slider.element
@@ -393,9 +395,6 @@
 
             }
 
-            // we don't want the step ever to be a floating point.
-            slider.options.pipStep = Math.round( slider.options.pipStep );
-
             // create our first pip
             collection += createPip("first");
 
@@ -569,7 +568,7 @@
             }
 
 
-            
+
 
             if ( value < min ) { 
                 value = min; 
