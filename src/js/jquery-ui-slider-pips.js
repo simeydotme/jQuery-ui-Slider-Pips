@@ -11,7 +11,6 @@
 
             var slider = this, i, j, p, collection = "",
                 mousedownHandlers,
-                originalMousedown,
                 min = slider._valueMin(),
                 max = slider._valueMax(),
                 value = slider._value(),
