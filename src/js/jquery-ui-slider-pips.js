@@ -192,6 +192,20 @@
                         }
                     }
 
+                    if ( slider.options.range && tempHandles.length === 2 ) {
+
+                        if ( val > sliderVals[1] ) {
+
+                            closestHandle = tempHandles[1];
+
+                        } else if ( val < sliderVals[0] ) {
+                        
+                            closestHandle = tempHandles[0];
+
+                        }
+
+                    }
+
                 }
 
                 return closestHandle;
