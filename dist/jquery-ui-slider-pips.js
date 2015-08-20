@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.10.6 - 2015-07-18
+/*! jQuery-ui-Slider-Pips - v1.10.7 - 2015-08-20
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 // PIPS
@@ -192,6 +192,20 @@
                         if( slider._lastChangedValue === tempHandles[k] ) {
                             closestHandle = tempHandles[k];
                         }
+                    }
+
+                    if ( slider.options.range && tempHandles.length === 2 ) {
+
+                        if ( val > sliderVals[1] ) {
+
+                            closestHandle = tempHandles[1];
+
+                        } else if ( val < sliderVals[0] ) {
+                        
+                            closestHandle = tempHandles[0];
+
+                        }
+
                     }
 
                 }
