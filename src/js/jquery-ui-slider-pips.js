@@ -570,7 +570,7 @@
                 // function
                 // must return a value to display in the floats
 
-                handleText : false
+                handleText: false
                 // 'numbered', false
 
             };
@@ -709,8 +709,11 @@
                         .eq( i )
                         .append( $("<span class=\"ui-slider-tip\">"+ options.formatLabel(tipValues[i]) +"</span>") );
 
-                    if(options.handleText == 'numbered')
+                    if( options.handleText == 'numbered' ) {
+
                         $handles.eq( i ). text( i+1 );
+
+                    }
 
                 }
 
