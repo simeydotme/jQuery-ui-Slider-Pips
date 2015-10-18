@@ -8,8 +8,8 @@ Use it for creating a nicely-styled slider like shown below
 
 ===  
 
-##### Update:  
-The plugin is now _(since 06/06/2015)_ compatible with the `1.11.2` update to the jqueryui library.
+#### Want to contribute?:  
+Please make sure to create a JSFiddle to demonstrate any problems, or pull requests, with this as a base: http://jsfiddle.net/simeydotme/Lh6pygef/ (press **fork** on the toolbar)
 
 ===
 
