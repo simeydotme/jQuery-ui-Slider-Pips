@@ -704,7 +704,8 @@
 
                     $handles
                         .eq( i )
-                        .append( $("<span class=\"ui-slider-tip\">"+ options.formatLabel(tipValues[i]) +"</span>") );
+                        .append( $("<span class=\"ui-slider-tip\">"+ options.formatLabel(tipValues[i]) +"</span>") )
+                        .attr( 'data-handle-iteration' , i+1 );
 
                 }
 
