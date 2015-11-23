@@ -154,7 +154,7 @@ gulp.task("c", function() {
 
 });
 
-gulp.task("t", ["commit"], function() {
+gulp.task("t", ["c"], function() {
 
     var pkg = pack(),
         newv = pkg.version;
@@ -199,4 +199,6 @@ gulp.task("bump", function( patch, minor, major ) {
 
 });
 
-gulp.task("commit", ["c", "t" ]);
+gulp.task("commit", ["c", "t"], function() {
+    return gulp;
+});
