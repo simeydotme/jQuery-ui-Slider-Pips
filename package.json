@@ -47,8 +47,10 @@
     "gulp-uglify": "^1.5.1"
   },
   "dependencies": {
+    "fs": "0.0.2",
     "gulp-bump": "^1.0.0",
     "gulp-git": "^1.6.0",
+    "gulp-param": "^0.6.4",
     "semver": "^5.1.0"
   }
 }
