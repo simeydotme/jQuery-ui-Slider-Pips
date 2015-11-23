@@ -50,7 +50,13 @@ var out = {
 
 // TASKS
 
-gulp.task("default", ["clean", "js", "sass"], function() {
+gulp.task("default", ["assets"], function() {
+
+    return gulp;
+
+});
+
+gulp.task("assets", ["clean", "js", "sass"], function() {
 
     console.log("⭐ >> Finished putting assets to /dist/" );
     return gulp;
@@ -128,7 +134,7 @@ gulp.task("sass", ["clean"], function() {
  * spawn the sub-tasks or write dist files.
  */
 
-gulp.task("commit", ["bumpv", "default"], function() {
+gulp.task("commit", function() {
 
     var pkg = pack(),
         newv = pkg.version;
@@ -193,4 +199,4 @@ gulp.task("bumpv", function( patch, minor, major ) {
 
 });
 
-gulp.task("bump", ["bumpv", "default", "commit", "tag" ]);
+gulp.task("bumpc", ["commit", "tag" ]);
