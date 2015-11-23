@@ -1,11 +1,12 @@
 
 "use strict";
 
+var gulp = require("gulp-param")( require("gulp"), process.argv );
+
 var pkg = require("./package.json"),
     semver = require("semver"),
     dateformat = require("dateformat"),
 
-    gulp = require("gulp"),
     git = require("gulp-git"),
     sass = require("gulp-sass"),
     bump = require("gulp-bump"),
@@ -164,8 +165,7 @@ gulp.task("bumpv", function( patch, minor, major ) {
 
     } else {
 
-        console.log("⭐ >> Not Bumping Version...");
-        throw new Error("Not Bumping, didn't supply bump type");
+        throw new Error("⭐ >> Not Bumping, didn't supply bump type\n\n\n\n");
         return false;
 
     }
