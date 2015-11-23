@@ -134,7 +134,7 @@ gulp.task("sass", ["clean"], function() {
  * spawn the sub-tasks or write dist files.
  */
 
-gulp.task("commit", function() {
+gulp.task("c", function() {
 
     var pkg = pack(),
         newv = pkg.version;
@@ -154,7 +154,7 @@ gulp.task("commit", function() {
 
 });
 
-gulp.task("tag", ["commit"], function() {
+gulp.task("t", ["commit"], function() {
 
     var pkg = pack(),
         newv = pkg.version;
@@ -169,7 +169,7 @@ gulp.task("tag", ["commit"], function() {
 
 });
 
-gulp.task("bumpv", function( patch, minor, major ) {
+gulp.task("bump", function( patch, minor, major ) {
     
     var b = 
         (patch) ? "patch" : 
@@ -199,4 +199,4 @@ gulp.task("bumpv", function( patch, minor, major ) {
 
 });
 
-gulp.task("bumpc", ["commit", "tag" ]);
+gulp.task("commit", ["c", "t" ]);
