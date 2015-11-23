@@ -3,7 +3,7 @@
 
 var gulp = require("gulp-param")( require("gulp"), process.argv );
 
-var pkg = require("./package.json"),
+var fs = require("fs"),
     semver = require("semver"),
     dateformat = require("dateformat"),
 
@@ -16,12 +16,18 @@ var pkg = require("./package.json"),
     header = require("gulp-header"),
     autoprefixer = require("gulp-autoprefixer");
 
+var pack = function() {
+    return JSON.parse(fs.readFileSync("./package.json", "utf8"));
+};
+
 var dates = {
 
     today: dateformat( new Date() , "yyyy-mm-dd" ),
     year: dateformat( new Date() , "yyyy" )
 
 };
+
+var pkg = pack();
 
 var banner = "/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - <%= dates.today %>\n" + 
                 "<%= pkg.homepage ? \"* \" + pkg.homepage + \"\\n\" : \"\" %>" + 
@@ -67,6 +73,8 @@ gulp.task("clean", function() {
 
 gulp.task("js", ["clean"],  function() {
 
+    var pkg = pack();
+
     return gulp
         .src( "./src/js/**/*.js" )
 
@@ -85,6 +93,8 @@ gulp.task("js", ["clean"],  function() {
 
 
 gulp.task("sass", ["clean"], function() {
+
+    var pkg = pack();
 
     gulp
         .src("./src/**/*.scss")
@@ -120,7 +130,7 @@ gulp.task("sass", ["clean"], function() {
 
 gulp.task("bumpc", ["bumpv", "default"], function( patch, minor, major ) {
 
-    var pkg = require("./package.json"),
+    var pkg = pack(),
         newv = pkg.version;
 
     var fun = "🐒 🐔 🐧 🐤 🐗 🐝 🐌 🐞 🐜 🕷 🦂 🦀 🐍 🐢 🐟 🐡 🐬 🐋 🐊 🐆 🐅 🐃 🐂 🐄 🐪 🐘 🐐 🐏 🐑 🐎 🐖 🐀 🐁 🐓 🦃 🕊 🐕 🐈 🐇 🐿 🐉 🐲".split(" ");
@@ -152,7 +162,7 @@ gulp.task("bumpv", function( patch, minor, major ) {
     
     if( b ) {
 
-        var pkg = require("./package.json"),
+        var pkg = pack(),
             oldv = pkg.version,
             newv = semver.inc( oldv , b );
 
@@ -165,7 +175,7 @@ gulp.task("bumpv", function( patch, minor, major ) {
 
     } else {
 
-        throw new Error("⭐ >> Not Bumping, didn't supply bump type\n\n\n\n");
+        throw new Error("\n⚠ >> Not Bumping; didn't supply bump type\n\n");
         return false;
 
     }
