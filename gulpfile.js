@@ -33,7 +33,38 @@ var out = {
 };
 
 
-gulp.task("js", function() {
+
+
+
+
+
+
+
+
+// TASKS
+
+gulp.task("default", ["clean", "js", "sass"], function() {
+
+    console.log("⭐ >> Finished putting assets to /dist/" );
+    return gulp;
+
+});
+
+
+gulp.task("clean", function() {
+
+    console.log("⭐ >> All clean and shiny! ");
+
+    return gulp
+        .src("./dist", { read: false })
+        .pipe( clean() );
+
+});
+
+
+
+
+gulp.task("js", ["clean"],  function() {
 
     return gulp
         .src( "./src/js/**/*.js" )
@@ -49,7 +80,10 @@ gulp.task("js", function() {
 
 });
 
-gulp.task("sass", function() {
+
+
+
+gulp.task("sass", ["clean"], function() {
 
     gulp
         .src("./src/**/*.scss")
@@ -70,6 +104,8 @@ gulp.task("sass", function() {
 });
 
 
+
+
 /**
  * Bump task can be used like:
  * 
@@ -81,7 +117,31 @@ gulp.task("sass", function() {
  * spawn the sub-tasks or write dist files.
  */
 
-gulp.task("bump", function( patch, minor, major ) {
+gulp.task("bump", ["bumpv", "default"], function( patch, minor, major ) {
+
+    var pkg = require("./package.json"),
+        newv = pkg.version;
+
+    var fun = "🐒 🐔 🐧 🐤 🐗 🐝 🐌 🐞 🐜 🕷 🦂 🦀 🐍 🐢 🐟 🐡 🐬 🐋 🐊 🐆 🐅 🐃 🐂 🐄 🐪 🐘 🐐 🐏 🐑 🐎 🐖 🐀 🐁 🐓 🦃 🕊 🐕 🐈 🐇 🐿 🐉 🐲".split(" ");
+        fun = fun[ Math.floor(Math.random() * fun.length ) ];
+
+    console.log("⭐ >> Creating new tag for v" + newv );
+    console.log("⭐ >> Committing release v" + newv );
+
+    return gulp
+        .src([
+            "./*.json",
+            "./dist/**/*"
+        ])
+        .pipe( git.add() )
+        .pipe( git.commit("Release v" + newv + " ⚡" + fun + "⚡") )
+        .pipe( git.tag("v" + newv, "Version " + newv, function(err) {
+            if ( err ) { throw err; }
+        }));
+
+});
+
+gulp.task("bumpv", function( patch, minor, major ) {
     
     var b = 
         (patch) ? "patch" : 
@@ -95,46 +155,19 @@ gulp.task("bump", function( patch, minor, major ) {
             oldv = pkg.version,
             newv = semver.inc( oldv , b );
 
-        var fun = "🐒 🐔 🐧 🐤 🐗 🐝 🐌 🐞 🐜 🕷 🦂 🦀 🐍 🐢 🐟 🐡 🐬 🐋 🐊 🐆 🐅 🐃 🐂 🐄 🐪 🐘 🐐 🐏 🐑 🐎 🐖 🐀 🐁 🐓 🦃 🕊 🐕 🐈 🐇 🐿 🐉 🐲".split(" ");
-            fun = fun[ Math.floor(Math.random() * fun.length ) ];
+        console.log("⭐ >> Bumping Version to v" + newv );
 
-        console.log(">> Bumping Version to v" + newv );
-
-        gulp
+        return gulp
             .src("./*.json")
             .pipe( bump({ version: newv }) )
             .pipe( gulp.dest("./") );
 
-        console.log(">> Creating new tag for v" + newv );
-        console.log(">> Committing release v" + newv );
-
-        gulp
-            .src([
-                "./*.json",
-                "./dist/**/*"
-            ])
-            .pipe( git.add() )
-            .pipe( git.commit("Release v" + newv + " ⚡" + fun + "⚡") )
-            .pipe( git.tag("v" + newv, "Version " + newv, function(err) {
-                if ( err ) { throw err; }
-            }));
-
     } else {
 
-        console.log(">> Not Bumping Version...");
-        return gulp;
+        console.log("⭐ >> Not Bumping Version...");
+        throw new Error("Not Bumping, didn't supply bump type");
+        return false;
 
     }
-
-});
-
-
-gulp.task("clean", function() {
-
-    console.log("\n All clean 'n shiny! \n");
-
-    return gulp
-        .src("./dist", { read: false })
-        .pipe( clean() );
 
 });
