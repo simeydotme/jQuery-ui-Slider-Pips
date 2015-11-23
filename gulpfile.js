@@ -117,7 +117,7 @@ gulp.task("sass", ["clean"], function() {
  * spawn the sub-tasks or write dist files.
  */
 
-gulp.task("bump", ["bumpv", "default"], function( patch, minor, major ) {
+gulp.task("bumpc", ["bumpv", "default"], function( patch, minor, major ) {
 
     var pkg = require("./package.json"),
         newv = pkg.version;
@@ -171,3 +171,5 @@ gulp.task("bumpv", function( patch, minor, major ) {
     }
 
 });
+
+gulp.task("bump", ["bumpv", "default", "bumpc" ]);
