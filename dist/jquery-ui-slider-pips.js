@@ -1,5 +1,6 @@
-/*! jQuery-ui-Slider-Pips - v1.10.7 - 2015-08-20
+/*! jQuery-ui-Slider-Pips - 1.10.7 - 2015-11-23
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
+
 
 // PIPS
 
