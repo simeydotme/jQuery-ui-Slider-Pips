@@ -8,8 +8,8 @@ Use it for creating a nicely-styled slider like shown below
 
 ===  
 
-##### Update:  
-The plugin is now _(since 06/06/2015)_ compatible with the `1.11.2` update to the jqueryui library.
+#### Want to contribute?:  
+Please make sure to create a JSFiddle to demonstrate any problems, or pull requests, with this as a base: http://jsfiddle.net/simeydotme/Lh6pygef/ (press **fork** on the toolbar)
 
 ===
 
@@ -40,7 +40,9 @@ _Below methods are chainable, I've shown them separate for clarity_
 ####Default usage:
 
 ```html
-<!-- this widget needs an empty div tag. Note the class used on this div and on the jquery selectors below need to be the same... -->
+<!-- this widget needs an empty div tag. 
+    Note the class used on this div and on the jquery 
+    selectors below need to be the same... -->
 <div class="element"></div>
 ```
 
@@ -52,8 +54,13 @@ $('.element').slider().slider('pips').slider('float');
 ####Advanced usage with options:
 ```javascript
 
-// First of all attach a slider to an element. If you want to customize the range of values, you do it in the initialization.
-$('.element').slider({min: 20, max: 65});
+// First of all attach a slider to an element. 
+// If you want to set values, you do it in the initialization.
+$('.element').slider({
+    min: 20, 
+    max: 65,
+    values: [30, 40, 50]
+});
 
 // Then you can give it pips and labels!  
 $('.element').slider('pips', {  
