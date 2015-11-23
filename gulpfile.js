@@ -128,7 +128,7 @@ gulp.task("sass", ["clean"], function() {
  * spawn the sub-tasks or write dist files.
  */
 
-gulp.task("bumpc", ["bumpv", "default"], function( patch, minor, major ) {
+gulp.task("commit", ["bumpv", "default"], function() {
 
     var pkg = pack(),
         newv = pkg.version;
@@ -136,7 +136,6 @@ gulp.task("bumpc", ["bumpv", "default"], function( patch, minor, major ) {
     var fun = "🐒 🐔 🐧 🐤 🐗 🐝 🐌 🐞 🐜 🕷 🦂 🦀 🐍 🐢 🐟 🐡 🐬 🐋 🐊 🐆 🐅 🐃 🐂 🐄 🐪 🐘 🐐 🐏 🐑 🐎 🐖 🐀 🐁 🐓 🦃 🕊 🐕 🐈 🐇 🐿 🐉 🐲".split(" ");
         fun = fun[ Math.floor(Math.random() * fun.length ) ];
 
-    console.log("⭐ >> Creating new tag for v" + newv );
     console.log("⭐ >> Committing release v" + newv );
 
     return gulp
@@ -145,10 +144,22 @@ gulp.task("bumpc", ["bumpv", "default"], function( patch, minor, major ) {
             "./dist/**/*"
         ])
         .pipe( git.add() )
-        .pipe( git.commit("Release v" + newv + " ⚡" + fun + "⚡") )
-        .pipe( git.tag("v" + newv, "Version " + newv, function(err) {
-            if ( err ) { throw err; }
-        }));
+        .pipe( git.commit("Release v" + newv + " ⚡" + fun + "⚡") );
+
+});
+
+gulp.task("tag", ["commit"], function() {
+
+    var pkg = pack(),
+        newv = pkg.version;
+
+    console.log("⭐ >> Creating new tag for v" + newv );
+
+    git.tag("v" + newv, "Version " + newv, function(err) {
+        if ( err ) { throw err; }
+    });
+
+    return gulp;
 
 });
 
@@ -182,4 +193,4 @@ gulp.task("bumpv", function( patch, minor, major ) {
 
 });
 
-gulp.task("bump", ["bumpv", "default", "bumpc" ]);
+gulp.task("bump", ["bumpv", "default", "commit", "tag" ]);
