@@ -58,11 +58,18 @@
             if ( $.type( settings ) === "object" || $.type( settings ) === "undefined" ) {
 
                 $.extend( options, settings );
+                slider.element.data("pips-options", options );
 
             } else {
 
                 if ( settings === "destroy" ) {
+
                     destroy();
+
+                } else if ( settings === "refresh" ) {
+
+                    slider.element.slider( "pips", slider.element.data("pips-options") );
+
                 }
 
                 return;
@@ -598,11 +605,18 @@
             if ( $.type( settings ) === "object" || $.type( settings ) === "undefined" ) {
 
                 $.extend( options, settings );
+                slider.element.data("float-options", options );
 
             } else {
 
                 if ( settings === "destroy" ) {
+
                     destroy();
+
+                } else if ( settings === "refresh" ) {
+
+                    slider.element.slider( "float", slider.element.data("float-options") );
+
                 }
 
                 return;
