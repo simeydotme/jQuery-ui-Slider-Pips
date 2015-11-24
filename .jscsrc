@@ -3,7 +3,7 @@
     "maximumLineLength": 120,
     
     "disallowCapitalizedComments": true,
-    "disallowDanglingUnderscores": { "allExcept": ["_this"] },
+    "disallowDanglingUnderscores": { "allExcept": ["_this", "_data", "_valueMin", "_valueMax", "_value", "_values", "_lastChangedValue"] },
     "disallowEmptyBlocks": true,
     "disallowImplicitTypeConversion": [ "string", "number" ],
     "disallowKeywordsOnNewLine": [ "else", "catch", "while" ],
@@ -68,7 +68,7 @@
     //"requireSpacesInsideArrayBrackets": "all",
     //"requireSpacesInsideObjectBrackets": "allButNested",
     //"requireSpacesInsideParentheses": "allButNested",
-    "safeContextKeyword": ["_this", "$this"],
+    "safeContextKeyword": ["_this", "$this", "slider"],
     "validateIndentation": 4,
     "validateParameterSeparator": ", ",
     "validateQuoteMarks": true
