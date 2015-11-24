@@ -13,8 +13,6 @@
                 mousedownHandlers,
                 min = slider._valueMin(),
                 max = slider._valueMax(),
-                value = slider._value(),
-                values = slider._values(),
                 pips = ( max - min ) / slider.options.step,
                 $handles = slider.element.find(".ui-slider-handle"),
                 $pips;
@@ -158,10 +156,10 @@
                     tempHandles = [],
                     closestHandle = 0;
 
-                if( values && values.length ) {
+                if( slider.values() && slider.values().length ) {
 
                     // get the current values of the slider handles
-                    sliderVals = slider.element.slider("values");
+                    sliderVals = slider.values();
 
                     // find the offset value from the `val` for each
                     // handle, and store it in a new array
@@ -242,7 +240,7 @@
                 var val = $(label).data("value"),
                     indexToChange = getClosestHandle( val );
 
-                if ( values && values.length ) {
+                if ( slider.values() && slider.values().length ) {
 
                     slider.element.slider("values", indexToChange, val );
 
@@ -265,7 +263,9 @@
                     percent,
                     number = which,
                     classes = "ui-slider-pip",
-                    css = "";
+                    css = "",
+                    value = slider.value(),
+                    values = slider.values();
 
                 if ( "first" === which ) { number = 0; }
                 else if ( "last" === which ) { number = pips; }
@@ -507,7 +507,7 @@
 
                 }
 
-                if ( values && values.length ) {
+                if ( slider.values() && slider.values().length ) {
 
                     selectPip.range( values );
 
@@ -696,7 +696,7 @@
                 // corresponding element in the array, or the appropriate
                 // item in the object... or an empty string.
 
-                tipValues = ( values && values.length ) ? 
+                tipValues = ( slider.values() && slider.values().length ) ? 
                     getPipLabels( values ) :
                     getPipLabels( [ value ] );
 
