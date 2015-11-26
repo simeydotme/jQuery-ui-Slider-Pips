@@ -1,0 +1,130 @@
+
+    $size: 6px;
+    $bg: #ddd;
+    $highlight: #25DAA5;
+    $text: #888;
+
+    
+
+    #double-label-slider.ui-slider {
+        
+        margin-top: $size * 4;
+        height: $size;
+        background: $bg;
+        border: none;
+        border-radius: 0;
+
+        .ui-slider-handle {
+            
+            background: $highlight;
+            border: none;
+
+            width: $size * 3;
+            height: $size * 3;
+            margin-left: - $size * 1.5;
+            
+            border-radius: 100%;
+            
+            transition: box-shadow 0.2s ease;
+
+            &.ui-state-hover,
+            &.ui-state-focus,
+            &.ui-state-active {
+
+                box-shadow: 0 0 0 2px $highlight;
+
+            }
+
+        }
+
+        .ui-slider-pip {
+
+            top: - $size / 2;
+
+            .ui-slider-line {
+
+                background: white;
+                width: $size * 2;
+                height: $size * 2;
+                margin-left: - $size;
+
+                box-shadow: 0 0 0 2px $highlight;
+
+                border-radius: 100%;
+
+                transition: all 0.4s ease;
+
+            }
+
+            .ui-slider-label,
+            .ui-slider-label i,
+            .ui-slider-label span {
+
+                width: 100px;
+                margin-left: -50px;
+                text-align: center;
+
+            }
+
+            .ui-slider-label {
+                    
+                color: $text;
+                
+                i {
+                    
+                    font-style: normal;
+                    font-size: 1.8em;
+                    position: absolute;
+                    top: - $size * 6;
+
+                    @media screen and ( max-width: 500px ) {
+
+                        font-size: 1.4em;
+
+                    }
+
+                }
+                
+                span {
+                    
+                    opacity: 0.6;
+                    font-size: 1.2em;
+                    line-height: 1.3;
+                    position: absolute;
+                    top: $size * 3;
+
+                    @media screen and ( max-width: 500px ) {
+
+                        font-size: 1.1em;
+
+                    }
+                    
+                    transition: opacity 0.3s ease;
+                }
+
+            }
+
+            &:hover .ui-slider-label,
+            &:focus .ui-slider-label,
+            &.ui-slider-pip-selected .ui-slider-label,
+            &.ui-slider-pip-initial .ui-slider-label {
+                
+                font-weight: normal;
+
+                span {
+                 
+                    opacity: 1;
+                
+                }
+
+            }
+
+            &.ui-slider-pip-selected .ui-slider-label {
+
+                color: black;
+
+            }
+
+        }
+
+    }

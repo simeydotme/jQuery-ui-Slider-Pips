@@ -106,6 +106,7 @@
                         <li class="sidebar__item"><a href="#styling-scale">Scale</a></li>
                         <li class="sidebar__item"><a href="#styling-rainbow">Rainbow</a></li>
                         <li class="sidebar__item"><a href="#styling-flat">Modern Flat</a></li>
+                        <li class="sidebar__item"><a href="#styling-double">Double Labels</a></li>
                         <li class="sidebar__item"><a href="#styling-emoji">Emoji</a></li>
                     </ul>
                 </li>
@@ -2284,6 +2285,160 @@
                                           last: "pip"
                                       })
                                       .slider("float");
+                                </pre>
+                            </div>
+                    
+                        </div>
+                    
+                    </section>
+                    <section class="sub-block" id="styling-double">
+                        
+                        <h3>
+                            <a href="#styling-double" class="anchor">
+                                Double Labels
+                            </a>
+                        </h3>
+                    
+                        <p>One of the users of the <code>pips</code> plugin popped up on Github and asked for some info
+                        on how to add more than one label (above and below the slider) on 
+                        <a href="https://github.com/simeydotme/jQuery-ui-Slider-Pips/issues/77">issue #77</a>. It was a
+                        good question, and a nice solution, so it's posted here for teaching purposes.</p>
+                    
+                        <p>Basically we just supply custom <code>html</code> for the labels and then style it up.</p>
+                    
+                        <p><a href="#styling-double" data-active-tab="#styling-double-js">Look at the jQuery</a> 
+                            to see how it's done!</p>
+                            
+                    
+                        <dl class="tabs code" data-tab>
+                            <dd class="active"><a href="#styling-double-result" title="result"><i class="icon icon--eye"></i></a></dd>
+                            <dd><a href="#styling-double-html" title="html">&lt;/&gt;</a></dd>
+                            <dd><a href="#styling-double-css" title="css">{;}</a></dd>
+                            <dd><a href="#styling-double-js" title="jquery">($)</a></dd>
+                        </dl>
+                    
+                        <div class="tabs-content">
+                    
+                            <div class="content active" id="styling-double-result">
+                    
+                                <div id="double-label-slider"></div>
+                    
+                            </div>
+                    
+                            <div class="content" id="styling-double-html">
+                    
+                                <pre data-lang="html">
+                                  &lt;div id="double-label-slider"&gt;&lt;/div&gt;
+                    
+                                </pre>
+                    
+                            </div>
+                    
+                            <div class="content" id="styling-double-css">
+                    
+                                <pre data-lang="css">
+                                  #double-label-slider.ui-slider {
+                                    margin-top: 24px;
+                                    height: 6px;
+                                    background: #dddddd;
+                                    border: none;
+                                    border-radius: 0; }
+                    
+                                    #double-label-slider.ui-slider .ui-slider-handle {
+                                      background: #25daa5;
+                                      border: none;
+                                      width: 18px;
+                                      height: 18px;
+                                      margin-left: -9px;
+                                      border-radius: 100%;
+                                      transition: box-shadow 0.2s ease; }
+                    
+                                      #double-label-slider.ui-slider .ui-slider-handle.ui-state-hover, 
+                                      #double-label-slider.ui-slider .ui-slider-handle.ui-state-focus, 
+                                      #double-label-slider.ui-slider .ui-slider-handle.ui-state-active {
+                                        box-shadow: 0 0 0 2px #25daa5; }
+                    
+                                    #double-label-slider.ui-slider .ui-slider-pip {
+                                      top: -3px; }
+                    
+                                      #double-label-slider.ui-slider .ui-slider-pip .ui-slider-line {
+                                        background: white;
+                                        width: 12px;
+                                        height: 12px;
+                                        margin-left: -6px;
+                                        box-shadow: 0 0 0 2px #25daa5;
+                                        border-radius: 100%;
+                                        transition: all 0.4s ease; }
+                    
+                                      #double-label-slider.ui-slider .ui-slider-pip .ui-slider-label,
+                                      #double-label-slider.ui-slider .ui-slider-pip .ui-slider-label i,
+                                      #double-label-slider.ui-slider .ui-slider-pip .ui-slider-label span {
+                                        width: 100px;
+                                        margin-left: -50px;
+                                        text-align: center; }
+                    
+                                      #double-label-slider.ui-slider .ui-slider-pip .ui-slider-label {
+                                        color: #888888; }
+                    
+                                        #double-label-slider.ui-slider .ui-slider-pip .ui-slider-label i {
+                                          font-style: normal;
+                                          font-size: 1.8em;
+                                          position: absolute;
+                                          top: -36px; }
+                    
+                                          @media screen and (max-width: 500px) {
+                                            #double-label-slider.ui-slider .ui-slider-pip .ui-slider-label i {
+                                              font-size: 1.4em; } 
+                                        }
+                    
+                                        #double-label-slider.ui-slider .ui-slider-pip .ui-slider-label span {
+                                          opacity: 0.6;
+                                          font-size: 1.2em;
+                                          line-height: 1.3;
+                                          position: absolute;
+                                          top: 18px;
+                                          transition: opacity 0.3s ease; }
+                    
+                                          @media screen and (max-width: 500px) {
+                                            #double-label-slider.ui-slider .ui-slider-pip .ui-slider-label span {
+                                              font-size: 1.1em; } 
+                                          }
+                    
+                                      #double-label-slider.ui-slider .ui-slider-pip:hover .ui-slider-label span, 
+                                      #double-label-slider.ui-slider .ui-slider-pip:focus .ui-slider-label span, 
+                                      #double-label-slider.ui-slider .ui-slider-pip.ui-slider-pip-selected .ui-slider-label span {
+                                        opacity: 1; }
+                    
+                                      #double-label-slider.ui-slider .ui-slider-pip.ui-slider-pip-selected .ui-slider-label {
+                                        color: black; }
+                    
+                                </pre>
+                    
+                            </div>
+                    
+                            <div class="content" id="styling-double-js">
+                                <pre data-lang="js">
+                                  var doubleLabels = [
+                    
+                                      "&lt;i&gt;-2&lt;/i&gt;&lt;span&gt;I hated it&lt;/span&gt;", 
+                                      "&lt;i&gt;-1&lt;/i&gt;&lt;span&gt;I was displeased&lt;/span&gt;", 
+                                      "&lt;i&gt;0&lt;/i&gt;&lt;span&gt;I have no feelings&lt;/span&gt;", 
+                                      "&lt;i&gt;+1&lt;/i&gt;&lt;span&gt;I liked it&lt;/span&gt;", 
+                                      "&lt;i&gt;+2&lt;/i&gt;&lt;span&gt;I am easily excited&lt;/span&gt;"
+                    
+                                  ];
+                    
+                                  $("#double-label-slider")
+                                      .slider({
+                                          max: 2,
+                                          min: -2,
+                                          value: 0,
+                                          animate: 400
+                                      })
+                                      .slider("pips", {
+                                          rest: "label",
+                                          labels: doubleLabels
+                                      });
                                 </pre>
                             </div>
                     

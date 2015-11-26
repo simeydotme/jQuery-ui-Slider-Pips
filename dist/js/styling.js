@@ -114,6 +114,32 @@ $(function() {
 
 
 
+    var doubleLabels = [
+
+        "<i>-2</i><span>I hated it</span>", 
+        "<i>-1</i><span>I was displeased</span>", 
+        "<i>0</i><span>I have no feelings</span>", 
+        "<i>+1</i><span>I liked it</span>", 
+        "<i>+2</i><span>I am easily excited</span>"
+
+    ];
+
+    $("#double-label-slider")
+        .slider({
+            max: 2,
+            min: -2,
+            value: 0,
+            animate: 400
+        })
+        .slider("pips", {
+            rest: "label",
+            labels: doubleLabels
+        });
+
+
+
+
+
 
     var emoji = [ "🐌", "🐐", "🐘", "🐙", "🐞", "🐠", "🐈", "🐕", "🐦", "🐬", "🐖", "🐇", "🐅", "🐃" ],
         mine = "🐕",
