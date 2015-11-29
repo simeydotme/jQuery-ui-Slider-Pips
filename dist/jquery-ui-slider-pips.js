@@ -1,4 +1,4 @@
-/*! jQuery-ui-Slider-Pips - v1.11.0 - 2015-11-30
+/*! jQuery-ui-Slider-Pips - v1.11.1 - 2015-11-30
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 
@@ -253,7 +253,7 @@
             // without this method the label is just treated like a part
             // of the slider and there's no accuracy in the selected value
 
-            function labelClick( label ) {
+            function labelClick( label, e ) {
 
                 if (slider.option("disabled")) {
                     return;
@@ -264,15 +264,16 @@
 
                 if ( slider.values() && slider.values().length ) {
 
-                    slider.element.slider("values", indexToChange, val );
+                    slider.options.values[ indexToChange ] = slider._trimAlignValue( val );
 
                 } else {
 
-                    slider.element.slider("value", val );
+                    slider.options.value = slider._trimAlignValue( val );
 
                 }
 
-                slider._lastChangedValue = indexToChange;
+                slider._refreshValue();
+                slider._change( e, indexToChange );
 
             }
 
@@ -504,7 +505,7 @@
 
                     if ( $target.is(".ui-slider-label") ) {
 
-                        labelClick( $target );
+                        labelClick( $target, e );
 
                         slider.element
                             .one("mouseup.selectPip", function() {
