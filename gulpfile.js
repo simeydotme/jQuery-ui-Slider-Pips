@@ -198,7 +198,7 @@ gulp.task("bump", function( patch, minor, major ) {
  * this task will create a commit, and tag it with the version in package.json
  */
 
-gulp.task(" release", ["commit", "tag"], function() {
+gulp.task("release", ["commit", "tag"], function() {
     return gulp;
 });
 
