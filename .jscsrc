@@ -3,7 +3,17 @@
     "maximumLineLength": 120,
     
     "disallowCapitalizedComments": true,
-    "disallowDanglingUnderscores": { "allExcept": ["_this", "_data", "_valueMin", "_valueMax", "_value", "_values", "_lastChangedValue"] },
+    "disallowDanglingUnderscores": { "allExcept": [
+        "_this", 
+        "_data", 
+        "_valueMin", 
+        "_valueMax", 
+        "_value", 
+        "_values", 
+        "_lastChangedValue", 
+        "_change", 
+        "_trimAlignValue", 
+        "_refreshValue"] },
     "disallowEmptyBlocks": true,
     "disallowImplicitTypeConversion": [ "string", "number" ],
     "disallowKeywordsOnNewLine": [ "else", "catch", "while" ],
