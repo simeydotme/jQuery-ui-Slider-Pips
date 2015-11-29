@@ -12,32 +12,40 @@
         of an options object.</p>
 
     <dl class="tabs code" data-tab>
-        <dd class="active"><a href="#styling-pips-js" title="destroy pips">Pips</a></dd>
-        <dd><a href="#styling-float-js" title="destroy float">Float</a></dd>
+        <dd class="active"><a href="#destroying-pips-js" title="destroy pips">Pips</a></dd>
+        <dd><a href="#destroying-float-js" title="destroy float">Float</a></dd>
     </dl>
 
     <div class="tabs-content">
 
-        <div class="content active" id="styling-pips-js">
+        <div class="content active" id="destroying-pips-js">
             
             <pre data-lang="js">
                 // initialise the slider, and pips first
-                $(".slider").slider("pips");
+                $(".slider")
+                    .slider()
+                    .slider("pips");
 
                 // after a slider has been inialised
-                $(".slider").slider("pips", "destroy");
+                $(".slider")
+                    .slider()
+                    .slider("pips", "destroy");
             </pre>
 
         </div>
 
-        <div class="content" id="styling-float-js">
+        <div class="content" id="destroying-float-js">
             
             <pre data-lang="js">
                 // initialise the slider, and float first
-                $(".slider").slider("float");
+                $(".slider")
+                    .slider()
+                    .slider("float");
 
                 // after a slider has been inialised
-                $(".slider").slider("float", "destroy");
+                $(".slider")
+                    .slider()
+                    .slider("float", "destroy");
             </pre>
 
         </div>

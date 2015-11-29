@@ -1,0 +1,54 @@
+
+<section class="sub-block" id="refreshing">
+    
+    <h3>
+        <a href="#refreshing" class="anchor">
+            Refresh Method
+        </a>
+    </h3>
+
+    <p>If the slider's options have change programmatically, then we probably need
+        to update the pips/floats to reflect this.</p>
+
+    <dl class="tabs code" data-tab>
+        <dd class="active"><a href="#refreshing-pips-js" title="refresh pips">Pips</a></dd>
+        <dd><a href="#refreshing-float-js" title="refresh float">Float</a></dd>
+    </dl>
+
+    <div class="tabs-content">
+
+        <div class="content active" id="refreshing-pips-js">
+            
+            <pre data-lang="js">
+                // initialise the slider, and pips first
+                $(".slider")
+                    .slider({ max: 10 })
+                    .slider("pips");
+
+                // then change and option, and refresh the pips
+                $(".slider")
+                    .slider("options", "max", 20 )
+                    .slider("pips", "refresh");
+            </pre>
+
+        </div>
+
+        <div class="content" id="refreshing-float-js">
+            
+            <pre data-lang="js">
+                // initialise the slider, and float first
+                $(".slider")
+                    .slider({ max: 10 })
+                    .slider("float");
+
+                // then change and option, and refresh the float
+                $(".slider")
+                    .slider("options", "max", 20 )
+                    .slider("float", "refresh");
+            </pre>
+
+        </div>
+
+    </div>
+
+</section>
