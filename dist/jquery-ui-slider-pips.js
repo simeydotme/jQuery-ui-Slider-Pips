@@ -447,10 +447,8 @@
             collection += createPip("first");
 
             // for every stop in the slider; we create a pip.
-            for ( p = 1; p < pips; p++ ) {
-                if ( p % slider.options.pipStep === 0 ) {
+            for ( p = slider.options.pipStep; p < pips; p = p + slider.options.pipStep ) {
                     collection += createPip( p );
-                }
             }
 
             // create our last pip
