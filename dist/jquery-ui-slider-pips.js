@@ -80,8 +80,8 @@
             }
 
 
-            // we don't want the step ever to be a floating point.
-            slider.options.pipStep = Math.round( options.step );
+            // we don't want the step ever to be a floating point or negative (or 0 actually, so we'll set it to 1 in that case).
+            slider.options.pipStep = Math.abs(Math.round( options.step )) || 1;
 
             // get rid of all pips that might already exist.
             slider.element
