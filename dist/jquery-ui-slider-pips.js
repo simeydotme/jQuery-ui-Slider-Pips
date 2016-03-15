@@ -1,3 +1,5 @@
+/*! jQuery-ui-Slider-Pips - v1.11.2 - 2016-03-15
+* Copyright (c) 2016 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 /*! jQuery-ui-Slider-Pips - v1.11.1 - 2015-11-30
 * Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
@@ -80,8 +82,9 @@
             }
 
 
-            // we don't want the step ever to be a floating point or negative (or 0 actually, so we'll set it to 1 in that case).
-            slider.options.pipStep = Math.abs(Math.round( options.step )) || 1;
+            // we don't want the step ever to be a floating point or negative
+            // (or 0 actually, so we'll set it to 1 in that case).
+            slider.options.pipStep = Math.abs( Math.round( options.step ) ) || 1;
 
             // get rid of all pips that might already exist.
             slider.element
@@ -288,7 +291,10 @@
                     classes = "ui-slider-pip",
                     css = "",
                     value = slider.value(),
-                    values = slider.values();
+                    values = slider.values(),
+                    labelValue,
+                    classLabel,
+                    labelIndex;
 
                 if ( which === "first" ) {
 
@@ -301,10 +307,13 @@
                 }
 
                 // labelValue is the actual value of the pip based on the min/step
-                var labelValue = min + ( slider.options.step * number );
+                labelValue = min + ( slider.options.step * number );
 
                 // classLabel replaces any decimals with hyphens
-                var classLabel = labelValue.toString().replace(".","-");
+                classLabel = labelValue.toString().replace(".", "-");
+
+                // get the index needed for selecting labels out of the array
+                labelIndex = Math.round( ( number - min ) / options.step );
 
                 // we need to set the human-readable label to either the
                 // corresponding element in the array, or the appropriate
@@ -312,8 +321,7 @@
 
                 if ( $.type(options.labels) === "array" ) {
 
-                    var labelIndex = Math.round( ( number - min ) / options.step );
-                    label = options.labels[labelIndex] || "";
+                    label = options.labels[ labelIndex ] || "";
 
                 } else if ( $.type( options.labels ) === "object" ) {
 
@@ -331,9 +339,7 @@
 
                         // set other labels, but our index should start at -1
                         // because of the first pip.
-
-                        var labelIndex = Math.round( ( number - min ) / options.step ) - 1;
-                        label = options.labels.rest[labelIndex] || "";
+                        label = options.labels.rest[ labelIndex - 1 ] || "";
 
                     } else {
 
@@ -448,9 +454,9 @@
             // create our first pip
             collection += createPip("first");
 
-            // for every stop in the slider; we create a pip.
-            for ( p = slider.options.pipStep; p < pips; p = p + slider.options.pipStep ) {
-                    collection += createPip( p );
+            // for every stop in the slider where we need a pip; create one.
+            for ( p = slider.options.pipStep; p < pips; p += slider.options.pipStep ) {
+                collection += createPip( p );
             }
 
             // create our last pip
