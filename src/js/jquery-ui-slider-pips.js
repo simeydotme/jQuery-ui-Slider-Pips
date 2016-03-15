@@ -80,8 +80,8 @@
             }
 
 
-            // we don't want the step ever to be a floating point.
-            slider.options.pipStep = Math.round( options.step );
+            // we don't want the step ever to be a floating point or negative (or 0 actually, so we'll set it to 1 in that case).
+            slider.options.pipStep = Math.abs(Math.round( options.step )) || 1;
 
             // get rid of all pips that might already exist.
             slider.element
@@ -449,10 +449,8 @@
             collection += createPip("first");
 
             // for every stop in the slider; we create a pip.
-            for ( p = 1; p < pips; p++ ) {
-                if ( p % slider.options.pipStep === 0 ) {
+            for ( p = slider.options.pipStep; p < pips; p = p + slider.options.pipStep ) {
                     collection += createPip( p );
-                }
             }
 
             // create our last pip
