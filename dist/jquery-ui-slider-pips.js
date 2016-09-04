@@ -1,10 +1,5 @@
-/*! jQuery-ui-Slider-Pips - v1.11.3 - 2016-03-15
+/*! jQuery-ui-Slider-Pips - v1.11.4 - 2016-09-04
 * Copyright (c) 2016 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
-
-/*! jQuery-ui-Slider-Pips - v1.11.1 - 2015-11-30
-* Copyright (c) 2015 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
-
-
 
 (function($) {
 
@@ -314,7 +309,7 @@
                 classLabel = labelValue.toString().replace(".", "-");
 
                 // get the index needed for selecting labels out of the array
-                labelIndex = Math.round( ( number - min ) / options.step );
+                labelIndex = ( number + min ) - min;
 
                 // we need to set the human-readable label to either the
                 // corresponding element in the array, or the appropriate
