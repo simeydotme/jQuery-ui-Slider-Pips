@@ -311,7 +311,7 @@
                 classLabel = labelValue.toString().replace(".", "-");
 
                 // get the index needed for selecting labels out of the array
-                labelIndex = Math.round( ( number - min ) / options.step );
+                labelIndex = ( number + min ) - min;
 
                 // we need to set the human-readable label to either the
                 // corresponding element in the array, or the appropriate
