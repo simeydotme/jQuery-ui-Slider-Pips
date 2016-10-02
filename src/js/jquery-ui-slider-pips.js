@@ -564,9 +564,17 @@
 
 
 
+
+
+
+
+
+
+
+
         // floats
 
-        float: function( settings ) {
+        floats: function( settings ) {
 
             var i,
                 slider = this,
@@ -747,7 +755,7 @@
 
                     $handles
                         .eq( i )
-                        .append( $("<span class=\"ui-slider-tip\">"+ options.formatLabel(tipValues[i]) +"</span>") );
+                        .append( $("<span class=\"ui-slider-tip\">" + options.formatLabel(tipValues[i]) + "</span>") );
 
                 }
 
