@@ -104,12 +104,11 @@ gulp.task("js", ["clean"], function() {
         .src( "./src/js/**/*.js" )
 
         .pipe( header( banner, { pkg: pkg, dates: dates } ))
-        .pipe( rename( out.js + ".js" ) )
         .pipe( gulp.dest( "./dist" ) )
 
         .pipe( uglify("combined.js") )
         .pipe( header( banner, { pkg: pkg, dates: dates } ))
-        .pipe( rename( out.js + ".min.js" ) )
+        .pipe( rename({ extname: ".min.js" }) )
         .pipe( gulp.dest( "./dist" ) );
 
 });
@@ -160,13 +159,13 @@ gulp.task("sass", ["clean"], function() {
  */
 
 gulp.task("bump", function( patch, minor, major ) {
-    
-    var b = 
+
+    var b =
         (patch) ? "patch" :
         (minor) ? "minor" :
         (major) ? "major" :
         null;
-    
+
     if( b ) {
 
         var pkg = pack(),
