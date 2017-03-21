@@ -1,5 +1,5 @@
-#jQuery UI Slider Pips
-####Plugin to add "pips" or "floats" to a JQUI Slider.
+# jQuery UI Slider Pips
+#### Plugin to add "pips" or "floats" to a JQUI Slider.
 
 [![Join the chat at https://gitter.im/simeydotme/jQuery-ui-Slider-Pips](https://badges.gitter.im/simeydotme/jQuery-ui-Slider-Pips.svg)](https://gitter.im/simeydotme/jQuery-ui-Slider-Pips?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
     
@@ -8,17 +8,17 @@ This plugin **extends** the [jQuery UI Slider widget](http://jqueryui.com/slider
 Use it for creating a nicely-styled slider like shown below  
 [Documentation, Demos and Examples here](http://simeydotme.github.io/jQuery-ui-Slider-Pips/)
 
-===  
+--- 
 
 #### Want to contribute?:  
 Please make sure to create a JSFiddle to demonstrate any problems, or pull requests, with this as a base: http://jsfiddle.net/simeydotme/Lh6pygef/ (press **fork** on the toolbar)
 
-===
+---
 
 ![Default settings for the plugin](http://files.simey.me/pips.jpg "Example of Pips plugin with default options")
 ![Example of the slider in use](https://cloud.githubusercontent.com/assets/2817396/3999716/d887ebf2-2952-11e4-9044-0c1b6baba99a.gif "Slider being used by a person with a mouse")
 
-###Install
+### Install
 If you're using [Bower](http://bower.io) you can install this plugin quickly from the command-line! :)
 ```bash
 bower install jquery-ui-slider-pips --save
@@ -28,18 +28,18 @@ Otherwise, you may download the files in the `/dist/` folder.
 
 ------------------------------------  
   
-###Requirements:
+### Requirements:
   - jQuery (1.9+)
   - jQuery UI (1.10+)
   
 ------------------------------------  
   
-###Usage:   
+### Usage:   
 Include the plugin javascript file __after__ jQuery & jQuery-ui.   
 Include the CSS file; edit as you please.  
 _Below methods are chainable, I've shown them separate for clarity_
   
-####Default usage:
+#### Default usage:
 
 ```html
 <!-- this widget needs an empty div tag. 
@@ -53,7 +53,7 @@ _Below methods are chainable, I've shown them separate for clarity_
 $('.element').slider().slider('pips').slider('float');
 ```
 
-####Advanced usage with options:
+#### Advanced usage with options:
 ```javascript
 
 // First of all attach a slider to an element. 
@@ -84,7 +84,7 @@ $('.element').slider('float', {
 });
 ```
 
-####Options for pips:  
+#### Options for pips:  
 **first:** `"pip"` or `"label"` or `false`  
 **last:** `"pip"` or `"label"` or `false`  
 **rest:** `"pip"` or `"label"` or `false`  
@@ -106,7 +106,7 @@ $('.element').slider('float', {
   
 ------------------------------------
 
-###Style Customisation:  
+### Style Customisation:  
 All customisation should be done to the CSS file, or in your own CSS.  
 The base styles I've provided do a decent job in the Demo,   
 but they may need tweaking to suit your needs and UI theme.  
@@ -114,13 +114,13 @@ For some inspiration and help with styling, [go to the styling section of the do
   
 ------------------------------------
 
-###Compatibility:   
+### Compatibility:   
 Modern Browsers, IE7+   
 _(To really support IE7 you will need to do some CSS changes.)_
 
 ------------------------------------
 
-###License:  
+### License:  
 Open Source MIT.  
 http://opensource.org/licenses/MIT
 
