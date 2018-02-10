@@ -1,5 +1,5 @@
-/*! jQuery-ui-Slider-Pips - v1.11.4 - 2016-10-02
-* Copyright (c) 2016 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
+/*! jquery-ui-slider-pips - v2.0.0-alpha - 2018-02-10
+* Copyright (c) 2018 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 /* HORIZONTAL */
 /* increase bottom margin to fit the pips */
@@ -136,13 +136,9 @@
   font-size: 12px;
   opacity: 0;
   color: #333;
-  -webkit-transition-property: opacity, top, visibility;
   transition-property: opacity, top, visibility;
-  -webkit-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
-  -webkit-transition-duration: 200ms, 200ms, 0ms;
   transition-duration: 200ms, 200ms, 0ms;
-  -webkit-transition-delay: 0ms, 0ms, 200ms;
   transition-delay: 0ms, 0ms, 200ms;
 }
 
@@ -157,9 +153,7 @@
   opacity: 1;
   top: -30px;
   visibility: visible;
-  -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
-  -webkit-transition-delay: 200ms, 200ms, 0ms;
   transition-delay: 200ms, 200ms, 0ms;
 }
 
@@ -224,11 +218,8 @@
   margin-left: 0px;
   left: -60px;
   color: #333;
-  -webkit-transition-duration: 200ms, 200ms, 0;
   transition-duration: 200ms, 200ms, 0;
-  -webkit-transition-property: opacity, left, visibility;
   transition-property: opacity, left, visibility;
-  -webkit-transition-delay: 0, 0, 200ms;
   transition-delay: 0, 0, 200ms;
 }
 
