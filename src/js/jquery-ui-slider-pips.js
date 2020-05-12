@@ -270,6 +270,7 @@
 
                 slider._refreshValue();
                 slider._change( e, indexToChange );
+                slider._stop( e, indexToChange );
 
             }
 
@@ -397,7 +398,7 @@
 
                     if ( slider.options.range ) {
 
-                        if ( labelValue > values[0] && 
+                        if ( labelValue > values[0] &&
                             labelValue < values[1] ) {
 
                             classes += " ui-slider-pip-inrange";
