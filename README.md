@@ -1,3 +1,10 @@
+> ⚠   
+> 
+> **Unmaintained / Deprecated**  
+> _While this plugin should still function (if you're using an older version of jQueryUI) I don't think it's good enough for modern use and goes against some newer ideals (low dependency, low kb, less opinions on style) ... therefore I'd suggest moving away from this, and jQueryUI, and perhaps [look at using the newer **svelte-range-slider-pips**](https://github.com/simeydotme/svelte-range-slider-pips) module which should work in all environments!_
+>
+> ⚠
+
 # jQuery UI Slider Pips
 #### Plugin to add "pips" or "floats" to a JQUI Slider.
 
