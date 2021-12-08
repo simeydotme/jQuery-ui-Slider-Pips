@@ -29,7 +29,7 @@
     "ignore": [
         ".gitattributes",
         ".gitignore",
-        "Gruntfile.js",
+        "gulpfile.js",
         "*.json",
         "*.md",
         "*.txt",
