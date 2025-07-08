@@ -53,7 +53,7 @@
 
             };
 
-            if ( $.type( settings ) === "object" || $.type( settings ) === "undefined" ) {
+            if ( typeof settings === "object" || typeof settings === "undefined" ) {
 
                 $.extend( options, settings );
                 slider.element.data("pips-options", options );
@@ -312,11 +312,11 @@
                 // corresponding element in the array, or the appropriate
                 // item in the object... or an empty string.
 
-                if ( $.type(options.labels) === "array" ) {
+                if ( Array.isArray(options.labels) ) {
 
                     label = options.labels[ labelIndex ] || "";
 
-                } else if ( $.type( options.labels ) === "object" ) {
+                } else if ( typeof options.labels === "object" ) {
 
                     if ( which === "first" ) {
 
@@ -328,7 +328,7 @@
                         // set last label
                         label = options.labels.last || "";
 
-                    } else if ( $.type( options.labels.rest ) === "array" ) {
+                    } else if ( Array.isArray(options.labels.rest) ) {
 
                         // set other labels, but our index should start at -1
                         // because of the first pip.
@@ -605,7 +605,7 @@
 
             };
 
-            if ( $.type( settings ) === "object" || $.type( settings ) === "undefined" ) {
+            if ( typeof settings === "object" || typeof settings === "undefined" ) {
 
                 $.extend( options, settings );
                 slider.element.data("float-options", options );
@@ -686,7 +686,7 @@
                 // by looping through the values array and assigning the
                 // label if it exists.
 
-                if ( $.type( options.labels ) === "array" ) {
+                if ( Array.isArray(options.labels) ) {
 
                     for ( i = 0; i < values.length; i++ ) {
 
@@ -694,7 +694,7 @@
 
                     }
 
-                } else if ( $.type( options.labels ) === "object" ) {
+                } else if ( typeof options.labels === "object" ) {
 
                     for ( i = 0; i < values.length; i++ ) {
 
@@ -706,7 +706,7 @@
 
                             vals[i] = options.labels.last || max;
 
-                        } else if ( $.type( options.labels.rest ) === "array" ) {
+                        } else if ( typeof options.labels.rest === "array" ) {
 
                             vals[i] = options.labels.rest[ steppedVals[i] - 1 ] || values[i];
 
@@ -791,7 +791,7 @@
                 .off(".sliderFloat")
                 .on( options.event + ".sliderFloat", function( e, ui ) {
 
-                    var uiValue = ( $.type( ui.value ) === "array" ) ? ui.value : [ ui.value ],
+                    var uiValue = ( Array.isArray(ui.value) ) ? ui.value : [ ui.value ],
                         val = options.formatLabel( getPipLabels( uiValue )[0] );
 
                     $(ui.handle)

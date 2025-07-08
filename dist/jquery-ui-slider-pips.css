@@ -1,5 +1,5 @@
-/*! jQuery-ui-Slider-Pips - v1.11.4 - 2016-09-04
-* Copyright (c) 2016 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
+/*! jQuery-ui-Slider-Pips - v1.11.4 - 2025-07-08
+* Copyright (c) 2025 Simon Goellner <simey.me@gmail.com>; Licensed MIT */
 
 /* HORIZONTAL */
 /* increase bottom margin to fit the pips */
@@ -108,10 +108,8 @@
 /* FLOATING HORIZTONAL TOOLTIPS */
 /* remove the godawful looking focus outline on handle and float */
 .ui-slider-float .ui-slider-handle:focus,
-.ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip-label,
 .ui-slider-float .ui-slider-handle:focus .ui-slider-tip,
-.ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip-label,
-.ui-slider-float .ui-slider-handle:focus .ui-slider-tip-label
+.ui-slider-float .ui-slider-handle:focus .ui-slider-tip-label,
 .ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip-label {
   outline: none;
 }
@@ -180,7 +178,7 @@
   width: 0;
   height: 0;
   border: 5px solid rgba(255, 255, 255, 0);
-  border-top-color: white;
+  border-top-color: rgb(255, 255, 255);
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -204,7 +202,7 @@
 /* switch the arrow to top on labels */
 .ui-slider-float .ui-slider-pip .ui-slider-tip-label:after {
   border: 5px solid rgba(255, 255, 255, 0);
-  border-bottom-color: white;
+  border-bottom-color: rgb(255, 255, 255);
   top: -10px;
 }
 
@@ -256,7 +254,7 @@
 .ui-slider-vertical.ui-slider-float .ui-slider-tip:after,
 .ui-slider-vertical.ui-slider-float .ui-slider-pip .ui-slider-tip-label:after {
   border: 5px solid rgba(255, 255, 255, 0);
-  border-left-color: white;
+  border-left-color: rgb(255, 255, 255);
   border-top-color: transparent;
   position: absolute;
   bottom: 50%;
@@ -283,7 +281,7 @@
 
 .ui-slider-vertical.ui-slider-float .ui-slider-pip .ui-slider-tip-label:after {
   border: 5px solid rgba(255, 255, 255, 0);
-  border-right-color: white;
+  border-right-color: rgb(255, 255, 255);
   right: auto;
   left: -10px;
 }
@@ -297,7 +295,7 @@
 
 /* SELECTED STATES */
 /* Comment out this chuck of code if you don't want to have
-        the new label colours shown */
+    the new label colours shown */
 .ui-slider-pips [class*=ui-slider-pip-initial] {
   font-weight: bold;
   color: #14CA82;

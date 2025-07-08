@@ -118,10 +118,8 @@
 
     /* remove the godawful looking focus outline on handle and float */
     .ui-slider-float .ui-slider-handle:focus,
-    .ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip-label,
     .ui-slider-float .ui-slider-handle:focus .ui-slider-tip,
-    .ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip-label,
-    .ui-slider-float .ui-slider-handle:focus .ui-slider-tip-label
+    .ui-slider-float .ui-slider-handle:focus .ui-slider-tip-label,
     .ui-slider-float .ui-slider-handle.ui-state-focus .ui-slider-tip-label {
         outline: none;
     }
