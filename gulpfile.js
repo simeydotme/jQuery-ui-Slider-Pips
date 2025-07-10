@@ -1,20 +1,21 @@
 
 "use strict";
 
-var gulp = require("gulp-param")( require("gulp"), process.argv ),
+var gulp = require("gulp"),
+    options = require("minimist")(process.argv.slice(2)),
 
     fs = require("fs"),
     semver = require("semver"),
-    dateformat = require("dateformat"),
+    dateformat = require("dateformat").default,
 
     git = require("gulp-git"),
-    sass = require("gulp-sass"),
+    sass = require("gulp-sass")(require("sass")),
     bump = require("gulp-bump"),
     clean = require("gulp-clean"),
     uglify = require("gulp-uglify"),
     rename = require("gulp-rename"),
     header = require("gulp-header"),
-    autoprefixer = require("gulp-autoprefixer"),
+    autoprefixer = require("gulp-autoprefixer").default,
 
     pack = function() {
 
@@ -43,15 +44,6 @@ var gulp = require("gulp-param")( require("gulp"), process.argv ),
 
     };
 
-
-
-
-
-
-
-
-
-
 /**
  * tasks
  *
@@ -61,20 +53,6 @@ var gulp = require("gulp-param")( require("gulp"), process.argv ),
  * for dev; just run
  * "gulp"
  */
-
-gulp.task("default", ["assets"], function() {
-
-    return gulp;
-
-});
-
-gulp.task("assets", ["clean", "js", "sass"], function() {
-
-    console.log("⭐ >> Finished putting assets to /dist/" );
-
-    return gulp;
-
-});
 
 /**
  * clean the dist folder (empty it)
@@ -86,17 +64,17 @@ gulp.task("clean", function() {
 
     return gulp
         .src("./dist", { read: false })
-        .pipe( clean() );
+        .pipe( clean() )
+        .pipe( gulp.dest(".") );
 
 });
-
 
 /**
  * js task is used to clean the dist folder and output
  * the minified and non-minified files.
  */
 
-gulp.task("js", ["clean"], function() {
+gulp.task("js", function() {
 
     var pkg = pack();
 
@@ -114,19 +92,18 @@ gulp.task("js", ["clean"], function() {
 
 });
 
-
 /**
  * sass task is used to clean the dist folder and output
  * the minified and non-minified files.
  */
 
-gulp.task("sass", ["clean"], function() {
+gulp.task("sass", function() {
 
     var pkg = pack();
 
     gulp
         .src("./src/**/*.scss")
-        .pipe( sass({ outputStyle: "expanded" }).on("error", sass.logError ) )
+        .pipe( sass({ style: "expanded" }).on("error", sass.logError ) )
         .pipe( autoprefixer("last 5 versions") )
         .pipe( header( banner, { pkg: pkg, dates: dates } ))
         .pipe( rename( out.css + ".css" ))
@@ -134,7 +111,7 @@ gulp.task("sass", ["clean"], function() {
 
     return gulp
         .src("./src/**/*.scss")
-        .pipe( sass({ outputStyle: "compressed" }).on("error", sass.logError ) )
+        .pipe( sass({ style: "compressed" }).on("error", sass.logError ) )
         .pipe( autoprefixer("last 5 versions") )
         .pipe( header( banner, { pkg: pkg, dates: dates } ))
         .pipe( rename( out.css + ".min.css" ))
@@ -142,11 +119,7 @@ gulp.task("sass", ["clean"], function() {
 
 });
 
-
-
-
-
-
+gulp.task("assets", gulp.series("clean", "js", "sass"));
 
 /**
  * bump task can be used like:
@@ -159,14 +132,14 @@ gulp.task("sass", ["clean"], function() {
  * release a tag, commit the code or update the assets.
  */
 
-gulp.task("bump", function( patch, minor, major ) {
-    
-    var b = 
-        (patch) ? "patch" :
-        (minor) ? "minor" :
-        (major) ? "major" :
+gulp.task("bump", function() {
+
+    var b =
+        (options.patch) ? "patch" :
+        (options.minor) ? "minor" :
+        (options.major) ? "major" :
         null;
-    
+
     if( b ) {
 
         var pkg = pack(),
@@ -189,19 +162,6 @@ gulp.task("bump", function( patch, minor, major ) {
     }
 
 });
-
-
-
-
-/**
- * release task should be used after "bump" and "assets" was run.
- * this task will create a commit, and tag it with the version in package.json
- */
-
-gulp.task("release", ["commit", "tag"], function() {
-    return gulp;
-});
-
 
 /**
  * commit task is used for creating a cute release icon, and committing dist files
@@ -233,7 +193,7 @@ gulp.task("commit", function() {
  * with the latest version information from package.json.
  */
 
-gulp.task("tag", ["commit"], function() {
+gulp.task("tag", gulp.series("commit", function(done) {
 
     var pkg = pack(),
         newv = pkg.version;
@@ -241,10 +201,16 @@ gulp.task("tag", ["commit"], function() {
     console.log("⭐ >> Creating new tag for v" + newv );
 
     git.tag("v" + newv, "Version " + newv, function(err) {
-        if ( err ) { throw err; }
+        if ( err ) { done(err); }
+        else { done(); }
     });
 
-    return gulp;
+}));
 
-});
+/**
+ * release task should be used after "bump" and "assets" was run.
+ * this task will create a commit, and tag it with the version in package.json
+ */
+gulp.task("release", gulp.series("commit", "tag"));
 
+gulp.task("default", gulp.series("assets"));
