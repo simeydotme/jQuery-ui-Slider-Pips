@@ -2,6 +2,7 @@
 "use strict";
 
 var gulp = require("gulp"),
+    options = require("minimist")(process.argv.slice(2)),
 
     fs = require("fs"),
     semver = require("semver"),
@@ -131,12 +132,12 @@ gulp.task("assets", gulp.series("clean", "js", "sass"));
  * release a tag, commit the code or update the assets.
  */
 
-gulp.task("bump", function( patch, minor, major ) {
+gulp.task("bump", function() {
 
     var b =
-        (patch) ? "patch" :
-        (minor) ? "minor" :
-        (major) ? "major" :
+        (options.patch) ? "patch" :
+        (options.minor) ? "minor" :
+        (options.major) ? "major" :
         null;
 
     if( b ) {
@@ -192,7 +193,7 @@ gulp.task("commit", function() {
  * with the latest version information from package.json.
  */
 
-gulp.task("tag", gulp.series("commit", function() {
+gulp.task("tag", gulp.series("commit", function(done) {
 
     var pkg = pack(),
         newv = pkg.version;
@@ -200,10 +201,9 @@ gulp.task("tag", gulp.series("commit", function() {
     console.log("⭐ >> Creating new tag for v" + newv );
 
     git.tag("v" + newv, "Version " + newv, function(err) {
-        if ( err ) { throw err; }
+        if ( err ) { done(err); }
+        else { done(); }
     });
-
-    return gulp;
 
 }));
 
