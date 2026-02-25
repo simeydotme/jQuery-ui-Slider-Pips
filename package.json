@@ -29,7 +29,6 @@
   },
   "devDependencies": {
     "dateformat": "^5.0.3",
-    "fs": "0.0.2",
     "gulp": "^5.0.1",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-bump": "^3.2.0",
